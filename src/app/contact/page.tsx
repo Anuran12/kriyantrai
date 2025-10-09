@@ -131,8 +131,8 @@ export default function ContactPage() {
                 Get In Touch
               </h1>
               <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                Ready to transform your business with AI and automation? Let's
-                discuss how we can help you achieve your goals.
+                Ready to transform your business with AI and automation?
+                Let&#39;s discuss how we can help you achieve your goals.
               </p>
             </motion.div>
           </div>
@@ -154,8 +154,8 @@ export default function ContactPage() {
                     Send us a Message
                   </h2>
                   <p className="text-[#64748B] text-lg">
-                    We'd love to hear from you. Fill out the form below and
-                    we'll get back to you as soon as possible.
+                    We&#39;d love to hear from you. Fill out the form below and
+                    we&#39;ll get back to you as soon as possible.
                   </p>
                 </div>
 
@@ -168,7 +168,7 @@ export default function ContactPage() {
                   >
                     <CheckCircle size={20} className="text-green-600" />
                     <span className="text-green-800 font-medium">
-                      Message sent successfully! We'll get back to you soon.
+                      Message sent successfully! We&#39;ll get back to you soon.
                     </span>
                   </motion.div>
                 )}
