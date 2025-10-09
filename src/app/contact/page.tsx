@@ -30,13 +30,6 @@ const contactInfo = [
     color: "#FF6B35",
   },
   {
-    icon: MapPin,
-    title: "Visit Us",
-    content: "San Francisco, CA",
-    description: "Come say hello at our office",
-    color: "#0A2342",
-  },
-  {
     icon: Clock,
     title: "Business Hours",
     content: "24/7 Support",
@@ -117,7 +110,7 @@ export default function ContactPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-[#0A2342] via-[#00D4FF]/10 to-[#FF6B35]/10 overflow-hidden">
+        <section className="relative min-h-[calc(40vh)] flex items-center justify-center bg-gradient-to-br from-[#0A2342] via-[#00D4FF]/10 to-[#FF6B35]/10 overflow-hidden">
           <div className="absolute inset-0">
             <motion.div
               animate={{ rotate: 360 }}
@@ -134,10 +127,10 @@ export default function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold mb-6">
                 Get In Touch
               </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
                 Ready to transform your business with AI and automation? Let's
                 discuss how we can help you achieve your goals.
               </p>
@@ -391,48 +384,6 @@ export default function ContactPage() {
                 </motion.div>
               </motion.div>
             </div>
-          </div>
-        </section>
-
-        {/* Map Section (Placeholder) */}
-        <section className="py-20 bg-gradient-to-br from-[#F8FAFC] to-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#0A2342] mb-4">
-                Find Us
-              </h2>
-              <p className="text-[#64748B] text-lg max-w-2xl mx-auto">
-                Located in the heart of San Francisco's tech district, we're
-                easily accessible for meetings and collaborations.
-              </p>
-            </motion.div>
-
-            {/* Map Placeholder */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="relative h-96 bg-gradient-to-br from-[#0A2342]/10 to-[#00D4FF]/10 rounded-xl overflow-hidden shadow-lg"
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin size={48} className="text-[#00D4FF] mx-auto mb-4" />
-                  <h3 className="text-xl font-display font-bold text-[#0A2342] mb-2">
-                    San Francisco, CA
-                  </h3>
-                  <p className="text-[#64748B]">
-                    Interactive map would be displayed here
-                  </p>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </section>
       </main>

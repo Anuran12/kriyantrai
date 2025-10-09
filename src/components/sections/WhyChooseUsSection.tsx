@@ -73,10 +73,12 @@ export default function WhyChooseUsSection() {
                       className="absolute inset-0 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300"
                       style={{ backgroundColor: reason.color }}
                     ></div>
-                    <div className="relative z-10">
+                    <div
+                      className="relative z-10"
+                      style={{ color: reason.color }}
+                    >
                       <reason.icon
                         size={40}
-                        style={{ color: reason.color }}
                         className="group-hover:scale-110 transition-transform duration-300"
                       />
                     </div>

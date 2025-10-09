@@ -1,9 +1,11 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
-import ServicesSection from "@/components/sections/ServicesSection";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import FeaturedWorkSection from "@/components/sections/FeaturedWorkSection";
+import CompanyDescriptionSection from "@/components/sections/CompanyDescriptionSection";
+import CTABannerSection from "@/components/sections/CTABannerSection";
+// import LogoSliderSection from "@/components/sections/LogoSliderSection";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -26,9 +28,11 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <ServicesSection />
+        <CompanyDescriptionSection />
         <WhyChooseUsSection />
         <FeaturedWorkSection />
+        <CTABannerSection />
+        {/* <LogoSliderSection /> */}
       </main>
       <Footer />
     </div>

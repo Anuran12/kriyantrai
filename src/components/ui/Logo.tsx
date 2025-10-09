@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface LogoProps {
   size?: number;
@@ -12,50 +14,60 @@ export const Logo: React.FC<LogoProps> = ({
   showText = true,
 }) => {
   return (
-    <div className={`flex items-center space-x-2 ${className}`}>
-      {/* Logo Icon */}
-      <div
-        className="flex items-center justify-center rounded-lg"
-        style={{
-          width: size,
-          height: size,
-          background: "linear-gradient(135deg, #0A2342 0%, #00D4FF 100%)",
+    <motion.div
+      className={`flex items-center space-x-3 ${className}`}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      {/* Logo Image */}
+      <motion.div
+        className="relative overflow-hidden"
+        style={{ width: size, height: size }}
+        whileHover={{
+          rotate: [0, -5, 5, 0],
+          scale: 1.1,
+        }}
+        transition={{
+          duration: 0.5,
+          ease: "easeInOut",
         }}
       >
-        <svg
-          width={size * 0.6}
-          height={size * 0.6}
-          viewBox="0 0 24 24"
-          fill="none"
-          className="text-white"
-        >
-          <path
-            d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"
-            fill="currentColor"
-          />
-          <circle
-            cx="12"
-            cy="12"
-            r="8"
-            stroke="currentColor"
-            strokeWidth="1.5"
-          />
-          <circle cx="12" cy="12" r="3" fill="currentColor" />
-        </svg>
-      </div>
+        <Image
+          src="/logo.png"
+          alt="Kriyantrai Logo"
+          fill
+          className="object-contain"
+          priority
+        />
+        {/* Subtle glow effect */}
+        <motion.div
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          whileHover={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        />
+      </motion.div>
 
       {/* Logo Text */}
       {showText && (
-        <span
-          className="font-display font-bold text-[#0A2342]"
+        <motion.span
+          className="font-display font-bold text-[#153776] tracking-wide"
           style={{ fontSize: size * 0.6 }}
+          whileHover={{
+            scale: 1.02,
+          }}
+          transition={{ duration: 0.2 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
         >
           Kriyantrai
-        </span>
+        </motion.span>
       )}
-    </div>
+    </motion.div>
   );
 };
 
 export default Logo;
-
