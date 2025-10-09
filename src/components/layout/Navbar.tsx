@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
@@ -118,7 +118,7 @@ export default function Navbar() {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             {navItems.map((item, index) => (
-              <>
+              <Fragment key={`nav-${item.name}`}>
                 {item.name === "Work" && (
                   <motion.div
                     key="Services"
@@ -148,18 +148,13 @@ export default function Navbar() {
                               </span>
                             </Link>
                             <ul className="mt-2 space-y-1">
-                              {section.items.map((item) => (
-                                <Link
-                                  href={section.href}
-                                  className="inline-flex"
+                              {section.items.map((sub) => (
+                                <li
+                                  key={sub.label}
+                                  className="px-2 py-1 text-sm text-[#475569]"
                                 >
-                                  <li
-                                    key={item.label}
-                                    className="px-2 py-1 text-sm text-[#475569]"
-                                  >
-                                    {item.label}
-                                  </li>
-                                </Link>
+                                  {sub.label}
+                                </li>
                               ))}
                             </ul>
                           </div>
@@ -194,7 +189,7 @@ export default function Navbar() {
                     <motion.div className="absolute bottom-1 left-0 w-0 h-0.5 bg-[#153776] rounded-full group-hover:w-full transition-all duration-200 ease-out" />
                   </Link>
                 </motion.div>
-              </>
+              </Fragment>
             ))}
           </motion.div>
 

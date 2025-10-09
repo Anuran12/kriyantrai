@@ -53,7 +53,7 @@ export default function FeaturedWorkSection() {
             Featured Work
           </h2>
           <p className="text-lg text-[#64748B] max-w-3xl mx-auto">
-            Discover our latest projects and see how we're transforming
+            Discover our latest projects and see how we&apos;re transforming
             businesses with innovative AI, ML, and automation solutions.
           </p>
         </motion.div>
@@ -152,4 +152,3 @@ export default function FeaturedWorkSection() {
     </section>
   );
 }
-

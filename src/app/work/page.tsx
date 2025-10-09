@@ -149,8 +149,8 @@ export default function WorkPage() {
                 Our Work
               </h1>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Explore our portfolio of innovative projects where we've helped
-                businesses transform through AI, machine learning, and
+                Explore our portfolio of innovative projects where we&apos;ve
+                helped businesses transform through AI, machine learning, and
                 intelligent automation.
               </p>
             </motion.div>
@@ -350,8 +350,8 @@ export default function WorkPage() {
                 Ready to Start Your Project?
               </h2>
               <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-                Let's discuss how we can help bring your vision to life with our
-                expertise in AI, ML, and automation solutions.
+                Let&apos;s discuss how we can help bring your vision to life
+                with our expertise in AI, ML, and automation solutions.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}

@@ -46,8 +46,9 @@ export default function WhyChooseUsSection() {
             Why Choose Kriyantrai?
           </h2>
           <p className="text-lg text-[#64748B] max-w-3xl mx-auto">
-            We're not just service providers – we're your technology partners.
-            Here's what sets us apart in delivering exceptional results.
+            We&apos;re not just service providers – we&apos;re your technology
+            partners. Here&apos;s what sets us apart in delivering exceptional
+            results.
           </p>
         </motion.div>
 
