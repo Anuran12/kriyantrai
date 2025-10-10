@@ -4,10 +4,16 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import AnimatedLine from "@/components/animations/AnimatedLine";
+import HeroImg from "../../../public/Hero.png";
+import Logo from "../../../public/logo.png";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden bg-gradient-to-br from-white via-[#F8FAFC] to-white">
+    <section className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden bg-[#FAFAFA]">
+      <div className="absolute inset-0 z-30">
+        <AnimatedLine />
+      </div>
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Geometric patterns */}
@@ -34,7 +40,7 @@ export default function HeroSection() {
             rotate: { duration: 25, repeat: Infinity, ease: "linear" },
             scale: { duration: 5, repeat: Infinity, ease: "easeInOut" },
           }}
-          className="absolute bottom-20 right-20 w-24 h-24 opacity-10"
+          className="absolute bottom-20 right-20 w-24 h-24 opacity-10 z-50"
         >
           <div className="w-full h-full bg-gradient-to-br from-[#FF6B35] to-[#FF8C42] rounded-full"></div>
         </motion.div>
@@ -140,14 +146,19 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative"
           >
-            <div className="relative h-96 lg:h-[500px] rounded-xl overflow-hidden shadow-2xl">
+            <div className="relative h-96 lg:h-[500px] rounded-xl overflow-hidden scale-120">
               <Image
-                src="/api/placeholder/600/500"
+                src={HeroImg}
                 alt="AI and ML Solutions Animation"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+              <Image
+                src={Logo}
+                alt="AI and ML Solutions Animation"
+                fill
+                className=" object-contain p-32 md:p-44"
+              />
             </div>
 
             {/* Decorative elements */}

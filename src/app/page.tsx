@@ -1,6 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
+import AnimatedServicesShowcase from "@/components/sections/AnimatedServicesShowcase";
 import WhyChooseUsSection from "@/components/sections/WhyChooseUsSection";
 import FeaturedWorkSection from "@/components/sections/FeaturedWorkSection";
 import CompanyDescriptionSection from "@/components/sections/CompanyDescriptionSection";
@@ -28,7 +29,7 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <CompanyDescriptionSection />
+        <AnimatedServicesShowcase />
         <WhyChooseUsSection />
         <FeaturedWorkSection />
         <CTABannerSection />
