@@ -128,42 +128,43 @@ export default function WorkPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-[#0A2342] via-[#00D4FF]/10 to-[#FF6B35]/10 overflow-hidden">
-          <div className="absolute inset-0">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute top-10 right-10 w-24 h-24 opacity-10"
-            >
-              <div className="w-full h-full border-2 border-[#FF6B35] rounded-full"></div>
-            </motion.div>
-          </div>
+        <section className="relative min-h-[calc(50vh)] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0A2342] via-[#00D4FF]/10 to-[#FF6B35]/10">
+          <Image
+            src="/Hero.png"
+            alt="Background"
+            layout="fill"
+            objectFit="cover"
+            quality={100}
+            className="absolute inset-0 z-0 opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0A2342]/80 to-[#00D4FF]/20 z-10"></div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
-                Our Work
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white mb-6 drop-shadow-lg">
+                Our Transformative Work
               </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Explore our portfolio of innovative projects where we&apos;ve
-                helped businesses transform through AI, machine learning, and
-                intelligent automation.
+              <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                Explore our portfolio of groundbreaking projects where we
+                leverage AI, machine learning, and intelligent automation to
+                drive unparalleled innovation and deliver measurable impact for
+                our clients.
               </p>
             </motion.div>
           </div>
         </section>
 
         {/* Filter Section */}
-        <section className="py-12 bg-white border-b border-gray-200">
+        <section className="py-12 bg-white border-b border-gray-200 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-3">
                 <Filter size={20} className="text-[#0A2342]" />
-                <span className="font-semibold text-[#0A2342]">
+                <span className="font-semibold text-[#0A2342] text-lg">
                   Filter by Category:
                 </span>
               </div>
@@ -172,12 +173,12 @@ export default function WorkPage() {
                 {categories.map((category) => (
                   <motion.button
                     key={category}
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.05, backgroundColor: "#E2E8F0" }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => handleCategoryChange(category)}
-                    className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                    className={`px-5 py-2 rounded-full font-medium transition-all duration-300 text-base ${
                       selectedCategory === category
-                        ? "bg-gradient-to-r from-[#0A2342] to-[#00D4FF] text-white shadow-lg"
+                        ? "bg-gradient-to-r from-[#0A2342] to-[#00D4FF] text-white shadow-lg transform scale-105"
                         : "bg-gray-100 text-[#64748B] hover:bg-gray-200"
                     }`}
                   >
@@ -207,12 +208,12 @@ export default function WorkPage() {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white"
+                    className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white border border-gray-100"
                   >
                     {/* Featured Badge */}
                     {project.featured && (
                       <div className="absolute top-4 left-4 z-20">
-                        <span className="bg-gradient-to-r from-[#FF6B35] to-[#FF8C42] text-white text-xs font-bold px-3 py-1 rounded-full">
+                        <span className="bg-gradient-to-r from-[#FF6B35] to-[#FF8C42] text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
                           Featured
                         </span>
                       </div>
@@ -220,33 +221,35 @@ export default function WorkPage() {
 
                     {/* Project Image */}
                     <div className="relative h-64 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/20 to-gray-900/60 z-10"></div>
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out"
                       />
 
                       {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                       {/* Hover Content */}
-                      <div className="absolute bottom-0 left-0 right-0 p-6 z-30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-6 z-30 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-white text-sm font-medium bg-black/30 px-3 py-1 rounded-full">
+                          <span className="text-white text-sm font-medium bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
                             {project.category}
                           </span>
                           <motion.button
-                            whileHover={{ scale: 1.1 }}
+                            whileHover={{
+                              scale: 1.1,
+                              backgroundColor: "rgba(255,255,255,0.4)",
+                            }}
                             whileTap={{ scale: 0.95 }}
-                            className="text-white p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors duration-300"
+                            className="text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors duration-300"
                           >
-                            <ExternalLink size={16} />
+                            <ExternalLink size={18} />
                           </motion.button>
                         </div>
 
-                        <h3 className="text-white text-xl font-display font-bold mb-2">
+                        <h3 className="text-white text-2xl font-display font-bold mb-2 leading-tight">
                           {project.title}
                         </h3>
 
@@ -259,13 +262,13 @@ export default function WorkPage() {
                           {project.technologies.slice(0, 3).map((tech) => (
                             <span
                               key={tech}
-                              className="text-xs text-white bg-white/20 px-2 py-1 rounded-full"
+                              className="text-xs text-white bg-white/30 px-2 py-1 rounded-full"
                             >
                               {tech}
                             </span>
                           ))}
                           {project.technologies.length > 3 && (
-                            <span className="text-xs text-white bg-white/20 px-2 py-1 rounded-full">
+                            <span className="text-xs text-white bg-white/30 px-2 py-1 rounded-full">
                               +{project.technologies.length - 3}
                             </span>
                           )}
@@ -274,7 +277,7 @@ export default function WorkPage() {
 
                       {/* Gradient border effect */}
                       <div
-                        className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
+                        className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-500`}
                       ></div>
                     </div>
 
@@ -285,8 +288,22 @@ export default function WorkPage() {
                           {project.category}
                         </span>
                         {project.featured && (
-                          <span className="text-xs font-bold text-[#FF6B35]">
-                            ★ Featured
+                          <span className="text-xs font-bold text-[#FF6B35] flex items-center gap-1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              strokeWidth={1.5}
+                              stroke="currentColor"
+                              className="w-4 h-4"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"
+                              />
+                            </svg>
+                            Featured
                           </span>
                         )}
                       </div>
@@ -338,7 +355,7 @@ export default function WorkPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-[#0A2342] to-[#00D4FF]">
+        <section className="py-20 bg-gradient-to-r from-[#0A2342] to-[#00D4FF] text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -347,18 +364,19 @@ export default function WorkPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-6">
-                Ready to Start Your Project?
+                Ready to Transform Your Business?
               </h2>
               <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-                Let&apos;s discuss how we can help bring your vision to life
-                with our expertise in AI, ML, and automation solutions.
+                Partner with Kriyantrai to leverage cutting-edge AI, ML, and
+                automation solutions that drive innovation and deliver tangible
+                results.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-[#0A2342] font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                className="px-10 py-4 bg-white text-[#0A2342] font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
               >
-                Get In Touch
+                Get a Free Consultation
               </motion.button>
             </motion.div>
           </div>

@@ -16,7 +16,7 @@ const navItems = [
 const servicesMenu = [
   {
     title: "Development",
-    href: "/services/development",
+    href: "/development",
     items: [
       { label: "Web Development" },
       { label: "Mobile App Development" },
@@ -27,7 +27,7 @@ const servicesMenu = [
   },
   {
     title: "Data & Analytics",
-    href: "/services/data-analytics",
+    href: "/data-analytics",
     items: [
       { label: "Data Cleaning & Visualization" },
       { label: "Dashboard Development" },
@@ -38,7 +38,7 @@ const servicesMenu = [
   },
   {
     title: "AI & Automation",
-    href: "/services/ai-automation",
+    href: "/ai-automation",
     items: [
       { label: "Workflow Automation" },
       { label: "Chatbot Development" },
@@ -49,7 +49,7 @@ const servicesMenu = [
   },
   {
     title: "Machine Learning & Deep Learning",
-    href: "/services/ml-dl",
+    href: "/machine-learning",
     items: [
       { label: "Model Development & Training" },
       { label: "Computer Vision Projects" },
@@ -147,16 +147,18 @@ export default function Navbar() {
                                 {section.title}
                               </span>
                             </Link>
-                            <ul className="mt-2 space-y-1">
-                              {section.items.map((sub) => (
-                                <li
-                                  key={sub.label}
-                                  className="px-2 py-1 text-sm text-[#475569]"
-                                >
-                                  {sub.label}
-                                </li>
-                              ))}
-                            </ul>
+                            <Link href={section.href} className="inline-flex">
+                              <ul className="mt-2 space-y-1">
+                                {section.items.map((sub) => (
+                                  <li
+                                    key={sub.label}
+                                    className="px-2 py-1 text-sm text-[#475569]"
+                                  >
+                                    {sub.label}
+                                  </li>
+                                ))}
+                              </ul>
+                            </Link>
                           </div>
                         ))}
                       </div>

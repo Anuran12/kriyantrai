@@ -4,141 +4,131 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       <Navbar />
 
       <main>
-        {/* Hero Section with Background Image */}
-        <section
-          className="relative w-full h-[600px] bg-cover bg-center flex items-center"
-          style={{ backgroundImage: 'url("/api/placeholder/1920/600")' }}
-        >
-          <div className="absolute inset-0 bg-black/40"></div>
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row justify-between items-center lg:space-x-4 text-center">
-            <div className="lg:flex-1 mt-20">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="space-y-6"
-              >
-                <div className="bg-red-500 text-white px-6 py-3 inline-block text-3xl sm:text-4xl lg:text-4xl font-bold rounded-lg">
-                  <h1>RWE to reduce the size</h1>
-                </div>
-                <div className="bg-red-500 text-white px-6 py-3 inline-block text-3xl sm:text-4xl lg:text-4xl font-bold rounded-lg">
-                  <h1>and duration of clinical trials</h1>
-                </div>
-              </motion.div>
+        {/* Hero Section */}
+        <section className="relative h-[70vh] flex items-center justify-center text-white overflow-hidden">
+          <Image
+            src="/images/about-hero.jpg" // Placeholder image, replace with actual
+            alt="About Kriyantrai"
+            layout="fill"
+            objectFit="cover"
+            className="z-0"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A2342] to-[#00D4FF] opacity-80 z-10"></div>
+          <div className="relative z-20 text-center px-4">
+            <motion.h1
+              initial={{ opacity: 0, y: -50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl md:text-7xl font-extrabold mb-4"
+            >
+              About Kriyantrai
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl md:text-2xl max-w-3xl mx-auto mb-8"
+            >
+              Innovating for a smarter, more connected future.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <Link href="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-[#FF6B35] text-white px-8 py-4 rounded-full text-lg font-semibold flex items-center justify-center mx-auto shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Get in Touch
+                  <ArrowRight className="ml-2" size={20} />
+                </motion.button>
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Mission, Vision, Values Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-[#0A2342] mb-12">
+              Our Story
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {renderAboutCard(
+                "Our Mission",
+                "To empower businesses with cutting-edge technology solutions that drive innovation, efficiency, and sustainable growth.",
+                "from-[#00D4FF] to-[#0A2342]"
+              )}
+              {renderAboutCard(
+                "Our Vision",
+                "To be a global leader in digital transformation, recognized for our expertise, integrity, and commitment to client success.",
+                "from-[#FF6B35] to-[#FF8C42]"
+              )}
+              {renderAboutCard(
+                "Our Values",
+                "Innovation, Excellence, Collaboration, Integrity, and Customer Centricity are at the core of everything we do.",
+                "from-[#0A2342] to-[#00D4FF]"
+              )}
             </div>
           </div>
         </section>
 
-        {/* Mission Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="container mx-auto py-8">
-              <div className="flex flex-wrap">
-                {/* Image Section */}
-                <div className="w-full md:w-1/2 flex justify-center items-center p-4">
-                  <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                  >
-                    <Image
-                      src="/api/placeholder/600/400"
-                      alt="Healthcare and AI collaboration"
-                      width={600}
-                      height={400}
-                      className="w-full shadow-md rounded-lg"
-                    />
-                  </motion.div>
-                </div>
-                {/* Text Section */}
-                <div className="w-full md:w-1/2 p-4">
-                  <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold mb-6 pl-0 lg:pl-10">
-                      Our Mission Matters
-                    </h1>
-                    <p className="text-base md:text-lg lg:text-lg leading-relaxed text-justify pl-0 lg:pl-10">
-                      Healthcare deeply and meaningfully impacts every single
-                      person on Earth. We believe we can make it better…a lot
-                      better. We use AI to empower data-informed decisions that
-                      make high-quality care personalization possible at scale.
-                      We combine the latest advances in machine learning,
-                      natural language processing, data science, and data
-                      engineering with deep clinical and biomedical expertise to
-                      build the tools that allow health systems, life sciences,
-                      and payors to position—for the first time in
-                      history—long-term patient wellbeing at the center of their
-                      strategic objectives. The ambition of our mission and the
-                      transformative potential of our technology is what drives
-                      our commitment to success.
-                    </p>
-                  </motion.div>
-                </div>
-              </div>
-            </div>
+        {/* History Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100">
+          <div className="max-w-7xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-[#0A2342] mb-6">
+              Our Journey So Far
+            </h2>
+            <p className="text-lg text-[#64748B] max-w-3xl mx-auto mb-12">
+              Founded in [Year], Kriyantrai began with a vision to bridge the gap between complex technological advancements and practical business applications. Over the years, we have grown into a team of passionate experts dedicated to delivering exceptional results and fostering long-term partnerships.
+            </p>
+            {/* Timeline or key milestones can be added here */}
           </div>
         </section>
 
-        {/* Culture Section */}
-        <section className="py-20" style={{ backgroundColor: "#15142c" }}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="container mx-auto py-16 px-4 md:px-8 lg:py-32 lg:px-16 flex flex-col lg:flex-row items-center justify-between">
-              <div className="text-white lg:w-3/5">
-                <motion.h1
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8 }}
-                  viewport={{ once: true }}
-                  className="text-4xl md:text-4xl lg:text-5xl mb-6 mr-10 sm:mr-20 tracking-wider"
-                >
-                  A Home for Difference Makers
-                </motion.h1>
-                <motion.p
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  viewport={{ once: true }}
-                  className="text-base md:text-lg lg:text-lg leading-relaxed text-justify mr-6 mt-10 sm:mr-20"
-                >
-                  Our culture encourages every team member to go beyond their
-                  vertical of excellence and to curiously explore and understand
-                  the interplay of technology, medicine, business, and humanity.
-                  We demand excellence in the quality of our own work because
-                  everything we do affects a fellow human&apos;s healthcare. Our
-                  people are intelligent, imaginative, driven, and passionate.
-                  If you&apos;re excited about surmounting challenges, learning
-                  new things, honing skills, and making a dent in the universe,
-                  you belong here.
-                </motion.p>
-              </div>
-              <div className="lg:w-2/5 mt-8 lg:mt-0 flex justify-center items-center relative">
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  viewport={{ once: true }}
-                >
-                  <Image
-                    src="/api/placeholder/400/400"
-                    alt="Team collaboration and innovation"
-                    width={400}
-                    height={400}
-                    className="rounded-lg"
-                  />
-                </motion.div>
-              </div>
+        {/* Team Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-[#0A2342] mb-12">
+              Meet Our Team
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {renderTeamMember(
+                "John Doe",
+                "CEO & Founder",
+                "/images/team-john.jpg", // Placeholder image
+                "John is a visionary leader with over 20 years of experience in the tech industry. His passion for innovation drives Kriyantrai's strategic direction."
+              )}
+              {renderTeamMember(
+                "Jane Smith",
+                "Chief Technology Officer",
+                "/images/team-jane.jpg", // Placeholder image
+                "Jane leads our technology initiatives, bringing a wealth of expertise in AI, machine learning, and software architecture."
+              )}
+              {renderTeamMember(
+                "Peter Jones",
+                "Head of Development",
+                "/images/team-peter.jpg", // Placeholder image
+                "Peter is an expert in full-stack development, ensuring our solutions are robust, scalable, and user-friendly."
+              )}
+              {renderTeamMember(
+                "Sarah Lee",
+                "Lead Data Scientist",
+                "/images/team-sarah.jpg", // Placeholder image
+                "Sarah specializes in transforming complex data into actionable insights, helping clients make informed decisions."
+              )}
             </div>
           </div>
         </section>
@@ -146,5 +136,52 @@ export default function AboutPage() {
 
       <Footer />
     </div>
+  );
+}
+
+function renderAboutCard(
+  title: string,
+  description: string,
+  gradient: string
+) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="bg-white rounded-xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 text-center"
+    >
+      <h3 className="text-2xl font-bold text-[#0A2342] mb-4">{title}</h3>
+      <p className="text-[#64748B]">{description}</p>
+    </motion.div>
+  );
+}
+
+function renderTeamMember(
+  name: string,
+  role: string,
+  imageSrc: string,
+  bio: string
+) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="bg-white rounded-xl shadow-lg p-8 border border-gray-200 text-center"
+    >
+      <Image
+        src={imageSrc}
+        alt={name}
+        width={150}
+        height={150}
+        className="rounded-full mx-auto mb-6 object-cover w-36 h-36"
+      />
+      <h3 className="text-2xl font-bold text-[#0A2342] mb-2">{name}</h3>
+      <p className="text-[#FF6B35] font-semibold mb-4">{role}</p>
+      <p className="text-[#64748B] text-sm">{bio}</p>
+    </motion.div>
   );
 }
