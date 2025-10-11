@@ -5,62 +5,62 @@ import ServiceDetailSection from "./ServiceDetailSection";
 
 const services = [
   {
-    title: "AI Solutions",
+    title: "Development",
     description:
-      "Harness the power of artificial intelligence to transform your business operations. Our AI solutions deliver intelligent automation, predictive insights, and enhanced decision-making capabilities that drive measurable results.",
+      "We build robust, scalable, and user-friendly applications across multiple platforms to help businesses thrive in the digital world.",
     features: [
-      "Natural Language Processing for customer interaction automation",
-      "Computer Vision for image and video analysis",
-      "Predictive analytics for business forecasting",
-      "Intelligent chatbots and virtual assistants",
-      "Custom AI model development and training",
+      "Web Development",
+      "Mobile App Development",
+      "Desktop Application Development",
+      "Full-Stack Solutions",
+      "API Integration",
     ],
-    icon: Brain,
+    icon: Zap, // Reusing Zap icon for now, can be changed later if a more specific icon is available
     gradient: "from-[#00D4FF] to-[#0A2342]",
     direction: "right" as const,
   },
   {
-    title: "Machine Learning",
+    title: "Data & Analytics",
     description:
-      "Unlock the value hidden in your data with advanced machine learning models. We build custom ML solutions that learn from your data to optimize processes, predict outcomes, and provide actionable insights.",
+      "We transform raw data into actionable insights, helping businesses make informed decisions and gain competitive advantages.",
     features: [
-      "Supervised and unsupervised learning models",
-      "Deep learning neural networks",
-      "Recommendation systems and personalization",
-      "Anomaly detection and fraud prevention",
-      "Time series forecasting and trend analysis",
+      "Data Cleaning & Visualization",
+      "Dashboard Development",
+      "Business Intelligence Solutions",
+      "Predictive Analytics",
+      "Data Processing",
     ],
-    icon: Cpu,
+    icon: BarChart3, // Reusing BarChart3 icon for now
     gradient: "from-[#FF6B35] to-[#FF8C42]",
     direction: "left" as const,
   },
   {
-    title: "Automation",
+    title: "AI & Automation",
     description:
-      "Streamline your workflows and eliminate repetitive tasks with intelligent automation. Our solutions integrate seamlessly with your existing systems to boost productivity and reduce operational costs.",
+      "We leverage artificial intelligence and automation technologies to streamline operations, enhance productivity, and create intelligent solutions.",
     features: [
-      "Robotic Process Automation (RPA) implementation",
-      "Workflow optimization and process automation",
-      "API integration and system orchestration",
-      "Document processing and data extraction",
-      "Automated testing and quality assurance",
+      "Workflow Automation",
+      "Chatbot Development",
+      "AI-Powered Tools Integration",
+      "NLP & Text Automation",
+      "Image / Video Automation",
     ],
-    icon: Zap,
+    icon: Brain, // Reusing Brain icon for now
     gradient: "from-[#0A2342] to-[#00D4FF]",
     direction: "right" as const,
   },
   {
-    title: "Analytics",
+    title: "Machine Learning & Deep Learning",
     description:
-      "Transform raw data into strategic insights with comprehensive analytics solutions. We help you make data-driven decisions through advanced visualization, reporting, and business intelligence tools.",
+      "We develop advanced machine learning and deep learning solutions that solve complex problems and drive innovation.",
     features: [
-      "Interactive dashboards and data visualization",
-      "Real-time analytics and monitoring",
-      "Business intelligence reporting",
-      "Customer behavior analysis",
-      "Performance metrics and KPI tracking",
+      "Model Development & Training",
+      "Computer Vision Projects",
+      "Natural Language Processing",
+      "Recommendation Systems",
+      "Custom ML Solutions",
     ],
-    icon: BarChart3,
+    icon: Cpu, // Reusing Cpu icon for now
     gradient: "from-[#FF8C42] to-[#FF6B35]",
     direction: "left" as const,
   },

@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { LucideIcon } from "lucide-react";
+import Link from "next/link";
 
 interface ServiceDetailSectionProps {
   title: string;
@@ -92,13 +93,15 @@ export default function ServiceDetailSection({
             </div>
 
             {/* CTA Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`mt-8 px-8 py-4 bg-gradient-to-r ${gradient} text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300`}
-            >
-              Learn More
-            </motion.button>
+            <Link href={`/${title.toLowerCase().replace(/ & /g, "-").replace(/ /g, "-")}`}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`mt-8 px-8 py-4 bg-gradient-to-r ${gradient} text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300`}
+              >
+                Learn More
+              </motion.button>
+            </Link>
           </div>
 
           {/* Visual Side */}
