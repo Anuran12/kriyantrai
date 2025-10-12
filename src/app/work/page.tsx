@@ -6,6 +6,14 @@ import Footer from "@/components/layout/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Filter } from "lucide-react";
 import Image from "next/image";
+import AiAnalyst from "../../../public/work/Auto-analyst-poster.png";
+import Project2 from "../../../public/images/projects/Project-2.png";
+import Project3 from "../../../public/images/projects/Project-3.png";
+import Project4 from "../../../public/images/projects/Project-4.png";
+import Project5 from "../../../public/images/projects/Project-5.png";
+import Project7 from "../../../public/images/projects/Project-7.png";
+import Project8 from "../../../public/images/projects/Project-8.png";
+import Project6 from "../../../public/images/projects/Project-6.png";
 
 const categories = [
   "All",
@@ -23,7 +31,7 @@ const projects = [
     description:
       "A comprehensive analytics dashboard that uses machine learning to provide predictive insights and automated reporting for enterprise clients.",
     category: "AI",
-    image: "/api/placeholder/600/400",
+    image: AiAnalyst,
     technologies: ["Python", "TensorFlow", "React", "AWS"],
     gradient: "from-[#00D4FF] to-[#0A2342]",
     featured: true,
@@ -34,7 +42,7 @@ const projects = [
     description:
       "End-to-end automation solutions that streamline business processes and reduce operational costs by up to 60% through intelligent workflow optimization.",
     category: "Automation",
-    image: "/api/placeholder/600/400",
+    image: Project2,
     technologies: ["Node.js", "Docker", "Kubernetes", "MongoDB"],
     gradient: "from-[#FF6B35] to-[#FF8C42]",
     featured: true,
@@ -45,7 +53,7 @@ const projects = [
     description:
       "Advanced customer segmentation and behavior prediction system using deep learning algorithms to improve marketing effectiveness.",
     category: "ML",
-    image: "/api/placeholder/600/400",
+    image: Project3,
     technologies: ["Python", "PyTorch", "FastAPI", "PostgreSQL"],
     gradient: "from-[#0A2342] to-[#00D4FF]",
     featured: true,
@@ -56,7 +64,7 @@ const projects = [
     description:
       "NLP-powered chatbot solution that provides 24/7 customer support with natural language understanding and contextual responses.",
     category: "AI",
-    image: "/api/placeholder/600/400",
+    image: Project4,
     technologies: ["OpenAI API", "Next.js", "Supabase", "Redis"],
     gradient: "from-[#FF8C42] to-[#FF6B35]",
     featured: false,
@@ -67,7 +75,7 @@ const projects = [
     description:
       "IoT-enabled predictive maintenance platform that uses machine learning to forecast equipment failures and optimize maintenance schedules.",
     category: "ML",
-    image: "/api/placeholder/600/400",
+    image: Project5,
     technologies: ["Python", "Scikit-learn", "Vue.js", "InfluxDB"],
     gradient: "from-[#00D4FF] to-[#FF6B35]",
     featured: false,
@@ -78,7 +86,7 @@ const projects = [
     description:
       "Custom automation engine that integrates with existing business systems to create seamless automated workflows across departments.",
     category: "Automation",
-    image: "/api/placeholder/600/400",
+    image: Project6,
     technologies: ["TypeScript", "Node.js", "RabbitMQ", "MySQL"],
     gradient: "from-[#0A2342] to-[#FF8C42]",
     featured: false,
@@ -89,7 +97,7 @@ const projects = [
     description:
       "Real-time data visualization platform that provides actionable insights through interactive dashboards and automated alerts.",
     category: "Analytics",
-    image: "/api/placeholder/600/400",
+    image: Project7,
     technologies: ["React", "D3.js", "WebSocket", "Elasticsearch"],
     gradient: "from-[#FF6B35] to-[#0A2342]",
     featured: false,
@@ -100,7 +108,7 @@ const projects = [
     description:
       "Cross-platform mobile application with AI-powered features including smart recommendations and personalized user experiences.",
     category: "Development",
-    image: "/api/placeholder/600/400",
+    image: Project8,
     technologies: ["React Native", "Firebase", "TensorFlow Lite", "Stripe"],
     gradient: "from-[#FF8C42] to-[#00D4FF]",
     featured: false,

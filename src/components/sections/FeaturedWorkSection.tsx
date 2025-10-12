@@ -5,33 +5,38 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+import Project1 from "../../../public/images/projects/Project-1.png";
+import Project3 from "../../../public/images/projects/Project-3.png";
+import Project2 from "../../../public/images/projects/Project-6.png";
+
 const featuredProjects = [
   {
     id: 1,
     title: "AI-Powered Analytics Platform",
     description:
       "A comprehensive analytics dashboard that uses machine learning to provide predictive insights and automated reporting.",
-    image: "/images/projects/project-1.jpg",
+    image: Project1,
     category: "AI & Analytics",
     technologies: ["Python", "TensorFlow", "React", "AWS"],
     gradient: "from-[#00D4FF] to-[#0A2342]",
   },
   {
     id: 2,
-    title: "Smart Automation Suite",
+    title: "Workflow Automation Engine",
     description:
-      "End-to-end automation solutions that streamline business processes and reduce operational costs by 60%.",
-    image: "/images/projects/project-2.jpg",
+      "Custom automation engine that integrates with existing business systems to create seamless automated workflows across departments.",
     category: "Automation",
-    technologies: ["Node.js", "Docker", "Kubernetes", "MongoDB"],
-    gradient: "from-[#FF6B35] to-[#FF8C42]",
+    image: Project2,
+    technologies: ["TypeScript", "Node.js", "RabbitMQ", "MySQL"],
+    gradient: "from-[#0A2342] to-[#FF8C42]",
+    featured: false,
   },
   {
     id: 3,
     title: "ML-Driven Customer Insights",
     description:
       "Advanced customer segmentation and behavior prediction system using deep learning algorithms.",
-    image: "/images/projects/project-3.jpg",
+    image: Project3,
     category: "Machine Learning",
     technologies: ["Python", "PyTorch", "FastAPI", "PostgreSQL"],
     gradient: "from-[#0A2342] to-[#00D4FF]",

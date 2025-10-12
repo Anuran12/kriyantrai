@@ -156,14 +156,18 @@ export default function ServiceDetailSection({
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               className={`absolute -top-2 md:-top-4 ${
-                direction === "right" ? "-right-2 md:-right-4" : "-left-2 md:-left-4"
+                direction === "right"
+                  ? "-right-2 md:-right-4"
+                  : "-left-2 md:-left-4"
               } w-16 h-16 md:w-20 md:h-20 border-2 border-[#00D4FF] rounded-lg opacity-30 hidden md:block`}
             />
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 4, repeat: Infinity }}
               className={`absolute -bottom-2 md:-bottom-4 ${
-                direction === "right" ? "-left-2 md:-left-4" : "-right-2 md:-right-4"
+                direction === "right"
+                  ? "-left-2 md:-left-4"
+                  : "-right-2 md:-right-4"
               } w-12 h-12 md:w-16 md:h-16 bg-[#FF6B35] rounded-full opacity-20 hidden md:block`}
             />
           </div>
