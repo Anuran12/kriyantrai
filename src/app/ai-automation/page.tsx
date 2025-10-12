@@ -3,41 +3,95 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import { ArrowRight, Brain, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  FaRobot,
+  FaComments,
+  FaBrain,
+  FaLanguage,
+  FaVideo,
+  FaCogs,
+} from "react-icons/fa";
 
-export default function AiAutomationPage() {
+interface ServiceCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const renderServiceCard = ({ icon, title, description }: ServiceCardProps) => (
+  <motion.div
+    className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border border-gray-200 hover:border-[#0A2342] transition-all duration-300"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 0.6 }}
+  >
+    <div className="text-[#0A2342] mb-4">{icon}</div>
+    <h3 className="text-2xl font-bold text-[#0A2342] mb-2">{title}</h3>
+    <p className="text-gray-700 text-base">{description}</p>
+  </motion.div>
+);
+
+interface FeaturedWorkCardProps {
+  title: string;
+  description: string;
+  image: string; // Path to the image
+}
+
+const renderFeaturedWorkCard = ({
+  title,
+  description,
+  image,
+}: FeaturedWorkCardProps) => (
+  <motion.div
+    className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-200 hover:border-[#0A2342] transition-all duration-300"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 0.6 }}
+  >
+    <img
+      src={image}
+      alt={title}
+      className="w-24 h-24 object-cover rounded-full mb-4 border-2 border-[#0A2342]"
+    />
+    <h3 className="text-2xl font-bold text-[#0A2342] mb-2">{title}</h3>
+    <p className="text-gray-700 text-base">{description}</p>
+  </motion.div>
+);
+
+const AIAutomationPage = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white text-black">
       <Navbar />
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center text-white overflow-hidden">
-        <Image
-          src="/images/ai-automation-hero.jpg" // Placeholder image, replace with actual
-          alt="AI & Automation Services"
-          layout="fill"
-          objectFit="cover"
-          className="z-0"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A2342] to-[#00D4FF] opacity-80 z-10"></div>
-        <div className="relative z-20 text-center px-4">
+      <section className="relative h-screen flex items-center justify-center text-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/Hero.png')" }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent"></div>
+        </div>
+        <div className="relative z-10 p-8 max-w-4xl mx-auto">
           <motion.h1
+            className="text-5xl md:text-7xl font-extrabold mb-4 leading-tight text-[#0A2342]"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-extrabold mb-4"
+            transition={{ duration: 1 }}
           >
-            AI & Automation Services
+            AI & <span className="text-[#0A2342]">Automation Solutions</span>
           </motion.h1>
           <motion.p
+            className="text-lg md:text-xl text-gray-700 mb-8"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl max-w-3xl mx-auto mb-8"
+            transition={{ duration: 1, delay: 0.5 }}
           >
-            Leveraging artificial intelligence and automation to optimize your
-            business processes.
+            Transforming businesses with intelligent automation and artificial
+            intelligence.
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -48,10 +102,9 @@ export default function AiAutomationPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#FF6B35] text-white px-8 py-4 rounded-full text-lg font-semibold flex items-center justify-center mx-auto shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-[#0A2342] hover:bg-[#0A2342]/90 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105"
               >
                 Get a Free Consultation
-                <ArrowRight className="ml-2" size={20} />
               </motion.button>
             </Link>
           </motion.div>
@@ -59,120 +112,177 @@ export default function AiAutomationPage() {
       </section>
 
       {/* Services Overview Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-[#0A2342] mb-12">
-            Our Expertise in AI & Automation
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {renderServiceCard(
-              "Workflow Automation",
-              "Automating repetitive tasks and optimizing business workflows.",
-              [
-                "RPA Implementation",
-                "Business Process Automation",
-                "Intelligent Document Processing",
-                "Workflow Orchestration",
-              ],
-              "from-[#00D4FF] to-[#0A2342]"
-            )}
-            {renderServiceCard(
-              "Chatbot Development",
-              "Building intelligent conversational agents for enhanced customer service and engagement.",
-              [
-                "AI-Powered Chatbots",
-                "Customer Support Bots",
-                "Sales & Marketing Bots",
-                "Internal Communication Bots",
-              ],
-              "from-[#FF6B35] to-[#FF8C42]"
-            )}
-            {renderServiceCard(
-              "AI-Powered Tools Integration",
-              "Integrating advanced AI tools into your existing systems for enhanced capabilities.",
-              [
-                "CRM Integration with AI",
-                "ERP Optimization with AI",
-                "Custom AI API Integration",
-                "Data Analytics Platform Integration",
-              ],
-              "from-[#0A2342] to-[#00D4FF]"
-            )}
-            {renderServiceCard(
-              "NLP & Text Automation",
-              "Leveraging Natural Language Processing for text analysis and automation.",
-              [
-                "Sentiment Analysis",
-                "Text Summarization",
-                "Language Translation",
-                "Content Generation",
-              ],
-              "from-[#FF8C42] to-[#FF6B35]"
-            )}
-            {renderServiceCard(
-              "Image / Video Automation",
-              "Automating tasks involving visual data using computer vision and AI.",
-              [
-                "Object Detection & Recognition",
-                "Facial Recognition",
-                "Video Analytics",
-                "Image Processing",
-              ],
-              "from-[#00D4FF] to-[#0A2342]"
-            )}
+      <section className="py-20 px-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            className="text-5xl font-extrabold text-center mb-16 text-[#0A2342]"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            Our <span className="text-[#0A2342]">AI & Automation Services</span>
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {renderServiceCard({
+              icon: <FaRobot className="text-5xl" />,
+              title: "Robotic Process Automation (RPA)",
+              description:
+                "Automating repetitive tasks to improve efficiency and reduce operational costs.",
+            })}
+            {renderServiceCard({
+              icon: <FaComments className="text-5xl" />,
+              title: "AI-Powered Chatbots & Virtual Assistants",
+              description:
+                "Enhancing customer service and engagement with intelligent conversational agents.",
+            })}
+            {renderServiceCard({
+              icon: <FaBrain className="text-5xl" />,
+              title: "Machine Learning Integration",
+              description:
+                "Integrating advanced ML models into your existing systems for predictive analytics and decision-making.",
+            })}
+            {renderServiceCard({
+              icon: <FaLanguage className="text-5xl" />,
+              title: "Natural Language Processing (NLP)",
+              description:
+                "Developing solutions that understand, interpret, and generate human language for various applications.",
+            })}
+            {renderServiceCard({
+              icon: <FaVideo className="text-5xl" />,
+              title: "Computer Vision Solutions",
+              description:
+                "Implementing AI to interpret and make decisions based on visual data for tasks like object recognition and analysis.",
+            })}
+            {renderServiceCard({
+              icon: <FaCogs className="text-5xl" />,
+              title: "Custom AI Development",
+              description:
+                "Building bespoke AI solutions tailored to your unique business challenges and opportunities.",
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Works Section */}
+      <section className="py-20 px-8 bg-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            className="text-5xl font-extrabold text-center mb-16 text-[#0A2342]"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            Our{" "}
+            <span className="text-[#0A2342]">
+              Featured AI & Automation Works
+            </span>
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {renderFeaturedWorkCard({
+              title: "Automated Customer Support Chatbot",
+              description:
+                "Developed an AI-powered chatbot that handles 70% of customer inquiries, significantly reducing response times and improving satisfaction.",
+              image: "/file.svg", // Placeholder image
+            })}
+            {renderFeaturedWorkCard({
+              title: "Intelligent Document Processing",
+              description:
+                "Implemented an RPA solution with ML for automated extraction and processing of data from various document types, boosting operational efficiency.",
+              image: "/file.svg", // Placeholder image
+            })}
+            {renderFeaturedWorkCard({
+              title: "Predictive Maintenance System",
+              description:
+                "Created an AI system that predicts equipment failures before they occur, leading to a 25% reduction in downtime for manufacturing clients.",
+              image: "/file.svg", // Placeholder image
+            })}
           </div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 text-center">
-        <h2 className="text-4xl font-bold text-[#0A2342] mb-6">
-          Why Choose Kriyantrai for AI & Automation?
-        </h2>
-        <p className="text-lg text-[#64748B] max-w-3xl mx-auto">
-          We empower your business with intelligent automation solutions that
-          drive efficiency, reduce costs, and unlock new opportunities. Our
-          expertise in AI and automation ensures seamless integration and
-          measurable impact on your operations.
-        </p>
+      <section className="py-20 px-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.h2
+            className="text-5xl font-extrabold mb-12 text-[#0A2342]"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            Why Choose Kriyantrai for{" "}
+            <span className="text-[#0A2342]">AI & Automation?</span>
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+            <motion.div
+              className="bg-white rounded-xl shadow-lg p-8 border border-gray-200"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-3xl font-bold text-[#0A2342] mb-4">
+                Innovation at Core
+              </h3>
+              <p className="text-gray-700 text-lg">
+                We leverage the latest AI and automation technologies to deliver
+                innovative solutions that drive real business value.
+              </p>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl shadow-lg p-8 border border-gray-200"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-3xl font-bold text-[#0A2342] mb-4">
+                Tailored Strategies
+              </h3>
+              <p className="text-gray-700 text-lg">
+                Our approach is customized to your specific needs, ensuring
+                solutions that perfectly align with your business objectives.
+              </p>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl shadow-lg p-8 border border-gray-200"
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-3xl font-bold text-[#0A2342] mb-4">
+                End-to-End Implementation
+              </h3>
+              <p className="text-gray-700 text-lg">
+                From conceptualization to deployment and ongoing support, we
+                provide comprehensive assistance throughout your AI and
+                automation journey.
+              </p>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl shadow-lg p-8 border border-gray-200"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-3xl font-bold text-[#0A2342] mb-4">
+                Measurable Impact
+              </h3>
+              <p className="text-gray-700 text-lg">
+                We focus on delivering solutions that provide tangible results,
+                improving efficiency, and driving growth for your business.
+              </p>
+            </motion.div>
+          </div>
+        </div>
       </section>
       <Footer />
     </div>
   );
-}
+};
 
-function renderServiceCard(
-  title: string,
-  description: string,
-  features: string[],
-  gradient: string
-) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true, amount: 0.3 }}
-      className="bg-white rounded-xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300"
-    >
-      <div
-        className={`w-16 h-16 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center mb-6 shadow-md`}
-      >
-        <Brain size={32} className="text-white" />
-      </div>
-      <h3 className="text-2xl font-bold text-[#0A2342] mb-4">{title}</h3>
-      <p className="text-[#64748B] mb-6">{description}</p>
-      <ul className="space-y-3">
-        {features.map((feature, idx) => (
-          <li key={idx} className="flex items-center text-[#64748B]">
-            <Zap
-              size={18}
-              className={`mr-3 text-transparent bg-clip-text bg-gradient-to-br ${gradient}`}
-            />
-            {feature}
-          </li>
-        ))}
-      </ul>
-    </motion.div>
-  );
-}
+export default AIAutomationPage;

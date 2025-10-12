@@ -129,7 +129,7 @@ export default function Navbar() {
                       duration: 0.5,
                       ease: "easeOut",
                     }}
-                    className="relative group"
+                    className="relative group hidden md:block"
                   >
                     <div className="relative px-4 py-2 text-[#0A2342] hover:text-[#153776] transition-colors duration-200 font-medium rounded-lg overflow-hidden cursor-pointer select-none">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#153776]/10 to-[#00D4FF]/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
@@ -293,29 +293,30 @@ export default function Navbar() {
                     href={item.href}
                     onClick={() => setIsOpen(false)}
                     className="group block relative"
-                  />
-                  <motion.div
-                    className="flex items-center justify-between p-4 rounded-xl bg-white/60 backdrop-blur-sm border border-gray-200/30 hover:bg-white hover:shadow-lg transition-all duration-300"
-                    whileHover={{
-                      scale: 1.02,
-                      x: 5,
-                    }}
-                    whileTap={{ scale: 0.98 }}
                   >
-                    <span className="text-[#0A2342] font-medium text-lg group-hover:text-[#153776] transition-colors duration-300">
-                      {item.name}
-                    </span>
-
-                    {/* Animated arrow */}
                     <motion.div
-                      className="text-[#153776] opacity-0 group-hover:opacity-100"
-                      initial={{ x: -10 }}
-                      whileHover={{ x: 0 }}
-                      transition={{ duration: 0.2 }}
+                      className="flex items-center justify-between p-4 rounded-xl bg-white/60 backdrop-blur-sm border border-gray-200/30 hover:bg-white hover:shadow-lg transition-all duration-300"
+                      whileHover={{
+                        scale: 1.02,
+                        x: 5,
+                      }}
+                      whileTap={{ scale: 0.98 }}
                     >
-                      →
+                      <span className="text-[#0A2342] font-medium text-lg group-hover:text-[#153776] transition-colors duration-300">
+                        {item.name}
+                      </span>
+
+                      {/* Animated arrow */}
+                      <motion.div
+                        className="text-[#153776] opacity-0 group-hover:opacity-100"
+                        initial={{ x: -10 }}
+                        whileHover={{ x: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        →
+                      </motion.div>
                     </motion.div>
-                  </motion.div>
+                  </Link>
 
                   {/* Subtle gradient line */}
                   <motion.div
@@ -327,6 +328,34 @@ export default function Navbar() {
                   />
                 </motion.div>
               ))}
+
+              {/* Mobile Services Accordion */}
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  x: -30,
+                  scale: 0.9,
+                }}
+                animate={{
+                  opacity: 1,
+                  x: 0,
+                  scale: 1,
+                }}
+                transition={{
+                  delay: navItems.length * 0.1,
+                  duration: 0.4,
+                  ease: "easeOut",
+                  type: "spring",
+                  stiffness: 200,
+                }}
+                exit={{
+                  opacity: 0,
+                  x: 30,
+                  scale: 0.9,
+                }}
+              >
+                <MobileServicesAccordion />
+              </motion.div>
 
               {/* Decorative elements */}
               <motion.div
@@ -348,3 +377,108 @@ export default function Navbar() {
     </motion.nav>
   );
 }
+
+// Mobile Services Accordion Component
+const MobileServicesAccordion = () => {
+  const [openSection, setOpenSection] = useState<string | null>(null);
+
+  const toggleSection = (sectionTitle: string) => {
+    setOpenSection(openSection === sectionTitle ? null : sectionTitle);
+  };
+
+  return (
+    <div className="mt-4 space-y-2">
+      <motion.div
+        initial={{
+          opacity: 0,
+          x: -30,
+          scale: 0.9,
+        }}
+        animate={{
+          opacity: 1,
+          x: 0,
+          scale: 1,
+        }}
+        transition={{
+          delay: 0.1,
+          duration: 0.4,
+          ease: "easeOut",
+          type: "spring",
+          stiffness: 200,
+        }}
+        className="p-4 rounded-xl bg-white/60 backdrop-blur-sm border border-gray-200/30 hover:bg-white hover:shadow-lg transition-all duration-300 cursor-pointer"
+        onClick={() => toggleSection("Services")}
+      >
+        <div className="flex items-center justify-between">
+          <span className="text-[#0A2342] font-medium text-lg">Services</span>
+          <motion.div
+            animate={{ rotate: openSection === "Services" ? 90 : 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            →
+          </motion.div>
+        </div>
+      </motion.div>
+
+      <AnimatePresence>
+        {openSection === "Services" && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <div className="pl-4 pr-2 py-2 space-y-2">
+              {servicesMenu.map((section) => (
+                <div key={section.title}>
+                  <Link
+                    href={section.href}
+                    onClick={() => setOpenSection(null)}
+                    className="group block relative"
+                  >
+                    <motion.div
+                      className="flex items-center justify-between p-3 rounded-lg bg-white/50 backdrop-blur-sm border border-gray-100/30 hover:bg-white hover:shadow-md transition-all duration-300"
+                      whileHover={{
+                        scale: 1.01,
+                        x: 3,
+                      }}
+                      whileTap={{ scale: 0.99 }}
+                    >
+                      <span className="text-[#153776] font-medium">
+                        {section.title}
+                      </span>
+                      <motion.div
+                        className="text-[#00D4FF] opacity-0 group-hover:opacity-100"
+                        initial={{ x: -5 }}
+                        whileHover={{ x: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        →
+                      </motion.div>
+                    </motion.div>
+                  </Link>
+                  <ul className="mt-1 space-y-0.5 pl-4">
+                    {section.items.map((sub) => (
+                      <li key={sub.label}>
+                        <Link
+                          href={`${section.href}#${sub.label
+                            .toLowerCase()
+                            .replace(/ /g, "-")}`}
+                          onClick={() => setOpenSection(null)}
+                          className="block px-3 py-1 text-sm text-[#475569] hover:text-[#153776] transition-colors duration-200"
+                        >
+                          {sub.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};

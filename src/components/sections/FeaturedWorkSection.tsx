@@ -11,7 +11,7 @@ const featuredProjects = [
     title: "AI-Powered Analytics Platform",
     description:
       "A comprehensive analytics dashboard that uses machine learning to provide predictive insights and automated reporting.",
-    image: "/api/placeholder/600/400",
+    image: "/images/projects/project-1.jpg",
     category: "AI & Analytics",
     technologies: ["Python", "TensorFlow", "React", "AWS"],
     gradient: "from-[#00D4FF] to-[#0A2342]",
@@ -21,7 +21,7 @@ const featuredProjects = [
     title: "Smart Automation Suite",
     description:
       "End-to-end automation solutions that streamline business processes and reduce operational costs by 60%.",
-    image: "/api/placeholder/600/400",
+    image: "/images/projects/project-2.jpg",
     category: "Automation",
     technologies: ["Node.js", "Docker", "Kubernetes", "MongoDB"],
     gradient: "from-[#FF6B35] to-[#FF8C42]",
@@ -31,7 +31,7 @@ const featuredProjects = [
     title: "ML-Driven Customer Insights",
     description:
       "Advanced customer segmentation and behavior prediction system using deep learning algorithms.",
-    image: "/api/placeholder/600/400",
+    image: "/images/projects/project-3.jpg",
     category: "Machine Learning",
     technologies: ["Python", "PyTorch", "FastAPI", "PostgreSQL"],
     gradient: "from-[#0A2342] to-[#00D4FF]",

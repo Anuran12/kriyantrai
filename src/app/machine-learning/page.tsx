@@ -3,41 +3,96 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
-import { ArrowRight, Cpu, FlaskConical } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  FaBrain,
+  FaRobot,
+  FaEye,
+  FaChartLine,
+  FaCogs,
+  FaLightbulb,
+} from "react-icons/fa";
 
-export default function MachineLearningPage() {
+interface ServiceCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const renderServiceCard = ({ icon, title, description }: ServiceCardProps) => (
+  <motion.div
+    className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border border-gray-200 hover:border-[#0A2342] transition-all duration-300"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 0.6 }}
+  >
+    <div className="text-[#0A2342] mb-4">{icon}</div>
+    <h3 className="text-2xl font-bold text-[#0A2342] mb-2">{title}</h3>
+    <p className="text-gray-700 text-base">{description}</p>
+  </motion.div>
+);
+
+interface FeaturedWorkCardProps {
+  title: string;
+  description: string;
+  image: string; // Path to the image
+}
+
+const renderFeaturedWorkCard = ({
+  title,
+  description,
+  image,
+}: FeaturedWorkCardProps) => (
+  <motion.div
+    className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-200 hover:border-[#0A2342] transition-all duration-300"
+    initial={{ opacity: 0, y: 50 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 0.6 }}
+  >
+    <img
+      src={image}
+      alt={title}
+      className="w-24 h-24 object-cover rounded-full mb-4 border-2 border-[#0A2342]"
+    />
+    <h3 className="text-2xl font-bold text-[#0A2342] mb-2">{title}</h3>
+    <p className="text-gray-700 text-base">{description}</p>
+  </motion.div>
+);
+
+const MachineLearningPage = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white text-black">
       <Navbar />
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center text-white overflow-hidden">
-        <Image
-          src="/images/machine-learning-hero.jpg" // Placeholder image, replace with actual
-          alt="Machine Learning & Deep Learning Services"
-          layout="fill"
-          objectFit="cover"
-          className="z-0"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#FF8C42] to-[#FF6B35] opacity-80 z-10"></div>
-        <div className="relative z-20 text-center px-4">
+      <section className="relative h-screen flex items-center justify-center text-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/Hero.png')" }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent"></div>
+        </div>
+        <div className="relative z-10 p-8 max-w-4xl mx-auto">
           <motion.h1
+            className="text-5xl md:text-7xl font-extrabold mb-4 leading-tight text-[#0A2342]"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-extrabold mb-4"
+            transition={{ duration: 1 }}
           >
-            Machine Learning & Deep Learning Services
+            Advanced{" "}
+            <span className="text-[#0A2342]">Machine Learning Solutions</span>
           </motion.h1>
           <motion.p
+            className="text-lg md:text-xl text-gray-700 mb-8"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl max-w-3xl mx-auto mb-8"
+            transition={{ duration: 1, delay: 0.5 }}
           >
-            Building intelligent systems that learn, adapt, and drive
-            innovation.
+            Leveraging cutting-edge AI to drive innovation and efficiency for
+            your business.
           </motion.p>
           <motion.div
             initial={{ opacity: 0 }}
@@ -48,10 +103,9 @@ export default function MachineLearningPage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#0A2342] text-white px-8 py-4 rounded-full text-lg font-semibold flex items-center justify-center mx-auto shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-[#0A2342] hover:bg-[#0A2342]/90 text-white font-bold py-3 px-8 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105"
               >
                 Get a Free Consultation
-                <ArrowRight className="ml-2" size={20} />
               </motion.button>
             </Link>
           </motion.div>
@@ -59,120 +113,178 @@ export default function MachineLearningPage() {
       </section>
 
       {/* Services Overview Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-[#0A2342] mb-12">
-            Our Expertise in Machine Learning & Deep Learning
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {renderServiceCard(
-              "Model Development & Training",
-              "Designing, building, and training custom ML models for specific business challenges.",
-              [
-                "Supervised & Unsupervised Learning",
-                "Reinforcement Learning",
-                "Model Optimization",
-                "Hyperparameter Tuning",
-              ],
-              "from-[#FF8C42] to-[#FF6B35]"
-            )}
-            {renderServiceCard(
-              "Computer Vision Projects",
-              "Developing AI systems that can interpret and understand visual information.",
-              [
-                "Object Detection & Recognition",
-                "Image Classification",
-                "Facial Recognition",
-                "Video Analytics",
-              ],
-              "from-[#00D4FF] to-[#0A2342]"
-            )}
-            {renderServiceCard(
-              "Natural Language Processing",
-              "Enabling machines to understand, interpret, and generate human language.",
-              [
-                "Sentiment Analysis",
-                "Text Summarization",
-                "Language Translation",
-                "Chatbot Integration",
-              ],
-              "from-[#FF6B35] to-[#FF8C42]"
-            )}
-            {renderServiceCard(
-              "Recommendation Systems",
-              "Building personalized recommendation engines to enhance user experience and drive engagement.",
-              [
-                "Collaborative Filtering",
-                "Content-Based Filtering",
-                "Hybrid Recommendation Models",
-                "Personalized Content Delivery",
-              ],
-              "from-[#0A2342] to-[#00D4FF]"
-            )}
-            {renderServiceCard(
-              "Custom ML Solutions",
-              "Tailoring machine learning solutions to address unique business problems and opportunities.",
-              [
-                "Predictive Maintenance",
-                "Fraud Detection",
-                "Market Basket Analysis",
-                "Customer Segmentation",
-              ],
-              "from-[#FF8C42] to-[#FF6B35]"
-            )}
+      <section className="py-20 px-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            className="text-5xl font-extrabold text-center mb-16 text-[#0A2342]"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            Our{" "}
+            <span className="text-[#0A2342]">Machine Learning Services</span>
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {renderServiceCard({
+              icon: <FaBrain className="text-5xl" />,
+              title: "Predictive Analytics",
+              description:
+                "Forecasting future trends and behaviors to enable proactive decision-making.",
+            })}
+            {renderServiceCard({
+              icon: <FaRobot className="text-5xl" />,
+              title: "Natural Language Processing (NLP)",
+              description:
+                "Developing systems that understand, interpret, and generate human language.",
+            })}
+            {renderServiceCard({
+              icon: <FaEye className="text-5xl" />,
+              title: "Computer Vision",
+              description:
+                "Enabling machines to interpret and understand visual information from the world.",
+            })}
+            {renderServiceCard({
+              icon: <FaChartLine className="text-5xl" />,
+              title: "Deep Learning Solutions",
+              description:
+                "Implementing neural networks for complex pattern recognition and advanced AI capabilities.",
+            })}
+            {renderServiceCard({
+              icon: <FaCogs className="text-5xl" />,
+              title: "Reinforcement Learning",
+              description:
+                "Creating intelligent agents that learn optimal behaviors through trial and error.",
+            })}
+            {renderServiceCard({
+              icon: <FaLightbulb className="text-5xl" />,
+              title: "ML Model Deployment & Management",
+              description:
+                "Deploying, monitoring, and managing machine learning models in production environments.",
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Works Section */}
+      <section className="py-20 px-8 bg-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            className="text-5xl font-extrabold text-center mb-16 text-[#0A2342]"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            Our{" "}
+            <span className="text-[#0A2342]">
+              Featured Machine Learning Works
+            </span>
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {renderFeaturedWorkCard({
+              title: "Fraud Detection System",
+              description:
+                "Developed an ML-powered system that accurately detects and prevents fraudulent transactions in real-time.",
+              image: "/file.svg", // Placeholder image
+            })}
+            {renderFeaturedWorkCard({
+              title: "Customer Churn Prediction",
+              description:
+                "Implemented a model to predict customer churn, allowing for proactive retention strategies and improved customer lifetime value.",
+              image: "/file.svg", // Placeholder image
+            })}
+            {renderFeaturedWorkCard({
+              title: "Automated Image Tagging",
+              description:
+                "Built a computer vision solution for automated image tagging, enhancing content management and search capabilities.",
+              image: "/file.svg", // Placeholder image
+            })}
           </div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 text-center">
-        <h2 className="text-4xl font-bold text-[#0A2342] mb-6">
-          Why Choose Kriyantrai for Machine Learning & Deep Learning?
-        </h2>
-        <p className="text-lg text-[#64748B] max-w-3xl mx-auto">
-          Our team of data scientists and ML engineers are at the forefront of
-          AI innovation, delivering cutting-edge solutions that provide a
-          competitive edge. We focus on building scalable, efficient, and
-          ethical AI systems that drive real-world impact.
-        </p>
+      <section className="py-20 px-8 bg-gray-50">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.h2
+            className="text-5xl font-extrabold mb-12 text-[#0A2342]"
+            initial={{ opacity: 0, y: -50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8 }}
+          >
+            Why Choose Kriyantrai for{" "}
+            <span className="text-[#0A2342]">Machine Learning?</span>
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+            <motion.div
+              className="bg-white rounded-xl shadow-lg p-8 border border-gray-200"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-3xl font-bold text-[#0A2342] mb-4">
+                Expertise & Innovation
+              </h3>
+              <p className="text-gray-700 text-lg">
+                Our team comprises leading ML engineers and data scientists,
+                constantly pushing the boundaries of AI innovation.
+              </p>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl shadow-lg p-8 border border-gray-200"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-3xl font-bold text-[#0A2342] mb-4">
+                Customized Solutions
+              </h3>
+              <p className="text-gray-700 text-lg">
+                We develop bespoke ML models and solutions tailored to your
+                specific business challenges and objectives.
+              </p>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl shadow-lg p-8 border border-gray-200"
+              initial={{ opacity: 0, y: -50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-3xl font-bold text-[#0A2342] mb-4">
+                Ethical AI Practices
+              </h3>
+              <p className="text-gray-700 text-lg">
+                Committed to responsible AI development, ensuring fairness,
+                transparency, and accountability in all our solutions.
+              </p>
+            </motion.div>
+            <motion.div
+              className="bg-white rounded-xl shadow-lg p-8 border border-gray-200"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-3xl font-bold text-[#0A2342] mb-4">
+                End-to-End Support
+              </h3>
+              <p className="text-gray-700 text-lg">
+                From data preparation to model deployment and ongoing
+                optimization, we provide comprehensive support every step of the
+                way.
+              </p>
+            </motion.div>
+          </div>
+        </div>
       </section>
       <Footer />
     </div>
   );
-}
+};
 
-function renderServiceCard(
-  title: string,
-  description: string,
-  features: string[],
-  gradient: string
-) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true, amount: 0.3 }}
-      className="bg-white rounded-xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300"
-    >
-      <div
-        className={`w-16 h-16 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center mb-6 shadow-md`}
-      >
-        <Cpu size={32} className="text-white" />
-      </div>
-      <h3 className="text-2xl font-bold text-[#0A2342] mb-4">{title}</h3>
-      <p className="text-[#64748B] mb-6">{description}</p>
-      <ul className="space-y-3">
-        {features.map((feature, idx) => (
-          <li key={idx} className="flex items-center text-[#64748B]">
-            <FlaskConical
-              size={18}
-              className={`mr-3 text-transparent bg-clip-text bg-gradient-to-br ${gradient}`}
-            />
-            {feature}
-          </li>
-        ))}
-      </ul>
-    </motion.div>
-  );
-}
+export default MachineLearningPage;

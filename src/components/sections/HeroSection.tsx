@@ -4,16 +4,13 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import AnimatedLine from "@/components/animations/AnimatedLine";
 import HeroImg from "../../../public/Hero.png";
 import Logo from "../../../public/logo.png";
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden bg-[#FAFAFA]">
-      <div className="absolute inset-0 z-30">
-        <AnimatedLine />
-      </div>
+      <div className="absolute inset-0 z-30"></div>
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Geometric patterns */}
@@ -94,12 +91,12 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="space-y-4"
+              className="space-y-2 sm:space-y-4"
             >
-              <div className="bg-gradient-to-r from-[#9fefe7] to-[#d8f8f5] text-gray-700 px-6 py-3 inline-block text-2xl sm:text-3xl lg:text-4xl font-bold rounded-lg">
+              <div className="bg-gradient-to-r from-[#9fefe7] to-[#d8f8f5] text-gray-700 px-4 py-2 sm:px-6 sm:py-3 inline-block text-xl sm:text-3xl lg:text-4xl font-bold rounded-lg">
                 <h1>Build Faster. Automate Smarter.</h1>
               </div>
-              <div className="bg-gradient-to-r from-[#9fefe7] to-[#d8f8f5] text-gray-700 px-6 py-3 inline-block text-xl sm:text-xl lg:text-2xl font-bold rounded-lg">
+              <div className="bg-gradient-to-r from-[#9fefe7] to-[#d8f8f5] text-gray-700 px-4 py-2 sm:px-6 sm:py-3 inline-block text-lg sm:text-xl lg:text-2xl font-bold rounded-lg">
                 <h1>Web, Data & AI Solutions for Growth</h1>
               </div>
             </motion.div>
@@ -109,7 +106,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg text-[#64748B] leading-relaxed"
+              className="text-base sm:text-lg text-[#64748B] leading-relaxed"
             >
               We design and ship high‑quality websites, apps, dashboards, and AI
               automations that streamline operations and accelerate growth.
@@ -146,7 +143,7 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative"
           >
-            <div className="relative h-96 lg:h-[500px] rounded-xl overflow-hidden scale-120">
+            <div className="relative h-96 lg:h-[500px] rounded-xl overflow-hidden lg:scale-100">
               <Image
                 src={HeroImg}
                 alt="AI and ML Solutions Animation"
@@ -157,7 +154,7 @@ export default function HeroSection() {
                 src={Logo}
                 alt="AI and ML Solutions Animation"
                 fill
-                className=" object-contain p-32 md:p-44"
+                className=" object-contain p-20 md:p-32 lg:p-44"
               />
             </div>
 
@@ -165,12 +162,12 @@ export default function HeroSection() {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              className="absolute -top-4 -left-4 w-16 h-16 border-2 border-[#00D4FF] rounded-full opacity-20"
+              className="absolute -top-4 -left-4 w-16 h-16 border-2 border-[#00D4FF] rounded-full opacity-20 hidden md:block"
             ></motion.div>
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-4 -right-4 w-12 h-12 bg-[#FF6B35] rounded-lg opacity-20"
+              className="absolute -bottom-4 -right-4 w-12 h-12 bg-[#FF6B35] rounded-lg opacity-20 hidden md:block"
             ></motion.div>
           </motion.div>
         </div>
