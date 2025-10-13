@@ -129,11 +129,11 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-400">
             <div className="flex items-center space-x-2">
               <Mail size={16} />
-              <span>hello@kriyantrai.com</span>
+              <span>info@kriyantrai.com</span>
             </div>
             <div className="flex items-center space-x-2">
               <Phone size={16} />
-              <span>+1 (555) 123-4567</span>
+              <span>+91 </span>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin size={16} />

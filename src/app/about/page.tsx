@@ -92,7 +92,11 @@ export default function AboutPage() {
               Our Journey So Far
             </h2>
             <p className="text-lg text-[#64748B] max-w-3xl mx-auto mb-12">
-              Founded in [Year], Kriyantrai began with a vision to bridge the gap between complex technological advancements and practical business applications. Over the years, we have grown into a team of passionate experts dedicated to delivering exceptional results and fostering long-term partnerships.
+              Founded in [Year], Kriyantrai began with a vision to bridge the
+              gap between complex technological advancements and practical
+              business applications. Over the years, we have grown into a team
+              of passionate experts dedicated to delivering exceptional results
+              and fostering long-term partnerships.
             </p>
             {/* Timeline or key milestones can be added here */}
           </div>
@@ -139,18 +143,14 @@ export default function AboutPage() {
   );
 }
 
-function renderAboutCard(
-  title: string,
-  description: string,
-  gradient: string
-) {
+function renderAboutCard(title: string, description: string, gradient: string) {
   return (
     <motion.div
+      className={`bg-gradient-to-r ${gradient} rounded-xl shadow-lg p-8 flex flex-col items-center text-center border border-gray-200 hover:border-[#0A2342] transition-all duration-300`}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true, amount: 0.3 }}
-      className="bg-white rounded-xl shadow-lg p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 text-center"
     >
       <h3 className="text-2xl font-bold text-[#0A2342] mb-4">{title}</h3>
       <p className="text-[#64748B]">{description}</p>

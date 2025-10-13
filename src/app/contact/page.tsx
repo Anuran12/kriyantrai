@@ -18,23 +18,16 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    content: "hello@kriyantrai.com",
+    content: "info@kriyantrai.com",
     description: "Send us an email anytime",
     color: "#00D4FF",
   },
   {
     icon: Phone,
     title: "Call Us",
-    content: "+1 (555) 123-4567",
+    content: "+91",
     description: "Mon-Fri from 8am to 5pm",
     color: "#FF6B35",
-  },
-  {
-    icon: Clock,
-    title: "Business Hours",
-    content: "24/7 Support",
-    description: "We're here when you need us",
-    color: "#FF8C42",
   },
 ];
 
