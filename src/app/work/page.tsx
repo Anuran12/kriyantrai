@@ -7,13 +7,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Filter } from "lucide-react";
 import Image from "next/image";
 import AiAnalyst from "../../../public/work/Auto-analyst-poster.png";
-import Project2 from "../../../public/work/Project-2.png";
-import Project3 from "../../../public/work/Project-3.png";
-import Project4 from "../../../public/work/Project-4.png";
-import Project5 from "../../../public/work/Project-5.png";
-import Project7 from "../../../public/work/Project-7.png";
-import Project8 from "../../../public/work/Project-8.png";
-import Project6 from "../../../public/work/Project-6.png";
+import Project2 from "../../../public/images/projects/Project-2.png";
+import Project3 from "../../../public/images/projects/Project-3.png";
+import Project4 from "../../../public/images/projects/Project-4.png";
+import Project5 from "../../../public/images/projects/Project-5.png";
+import Project7 from "../../../public/images/projects/Project-7.png";
+import Project8 from "../../../public/images/projects/Project-8.png";
+import Project6 from "../../../public/images/projects/Project-6.png";
 
 const categories = [
   "All",
