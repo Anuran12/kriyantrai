@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -28,17 +28,29 @@ export default function ServiceDetailSection({
   gif,
 }: ServiceDetailSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start 0.8", "end 0.2"],
+    offset: ["start 0.9", "end 0.1"], // Adjusted offset for faster animation
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]);
   const x = useTransform(
     scrollYProgress,
     [0, 0.5],
-    [direction === "left" ? -100 : 100, 0]
+    [direction === "left" ? (isMobile ? -25 : -100) : isMobile ? 25 : 100, 0] // Conditional x value
   );
 
   return (
@@ -83,7 +95,7 @@ export default function ServiceDetailSection({
                   key={idx}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: idx * 0.1 }}
+                  transition={{ delay: isMobile ? idx * 0.05 : idx * 0.1 }}
                   viewport={{ once: true }}
                   className="flex items-start gap-2 md:gap-3"
                 >

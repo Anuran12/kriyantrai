@@ -9,7 +9,7 @@ import Logo from "../../../public/logo.png";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex items-center overflow-hidden bg-[#FAFAFA]">
+    <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-[#FAFAFA]">
       <div className="absolute inset-0 z-30"></div>
       {/* Animated Background */}
       <div className="absolute inset-0">
