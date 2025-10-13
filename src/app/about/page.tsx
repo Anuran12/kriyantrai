@@ -18,9 +18,8 @@ export default function AboutPage() {
           <Image
             src="/images/about-hero.jpg" // Placeholder image, replace with actual
             alt="About Kriyantrai"
-            layout="fill"
-            objectFit="cover"
-            className="z-0"
+            fill
+            className="z-0 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A2342] to-[#00D4FF] opacity-80 z-10"></div>
           <div className="relative z-20 text-center px-4">

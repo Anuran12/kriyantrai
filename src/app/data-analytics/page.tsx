@@ -53,9 +53,11 @@ const renderFeaturedWorkCard = ({
     viewport={{ once: true, amount: 0.3 }}
     transition={{ duration: 0.6 }}
   >
-    <img
+    <Image
       src={image}
       alt={title}
+      width={96} // Assuming w-24 (96px)
+      height={96} // Assuming h-24 (96px)
       className="w-24 h-24 object-cover rounded-full mb-4 border-2 border-[#0A2342]"
     />
     <h3 className="text-2xl font-bold text-[#0A2342] mb-2">{title}</h3>

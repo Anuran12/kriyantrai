@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-// @ts-expect-error
+// @ts-expect-error: No default export for nodemailer
 import nodemailer from "nodemailer";
 
 export async function POST(request: Request) {

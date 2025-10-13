@@ -138,8 +138,7 @@ export default function ServiceDetailSection({
                 <Image
                   src={gif}
                   alt={title}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
                   className="w-full h-full object-cover"
                   unoptimized // GIFs are not optimized by Next.js Image component
                 />

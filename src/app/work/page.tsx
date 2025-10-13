@@ -7,13 +7,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Filter } from "lucide-react";
 import Image from "next/image";
 import AiAnalyst from "../../../public/work/Auto-analyst-poster.png";
-import Project2 from "../../../public/images/projects/Project-2.png";
-import Project3 from "../../../public/images/projects/Project-3.png";
-import Project4 from "../../../public/images/projects/Project-4.png";
-import Project5 from "../../../public/images/projects/Project-5.png";
-import Project7 from "../../../public/images/projects/Project-7.png";
-import Project8 from "../../../public/images/projects/Project-8.png";
-import Project6 from "../../../public/images/projects/Project-6.png";
+import Project2 from "../../../public/work/Project-2.png";
+import Project3 from "../../../public/work/Project-3.png";
+import Project4 from "../../../public/work/Project-4.png";
+import Project5 from "../../../public/work/Project-5.png";
+import Project7 from "../../../public/work/Project-7.png";
+import Project8 from "../../../public/work/Project-8.png";
+import Project6 from "../../../public/work/Project-6.png";
 
 const categories = [
   "All",
@@ -140,10 +140,9 @@ export default function WorkPage() {
           <Image
             src="/Hero.png"
             alt="Background"
-            layout="fill"
-            objectFit="cover"
+            fill
             quality={100}
-            className="absolute inset-0 z-0 opacity-20"
+            className="absolute inset-0 z-0 opacity-20 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#0A2342]/80 to-[#00D4FF]/20 z-10"></div>
 
