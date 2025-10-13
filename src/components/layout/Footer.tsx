@@ -11,10 +11,10 @@ const footerLinks = {
     { name: "Contact", href: "/contact" },
   ],
   services: [
-    { name: "AI Solutions", href: "/work?filter=ai" },
-    { name: "Machine Learning", href: "/work?filter=ml" },
-    { name: "Automation", href: "/work?filter=automation" },
-    { name: "Development", href: "/work?filter=development" },
+    { name: "AI Solutions", href: "/ai-automation" },
+    { name: "Machine Learning", href: "/machine-learning" },
+    { name: "Analytics", href: "/data-analytics" },
+    { name: "Development", href: "/development" },
   ],
 };
 
@@ -137,7 +137,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center space-x-2">
               <MapPin size={16} />
-              <span>San Francisco, CA</span>
+              <span>Kolkata, India</span>
             </div>
           </div>
         </motion.div>

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Kriyantrai" }],
   viewport: "width=device-width, initial-scale=1",
   icons: {
-    icon: "/favicon.svg",
+    icon: "/favicon.ico",
   },
 };
 
