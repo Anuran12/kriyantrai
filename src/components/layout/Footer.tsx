@@ -150,9 +150,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400"
         >
-          <p>
-            &copy; {new Date().getFullYear()} Kriyantrai. All rights reserved.
-          </p>
+          <p>&copy; 2024 Kriyantrai. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>

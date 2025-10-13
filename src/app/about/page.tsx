@@ -7,6 +7,10 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
+import Team1 from "../../../public/team/team-1.png";
+import Team2 from "../../../public/team/team-2.jpg";
+import Team3 from "../../../public/team/team-3.png";
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -64,7 +68,7 @@ export default function AboutPage() {
             <h2 className="text-4xl font-bold text-center text-[#0A2342] mb-12">
               Our Story
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-white">
               {renderAboutCard(
                 "Our Mission",
                 "To empower businesses with cutting-edge technology solutions that drive innovation, efficiency, and sustainable growth.",
@@ -91,11 +95,11 @@ export default function AboutPage() {
               Our Journey So Far
             </h2>
             <p className="text-lg text-[#64748B] max-w-3xl mx-auto mb-12">
-              Founded in [Year], Kriyantrai began with a vision to bridge the
-              gap between complex technological advancements and practical
-              business applications. Over the years, we have grown into a team
-              of passionate experts dedicated to delivering exceptional results
-              and fostering long-term partnerships.
+              Founded in 2024, Kriyantrai began with a vision to bridge the gap
+              between complex technological advancements and practical business
+              applications. Over the years, we have grown into a team of
+              passionate experts dedicated to delivering exceptional results and
+              fostering long-term partnerships.
             </p>
             {/* Timeline or key milestones can be added here */}
           </div>
@@ -109,28 +113,22 @@ export default function AboutPage() {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {renderTeamMember(
-                "John Doe",
+                "Souvagya Das",
                 "CEO & Founder",
-                "/images/team-john.jpg", // Placeholder image
-                "John is a visionary leader with over 20 years of experience in the tech industry. His passion for innovation drives Kriyantrai's strategic direction."
+                Team1.src, // Placeholder image
+                "Souvagya is a visionary leader with over 20 years of experience in the tech industry. His passion for innovation drives Kriyantrai's strategic direction."
               )}
               {renderTeamMember(
-                "Jane Smith",
-                "Chief Technology Officer",
-                "/images/team-jane.jpg", // Placeholder image
-                "Jane leads our technology initiatives, bringing a wealth of expertise in AI, machine learning, and software architecture."
-              )}
-              {renderTeamMember(
-                "Peter Jones",
+                "Souvik Makur",
                 "Head of Development",
-                "/images/team-peter.jpg", // Placeholder image
-                "Peter is an expert in full-stack development, ensuring our solutions are robust, scalable, and user-friendly."
+                Team2.src, // Placeholder image
+                "Souvik is an expert in full-stack development, ensuring our solutions are robust, scalable, and user-friendly."
               )}
               {renderTeamMember(
-                "Sarah Lee",
-                "Lead Data Scientist",
-                "/images/team-sarah.jpg", // Placeholder image
-                "Sarah specializes in transforming complex data into actionable insights, helping clients make informed decisions."
+                "Anuran Das",
+                "Chief Technology Officer",
+                Team3.src, // Placeholder image
+                "Anuran leads our technology initiatives, bringing a wealth of expertise in AI, machine learning, and software architecture."
               )}
             </div>
           </div>
@@ -151,8 +149,8 @@ function renderAboutCard(title: string, description: string, gradient: string) {
       transition={{ duration: 0.6 }}
       viewport={{ once: true, amount: 0.3 }}
     >
-      <h3 className="text-2xl font-bold text-[#0A2342] mb-4">{title}</h3>
-      <p className="text-[#64748B]">{description}</p>
+      <h3 className="text-2xl font-bold text-[#ffffff] mb-4">{title}</h3>
+      <p className="text-[#dcdcdc]">{description}</p>
     </motion.div>
   );
 }
