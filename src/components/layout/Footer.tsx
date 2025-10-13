@@ -54,7 +54,7 @@ export default function Footer() {
               We create intelligent solutions that drive innovation, efficiency,
               and growth.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.name}
@@ -68,7 +68,7 @@ export default function Footer() {
                   <social.icon size={20} />
                 </motion.a>
               ))}
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Quick Links */}

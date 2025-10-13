@@ -116,7 +116,7 @@ export default function AboutPage() {
                 "Souvagya Das",
                 "CEO & Founder",
                 Team1.src, // Placeholder image
-                "Souvagya is a visionary leader with over 20 years of experience in the tech industry. His passion for innovation drives Kriyantrai's strategic direction."
+                "Souvagya is a visionary leader with over 4 years of experience in the tech industry. His passion for innovation drives Kriyantrai's strategic direction."
               )}
               {renderTeamMember(
                 "Souvik Makur",

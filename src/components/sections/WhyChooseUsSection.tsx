@@ -129,9 +129,9 @@ export default function WhyChooseUsSection() {
           className="mt-16 md:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
         >
           {[
-            { number: "500+", label: "Projects Completed" },
+            { number: "50+", label: "Projects Completed" },
             { number: "98%", label: "Client Satisfaction" },
-            { number: "50+", label: "Expert Team Members" },
+            { number: "15+", label: "Expert Team Members" },
             { number: "24/7", label: "Support Available" },
           ].map((stat, index) => (
             <motion.div
