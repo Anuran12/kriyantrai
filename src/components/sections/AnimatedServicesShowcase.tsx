@@ -15,7 +15,8 @@ const services = [
       "Full-Stack Solutions",
       "API Integration",
     ],
-    icon: Zap, // Reusing Zap icon for now, can be changed later if a more specific icon is available
+    icon: Zap,
+    gif: "/services/Service-1.gif", // Add GIF path
     gradient: "from-[#00D4FF] to-[#0A2342]",
     direction: "right" as const,
   },
@@ -30,7 +31,8 @@ const services = [
       "Predictive Analytics",
       "Data Processing",
     ],
-    icon: BarChart3, // Reusing BarChart3 icon for now
+    icon: BarChart3,
+    gif: "/services/Service-2.gif", // Add GIF path
     gradient: "from-[#FF6B35] to-[#FF8C42]",
     direction: "left" as const,
   },
@@ -45,7 +47,8 @@ const services = [
       "NLP & Text Automation",
       "Image / Video Automation",
     ],
-    icon: Brain, // Reusing Brain icon for now
+    icon: Brain,
+    gif: "/services/Service-3.gif", // Add GIF path
     gradient: "from-[#0A2342] to-[#00D4FF]",
     direction: "right" as const,
   },
@@ -60,9 +63,10 @@ const services = [
       "Recommendation Systems",
       "Custom ML Solutions",
     ],
-    icon: Cpu, // Reusing Cpu icon for now
-    gradient: "from-[#FF8C42] to-[#FF6B35]",
+    icon: Cpu,
+    gif: "/services/Service-4.gif", // Add GIF path
     direction: "left" as const,
+    gradient: "from-[#FF6B35] to-[#FF8C42]",
   },
 ];
 
@@ -113,14 +117,15 @@ export default function AnimatedServicesShowcase() {
       <div className="relative z-10">
         {services.map((service, index) => (
           <ServiceDetailSection
-            key={service.title}
+            key={index}
             title={service.title}
             description={service.description}
             features={service.features}
             icon={service.icon}
-            gradient={service.gradient}
-            direction={service.direction}
+            gradient={service.gradient ?? ""}
+            direction={service.direction ?? "right"}
             index={index}
+            gif={service.gif}
           />
         ))}
       </div>

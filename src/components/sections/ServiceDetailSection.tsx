@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { LucideIcon } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ServiceDetailSectionProps {
   title: string;
@@ -13,6 +14,7 @@ interface ServiceDetailSectionProps {
   gradient: string;
   direction: "left" | "right";
   index: number;
+  gif?: string; // Optional GIF path
 }
 
 export default function ServiceDetailSection({
@@ -23,6 +25,7 @@ export default function ServiceDetailSection({
   gradient,
   direction,
   index,
+  gif,
 }: ServiceDetailSectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -119,12 +122,22 @@ export default function ServiceDetailSection({
               whileHover={{ scale: 1.02 }}
               className="relative h-64 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
             >
-              {/* Placeholder for service visualization */}
-              <div
-                className={`w-full h-full bg-gradient-to-br ${gradient} opacity-20 flex items-center justify-center`}
-              >
-                <IconComponent size={80} className="text-white opacity-30" />
-              </div>
+              {gif ? (
+                <Image
+                  src={gif}
+                  alt={title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="w-full h-full object-cover"
+                  unoptimized // GIFs are not optimized by Next.js Image component
+                />
+              ) : (
+                <div
+                  className={`w-full h-full bg-gradient-to-br ${gradient} opacity-20 flex items-center justify-center`}
+                >
+                  <IconComponent size={80} className="text-white opacity-30" />
+                </div>
+              )}
 
               {/* Decorative elements */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
