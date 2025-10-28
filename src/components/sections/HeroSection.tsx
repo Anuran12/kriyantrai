@@ -10,7 +10,6 @@ import Logo from "../../../public/logo.png";
 export default function HeroSection() {
   return (
     <section className="relative min-h-[100vh] flex items-center overflow-hidden bg-[#FAFAFA]">
-      <div className="absolute inset-0 z-30"></div>
       {/* Animated Background */}
       <div className="absolute inset-0">
         {/* Geometric patterns */}
@@ -124,7 +123,7 @@ export default function HeroSection() {
                 <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group inline-flex items-center gap-3 px-10 py-4 bg-[#153776] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="group inline-flex items-center gap-3 px-10 py-4 bg-[#153776] text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 z-50"
                 >
                   Get In Touch
                   <ArrowRight

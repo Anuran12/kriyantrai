@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { LucideIcon } from "lucide-react";
 import Link from "next/link";
@@ -41,17 +41,7 @@ export default function ServiceDetailSection({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start 0.9", "end 0.1"], // Adjusted offset for faster animation
-  });
-
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 1]);
-  const x = useTransform(
-    scrollYProgress,
-    [0, 0.5],
-    [direction === "left" ? (isMobile ? -25 : -100) : isMobile ? 25 : 100, 0] // Conditional x value
-  );
+  // Removed scroll-based animation triggers
 
   return (
     <div
@@ -60,7 +50,29 @@ export default function ServiceDetailSection({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div
-          style={{ opacity, x }}
+          initial={{
+            opacity: 0,
+            x:
+              direction === "left"
+                ? isMobile
+                  ? -25
+                  : -100
+                : isMobile
+                ? 25
+                : 100,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              type: "spring",
+              stiffness: 50,
+              damping: 20,
+              mass: 1,
+              delay: 0.4,
+            },
+          }}
+          viewport={{ once: true, margin: "-100px" }}
           className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
             direction === "right" ? "lg:flex-row-reverse" : ""
           }`}
@@ -95,8 +107,14 @@ export default function ServiceDetailSection({
                   key={idx}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: isMobile ? idx * 0.05 : idx * 0.1 }}
-                  viewport={{ once: true }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 60,
+                    damping: 25,
+                    mass: 0.8,
+                    delay: isMobile ? idx * 0.25 : idx * 0.4,
+                  }}
+                  viewport={{ once: true, margin: "-50px" }}
                   className="flex items-start gap-2 md:gap-3"
                 >
                   <div
