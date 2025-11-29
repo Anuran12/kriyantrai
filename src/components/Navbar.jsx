@@ -101,13 +101,13 @@ export default function Navbar() {
                   <motion.a
                     key={index}
                     href={link.href}
-                    className="text-black font-medium hover:text-gray-600 transition-colors relative"
+                    className="text-[#173876] font-medium hover:text-[#0f2a5a] transition-colors relative"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     {link.name}
                     <motion.div
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#F68F12]"
                       initial={{ scaleX: 0 }}
                       whileHover={{ scaleX: 1 }}
                       transition={{ duration: 0.2 }}
@@ -121,7 +121,7 @@ export default function Navbar() {
                 whileHover={{ scale: 1.1, rotate: 360 }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-black to-gray-600 rounded-full flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#173876] to-[#0f2a5a] rounded-full flex items-center justify-center shadow-lg">
                   <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M12 2L2 7l10 5 10-5-10-5z" />
                     <path d="M2 17l10 5 10-5" />
@@ -139,13 +139,13 @@ export default function Navbar() {
                 >
                   <motion.a
                     href="#"
-                    className="text-black font-medium hover:text-gray-600 transition-colors relative"
+                    className="text-[#173876] font-medium hover:text-[#0f2a5a] transition-colors relative"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     Service
                     <motion.div
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#F68F12]"
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: showServices ? 1 : 0 }}
                       transition={{ duration: 0.2 }}
@@ -170,7 +170,7 @@ export default function Navbar() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
                               >
-                                <div className="bg-black text-white rounded-2xl px-4 py-2 mb-3 inline-block">
+                                <div className="bg-[#173876] text-white rounded-2xl px-4 py-2 mb-3 inline-block">
                                   <h4 className="text-sm font-bold">{service.category}</h4>
                                 </div>
                                 <ul className="space-y-2">
@@ -180,7 +180,7 @@ export default function Navbar() {
                                       whileHover={{ x: 5 }}
                                       transition={{ duration: 0.2 }}
                                     >
-                                      <a className="text-gray-700 hover:text-black transition-colors text-sm">
+                                      <a className="text-gray-700 hover:text-[#173876] transition-colors text-sm">
                                         {item}
                                       </a>
                                     </motion.li>
@@ -199,13 +199,13 @@ export default function Navbar() {
                   <motion.a
                     key={index}
                     href={link.href}
-                    className="text-black font-medium hover:text-gray-600 transition-colors relative"
+                    className="text-[#173876] font-medium hover:text-[#0f2a5a] transition-colors relative"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     {link.name}
                     <motion.div
-                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-black"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#F68F12]"
                       initial={{ scaleX: 0 }}
                       whileHover={{ scaleX: 1 }}
                       transition={{ duration: 0.2 }}

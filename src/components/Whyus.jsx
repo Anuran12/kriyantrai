@@ -47,7 +47,7 @@ export default function KriyantraiCards() {
   };
 
   return (
-    <div className='bg-black'>
+    <div className='-mt-6 shadow-2xl shadow-black/90'>
     <div className="min-h-screen bg-white py-20 px-6 rounded-t-4xl">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
@@ -57,7 +57,7 @@ export default function KriyantraiCards() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="text-5xl font-bold text-black mb-4">
+          <h2 className="text-5xl font-bold text-[#173876] mb-4">
             Why Choose Kriyantrai?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -82,10 +82,10 @@ export default function KriyantraiCards() {
               }}
               className="group relative"
             >
-              <div className="bg-white border-2 border-black rounded-3xl p-8 h-full transition-all duration-300 group-hover:shadow-2xl">
+              <div className="bg-white border-2 border-[#173876] rounded-3xl p-8 h-full transition-all duration-300 group-hover:shadow-2xl">
                 {/* Icon Container */}
                 <motion.div 
-                  className="w-16 h-16 bg-black rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+                  className="w-16 h-16 bg-[#F68F12] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
@@ -93,7 +93,7 @@ export default function KriyantraiCards() {
                 </motion.div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-black mb-4">
+                <h3 className="text-2xl font-bold text-[#173876] mb-4">
                   {card.title}
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
@@ -102,7 +102,7 @@ export default function KriyantraiCards() {
 
                 {/* Animated Underline */}
                 <motion.div 
-                  className="h-1 bg-black mt-6 rounded-full"
+                  className="h-1 bg-[#F68F12] mt-6 rounded-full"
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
                   viewport={{ once: true }}
@@ -129,7 +129,7 @@ export default function KriyantraiCards() {
           ].map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center p-8 border-2 border-black rounded-2xl bg-white hover:bg-black hover:text-white transition-all duration-300 group"
+              className="text-center p-8 border-2 border-[#173876] rounded-2xl bg-white hover:bg-[#173876] hover:text-white transition-all duration-300 group"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -137,7 +137,7 @@ export default function KriyantraiCards() {
               whileHover={{ scale: 1.05 }}
             >
               <motion.div 
-                className="text-5xl font-bold mb-3"
+                className="text-5xl font-bold mb-3 text-[#173876] group-hover:text-white transition-colors duration-300"
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}

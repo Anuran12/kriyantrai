@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from 'lucide-react';
 
 export default function Footer() {
   const companyLinks = [
@@ -13,6 +13,12 @@ export default function Footer() {
     { name: "Machine Learning", href: "#" },
     { name: "Analytics", href: "#" },
     { name: "Development", href: "#" }
+  ];
+
+  const socialLinks = [
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Instagram, href: "#", label: "Instagram" }
   ];
 
   const containerVariants = {
@@ -36,143 +42,184 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black text-white py-16 px-6 rounded-t-4xl">
-      <div className="max-w-7xl mx-auto">
-        {/* Main Footer Content */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {/* Brand Section */}
-          <motion.div variants={itemVariants}>
-            <div className="flex items-center gap-3 mb-4">
-              <motion.div
-                className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center"
-                whileHover={{ rotate: 360, scale: 1.1 }}
-                transition={{ duration: 0.6 }}
-              >
-                <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  <path d="M2 17l10 5 10-5" />
-                  <path d="M2 12l10 5 10-5" />
-                </svg>
-              </motion.div>
-              <h3 className="text-2xl font-bold">Kriyantrai</h3>
-            </div>
-            <p className="text-gray-400 leading-relaxed">
-              Transforming businesses with AI, Machine Learning, and Automation. We create intelligent solutions that drive innovation, efficiency, and growth.
-            </p>
-          </motion.div>
+    <footer className="relative bg-white overflow-hidden">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" className='mt-0 w-full ml-0 relative rotate-z-180'><g fill="#173876"><path d="M0 1v99c134.3 0 153.7-99 296-99H0Z" opacity=".5"></path><path d="M1000 4v86C833.3 90 833.3 3.6 666.7 3.6S500 90 333.3 90 166.7 4 0 4h1000Z" opacity=".5"></path><path d="M617 1v86C372 119 384 1 196 1h421Z" opacity=".5"></path><path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path></g></svg>
 
-          {/* Company Links */}
-          <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-bold mb-4">Company</h4>
-            <ul className="space-y-3">
-              {companyLinks.map((link, index) => (
-                <motion.li
-                  key={index}
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
 
-          {/* Services Links */}
-          <motion.div variants={itemVariants}>
-            <h4 className="text-lg font-bold mb-4">Services</h4>
-            <ul className="space-y-3">
-              {serviceLinks.map((link, index) => (
-                <motion.li
-                  key={index}
-                  whileHover={{ x: 5 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        </motion.div>
 
-        {/* Divider */}
-        <motion.div
-          className="border-t border-gray-800 mb-8"
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        />
-
-        {/* Contact Information */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.a
-            href="mailto:info@kriyantrai.com"
-            className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
-            variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-gray-700 transition-colors">
-              <Mail size={18} />
-            </div>
-            <span>info@kriyantrai.com</span>
-          </motion.a>
-
-          <motion.a
-            href="tel:+916289946256"
-            className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
-            variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center group-hover:bg-gray-700 transition-colors">
-              <Phone size={18} />
-            </div>
-            <span>+91 6289946256</span>
-          </motion.a>
-
+      {/* Footer Content */}
+      <div className="relative  bg-gradient-to-b from-[#173876] to-[#0f2a5a]">
+      
+     
+       
+        <div className="max-w-7xl mx-auto">
+          {/* Main Footer Content */}
           <motion.div
-            className="flex items-center gap-3 text-gray-400"
-            variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
+            className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-              <MapPin size={18} />
-            </div>
-            <span>Kolkata, India</span>
-          </motion.div>
-        </motion.div>
+            {/* Brand Section */}
+            <motion.div variants={itemVariants} className="md:col-span-2">
+              <div className="flex items-center gap-3 mb-6">
+                <motion.div
+                  className="w-12 h-12 bg-gradient-to-br from-[#F68F12] to-[#e07d0a] rounded-xl flex items-center justify-center shadow-lg"
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                  </svg>
+                </motion.div>
+                <h3 className="text-3xl font-bold text-white">Kriyantrai</h3>
+              </div>
+              <p className="text-white/80 leading-relaxed mb-6 max-w-md">
+                Transforming businesses with AI, Machine Learning, and Automation. We create intelligent solutions that drive innovation, efficiency, and growth.
+              </p>
+              
+              {/* Social Links */}
+              <div className="flex gap-4">
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-[#F68F12] transition-colors group"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label={social.label}
+                  >
+                    <social.icon size={18} className="text-white" />
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
 
-        {/* Copyright */}
-        <motion.div
-          className="text-center text-gray-500 text-sm"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          © 2024 Kriyantrai. All rights reserved.
-        </motion.div>
+            {/* Company Links */}
+            <motion.div variants={itemVariants}>
+              <h4 className="text-xl font-bold mb-6 text-white">Company</h4>
+              <ul className="space-y-3">
+                {companyLinks.map((link, index) => (
+                  <motion.li
+                    key={index}
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <a
+                      href={link.href}
+                      className="text-white/70 hover:text-[#F68F12] transition-colors duration-200 text-sm"
+                    >
+                      {link.name}
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Services Links */}
+            <motion.div variants={itemVariants}>
+              <h4 className="text-xl font-bold mb-6 text-white">Services</h4>
+              <ul className="space-y-3">
+                {serviceLinks.map((link, index) => (
+                  <motion.li
+                    key={index}
+                    whileHover={{ x: 5 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <a
+                      href={link.href}
+                      className="text-white/70 hover:text-[#F68F12] transition-colors duration-200 text-sm"
+                    >
+                      {link.name}
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          </motion.div>
+
+          {/* Animated Divider */}
+          <motion.div
+            className="relative h-px bg-gradient-to-r from-transparent via-white/30 to-transparent mb-8"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
+            <motion.div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-[#F68F12] rounded-full"
+              animate={{ 
+                scale: [1, 1.5, 1],
+                opacity: [1, 0.5, 1]
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </motion.div>
+
+          {/* Contact Information */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.a
+              href="mailto:info@kriyantrai.com"
+              className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group"
+              variants={itemVariants}
+              whileHover={{ scale: 1.02, x: 5 }}
+            >
+              <div className="w-11 h-11 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:bg-[#F68F12] transition-all duration-300">
+                <Mail size={18} />
+              </div>
+              <span className="text-sm">info@kriyantrai.com</span>
+            </motion.a>
+
+            <motion.a
+              href="tel:+916289946256"
+              className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group"
+              variants={itemVariants}
+              whileHover={{ scale: 1.02, x: 5 }}
+            >
+              <div className="w-11 h-11 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center group-hover:bg-[#F68F12] transition-all duration-300">
+                <Phone size={18} />
+              </div>
+              <span className="text-sm">+91 6289946256</span>
+            </motion.a>
+
+            <motion.div
+              className="flex items-center gap-3 text-white/70"
+              variants={itemVariants}
+              whileHover={{ scale: 1.02, x: 5 }}
+            >
+              <div className="w-11 h-11 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                <MapPin size={18} />
+              </div>
+              <span className="text-sm">Kolkata, India</span>
+            </motion.div>
+          </motion.div>
+
+          {/* Copyright */}
+          <motion.div
+            className="text-center text-white/50 text-sm pt-8 border-t border-white/10"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <p>© 2024 Kriyantrai. All rights reserved.</p>
+          </motion.div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" className='mt-0 w-full ml-0 relative rotate-z-180'><g fill="#017387"><path d="M0 1v99c134.3 0 153.7-99 296-99H0Z" opacity=".5"></path><path d="M1000 4v86C833.3 90 833.3 3.6 666.7 3.6S500 90 333.3 90 166.7 4 0 4h1000Z" opacity=".5"></path><path d="M617 1v86C372 119 384 1 196 1h421Z" opacity=".5"></path><path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path></g></svg>
+
       </div>
     </footer>
   );

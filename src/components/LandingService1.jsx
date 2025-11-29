@@ -112,13 +112,13 @@ export default function LandingService1({
   }
 
   return (
-    <div className={`w-full h-screen bg-black text-white flex flex-col pt-20 ${roundedTop ? "rounded-t-4xl" : ""}`}>
+    <div className={`w-full min-h-[110vh] bg-[#173876] text-white flex flex-col pt-20 ${roundedTop ? "rounded-t-4xl" : ""} -mt-6 z-20 relative`}>
       <motion.h1
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={titleVariants}
-        className="text-6xl md:text-8xl font-black leading-tight mx-8 bg-linear-to-b from-white from-0% via-black via-90% to-transparent to-100% bg-clip-text text-transparent text-shadow-lg shadow-white/30"
+        className="text-6xl md:text-8xl font-black leading-tight mx-8 bg-linear-to-b from-white from-0% via-[#173876] via-90% to-transparent to-100% bg-clip-text text-transparent text-shadow-lg shadow-white/30"
       >
         {title}
       </motion.h1>
@@ -159,7 +159,7 @@ export default function LandingService1({
                   stiffness: 200
                 }
               }}
-              className="w-2 h-2 rounded-full bg-white"
+              className="w-2 h-2 rounded-full bg-[#F68F12]"
             />
             {item}
           </motion.li>
@@ -172,18 +172,18 @@ export default function LandingService1({
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={buttonVariants}
-        className="bg-gradient-to-br from-white to-white/60 text-black w-[11%] h-14 rounded-full flex justify-evenly items-center hover:scale-105 transition-all duration-200 cursor-pointer ml-12 mt-8"
+        className="bg-gradient-to-br from-white to-white/60 text-[#173876] w-fit px-6 md:px-8 h-12 md:h-14 rounded-full flex items-center gap-3 md:gap-4 hover:scale-105 transition-all duration-200 cursor-pointer ml-6 md:ml-12 mt-8"
         whileHover="hover"
         whileTap={{ scale: 0.95 }}
       >
         <motion.span 
-          className={`text-lg flex justify-center items-center font-serif ${instr.className}`}
+          className={`text-base md:text-lg flex justify-center items-center font-serif ${instr.className} whitespace-nowrap`}
         >
           {buttonText}
         </motion.span>
 
         <motion.div
-          className="w-[25%] aspect-square rounded-full bg-black flex justify-center items-center overflow-hidden"
+          className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#173876] flex justify-center items-center overflow-hidden shrink-0 relative -mr-6"
           variants={{ initial: { scale: 1 }, hover: { scale: 1.05 } }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
@@ -202,7 +202,7 @@ export default function LandingService1({
               },
             }}
           >
-            <ArrowRight size={30} color="white" />
+            <ArrowRight size={20} className="md:w-[26px] md:h-[26px]" color="white" />
           </motion.div>
         </motion.div>
       </motion.button>

@@ -62,7 +62,7 @@ export default function FeaturedWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl font-bold text-black mb-4">
+          <h2 className="text-5xl font-bold text-[#173876] mb-4">
             Featured Work
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -106,14 +106,14 @@ export default function FeaturedWorks() {
                 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="bg-white/50 backdrop-blur-sm rounded-xl p-4 border-2 border-black">
+                <div className="bg-white/50 backdrop-blur-sm rounded-xl p-4 border-2 border-[#173876]">
                   {/* Category */}
-                  <span className="text-[10px] font-semibold text-gray-600 uppercase tracking-wider">
+                  <span className="text-[10px] font-semibold text-[#173876] uppercase tracking-wider">
                     {project.category}
                   </span>
 
                   {/* Title */}
-                  <h3 className="text-base font-bold text-black mt-1 mb-2">
+                  <h3 className="text-base font-bold text-[#173876] mt-1 mb-2">
                     {project.title}
                   </h3>
 
@@ -127,7 +127,7 @@ export default function FeaturedWorks() {
                     {project.techs.map((tech, i) => (
                       <span
                         key={i}
-                        className="px-2 py-0.5 bg-black text-white border border-black rounded-full text-[10px] font-medium"
+                        className="px-2 py-0.5 bg-[#173876] text-white border border-[#173876] rounded-full text-[10px] font-medium"
                       >
                         {tech}
                       </span>
@@ -136,7 +136,7 @@ export default function FeaturedWorks() {
 
                   {/* Visit Site Button */}
                   <motion.button
-                    className="w-8 h-8 bg-black rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors"
+                    className="w-8 h-8 bg-[#F68F12] rounded-full flex items-center justify-center hover:bg-[#e07d0a] transition-colors"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -153,10 +153,10 @@ export default function FeaturedWorks() {
                 }}
                 transition={{ duration: 0.3 }}
               >
-                <span className="text-[10px] font-semibold text-gray-800 uppercase tracking-wider">
+                <span className="text-[10px] font-semibold text-[#173876] uppercase tracking-wider">
                   {project.category}
                 </span>
-                <h3 className="text-lg font-bold text-black mt-1">
+                <h3 className="text-lg font-bold text-[#173876] mt-1">
                   {project.title}
                 </h3>
               </motion.div>
@@ -173,7 +173,7 @@ export default function FeaturedWorks() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <motion.button
-            className="px-8 py-4 bg-black text-white rounded-full font-semibold text-lg hover:bg-gray-800 transition-colors flex items-center gap-3"
+            className="px-8 py-4 bg-[#173876] text-white rounded-full font-semibold text-lg hover:bg-[#0f2a5a] transition-colors flex items-center gap-3"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -191,14 +191,14 @@ export default function FeaturedWorks() {
 
       <div className= {` h-[60vh] w-full  flex flex-col justify-center items-center gap-3 `}>
         
-        <h1 className={`${instr.className} text-5xl md:text-7xl font-normal text-center leading-tight px-4 md:px-0 `}>
+        <h1 className={`${instr.className} text-5xl md:text-7xl font-normal text-center leading-tight px-4 md:px-0 text-[#173876]`}>
             Ready to Transform Your Business?
         </h1>
-        <p className={`${instr.className} text-lg md:text-xl w-[60%] text-center`}>
+        <p className={`${instr.className} text-lg md:text-xl w-[60%] text-center text-gray-700`}>
             Let's discuss how our AI, ML, and automation solutions can drive innovation and growth for your organization.
         </p>
         <motion.button 
-    className='bg-linear-to-br from-black to-zinc-500 w-[14%] h-16 rounded-full flex justify-evenly items-center relative hover:scale-105 transition-all duration-200 cursor-pointer'
+    className='bg-gradient-to-br from-[#173876] to-[#0f2a5a] w-[14%] h-16 rounded-full flex justify-evenly items-center relative hover:scale-105 transition-all duration-200 cursor-pointer'
     whileHover="hover"
     initial="initial"
 >
@@ -209,7 +209,7 @@ export default function FeaturedWorks() {
     </motion.span>
     
     <motion.div 
-        className='w-[25%] aspect-square rounded-full bg-white flex justify-center items-center overflow-hidden relative'
+        className='w-[25%] aspect-square rounded-full bg-[#FFF] flex justify-center items-center overflow-hidden relative'
         variants={{
             initial: { scale: 1 },
             hover: { scale: 1.05 }
@@ -217,7 +217,7 @@ export default function FeaturedWorks() {
         transition={{ duration: 0.3, ease: "easeOut" }}
     >
         <motion.div
-            className='absolute'
+            className='absolute text-white'
             variants={{
                 initial: { x: 0, opacity: 1 },
                 hover: { 
@@ -231,7 +231,7 @@ export default function FeaturedWorks() {
                 }
             }}
         >
-            <ArrowRight size={30} />
+            <ArrowRight size={30} color='#173876' />
         </motion.div>
     </motion.div>
 </motion.button>

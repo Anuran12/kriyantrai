@@ -98,9 +98,9 @@ export default function ServiceSectionRight({
 
   return (
     <div
-      className={`w-full min-h-screen bg-black text-white flex flex-col items-end pt-20 ${
+      className={`w-full min-h-[110vh] bg-white text-[#173876] flex flex-col items-end pt-20 ${
         roundedTop ? "rounded-t-4xl" : ""
-      }`}
+      } -mt-6 z-20 relative`}
     >
       <div className="mx-8 text-right">
         <motion.h1
@@ -109,7 +109,7 @@ export default function ServiceSectionRight({
           viewport={{ once: true, amount: 0.3 }}
           variants={titleVariants}
           className={`${archivob.className} text-6xl md:text-8xl font-normal leading-tight
-          bg-linear-to-b from-white from-0% via-black via-90% to-transparent to-100% bg-clip-text text-transparent text-shadow-lg shadow-white/30`}
+          bg-linear-to-b from-[#173876] from-0% via-white via-90% to-transparent to-100% bg-clip-text text-transparent text-shadow-lg shadow-[#173876]/30`}
         >
           {title}
         </motion.h1>
@@ -121,7 +121,7 @@ export default function ServiceSectionRight({
             viewport={{ once: true, amount: 0.3 }}
             variants={titleVariants}
             className={`${archivob.className} text-6xl md:text-8xl font-normal leading-tight
-           bg-linear-to-b from-white from-0% via-black via-90% to-transparent to-100% bg-clip-text text-transparent text-shadow-lg shadow-white/30`}
+           bg-linear-to-b from-[#173876] from-0% via-white via-90% to-transparent to-100% bg-clip-text text-transparent text-shadow-lg shadow-[#173876]/30`}
           >
             {title2}
           </motion.h1>
@@ -133,7 +133,7 @@ export default function ServiceSectionRight({
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={descriptionVariants}
-        className={`${archivo.className} text-lg md:text-xl w-[60%] mr-12 mt-4 text-white/90 text-right`}
+        className={`${archivo.className} text-lg md:text-xl w-[60%] mr-12 mt-4 text-[#173876]/90 text-right`}
       >
         {description}
       </motion.p>
@@ -150,7 +150,7 @@ export default function ServiceSectionRight({
             key={i}
             variants={itemVariants}
             whileHover={{ x: -10, transition: { duration: 0.2 } }}
-            className="text-lg text-white/80 pb-3 flex items-center gap-3 justify-end hover:text-white transition-all"
+            className="text-lg text-[#173876]/80 pb-3 flex items-center gap-3 justify-end hover:text-[#173876] transition-all"
           >
             {item}
             <motion.div
@@ -165,7 +165,7 @@ export default function ServiceSectionRight({
                   stiffness: 200
                 }
               }}
-              className="w-2 h-2 rounded-full bg-white"
+              className="w-2 h-2 rounded-full bg-[#F68F12]"
             />
           </motion.li>
         ))}
@@ -177,16 +177,16 @@ export default function ServiceSectionRight({
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={buttonVariants}
-        className={`bg-linear-to-br from-white to-white/60 text-black w-[11%] h-14 rounded-full flex justify-evenly items-center hover:scale-105 transition-all duration-200 cursor-pointer mr-12 mt-8 ${title2?'mb-10':'mb-0'}`}
+        className={`bg-gradient-to-br from-[#173876] to-[#0f2a5a] text-white w-fit px-6 md:px-8 h-12 md:h-14 rounded-full flex items-center gap-3 md:gap-4 hover:scale-105 transition-all duration-200 cursor-pointer mr-6 md:mr-12 mt-8 ${title2?'mb-10':'mb-0'}`}
         whileHover="hover"
         whileTap={{ scale: 0.95 }}
       >
-        <motion.span className={`${instr.className} text-lg flex justify-center items-center`}>
+        <motion.span className={`${instr.className} text-base md:text-lg flex justify-center items-center whitespace-nowrap`}>
           {buttonText}
         </motion.span>
 
         <motion.div
-          className="w-[25%] aspect-square rounded-full bg-black flex justify-center items-center overflow-hidden"
+          className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#ffffff] flex justify-center items-center overflow-hidden shrink-0 relative -mr-6 text-[#173876]"
           variants={{ initial: { scale: 1 }, hover: { scale: 1.05 } }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
@@ -205,7 +205,7 @@ export default function ServiceSectionRight({
               },
             }}
           >
-            <ArrowRight size={30} color="white" />
+            <ArrowRight size={20} className="md:w-[26px] md:h-[26px]" color="#173876" />
           </motion.div>
         </motion.div>
       </motion.button>
