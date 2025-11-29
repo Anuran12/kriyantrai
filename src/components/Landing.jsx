@@ -58,7 +58,7 @@ function Landing() {
         
         {/* Content */}
         <div className="relative z-10 flex flex-col justify-center items-center gap-3 w-full">
-        <h1 className={`${roboto.className} text-xl md:text-2xl text-white`} >
+        <h1 className={`${roboto.className} text-xl md:text-2xl text-white text-center`} >
             Transforming Business with AI & Innovation
         </h1>
         <h1 className={`${instr.className} text-5xl md:text-7xl font-normal text-center leading-tight px-4 md:px-0 text-white`}>

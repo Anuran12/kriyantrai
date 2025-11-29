@@ -118,7 +118,7 @@ export default function LandingService1({
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={titleVariants}
-        className="text-6xl md:text-8xl font-black leading-tight mx-8 bg-linear-to-b from-white from-0% via-[#173876] via-90% to-transparent to-100% bg-clip-text text-transparent text-shadow-lg shadow-white/30"
+        className="text-4xl md:text-8xl font-black leading-tight mx-8 bg-linear-to-b from-white from-0% via-[#173876] via-90% to-transparent to-100% bg-clip-text text-transparent text-shadow-lg shadow-white/30"
       >
         {title}
       </motion.h1>
@@ -183,7 +183,7 @@ export default function LandingService1({
         </motion.span>
 
         <motion.div
-          className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#173876] flex justify-center items-center overflow-hidden shrink-0 relative -mr-6"
+          className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#173876] flex justify-center items-center overflow-hidden shrink-0 relative -mr-4 md:-mr-6"
           variants={{ initial: { scale: 1 }, hover: { scale: 1.05 } }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >

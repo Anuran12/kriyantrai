@@ -108,7 +108,7 @@ export default function ServiceSectionRight({
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={titleVariants}
-          className={`${archivob.className} text-6xl md:text-8xl font-normal leading-tight
+          className={`${archivob.className} text-4xl md:text-8xl font-normal leading-tight
           bg-linear-to-b from-[#173876] from-0% via-white via-90% to-transparent to-100% bg-clip-text text-transparent text-shadow-lg shadow-[#173876]/30`}
         >
           {title}
@@ -120,7 +120,7 @@ export default function ServiceSectionRight({
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={titleVariants}
-            className={`${archivob.className} text-6xl md:text-8xl font-normal leading-tight
+            className={`${archivob.className} text-4xl md:text-8xl font-normal leading-tight
            bg-linear-to-b from-[#173876] from-0% via-white via-90% to-transparent to-100% bg-clip-text text-transparent text-shadow-lg shadow-[#173876]/30`}
           >
             {title2}
@@ -186,7 +186,7 @@ export default function ServiceSectionRight({
         </motion.span>
 
         <motion.div
-          className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#ffffff] flex justify-center items-center overflow-hidden shrink-0 relative -mr-6 text-[#173876]"
+          className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#ffffff] flex justify-center items-center overflow-hidden shrink-0 relative -mr-4 md:-mr-6 text-[#173876]"
           variants={{ initial: { scale: 1 }, hover: { scale: 1.05 } }}
           transition={{ duration: 0.3, ease: "easeOut" }}
         >

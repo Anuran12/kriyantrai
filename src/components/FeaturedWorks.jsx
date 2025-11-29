@@ -197,44 +197,44 @@ export default function FeaturedWorks() {
         <p className={`${instr.className} text-lg md:text-xl w-[60%] text-center text-gray-700`}>
             Let's discuss how our AI, ML, and automation solutions can drive innovation and growth for your organization.
         </p>
-        <motion.button 
-    className='bg-gradient-to-br from-[#173876] to-[#0f2a5a] w-[14%] h-16 rounded-full flex justify-evenly items-center relative hover:scale-105 transition-all duration-200 cursor-pointer'
-    whileHover="hover"
-    initial="initial"
->
-    <motion.span 
-        className={`${instr.className} w-[65%] h-[90%] text-white text-2xl flex justify-center items-center`}
-    >
-        Get In Touch
-    </motion.span>
-    
-    <motion.div 
-        className='w-[25%] aspect-square rounded-full bg-[#FFF] flex justify-center items-center overflow-hidden relative'
-        variants={{
-            initial: { scale: 1 },
-            hover: { scale: 1.05 }
-        }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
-    >
-        <motion.div
-            className='absolute text-white'
-            variants={{
-                initial: { x: 0, opacity: 1 },
-                hover: { 
-                    x: [0, 50, -50, 0],
-                    opacity: [1, 0, 0, 1],
-                    transition: {
-                        duration: 0.5,
-                        times: [0, 0.25, 0.5, 1],
-                        ease: "easeInOut"
-                    }
-                }
-            }}
-        >
-            <ArrowRight size={30} color='#173876' />
-        </motion.div>
-    </motion.div>
-</motion.button>
+        <motion.button
+                className='bg-gradient-to-br from-white to-white min-w-fit px-6 md:px-8 h-14 md:h-16 rounded-full flex items-center gap-3 md:gap-4 relative hover:scale-105 transition-all duration-200 cursor-pointer'
+                whileHover="hover"
+                initial="initial"
+            >
+                <motion.span
+                    className={`${instr.className} text-[#173876] text-lg md:text-2xl whitespace-nowrap`}
+                >
+                    Get In Touch
+                </motion.span>
+        
+                <motion.div
+                    className='w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#173876] flex justify-center items-center overflow-hidden relative shrink-0 -mr-4'
+                    variants={{
+                        initial: { scale: 1 },
+                        hover: { scale: 1.05 }
+                    }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                    <motion.div
+                        className='absolute text-white'
+                        variants={{
+                            initial: { x: 0, opacity: 1 },
+                            hover: {
+                                x: [0, 50, -50, 0],
+                                opacity: [1, 0, 0, 1],
+                                transition: {
+                                    duration: 0.5,
+                                    times: [0, 0.25, 0.5, 1],
+                                    ease: "easeInOut"
+                                }
+                            }
+                        }}
+                    >
+                        <ArrowRight size={20} className="md:w-[30px] md:h-[30px]" />
+                    </motion.div>
+                </motion.div>
+            </motion.button>
     </div>
     </div>
   );

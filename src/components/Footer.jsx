@@ -42,17 +42,20 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-white overflow-hidden">
- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" className='mt-0 w-full ml-0 relative rotate-z-180'><g fill="#173876"><path d="M0 1v99c134.3 0 153.7-99 296-99H0Z" opacity=".5"></path><path d="M1000 4v86C833.3 90 833.3 3.6 666.7 3.6S500 90 333.3 90 166.7 4 0 4h1000Z" opacity=".5"></path><path d="M617 1v86C372 119 384 1 196 1h421Z" opacity=".5"></path><path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path></g></svg>
-
-
+    <footer className="relative bg-white overflow-hidden -mt-1">
+      {/* Top Wave SVG */}
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" className='w-full block rotate-180' preserveAspectRatio="none" style={{ display: 'block', height: 'auto' }}>
+        <g fill="#173876">
+          <path d="M0 1v99c134.3 0 153.7-99 296-99H0Z" opacity=".5"></path>
+          <path d="M1000 4v86C833.3 90 833.3 3.6 666.7 3.6S500 90 333.3 90 166.7 4 0 4h1000Z" opacity=".5"></path>
+          <path d="M617 1v86C372 119 384 1 196 1h421Z" opacity=".5"></path>
+          <path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path>
+        </g>
+      </svg>
 
       {/* Footer Content */}
-      <div className="relative  bg-gradient-to-b from-[#173876] to-[#0f2a5a]">
-      
-     
-       
-        <div className="max-w-7xl mx-auto">
+      <div className="relative bg-gradient-to-b from-[#173876] to-[#0f2a5a] -mt-1">
+        <div className="max-w-7xl mx-auto px-6 md:px-8 py-12 md:py-16">
           {/* Main Footer Content */}
           <motion.div
             className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12"
@@ -209,7 +212,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <motion.div
-            className="text-center text-white/50 text-sm pt-8 border-t border-white/10"
+            className="text-center text-white/50 text-sm pt-8 border-t border-white/10 pb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -218,8 +221,16 @@ export default function Footer() {
             <p>© 2024 Kriyantrai. All rights reserved.</p>
           </motion.div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" className='mt-0 w-full ml-0 relative rotate-z-180'><g fill="#017387"><path d="M0 1v99c134.3 0 153.7-99 296-99H0Z" opacity=".5"></path><path d="M1000 4v86C833.3 90 833.3 3.6 666.7 3.6S500 90 333.3 90 166.7 4 0 4h1000Z" opacity=".5"></path><path d="M617 1v86C372 119 384 1 196 1h421Z" opacity=".5"></path><path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path></g></svg>
 
+        {/* Bottom Wave SVG */}
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" className='w-full block -mb-1' preserveAspectRatio="none" style={{ display: 'block', height: 'auto' }}>
+          <g fill="#0f2a5a">
+            <path d="M0 1v99c134.3 0 153.7-99 296-99H0Z" opacity=".5"></path>
+            <path d="M1000 4v86C833.3 90 833.3 3.6 666.7 3.6S500 90 333.3 90 166.7 4 0 4h1000Z" opacity=".5"></path>
+            <path d="M617 1v86C372 119 384 1 196 1h421Z" opacity=".5"></path>
+            <path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z"></path>
+          </g>
+        </svg>
       </div>
     </footer>
   );
