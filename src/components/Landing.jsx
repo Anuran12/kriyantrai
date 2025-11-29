@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { Instrument_Serif , Roboto_Serif, Archivo_Black} from 'next/font/google'
 import { ArrowRight } from 'lucide-react'
 import {motion} from 'motion/react'
@@ -22,35 +22,64 @@ const roboto = Roboto_Serif({
     variable: '--font-roboto',
 })
 
-
+// Preloader Component
+const Preloader = () => {
+  return (
+    <div className="fixed inset-0 bg-black z-50 flex justify-center items-center">
+      <div className="w-16 h-16 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+    </div>
+  )
+}
 
 function Landing() {
+  const [videoLoaded, setVideoLoaded] = useState(false)
+
   return (
     <div className='w-full'>
+        {/* Preloader */}
+        {!videoLoaded && <Preloader />}
+        
         <Navbar/>
-    <div className= {` h-screen w-full  flex flex-col justify-center items-center gap-3 `}>
-        <h1 className={`${roboto.className} text-xl md:text-2xl`} >
+    <div className= {` h-screen w-full  flex flex-col justify-center items-center gap-3 relative overflow-hidden `}>
+        
+        <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            preload="auto"
+            onCanPlayThrough={() => setVideoLoaded(true)}
+            className="absolute inset-0 w-full h-full object-cover"
+        >
+            <source src="/herovideo.mp4" type="video/mp4" />
+        </video>
+        
+        
+        
+        {/* Content */}
+        <div className="relative z-10 flex flex-col justify-center items-center gap-3 w-full">
+        <h1 className={`${roboto.className} text-xl md:text-2xl text-white`} >
             Transforming Business with AI & Innovation
         </h1>
-        <h1 className={`${instr.className} text-5xl md:text-7xl font-normal text-center leading-tight px-4 md:px-0 `}>
+        <h1 className={`${instr.className} text-5xl md:text-7xl font-normal text-center leading-tight px-4 md:px-0 text-white`}>
             Build Faster. Automate Smarter.
         </h1>
-        <p className={`${instr.className} text-lg md:text-xl w-[60%] text-center mt-20`}>
+        <p className={`${instr.className} text-lg md:text-xl w-[60%] text-center mt-20 text-white/90`}>
             We design and ship high‑quality websites, apps, dashboards, and AI automations that streamline operations and accelerate growth. Partner with our team to turn ideas into scalable, production‑ready products.
         </p>
         <motion.button 
-    className='bg-linear-to-br from-black to-zinc-500 w-[14%] h-16 rounded-full flex justify-evenly items-center relative hover:scale-105 transition-all duration-200 cursor-pointer'
+    className='bg-linear-to-br from-white to-zinc-200 w-[14%] h-16 rounded-full flex justify-evenly items-center relative hover:scale-105 transition-all duration-200 cursor-pointer'
     whileHover="hover"
     initial="initial"
 >
     <motion.span 
-        className={`${instr.className} w-[65%] h-[90%] text-white text-2xl flex justify-center items-center`}
+        className={`${instr.className} w-[65%] h-[90%] text-black text-2xl flex justify-center items-center`}
     >
         Get In Touch
     </motion.span>
     
     <motion.div 
-        className='w-[25%] aspect-square rounded-full bg-white flex justify-center items-center overflow-hidden relative'
+        className='w-[25%] aspect-square rounded-full bg-black flex justify-center items-center overflow-hidden relative'
         variants={{
             initial: { scale: 1 },
             hover: { scale: 1.05 }
@@ -58,7 +87,7 @@ function Landing() {
         transition={{ duration: 0.3, ease: "easeOut" }}
     >
         <motion.div
-            className='absolute'
+            className='absolute text-white'
             variants={{
                 initial: { x: 0, opacity: 1 },
                 hover: { 
@@ -76,6 +105,7 @@ function Landing() {
         </motion.div>
     </motion.div>
 </motion.button>
+        </div>
     </div>
     <LandingService1
   title="DEVELOPMENT"
@@ -89,7 +119,7 @@ function Landing() {
   ]}
   buttonText="Learn more"
   onButtonClick={() => console.log("Clicked!")}
-  roundedTop={true}
+  
 />
 
 <LandingService2
