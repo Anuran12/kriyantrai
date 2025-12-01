@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Instrument_Serif, Roboto_Serif } from 'next/font/google';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
   const instr = Instrument_Serif({
       subsets: ['latin'],
@@ -17,6 +18,7 @@ import { useState } from 'react';
   
 
 export default function FeaturedWorks() {
+  const router = useRouter();
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
 
@@ -176,6 +178,7 @@ export default function FeaturedWorks() {
             className="px-8 py-4 bg-[#173876] text-white rounded-full font-semibold text-lg hover:bg-[#0f2a5a] transition-colors flex items-center gap-3"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={()=> router.push('/work')}
           >
             See All Projects
             <motion.div
@@ -201,6 +204,7 @@ export default function FeaturedWorks() {
                 className='bg-gradient-to-br from-white to-white min-w-fit px-6 md:px-8 h-14 md:h-16 rounded-full flex items-center gap-3 md:gap-4 relative hover:scale-105 transition-all duration-200 cursor-pointer'
                 whileHover="hover"
                 initial="initial"
+                onClick={()=>{router.push('/contact')}}
             >
                 <motion.span
                     className={`${instr.className} text-[#173876] text-lg md:text-2xl whitespace-nowrap`}

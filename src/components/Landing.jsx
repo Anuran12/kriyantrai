@@ -9,6 +9,8 @@ import Whyus from './Whyus'
 import FeaturedWorks from './FeaturedWorks'
 import Footer from './Footer'
 import Navbar from './Navbar'
+import { useRouter } from 'next/navigation'
+
 
 const instr = Instrument_Serif({
     subsets: ['latin'],
@@ -32,6 +34,7 @@ const Preloader = () => {
 }
 
 function Landing() {
+  const router = useRouter();
   const [videoLoaded, setVideoLoaded] = useState(false)
 
   return (
@@ -39,7 +42,7 @@ function Landing() {
         {/* Preloader */}
         {!videoLoaded && <Preloader />}
         
-        <Navbar/>
+        
     <div className= {` h-[110vh] w-full  flex flex-col justify-center items-center gap-3 relative overflow-hidden `}>
         
         <video 
@@ -71,6 +74,7 @@ function Landing() {
         className='bg-gradient-to-br from-white to-white min-w-fit px-6 md:px-8 h-14 md:h-16 rounded-full flex items-center gap-3 md:gap-4 relative hover:scale-105 transition-all duration-200 cursor-pointer'
         whileHover="hover"
         initial="initial"
+        onClick={()=>{router.push('/contact')}}
     >
         <motion.span
             className={`${instr.className} text-[#173876] text-lg md:text-2xl whitespace-nowrap`}
@@ -118,7 +122,7 @@ function Landing() {
     "API Integration",
   ]}
   buttonText="Learn more"
-  onButtonClick={() => console.log("Clicked!")}
+  onButtonClick={() => router.push('/services/dev')}
   roundedTop={true}
   
 />
@@ -134,7 +138,7 @@ function Landing() {
     "Data Processing",
   ]}
   buttonText="Learn more"
-  onButtonClick={() => console.log("Clicked!")}
+  onButtonClick={() => router.push('/services/data')}
   roundedTop={true}
   
 />
@@ -149,7 +153,7 @@ function Landing() {
   "Image / Video Automation"
 ]}
   buttonText="Learn more"
-  onButtonClick={() => console.log("Clicked!")}
+  onButtonClick={() => router.push('/services/ai')}
 roundedTop={true}
 />
 
@@ -166,7 +170,7 @@ roundedTop={true}
 ]
 }
   buttonText="Learn more"
-  onButtonClick={() => console.log("Clicked!")}
+  onButtonClick={() => router.push('/services/ml-dl')}
   roundedTop={true}
   
 />

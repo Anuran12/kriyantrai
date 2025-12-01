@@ -37,58 +37,22 @@ export default function Navbar() {
   }, [showMobileMenu]);
 
   const navLinksLeft = [
-    { name: "Home", href: "#" },
-    { name: "About", href: "#" }
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" }
   ];
 
   const navLinksRight = [
-    { name: "Work", href: "#" },
-    { name: "Contact", href: "#" }
+    { name: "Work", href: "/work" },
+    { name: "Contact", href: "/contact" }
   ];
 
   const allNavLinks = [...navLinksLeft, ...navLinksRight];
 
   const services = [
-    {
-      category: "Development",
-      items: [
-        "Web Development",
-        "Mobile App Development",
-        "Desktop Application Development",
-        "Full-Stack Solutions",
-        "API Integration"
-      ]
-    },
-    {
-      category: "Data & Analytics",
-      items: [
-        "Data Cleaning & Visualization",
-        "Dashboard Development",
-        "Business Intelligence Solutions",
-        "Predictive Analytics",
-        "Big Data Processing"
-      ]
-    },
-    {
-      category: "AI & Automation",
-      items: [
-        "Workflow Automation",
-        "Chatbot Development",
-        "AI-Powered Tools Integration",
-        "NLP & Text Automation",
-        "Image / Video Automation"
-      ]
-    },
-    {
-      category: "Machine Learning & Deep Learning",
-      items: [
-        "Model Development & Training",
-        "Computer Vision Projects",
-        "Natural Language Processing",
-        "Recommendation Systems",
-        "Custom ML Solutions"
-      ]
-    }
+    { category: "Development" ,route: '/services/dev'},
+    { category: "Data & Analytics", route: '/services/data' },
+    { category: "AI & Automation", route: '/services/ai' },
+    { category: "Machine Learning & Deep Learning", route: '/services/ml-dl' }
   ];
 
   return (
@@ -98,20 +62,31 @@ export default function Navbar() {
           <>
             {/* Desktop Navbar */}
             <motion.div
-              initial={{ y: -120, opacity: 0 }}
+              initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -120, opacity: 0 }}
+              exit={{ y: -100, opacity: 0 }}
               transition={{ duration: 0.35, ease: "easeInOut" }}
-              className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-xl px-2 hidden md:block"
+              className="fixed top-0 left-0 right-0 z-50 hidden md:block"
             >
               <motion.nav
-                className="bg-white/50 backdrop-blur-lg border border-white/20 rounded-full shadow-2xl px-8 py-4"
+                className="bg-white/50 backdrop-blur-lg border-b border-white/20 shadow-lg px-8 py-4"
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                <div className="grid grid-cols-3 items-center text-center">
-                  <div className="flex justify-start gap-8 ml-12">
+                <div className="flex items-center justify-between max-w-7xl mx-auto">
+                  {/* Logo on the left */}
+                  <motion.div
+                    className="flex items-center gap-3"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
+                    <span className="text-[#173876] text-2xl font-semibold font-sans">Kriyantrai</span>
+                  </motion.div>
+
+                  {/* Navigation links on the right */}
+                  <div className="flex items-center gap-8">
                     {navLinksLeft.map((link, index) => (
                       <motion.a
                         key={index}
@@ -129,23 +104,7 @@ export default function Navbar() {
                         />
                       </motion.a>
                     ))}
-                  </div>
 
-                  <motion.div
-                    className="flex justify-center"
-                    whileHover={{ scale: 1.1, rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#173876] to-[#0f2a5a] rounded-full flex items-center justify-center shadow-lg">
-                      <svg viewBox="0 0 24 24" className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                        <path d="M2 17l10 5 10-5" />
-                        <path d="M2 12l10 5 10-5" />
-                      </svg>
-                    </div>
-                  </motion.div>
-
-                  <div className="flex justify-end gap-8">
                     <div
                       className="relative"
                       onMouseEnter={() => setShowServices(true)}
@@ -157,7 +116,7 @@ export default function Navbar() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        Service
+                        Services
                         <motion.div
                           className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#F68F12]"
                           initial={{ scaleX: 0 }}
@@ -169,40 +128,31 @@ export default function Navbar() {
                       <AnimatePresence>
                         {showServices && (
                           <motion.div
-                            className="absolute top-12 right-0 w-[750px]"
+                            className="absolute top-12 right-0 w-64"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 0.3 }}
                           >
-                            <div className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-3xl shadow-2xl p-6">
-                              <div className="grid grid-cols-2 gap-6">
+                            <div className="bg-white/90 backdrop-blur-lg border border-white/20 rounded-2xl shadow-2xl p-4">
+                              <ul className="space-y-3">
                                 {services.map((service, index) => (
-                                  <motion.div
+                                  <motion.li
                                     key={index}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ delay: index * 0.1 }}
+                                    initial={{ opacity: 0, x: -10 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: index * 0.05 }}
+                                    whileHover={{ x: 5 }}
                                   >
-                                    <div className="bg-[#173876] text-white rounded-2xl px-4 py-2 mb-3 inline-block">
-                                      <h4 className="text-sm font-bold">{service.category}</h4>
-                                    </div>
-                                    <ul className="space-y-2">
-                                      {service.items.map((item, i) => (
-                                        <motion.li
-                                          key={i}
-                                          whileHover={{ x: 5 }}
-                                          transition={{ duration: 0.2 }}
-                                        >
-                                          <a className="text-gray-700 hover:text-[#173876] transition-colors text-sm">
-                                            {item}
-                                          </a>
-                                        </motion.li>
-                                      ))}
-                                    </ul>
-                                  </motion.div>
+                                    <a
+                                      href={service.route}
+                                      className="text-[#173876] hover:text-[#F68F12] transition-colors font-medium block"
+                                    >
+                                      {service.category}
+                                    </a>
+                                  </motion.li>
                                 ))}
-                              </div>
+                              </ul>
                             </div>
                           </motion.div>
                         )}
@@ -246,14 +196,8 @@ export default function Navbar() {
                     className="flex items-center gap-2"
                     whileTap={{ scale: 0.95 }}
                   >
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#173876] to-[#0f2a5a] rounded-full flex items-center justify-center shadow-lg">
-                      <svg viewBox="0 0 24 24" className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                        <path d="M2 17l10 5 10-5" />
-                        <path d="M2 12l10 5 10-5" />
-                      </svg>
-                    </div>
-                    <span className="text-[#173876] font-bold text-lg">Kriyantrai</span>
+                    <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
+                    <span className="text-[#173876] text-lg font-semibold font-sans">Kriyantrai</span>
                   </motion.div>
 
                   {/* Menu Button */}
@@ -348,31 +292,20 @@ export default function Navbar() {
                   className="border-t border-[#173876]/20 pt-6"
                 >
                   <h3 className="text-[#173876] text-xl font-bold mb-6">Services</h3>
-                  <div className="space-y-6">
+                  <div className="space-y-3">
                     {services.map((service, index) => (
-                      <motion.div
+                      <motion.a
                         key={index}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        href={service.route}
+                        className="block text-[#173876] text-lg font-medium hover:text-[#F68F12] transition-colors py-2"
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.5 + index * 0.1 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => setShowMobileMenu(false)}
                       >
-                        <div className="bg-[#173876] text-white rounded-xl px-4 py-2 mb-3 inline-block">
-                          <h4 className="text-sm font-bold">{service.category}</h4>
-                        </div>
-                        <ul className="space-y-2 ml-4">
-                          {service.items.map((item, i) => (
-                            <li key={i}>
-                              <a
-                                href="#"
-                                className="text-gray-700 hover:text-[#173876] transition-colors text-sm block py-1"
-                                onClick={() => setShowMobileMenu(false)}
-                              >
-                                {item}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </motion.div>
+                        {service.category}
+                      </motion.a>
                     ))}
                   </div>
                 </motion.div>

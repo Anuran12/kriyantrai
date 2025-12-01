@@ -3,16 +3,16 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from 'lucide-react'
 
 export default function Footer() {
   const companyLinks = [
-    { name: "About", href: "#" },
-    { name: "Work", href: "#" },
-    { name: "Contact", href: "#" }
+    { name: "About", href: "/about" },
+    { name: "Work", href: "/work" },
+    { name: "Contact", href: "/contact" }
   ];
 
   const serviceLinks = [
-    { name: "AI Solutions", href: "#" },
-    { name: "Machine Learning", href: "#" },
-    { name: "Analytics", href: "#" },
-    { name: "Development", href: "#" }
+    { name: "Development", href: "/services/dev" },
+    { name: "Data & Analytics", href: "/services/data" },
+    { name: "AI & Automation", href: "/services/ai" },
+    { name: "ML & DL", href: "/services/ml-dl" }
   ];
 
   const socialLinks = [
@@ -67,18 +67,14 @@ export default function Footer() {
             {/* Brand Section */}
             <motion.div variants={itemVariants} className="md:col-span-2">
               <div className="flex items-center gap-3 mb-6">
-                <motion.div
-                  className="w-12 h-12 bg-gradient-to-br from-[#F68F12] to-[#e07d0a] rounded-xl flex items-center justify-center shadow-lg"
-                  whileHover={{ rotate: 360, scale: 1.1 }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <svg viewBox="0 0 24 24" className="w-7 h-7 text-white" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                    <path d="M2 17l10 5 10-5" />
-                    <path d="M2 12l10 5 10-5" />
-                  </svg>
-                </motion.div>
-                <h3 className="text-3xl font-bold text-white">Kriyantrai</h3>
+                <motion.img 
+                  src="/logo.png" 
+                  alt="Kriyantrai Logo" 
+                  className="h-12 w-auto"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                />
+                <h3 className="text-3xl font-bold text-white font-sans">Kriyantrai</h3>
               </div>
               <p className="text-white/80 leading-relaxed mb-6 max-w-md">
                 Transforming businesses with AI, Machine Learning, and Automation. We create intelligent solutions that drive innovation, efficiency, and growth.
