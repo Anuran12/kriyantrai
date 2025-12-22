@@ -10,6 +10,7 @@ import FeaturedWorks from './FeaturedWorks'
 import Footer from './Footer'
 import Navbar from './Navbar'
 import { useRouter } from 'next/navigation'
+import ServicesSection from './Services'
 
 
 const instr = Instrument_Serif({
@@ -111,7 +112,7 @@ function Landing() {
     </motion.button>
         </div>
     </div>
-    <LandingService1
+    {/* <LandingService1
   title="DEVELOPMENT"
   description="We build robust, scalable, and user-friendly applications across multiple platforms."
   items={[
@@ -174,7 +175,9 @@ roundedTop={true}
   onButtonClick={() => router.push('/services/ml-dl')}
   roundedTop={true}
   
-/>
+/> */}
+
+<ServicesSection/>
 
 <Whyus/>
 <FeaturedWorks/>
