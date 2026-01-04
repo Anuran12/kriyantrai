@@ -2,8 +2,10 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useRouter } from 'next/navigation'
 
 export default function Navbar() {
+    const router = useRouter();
   const [showServices, setShowServices] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showNav, setShowNav] = useState(true);
@@ -80,8 +82,9 @@ export default function Navbar() {
                     className="flex items-center gap-3"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
+                    onClick={()=>{router.push('/')}}
                   >
-                    <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
+                    <img src="/logo.png" alt="Logo" className="h-12 w-auto"  />
                     <span className="text-[#173876] text-2xl font-semibold font-sans">Kriyantrai</span>
                   </motion.div>
 

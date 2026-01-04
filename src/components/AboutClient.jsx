@@ -53,15 +53,15 @@ function AboutClient() {
             </motion.h1>
             
             <motion.p
-              className={`${instr.className} text-lg md:text-2xl lg:text-3xl text-gray-700 mb-10`}
+              className={`${instr.className} text-md md:text-lg lg:text-xl text-gray-700 mb-10`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Innovating for a smarter, more connected future.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
             </motion.p>
 
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -105,7 +105,7 @@ function AboutClient() {
                           </motion.div>
                       </motion.div>
                   </motion.button>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
 

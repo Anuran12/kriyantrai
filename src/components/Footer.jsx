@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 
 export default function Footer() {
   const companyLinks = [
@@ -16,9 +16,8 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" }
+    { icon: Linkedin, href: "https://www.linkedin.com/in/yourprofile", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/yourusername", label: "GitHub" }
   ];
 
   const containerVariants = {
@@ -214,7 +213,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <p>© 2024 Kriyantrai. All rights reserved.</p>
+            <p>© 2025-26 Kriyantrai. All rights reserved.</p>
           </motion.div>
         </div>
 

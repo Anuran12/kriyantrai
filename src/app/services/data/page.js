@@ -1,12 +1,13 @@
 'use client';
 import React, { useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight, BarChart3, PieChart, TrendingUp, Brain, Database, Lightbulb, Users, Target, Cpu, Award, ExternalLink, Star } from 'lucide-react';
 import Footer from '@/components/Footer';
+import { useRouter } from 'next/navigation';
 
 const instr = { className: 'font-serif' };
 
-// Project Card Component
+// Compact Project Card
 const ProjectCard = ({ 
   image, 
   title, 
@@ -14,40 +15,52 @@ const ProjectCard = ({
   tags = [], 
   technologies = [], 
   featured = false,
-  projectUrl = "#"
+  projectUrl = "#",
+  client,
+  metrics
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const tagColors = {
-    AI: 'bg-purple-100 text-purple-700 border-purple-300',
-    ML: 'bg-blue-100 text-blue-700 border-blue-300',
-    ANALYTICS: 'bg-pink-100 text-pink-700 border-pink-300',
-    BI: 'bg-indigo-100 text-indigo-700 border-indigo-300',
-    BIGDATA: 'bg-emerald-100 text-emerald-700 border-emerald-300',
-    PREDICTION: 'bg-orange-100 text-orange-700 border-orange-300'
-  };
-
   return (
     <motion.div
-      className='relative w-full'
-      initial={{ opacity: 0, y: 50 }}
+      className='relative w-full h-full'
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.4 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className='bg-[#F9FAFB] rounded-3xl p-6 shadow-[8px_8px_16px_#d1d9e6,-8px_-8px_16px_#ffffff] hover:shadow-[12px_12px_24px_#d1d9e6,-12px_-12px_24px_#ffffff] transition-all duration-300'>
+      <div className='bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col border border-gray-100'>
         
-        <div className='relative w-full h-64 rounded-2xl overflow-hidden mb-4'>
-          <img 
+        <div className='relative w-full h-48 overflow-hidden'>
+          <motion.img 
             src={image} 
             alt={title}
             className='w-full h-full object-cover'
+            animate={{ scale: isHovered ? 1.08 : 1 }}
+            transition={{ duration: 0.5 }}
           />
           
+          <div className='absolute inset-0 bg-gradient-to-t from-[#153776]/80 via-[#153776]/20 to-transparent' />
+          
+          {featured && (
+            <div className='absolute top-3 right-3 flex items-center gap-1.5 bg-[#F67C0E] text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg'>
+              <Star size={12} fill="white" />
+              FEATURED
+            </div>
+          )}
+
+          <div className='absolute bottom-3 left-3 flex flex-wrap gap-1.5'>
+            {tags.slice(0, 2).map((tag, index) => (
+              <span key={index} className='px-2.5 py-1 rounded text-xs font-semibold bg-white/95 text-[#153776] backdrop-blur-sm'>
+                {tag}
+              </span>
+            ))}
+          </div>
+
           <motion.div
-            className='absolute inset-0 backdrop-blur-md bg-white/30 flex items-center justify-center'
+            className='absolute inset-0 bg-[#153776]/95 backdrop-blur-sm flex flex-col items-center justify-center gap-3 p-4'
             initial={{ opacity: 0 }}
             animate={{ opacity: isHovered ? 1 : 0 }}
             transition={{ duration: 0.3 }}
@@ -56,80 +69,62 @@ const ProjectCard = ({
               href={projectUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className='bg-[#F66F13] text-white px-8 py-4 rounded-full font-semibold flex items-center gap-3 shadow-lg hover:bg-[#d45a0a] transition-colors'
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ 
-                scale: isHovered ? 1 : 0,
-                rotate: isHovered ? 0 : -180
-              }}
-              transition={{ 
-                type: "spring",
-                stiffness: 260,
-                damping: 20
-              }}
+              className='bg-[#F67C0E] text-white px-5 py-2.5 rounded-lg font-semibold flex items-center gap-2 shadow-lg hover:bg-[#e56d00] transition-colors text-sm'
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: isHovered ? 0 : 10, opacity: isHovered ? 1 : 0 }}
+              transition={{ delay: 0.05 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               View Case Study
-              <ExternalLink size={20} />
+              <ExternalLink size={16} />
             </motion.a>
+            
+            {metrics && (
+              <motion.div
+                className='flex gap-4 text-white text-xs'
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: isHovered ? 0 : 10, opacity: isHovered ? 1 : 0 }}
+                transition={{ delay: 0.1 }}
+              >
+                {Object.entries(metrics).slice(0, 3).map(([key, value], idx) => (
+                  <div key={idx} className='text-center'>
+                    <div className='font-bold text-[#F67C0E]'>{value}</div>
+                    <div className='text-xs opacity-90'>{key}</div>
+                  </div>
+                ))}
+              </motion.div>
+            )}
           </motion.div>
         </div>
 
-        <div className='flex flex-wrap gap-2 mb-4'>
-          {tags.map((tag, index) => (
-            <motion.span
-              key={index}
-              className={`px-4 py-1.5 rounded-full text-xs font-semibold border ${tagColors[tag] || 'bg-gray-100 text-gray-700 border-gray-300'}`}
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.1 }}
-            >
-              {tag}
-            </motion.span>
-          ))}
-        </div>
+        <div className='p-4 flex flex-col flex-grow'>
+          {client && (
+            <div className='text-xs text-gray-500 mb-2 font-medium'>
+              <span className='text-[#F67C0E]'>CLIENT:</span> {client}
+            </div>
+          )}
 
-        {featured && (
-          <motion.div
-            className='inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-4 py-2 rounded-full text-sm font-bold mb-3 shadow-md'
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-          >
-            <Star size={16} fill="white" />
-            Featured Project
-          </motion.div>
-        )}
+          <h3 className={`${instr.className} text-lg font-bold text-[#153776] mb-2 line-clamp-2 hover:text-[#F67C0E] transition-colors`}>
+            {title}
+          </h3>
 
-        <h3 className={`${instr.className} text-2xl md:text-3xl font-bold text-[#0A2342] mb-3`}>
-          {title}
-        </h3>
+          <p className='text-sm text-gray-600 mb-3 line-clamp-2 leading-relaxed flex-grow'>
+            {description}
+          </p>
 
-        <p className='text-gray-700 leading-relaxed mb-4 text-sm md:text-base'>
-          {description}
-        </p>
-
-        <div className='flex flex-wrap gap-2'>
-          {technologies.map((tech, index) => (
-            <motion.span
-              key={index}
-              className='px-3 py-1.5 rounded-full text-xs font-medium bg-white text-[#0A2342] shadow-[inset_2px_2px_4px_#d1d9e6,inset_-2px_-2px_4px_#ffffff] border border-gray-200'
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
-              whileHover={{ 
-                scale: 1.1,
-                boxShadow: '4px 4px 8px #d1d9e6, -4px -4px 8px #ffffff'
-              }}
-            >
-              {tech}
-            </motion.span>
-          ))}
+          <div className='flex flex-wrap gap-1.5 pt-3 border-t border-gray-100'>
+            {technologies.slice(0, 4).map((tech, index) => (
+              <span key={index} className='px-2 py-1 rounded text-xs font-medium bg-[#F9FAFB] text-[#153776] hover:bg-[#153776] hover:text-white transition-colors'>
+                {tech}
+              </span>
+            ))}
+            {technologies.length > 4 && (
+              <span className='px-2 py-1 rounded text-xs font-medium text-gray-400'>
+                +{technologies.length - 4}
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </motion.div>
@@ -137,75 +132,79 @@ const ProjectCard = ({
 };
 
 function Page() {
-  const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
+  const router = useRouter();
 
   const services = [
     {
       title: "Business Intelligence (BI)",
-      description: "Transforming raw data into meaningful and actionable insights for strategic decision-making.",
+      description: "Transforming raw data into meaningful insights for strategic decision-making.",
       icon: BarChart3,
-      gradient: "from-blue-500 to-cyan-500"
+      color: "#153776"
     },
     {
       title: "Data Visualization & Dashboards",
-      description: "Creating interactive dashboards and visualizations to present complex data in an understandable format.",
+      description: "Creating interactive dashboards presenting complex data in understandable formats.",
       icon: PieChart,
-      gradient: "from-purple-500 to-pink-500"
+      color: "#F67C0E"
     },
     {
       title: "Predictive Analytics",
-      description: "Utilizing statistical algorithms and machine learning techniques to forecast future outcomes and trends.",
+      description: "Utilizing ML techniques to forecast future outcomes and business trends.",
       icon: TrendingUp,
-      gradient: "from-cyan-500 to-blue-500"
+      color: "#153776"
     },
     {
       title: "Machine Learning for Data",
-      description: "Implementing ML models to uncover patterns, automate decision-making, and enhance data-driven strategies.",
+      description: "Implementing ML models to uncover patterns and automate decision-making.",
       icon: Brain,
-      gradient: "from-orange-500 to-red-500"
+      color: "#F67C0E"
     },
     {
       title: "Big Data Solutions",
-      description: "Designing and implementing scalable solutions for managing, processing, and analyzing large volumes of data.",
+      description: "Scalable solutions for managing and analyzing large volumes of data.",
       icon: Database,
-      gradient: "from-green-500 to-emerald-500"
+      color: "#153776"
     },
     {
       title: "Data Strategy & Consulting",
-      description: "Developing comprehensive data strategies and providing expert consultation to maximize your data's potential.",
+      description: "Comprehensive data strategies to maximize your data's potential.",
       icon: Lightbulb,
-      gradient: "from-amber-500 to-orange-500"
+      color: "#F67C0E"
     }
   ];
 
   const projects = [
     {
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-      title: "Customer Churn Prediction System",
-      description: "Developed a predictive model that identified at-risk customers, leading to a 15% reduction in churn rate for an e-commerce client.",
-      tags: ['PREDICTION', 'ML', 'ANALYTICS'],
-      technologies: ['Python', 'Scikit-learn', 'TensorFlow', 'PostgreSQL'],
+      title: "Customer Churn Prediction",
+      description: "Predictive model identifying at-risk customers, leading to 15% reduction in churn rate.",
+      tags: ['PREDICTION', 'ML'],
+      technologies: ['Python', 'Scikit-learn', 'TensorFlow', 'PostgreSQL', 'Apache Airflow'],
       featured: true,
+      client: "E-commerce Platform",
+      metrics: { 'Churn': '-15%', 'Revenue': '+$2M', 'Accuracy': '92%' },
       projectUrl: "#"
     },
     {
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
       title: "Sales Performance Dashboard",
-      description: "Created an interactive BI dashboard providing real-time sales insights, enabling a 10% increase in sales efficiency.",
+      description: "Interactive BI dashboard providing real-time sales insights, enabling 10% increase in efficiency.",
       tags: ['BI', 'ANALYTICS'],
       technologies: ['Power BI', 'SQL', 'Azure', 'DAX'],
       featured: false,
+      client: "Retail Corporation",
+      metrics: { 'Efficiency': '+10%', 'Users': '500+', 'ROI': '250%' },
       projectUrl: "#"
     },
     {
       image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80',
       title: "Supply Chain Optimization",
-      description: "Implemented a big data solution to analyze supply chain logistics, resulting in a 20% reduction in operational costs.",
+      description: "Big data solution analyzing logistics, resulting in 20% reduction in operational costs.",
       tags: ['BIGDATA', 'ANALYTICS'],
-      technologies: ['Apache Spark', 'Hadoop', 'Kafka', 'MongoDB'],
+      technologies: ['Apache Spark', 'Hadoop', 'Kafka', 'MongoDB', 'Python'],
       featured: true,
+      client: "Manufacturing Corp",
+      metrics: { 'Cost': '-20%', 'Speed': '+35%', 'Data': '100TB+' },
       projectUrl: "#"
     }
   ];
@@ -214,283 +213,244 @@ function Page() {
     {
       icon: Users,
       title: "Deep Expertise",
-      description: "Our team comprises seasoned data scientists and analysts with a proven track record of delivering impactful solutions."
+      description: "Seasoned data scientists and analysts with proven track record of delivering impactful solutions."
     },
     {
       icon: Target,
       title: "Actionable Insights",
-      description: "We go beyond raw data, providing clear, actionable insights that empower you to make informed business decisions."
+      description: "Clear, actionable insights that empower you to make informed business decisions confidently."
     },
     {
       icon: Cpu,
       title: "Cutting-Edge Technology",
-      description: "We leverage the latest tools and technologies in data science, machine learning, and big data to deliver superior results."
+      description: "Latest tools in data science, machine learning, and big data to deliver superior results."
     },
     {
       icon: Award,
       title: "Customized Solutions",
-      description: "Every solution is tailored to your unique business needs and goals, ensuring maximum relevance and impact."
+      description: "Every solution tailored to your unique business needs ensuring maximum relevance and impact."
     }
   ];
 
   return (
-    <section className='bg-[#F9FAFB]'>
+    <div className='bg-[#F9FAFB]'>
       {/* Hero Section */}
-      <div className='relative min-h-screen w-full flex items-center justify-center overflow-hidden px-6 md:px-12 lg:px-24'>
-        {/* Animated Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            animate={{
-              rotate: 360,
-              scale: [1, 1.2, 1]
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="absolute -top-40 -left-40 w-96 h-96 bg-gradient-to-br from-[#F66F13]/20 to-transparent rounded-full blur-3xl"
-          />
-          <motion.div
-            animate={{
-              rotate: -360,
-              scale: [1.2, 1, 1.2]
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            className="absolute -bottom-40 -right-40 w-96 h-96 bg-gradient-to-br from-[#0A2342]/20 to-transparent rounded-full blur-3xl"
-          />
+      <section className='bg-gradient-to-br from-[#153776] via-[#1a4489] to-[#153776] py-20 px-6 md:px-12 lg:px-24 relative overflow-hidden'>
+        <div className='absolute inset-0 opacity-5'>
+          <div className='absolute inset-0' style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '40px 40px'
+          }} />
         </div>
 
-        <motion.div
-          style={{ opacity, scale }}
-          className='relative z-10 max-w-5xl text-center'
-        >
+        <div className='max-w-6xl mx-auto text-center relative z-10'>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg mb-8"
           >
-            <BarChart3 size={18} className="text-[#F66F13]" />
-            <span className="text-sm font-semibold text-[#0A2342]">Advanced Data Analytics</span>
-          </motion.div>
-
-          <motion.h1
-            className={`${instr.className} text-5xl md:text-6xl lg:text-7xl text-[#0A2342] mb-6 leading-tight font-bold`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Data & Analytics
-            <span className="block mt-2 bg-gradient-to-r from-[#F66F13] to-[#0A2342] bg-clip-text text-transparent">
-              Solutions
-            </span>
-          </motion.h1>
-          
-          <motion.p
-            className='text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed max-w-3xl mx-auto'
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Unlocking insights and driving informed decisions with advanced data analytics
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className='group bg-[#F66F13] text-white px-8 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3'
-            onClick={()=>{router.push('/contact')}}
+            <motion.div
+              className='inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold mb-6 mt-10'
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
             >
-              Get a Free Consultation
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </motion.button>
+              <BarChart3 size={16} />
+              ADVANCED DATA ANALYTICS
+            </motion.div>
             
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className='bg-white text-[#0A2342] px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200'
-            onClick={()=>{router.push('/work')}}
-            >
-              View Case Studies
-            </motion.button>
-          </motion.div>
+            <h1 className={`${instr.className} text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight`}>
+              Data & Analytics
+              <br />
+              <span className='bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent'>Solutions</span>
+            </h1>
+            
+            <motion.div 
+              className="w-24 h-1 bg-white/80 mx-auto rounded-full mb-6"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            />
+            
+            <p className='text-white/90 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-8'>
+              Unlocking insights and driving informed decisions with advanced data analytics. Transform your data into your most valuable business asset.
+            </p>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="grid grid-cols-3 gap-8 mt-20 max-w-2xl mx-auto"
-          >
-            {[
-              { number: "1B+", label: "Data Points Analyzed" },
-              { number: "85%", label: "Accuracy Rate" },
-              { number: "50+", label: "Analytics Projects" }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -5 }}
-                className="text-center"
+            <motion.div
+              className='flex flex-col sm:flex-row gap-4 justify-center items-center mb-16'
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              <button
+                onClick={() => router.push('/contact')}
+                className='bg-white text-[#153776] px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-gray-100 transition-all flex items-center gap-2'
               >
-                <div className="text-3xl md:text-4xl font-bold text-[#F66F13] mb-1">{stat.number}</div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
-              </motion.div>
-            ))}
+                Get Free Consultation
+                <ArrowRight size={18} />
+              </button>
+              
+              <button
+                onClick={() => router.push('/work')}
+                className='bg-white/10 backdrop-blur-sm text-white px-8 py-3 rounded-lg font-semibold border border-white/20 hover:bg-white/20 transition-all'
+              >
+                View Case Studies
+              </button>
+            </motion.div>
+
+            {/* Stats */}
+            <motion.div
+              className='grid grid-cols-3 gap-8 max-w-2xl mx-auto'
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+            >
+              {[
+                { number: "1B+", label: "Data Points Analyzed" },
+                { number: "85%", label: "Accuracy Rate" },
+                { number: "50+", label: "Analytics Projects" }
+              ].map((stat, index) => (
+                <div key={index} className='text-center'>
+                  <div className='text-3xl md:text-4xl font-bold text-white mb-1'>{stat.number}</div>
+                  <div className='text-sm text-white/80'>{stat.label}</div>
+                </div>
+              ))}
+            </motion.div>
           </motion.div>
-        </motion.div>
-      </div>
+        </div>
+      </section>
 
       {/* Services Section */}
-      <div className='services-section py-32 px-6 md:px-12 lg:px-24 bg-white'>
-        <div className="max-w-7xl mx-auto">
+      <section className='py-20 px-6 md:px-12 lg:px-24 bg-white'>
+        <div className='max-w-7xl mx-auto'>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            className='text-center mb-16'
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
           >
-            <h2 className={`${instr.className} text-4xl md:text-5xl lg:text-6xl font-bold text-[#0A2342] mb-4`}>
+            <h2 className={`${instr.className} text-3xl md:text-4xl lg:text-5xl font-bold text-[#153776] mb-4`}>
               Our Data & Analytics Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <div className="w-24 h-1 bg-[#F67C0E] mx-auto rounded-full mb-4"></div>
+            <p className='text-lg text-gray-600 max-w-2xl mx-auto'>
               Comprehensive solutions to unlock the full potential of your data
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {services.map((service, index) => {
               const Icon = service.icon;
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 50 }}
+                  className='bg-[#F9FAFB] rounded-lg p-6 border border-gray-100 hover:shadow-lg transition-all duration-300 group'
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className="group relative bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-                  
-                  <div className="relative z-10">
-                    <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 shadow-lg`}
-                    >
-                      <Icon size={32} className="text-white" />
-                    </motion.div>
+                  <div
+                    className='w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-all'
+                    style={{ backgroundColor: `${service.color}15` }}
+                  >
+                    <Icon size={24} style={{ color: service.color }} />
+                  </div>
 
-                    <h3 className={`${instr.className} text-2xl font-bold text-[#0A2342] mb-4 group-hover:text-[#F66F13] transition-colors`}>
-                      {service.title}
-                    </h3>
+                  <h3 className={`${instr.className} text-xl font-bold text-[#153776] mb-3 group-hover:text-[#F67C0E] transition-colors`}>
+                    {service.title}
+                  </h3>
 
-                    <p className="text-gray-600 leading-relaxed mb-4">
-                      {service.description}
-                    </p>
+                  <p className='text-sm text-gray-600 leading-relaxed mb-4'>
+                    {service.description}
+                  </p>
 
-                    <motion.div
-                      className="inline-flex items-center gap-2 text-[#F66F13] font-semibold group-hover:gap-3 transition-all"
-                    >
-                      Learn More
-                      <ArrowRight size={18} />
-                    </motion.div>
+                  <div className='inline-flex items-center gap-2 text-[#F67C0E] font-semibold text-sm'>
+                    Learn More
+                    <ArrowRight size={16} />
                   </div>
                 </motion.div>
               );
             })}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Featured Works Section */}
-      <div className='featured-works py-32 px-6 md:px-12 lg:px-24 bg-[#F9FAFB]'>
-        <div className="max-w-7xl mx-auto">
+      <section className='py-20 px-6 md:px-12 lg:px-24 bg-[#F9FAFB]'>
+        <div className='max-w-7xl mx-auto'>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            className='text-center mb-16'
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
           >
-            <h2 className={`${instr.className} text-4xl md:text-5xl lg:text-6xl font-bold text-[#0A2342] mb-4`}>
-              Our Featured Data & Analytics Works
+            <h2 className={`${instr.className} text-3xl md:text-4xl lg:text-5xl font-bold text-[#153776] mb-4`}>
+              Featured Data & Analytics Projects
             </h2>
-            <div className="w-24 h-1 bg-[#F66F13] mx-auto rounded-full mb-6"></div>
-            <p className="text-xl text-gray-600">
+            <div className="w-24 h-1 bg-[#F67C0E] mx-auto rounded-full mb-4"></div>
+            <p className='text-lg text-gray-600'>
               Real-world impact delivered through data-driven solutions
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {projects.map((project, index) => (
               <ProjectCard key={index} {...project} />
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Why Choose Us Section */}
-      <div className='why-choose-us py-32 px-6 md:px-12 lg:px-24 bg-white'>
-        <div className="max-w-7xl mx-auto">
+      <section className='py-20 px-6 md:px-12 lg:px-24 bg-white'>
+        <div className='max-w-6xl mx-auto'>
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            className='text-center mb-16'
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
           >
-            <h2 className={`${instr.className} text-4xl md:text-5xl lg:text-6xl font-bold text-[#0A2342] mb-4`}>
+            <h2 className={`${instr.className} text-3xl md:text-4xl lg:text-5xl font-bold text-[#153776] mb-4`}>
               Why Choose Kriyantrai for Data & Analytics?
             </h2>
-            <div className="w-24 h-1 bg-[#F66F13] mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-[#F67C0E] mx-auto rounded-full"></div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className='grid md:grid-cols-2 gap-8'>
             {reasons.map((reason, index) => {
               const Icon = reason.icon;
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  className='flex gap-4 items-start bg-[#F9FAFB] rounded-lg p-6 border border-gray-100'
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="flex gap-6 items-start"
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
-                  <motion.div
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                    className="shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-[#F66F13] to-[#0A2342] flex items-center justify-center shadow-lg"
-                  >
-                    <Icon size={32} className="text-white" />
-                  </motion.div>
+                  <div className='shrink-0 w-12 h-12 rounded-lg bg-[#153776] flex items-center justify-center'>
+                    <Icon size={24} className='text-white' />
+                  </div>
                   <div>
-                    <h3 className={`${instr.className} text-2xl font-bold text-[#0A2342] mb-3`}>
+                    <h3 className={`${instr.className} text-xl font-bold text-[#153776] mb-2`}>
                       {reason.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">{reason.description}</p>
+                    <p className='text-sm text-gray-600 leading-relaxed'>{reason.description}</p>
                   </div>
                 </motion.div>
               );
             })}
           </div>
         </div>
-      </div>
+      </section>
+
       <Footer/>
-    </section>
+    </div>
   );
 }
 

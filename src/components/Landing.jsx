@@ -11,6 +11,7 @@ import Footer from './Footer'
 import Navbar from './Navbar'
 import { useRouter } from 'next/navigation'
 import ServicesSection from './Services'
+import TrustedCompanies from './Partnership'
 
 
 const instr = Instrument_Serif({
@@ -112,70 +113,12 @@ function Landing() {
     </motion.button>
         </div>
     </div>
-    {/* <LandingService1
-  title="DEVELOPMENT"
-  description="We build robust, scalable, and user-friendly applications across multiple platforms."
-  items={[
-    "Web Development",
-    "Mobile App Development",
-    "Desktop Application Development",
-    "Full-Stack Solutions",
-    "API Integration",
-  ]}
-  buttonText="Learn more"
-  onButtonClick={() => router.push('/services/dev')}
-  roundedTop={true}
-  
-/>
 
-<LandingService2
- title="DATA & ANALYTICS"
-  description="We transform raw data into actionable insights, helping businesses make informed decisions and gain competitive advantages."
-  items={[
-    "Data Cleaning & Visualization",
-    "Dashboard Development",
-    "Business Intelligence Solutions",
-    "Predictive Analytics",
-    "Data Processing",
-  ]}
-  buttonText="Learn more"
-  onButtonClick={() => router.push('/services/data')}
-  roundedTop={true}
-  
-/>
-    <LandingService1
-  title="AI & AUTOMATION"
-  description="We leverage artificial intelligence and automation technologies to streamline operations, enhance productivity, and create intelligent solutions."
-  items={[
-  "Workflow Automation",
-  "Chatbot Development",
-  "AI-Powered Tools Integration",
-  "NLP & Text Automation",
-  "Image / Video Automation"
-]}
-  buttonText="Learn more"
-  onButtonClick={() => router.push('/services/ai')}
-  
-roundedTop={true}
-/>
 
-<LandingService2
- title="Machine Learning &"
- title2='Deep Learning'
-  description="We develop advanced machine learning and deep learning solutions that solve complex problems and drive innovation."
-  items={[
-  "Model Development & Training",
-  "Computer Vision Projects",
-  "Natural Language Processing",
-  "Recommendation Systems",
-  "Custom ML Solutions"
-]
-}
-  buttonText="Learn more"
-  onButtonClick={() => router.push('/services/ml-dl')}
-  roundedTop={true}
-  
-/> */}
+{/* IMPORTANT : Uncomment the following line to make the partnered companies section visible */}
+
+
+{/* <TrustedCompanies/> */}
 
 <ServicesSection/>
 
