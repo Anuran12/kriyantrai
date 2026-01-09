@@ -16,8 +16,8 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: "https://www.linkedin.com/in/yourprofile", label: "LinkedIn" },
-    { icon: Github, href: "https://github.com/yourusername", label: "GitHub" }
+    { icon: Linkedin, href: "https://www.linkedin.com/company/kriyantrai", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/KRIYANTRAI", label: "GitHub" }
   ];
 
   const containerVariants = {

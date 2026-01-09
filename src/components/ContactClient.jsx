@@ -132,7 +132,7 @@ export default function ContactClient() {
               transition={{ delay: 0.3, duration: 0.6 }}
             />
             <p className="text-white/90 text-lg max-w-3xl mx-auto leading-relaxed">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea odio amet reprehenderit mollitia quis nulla aliquid eligendi repellat beatae corrupti, in dignissimos, ipsam sunt dolorum. Sequi officiis eum non vitae.
+              Ready to transform your business with cutting-edge technology solutions? Kriyantrai is your trusted partner for innovative development, data analytics, AI automation, and machine learning services. Connect with our experienced team to elevate your business to new heights.
             </p>
           </motion.div>
         </div>
@@ -181,13 +181,13 @@ export default function ContactClient() {
 
                 <div className="flex items-start gap-3">
                   <div className="text-[#153776] font-semibold min-w-[80px]">Address:</div>
-                  <a 
-                    href="https://maps.google.com/?q=21+West+34th+Street,+New+York,+NY+10001" 
+                  <a
+                    href="https://maps.google.com/?q=68/88+AMARPALLY+JESSORE+ROAD+KOLKATA,+KOLKATA,+700074"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-700 hover:text-[#F67C0E]"
                   >
-                    21 West 34th Street, New York, NY 10001
+                    68/88 AMARPALLY JESSORE ROAD KOLKATA, KOLKATA, 700074
                   </a>
                 </div>
               </div>

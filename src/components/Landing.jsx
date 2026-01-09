@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Instrument_Serif , Roboto_Serif, Archivo_Black} from 'next/font/google'
 import { ArrowRight } from 'lucide-react'
 import {motion} from 'motion/react'
+import dynamic from 'next/dynamic'
 import LandingService1 from './LandingService1'
 import LandingService2 from './LandingService2'
 import Whyus from './Whyus'
@@ -10,8 +11,10 @@ import FeaturedWorks from './FeaturedWorks'
 import Footer from './Footer'
 import Navbar from './Navbar'
 import { useRouter } from 'next/navigation'
-import ServicesSection from './Services'
 import TrustedCompanies from './Partnership'
+
+// Dynamically import ServicesSection with SSR disabled to prevent hydration errors
+const ServicesSection = dynamic(() => import('./Services'), { ssr: false })
 
 
 const instr = Instrument_Serif({

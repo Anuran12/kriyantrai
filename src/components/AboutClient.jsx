@@ -58,7 +58,11 @@ function AboutClient() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+              For over five years, we have partnered with forward-thinking businesses across industries to transform their digital landscape through innovative technology solutions. From startups to established enterprises, we help build sustainable futures, empower teams, and drive measurable success—all while contributing to technological advancement in our community.
+
+              With a workforce of industry-leading experts and cutting-edge specialists, we continue to redefine what's possible by delivering transformative results. Progress that stems from combining deep technical expertise with strategic insight, powered by the strength of collaboration.
+
+              At Kriyantrai, our purpose is to create meaningful impact that matters—for our clients, our people, and the technology ecosystem we serve.
             </motion.p>
 
             {/* <motion.div
@@ -305,7 +309,7 @@ function AboutClient() {
                   CEO & Founder
                 </p>
                 <p className="text-gray-700 leading-relaxed text-sm md:text-base lg:text-lg">
-                  Souvagya is a visionary leader with over 4 years of experience in the tech industry. His passion for innovation drives Kriyantrai's strategic direction.
+                  Souvagya is a visionary entrepreneur and strategic leader with over 4 years of experience in the technology sector. As the founder of Kriyantrai, he has successfully led multiple digital transformation projects, from conceptualization to execution. His expertise spans strategic planning, business development, and emerging technology trends. Souvagya holds a strong background in engineering and business management, enabling him to bridge the gap between technical innovation and business objectives. His leadership philosophy centers on fostering a culture of continuous learning and innovation, ensuring Kriyantrai remains at the forefront of technological advancement.
                 </p>
               </div>
             </motion.div>
@@ -336,7 +340,7 @@ function AboutClient() {
                   Head of Development
                 </p>
                 <p className="text-gray-700 leading-relaxed text-sm md:text-base lg:text-lg">
-                  Souvik is an expert in full-stack development, ensuring our solutions are robust, scalable, and user-friendly.
+                  Souvik is a seasoned full-stack developer and technical architect with extensive experience in modern web technologies and software engineering. He specializes in building scalable, high-performance applications using cutting-edge frameworks and cloud technologies. His expertise encompasses frontend technologies like React, Next.js, and modern JavaScript, as well as backend development with Node.js, Python, and various database systems. Souvik has led the development of complex enterprise applications, mobile solutions, and API integrations for clients across diverse industries. His commitment to clean code, best practices, and user-centric design ensures that all Kriyantrai solutions not only meet technical requirements but also deliver exceptional user experiences.
                 </p>
               </div>
             </motion.div>
@@ -367,7 +371,7 @@ function AboutClient() {
                   Chief Technology Officer
                 </p>
                 <p className="text-gray-700 leading-relaxed text-sm md:text-base lg:text-lg">
-                  Anuran leads our technology initiatives, bringing a wealth of expertise in AI, machine learning, and software architecture.
+                  Anuran is a distinguished technology leader and AI specialist with deep expertise in artificial intelligence, machine learning, and advanced software architecture. He brings extensive experience in developing intelligent systems, predictive analytics platforms, and automated solutions that drive business transformation. His technical proficiency spans machine learning frameworks, deep learning models, computer vision applications, and natural language processing. Anuran has spearheaded numerous AI initiatives, including custom ML model development, recommendation systems, and intelligent automation solutions. His research background and industry experience enable him to translate complex AI concepts into practical, scalable business solutions that deliver measurable ROI for clients.
                 </p>
               </div>
             </motion.div>
