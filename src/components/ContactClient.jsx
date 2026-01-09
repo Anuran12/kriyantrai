@@ -181,13 +181,13 @@ export default function ContactClient() {
 
                 <div className="flex items-start gap-3">
                   <div className="text-[#153776] font-semibold min-w-[80px]">Address:</div>
-                  <a 
-                    href="https://maps.google.com/?q=21+West+34th+Street,+New+York,+NY+10001" 
+                  <a
+                    href="https://maps.google.com/?q=68/88+AMARPALLY+JESSORE+ROAD+KOLKATA,+KOLKATA,+700074"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-700 hover:text-[#F67C0E]"
                   >
-                    21 West 34th Street, New York, NY 10001
+                    68/88 AMARPALLY JESSORE ROAD KOLKATA, KOLKATA, 700074
                   </a>
                 </div>
               </div>
@@ -261,7 +261,7 @@ export default function ContactClient() {
                         value={formData.firstName}
                         onChange={handleChange}
                         disabled={isButtonDisabled}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#153776] focus:ring-2 focus:ring-[#153776]/20 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#153776] focus:ring-2 focus:ring-[#153776]/20 outline-none transition-all text-black"
                       />
                     </div>
 
@@ -275,7 +275,7 @@ export default function ContactClient() {
                         value={formData.lastName}
                         onChange={handleChange}
                         disabled={isButtonDisabled}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#153776] focus:ring-2 focus:ring-[#153776]/20 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#153776] focus:ring-2 focus:ring-[#153776]/20 outline-none transition-all text-black"
                       />
                     </div>
                   </div>
@@ -292,7 +292,7 @@ export default function ContactClient() {
                         value={formData.email}
                         onChange={handleChange}
                         disabled={isButtonDisabled}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#153776] focus:ring-2 focus:ring-[#153776]/20 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#153776] focus:ring-2 focus:ring-[#153776]/20 outline-none transition-all text-black"
                       />
                     </div>
 
@@ -306,7 +306,7 @@ export default function ContactClient() {
                         value={formData.phone}
                         onChange={handleChange}
                         disabled={isButtonDisabled}
-                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#153776] focus:ring-2 focus:ring-[#153776]/20 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#153776] focus:ring-2 focus:ring-[#153776]/20 outline-none transition-all text-black"
                       />
                     </div>
                   </div>
@@ -322,7 +322,7 @@ export default function ContactClient() {
                       value={formData.organization}
                       onChange={handleChange}
                       disabled={isButtonDisabled}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#153776] focus:ring-2 focus:ring-[#153776]/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#153776] focus:ring-2 focus:ring-[#153776]/20 outline-none transition-all text-black"
                     />
                   </div>
 
@@ -337,7 +337,7 @@ export default function ContactClient() {
                       value={formData.message}
                       onChange={handleChange}
                       disabled={isButtonDisabled}
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#153776] focus:ring-2 focus:ring-[#153776]/20 outline-none transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#153776] focus:ring-2 focus:ring-[#153776]/20 outline-none transition-all resize-none text-black"
                     />
                   </div>
 
