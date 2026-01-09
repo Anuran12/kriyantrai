@@ -60,7 +60,7 @@ function AboutClient() {
             >
               For over five years, we have partnered with forward-thinking businesses across industries to transform their digital landscape through innovative technology solutions. From startups to established enterprises, we help build sustainable futures, empower teams, and drive measurable success—all while contributing to technological advancement in our community.
 
-              With a workforce of industry-leading experts and cutting-edge specialists, we continue to redefine what's possible by delivering transformative results. Progress that stems from combining deep technical expertise with strategic insight, powered by the strength of collaboration.
+              With a workforce of industry-leading experts and cutting-edge specialists, we continue to redefine what&apos;s possible by delivering transformative results. Progress that stems from combining deep technical expertise with strategic insight, powered by the strength of collaboration.
 
               At Kriyantrai, our purpose is to create meaningful impact that matters—for our clients, our people, and the technology ecosystem we serve.
             </motion.p>
@@ -127,6 +127,91 @@ function AboutClient() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
           />
+        </div>
+      </div>
+
+      {/* Trusted Partners Section */}
+      <div className='trusted-partners-section w-full bg-white py-16 md:py-20 px-6 md:px-12'>
+        <div className="max-w-7xl mx-auto">
+          {/* Section Title */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16 md:mb-20"
+          >
+            <h2 className={`${instr.className} text-2xl md:text-3xl lg:text-4xl font-semibold text-[#0A2342] mb-4`}>
+              Trusted by Leading Companies and Partners
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+              We collaborate with renowned organizations and industry leaders to deliver exceptional solutions and drive positive impact.
+            </p>
+            <div className="w-24 h-1 bg-[#F66F13] mx-auto rounded-full mt-4"></div>
+          </motion.div>
+
+          {/* Partners Grid */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            {/* CINI Partner */}
+            <motion.a
+              href="https://cini.org.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-[#F66F13]/30"
+              whileHover={{ y: -10, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <div className="flex flex-col items-center text-center space-y-4">
+                {/* CINI Logo */}
+                <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center shadow-lg p-2">
+                  <img
+                    src="/CINI logo.png"
+                    alt="CINI Logo"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#0A2342] mb-2 group-hover:text-[#F66F13] transition-colors">
+                    Child in Need Institute
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Partnering with CINI to support community development and child welfare initiatives through innovative technology solutions.
+                  </p>
+                </div>
+              </div>
+            </motion.a>
+
+            {/* Collida Studio Partner */}
+            <motion.a
+              href="https://www.collidastudio.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-[#F66F13]/30"
+              whileHover={{ y: -10, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <div className="flex flex-col items-center text-center space-y-4">
+                {/* Collida Studio Logo Placeholder */}
+                <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <span className="text-white font-bold text-sm">COLLIDA</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#0A2342] mb-2 group-hover:text-[#F66F13] transition-colors">
+                    Collida Studio
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Collaborating with Collida Studio on creative design and multimedia projects to enhance user experiences and brand storytelling.
+                  </p>
+                </div>
+              </div>
+            </motion.a>
+          </motion.div>
         </div>
       </div>
 
@@ -309,7 +394,7 @@ function AboutClient() {
                   CEO & Founder
                 </p>
                 <p className="text-gray-700 leading-relaxed text-sm md:text-base lg:text-lg">
-                  Souvagya is a visionary leader with over 4 years of experience in the tech industry. His passion for innovation drives Kriyantrai's strategic direction.
+                  Souvagya is a visionary leader with over 4 years of experience in the tech industry. His passion for innovation drives Kriyantrai&apos;s strategic direction.
                 </p>
               </div>
             </motion.div>
