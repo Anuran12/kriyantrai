@@ -41,7 +41,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-white overflow-hidden -mt-1">
+    <footer className="relative bg-transparent overflow-hidden -mt-1">
       {/* Top Wave SVG */}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" className='w-full block rotate-180' preserveAspectRatio="none" style={{ display: 'block', height: 'auto' }}>
         <g fill="#173876">

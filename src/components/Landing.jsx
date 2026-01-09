@@ -126,8 +126,12 @@ function Landing() {
 <ServicesSection/>
 
 <Whyus/>
-<FeaturedWorks/>
-<Footer/>
+
+{/* Featured Works to Footer Section with Light Background */}
+<div className="bg-[#EBEBEB] relative">
+  <FeaturedWorks/>
+  <Footer/>
+</div>
 
     </div>
   )

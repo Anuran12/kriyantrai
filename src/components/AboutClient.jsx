@@ -141,7 +141,7 @@ function AboutClient() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16 md:mb-20"
           >
-            <h2 className={`${instr.className} text-2xl md:text-3xl lg:text-4xl font-semibold text-[#0A2342] mb-4`}>
+            <h2 className={`${instr.className} text-2xl md:text-3xl lg:text-4xl font-semibold text-[#4d6179] mb-4`}>
               Trusted by Leading Companies and Partners
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -163,7 +163,7 @@ function AboutClient() {
               href="https://cini.org.uk/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-[#F66F13]/30"
+              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-[#FFA630]/30"
               whileHover={{ y: -10, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -177,7 +177,7 @@ function AboutClient() {
                   />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#0A2342] mb-2 group-hover:text-[#F66F13] transition-colors">
+                  <h3 className="text-xl font-bold text-[#4d6179] mb-2 group-hover:text-[#FFA630] transition-colors">
                     Child in Need Institute
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
@@ -192,7 +192,7 @@ function AboutClient() {
               href="https://www.collidastudio.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-[#F66F13]/30"
+              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-[#FFA630]/30"
               whileHover={{ y: -10, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -202,7 +202,7 @@ function AboutClient() {
                   <span className="text-white font-bold text-sm">COLLIDA</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-[#0A2342] mb-2 group-hover:text-[#F66F13] transition-colors">
+                  <h3 className="text-xl font-bold text-[#4d6179] mb-2 group-hover:text-[#FFA630] transition-colors">
                     Collida Studio
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
@@ -216,7 +216,7 @@ function AboutClient() {
       </div>
 
       {/* Timeline Section */}
-      <div className='our-story-timeline min-h-screen w-full bg-gray-50 py-16 md:py-20 px-6 md:px-12'>
+      <div className='our-story-timeline min-h-screen w-full bg-[#EBEBEB] py-16 md:py-20 px-6 md:px-12 relative'>
         <div className="max-w-4xl mx-auto">
           {/* Section Title */}
           <motion.div
@@ -226,7 +226,7 @@ function AboutClient() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16 md:mb-20"
           >
-            <h2 className={`${instr.className} text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A2342] mb-4`}>
+            <h2 className={`${instr.className} text-3xl md:text-4xl lg:text-5xl font-bold text-[#4d6179] mb-4`}>
               Our Story
             </h2>
             <div className="w-24 h-1 bg-[#F66F13] mx-auto rounded-full"></div>
@@ -235,7 +235,7 @@ function AboutClient() {
           {/* Timeline Container */}
           <div className="relative">
             {/* Vertical Line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 md:-translate-x-px">
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#0474BA]/30 via-[#00A7E1]/20 to-[#FFA630]/30 md:-translate-x-px">
               <motion.div
                 className="w-full bg-[#173876]"
                 initial={{ height: 0 }}
@@ -268,7 +268,7 @@ function AboutClient() {
                     transition={{ duration: 0.4, delay: index * 0.1 + 0.3 }}
                     className="absolute left-6 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center shrink-0 z-10"
                   >
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-[#F66F13] rounded-full flex items-center justify-center border-4 border-gray-50 shadow-lg">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#0474BA] to-[#00A7E1] rounded-full flex items-center justify-center border-4 border-white shadow-xl shadow-[#0474BA]/30">
                       <svg width="6" height="6" viewBox="0 0 8 8" className="fill-white md:w-2 md:h-2">
                         <circle cx="4" cy="4" r="4" />
                       </svg>

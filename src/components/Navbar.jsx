@@ -85,7 +85,7 @@ export default function Navbar() {
                     onClick={()=>{router.push('/')}}
                   >
                     <img src="/logo.png" alt="Logo" className="h-12 w-auto"  />
-                    <span className="text-[#173876] text-2xl font-semibold font-sans">Kriyantrai</span>
+                    <span className="text-[#4d6179] text-2xl font-semibold font-sans">Kriyantrai</span>
                   </motion.div>
 
                   {/* Navigation links on the right */}
@@ -94,13 +94,13 @@ export default function Navbar() {
                       <motion.a
                         key={index}
                         href={link.href}
-                        className="text-[#173876] font-medium hover:text-[#0f2a5a] transition-colors relative"
+                        className="text-[#4d6179] font-medium hover:text-[#0474BA] transition-colors relative"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         {link.name}
                         <motion.div
-                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#F68F12]"
+                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#FFA630]"
                           initial={{ scaleX: 0 }}
                           whileHover={{ scaleX: 1 }}
                           transition={{ duration: 0.2 }}
@@ -115,13 +115,13 @@ export default function Navbar() {
                     >
                       <motion.a
                         href="#"
-                        className="text-[#173876] font-medium hover:text-[#0f2a5a] transition-colors relative"
+                        className="text-[#4d6179] font-medium hover:text-[#0474BA] transition-colors relative"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         Services
                         <motion.div
-                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#F68F12]"
+                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#FFA630]"
                           initial={{ scaleX: 0 }}
                           animate={{ scaleX: showServices ? 1 : 0 }}
                           transition={{ duration: 0.2 }}
@@ -166,13 +166,13 @@ export default function Navbar() {
                       <motion.a
                         key={index}
                         href={link.href}
-                        className="text-[#173876] font-medium hover:text-[#0f2a5a] transition-colors relative"
+                        className="text-[#4d6179] font-medium hover:text-[#0474BA] transition-colors relative"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         {link.name}
                         <motion.div
-                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#F68F12]"
+                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#FFA630]"
                           initial={{ scaleX: 0 }}
                           whileHover={{ scaleX: 1 }}
                           transition={{ duration: 0.2 }}
@@ -200,13 +200,13 @@ export default function Navbar() {
                     whileTap={{ scale: 0.95 }}
                   >
                     <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
-                    <span className="text-[#173876] text-lg font-semibold font-sans">Kriyantrai</span>
+                    <span className="text-[#4d6179] text-lg font-semibold font-sans">Kriyantrai</span>
                   </motion.div>
 
                   {/* Menu Button */}
                   <motion.button
                     onClick={() => setShowMobileMenu(!showMobileMenu)}
-                    className="w-10 h-10 bg-gradient-to-br from-[#173876] to-[#0f2a5a] rounded-full flex items-center justify-center shadow-lg"
+                    className="w-10 h-10 bg-gradient-to-br from-[#0474BA] to-[#4d6179] rounded-full flex items-center justify-center shadow-lg"
                     whileTap={{ scale: 0.9 }}
                     whileHover={{ scale: 1.05 }}
                   >
@@ -253,7 +253,7 @@ export default function Navbar() {
           >
             {/* Backdrop */}
             <motion.div
-              className="absolute inset-0 bg-[#173876]/20 backdrop-blur-md"
+              className="absolute inset-0 bg-[#0474BA]/20 backdrop-blur-md"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -275,7 +275,7 @@ export default function Navbar() {
                     <motion.a
                       key={index}
                       href={link.href}
-                      className="block text-[#173876] text-2xl font-semibold hover:text-[#F68F12] transition-colors"
+                      className="block text-[#4d6179] text-2xl font-semibold hover:text-[#FFA630] transition-colors"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
@@ -294,13 +294,13 @@ export default function Navbar() {
                   transition={{ delay: 0.4 }}
                   className="border-t border-[#173876]/20 pt-6"
                 >
-                  <h3 className="text-[#173876] text-xl font-bold mb-6">Services</h3>
+                  <h3 className="text-[#4d6179] text-xl font-bold mb-6">Services</h3>
                   <div className="space-y-3">
                     {services.map((service, index) => (
                       <motion.a
                         key={index}
                         href={service.route}
-                        className="block text-[#173876] text-lg font-medium hover:text-[#F68F12] transition-colors py-2"
+                        className="block text-[#4d6179] text-lg font-medium hover:text-[#FFA630] transition-colors py-2"
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.5 + index * 0.1 }}

@@ -41,7 +41,7 @@ const ServicesSection = () => {
         { title: "Enterprise Desktop Solutions", desc: "Powerful desktop applications for complex business workflows" },
         { title: "Full-Stack Expertise", desc: "End-to-end development from database to user interface" }
       ],
-      color: "#173876"
+      color: "#0474BA"
     },
     {
       id: 2,
@@ -61,7 +61,7 @@ const ServicesSection = () => {
         { title: "Business Intelligence", desc: "Comprehensive BI solutions for strategic decision-making" },
         { title: "Advanced Analytics", desc: "Predictive modeling and statistical analysis for future insights" }
       ],
-      color: "#F68F12"
+      color: "#FFA630"
     },
     {
       id: 3,
@@ -81,7 +81,7 @@ const ServicesSection = () => {
         { title: "Custom AI Solutions", desc: "Tailored AI tools designed for your specific business needs" },
         { title: "Natural Language Processing", desc: "Text analysis, sentiment detection, and automated content generation" }
       ],
-      color: "#173876"
+      color: "#0474BA"
     },
     {
       id: 4,
@@ -101,7 +101,7 @@ const ServicesSection = () => {
         { title: "Language Understanding", desc: "Advanced NLP for text classification, translation, and summarization" },
         { title: "Recommendation Engines", desc: "Personalized content and product recommendation systems" }
       ],
-      color: "#F68F12"
+      color: "#FFA630"
     }
   ];
 
@@ -135,23 +135,23 @@ const ServicesSection = () => {
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden opacity-[0.02]">
         <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle, #173876 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(circle, #0474BA 1px, transparent 1px)`,
           backgroundSize: '40px 40px',
           transform: `translateY(${scrollY * 0.1}px)`
         }}></div>
       </div>
 
       {/* Floating Orbs */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-[#173876] rounded-full blur-3xl opacity-[0.05] animate-pulse"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#F68F12] rounded-full blur-3xl opacity-[0.05] animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-20 left-10 w-96 h-96 bg-[#0474BA] rounded-full blur-3xl opacity-[0.05] animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#FFA630] rounded-full blur-3xl opacity-[0.05] animate-pulse" style={{ animationDelay: '1s' }}></div>
 
       <div className="max-w-7xl mx-auto relative">
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-7xl font-bold mb-6 relative inline-block" style={{ fontFamily: 'Instrument Serif, serif' }}>
             <span className="relative">
-              <span className="absolute inset-0 bg-gradient-to-b from-[#173876] to-[#4a6fa5] bg-clip-text text-transparent blur-sm"></span>
-              <span className="relative bg-gradient-to-b from-[#173876] to-[#2d5a8f] bg-clip-text text-transparent">
+              <span className="absolute inset-0 bg-gradient-to-b from-[#0474BA] to-[#00A7E1] bg-clip-text text-transparent blur-sm"></span>
+              <span className="relative bg-gradient-to-b from-[#0474BA] to-[#00A7E1] bg-clip-text text-transparent">
                 Our Services
               </span>
             </span>
@@ -367,7 +367,7 @@ const ServicesSection = () => {
                     <h3 
                       className="text-3xl lg:text-4xl font-bold mb-4 transition-colors duration-300"
                       style={{
-                        color: isActive ? service.color : '#173876',
+                        color: isActive ? service.color : '#0474BA',
                         fontFamily: 'Instrument Serif, serif'
                       }}
                     >
