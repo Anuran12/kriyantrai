@@ -51,22 +51,22 @@ export default function KriyantraiCards() {
     <div className="min-h-screen bg-white py-20 px-6 rounded-t-4xl">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <motion.div
+        <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 bg-clip-text text-transparent mb-4">
+          <h2 className="text-5xl font-bold text-[#173876] mb-4">
             Why Choose Kriyantrai?
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We're not just service providers – we're your technology partners. Here's what sets us apart in delivering exceptional results.
           </p>
         </motion.div>
 
         {/* Cards Grid */}
-        <motion.div
+        <motion.div 
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -76,16 +76,16 @@ export default function KriyantraiCards() {
             <motion.div
               key={index}
               variants={cardVariants}
-              whileHover={{
-                y: -15,
+              whileHover={{ 
+                y: -10,
                 transition: { duration: 0.3 }
               }}
               className="group relative"
             >
-              <div className="bg-gradient-to-br from-slate-50 via-white to-slate-50 border border-slate-200/60 rounded-3xl p-8 h-full transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-slate-900/20 group-hover:border-slate-300/80 backdrop-blur-sm">
+              <div className="bg-white border-2 border-[#173876] rounded-3xl p-8 h-full transition-all duration-300 group-hover:shadow-2xl">
                 {/* Icon Container */}
-                <motion.div
-                  className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-500 shadow-lg shadow-emerald-500/30"
+                <motion.div 
+                  className="w-16 h-16 bg-[#F68F12] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
@@ -93,31 +93,28 @@ export default function KriyantraiCards() {
                 </motion.div>
 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-slate-800 mb-4 group-hover:text-slate-900 transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-[#173876] mb-4">
                   {card.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                <p className="text-gray-700 leading-relaxed">
                   {card.description}
                 </p>
 
                 {/* Animated Underline */}
-                <motion.div
-                  className="h-1 bg-gradient-to-r from-emerald-500 to-teal-600 mt-6 rounded-full shadow-sm"
+                <motion.div 
+                  className="h-1 bg-[#F68F12] mt-6 rounded-full"
                   initial={{ width: 0 }}
                   whileInView={{ width: "100%" }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.3 + index * 0.2 }}
                 />
               </div>
-
-              {/* Subtle background glow on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 to-teal-50/30 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
             </motion.div>
           ))}
         </motion.div>
 
         {/* Stats Section */}
-        <motion.div
+        <motion.div 
           className="mt-20 grid grid-cols-1 md:grid-cols-4 gap-8"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -132,28 +129,28 @@ export default function KriyantraiCards() {
           ].map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center p-8 border border-slate-200/60 rounded-2xl bg-gradient-to-br from-slate-50 via-white to-slate-50 hover:bg-gradient-to-br hover:from-slate-800 hover:to-slate-900 hover:text-white transition-all duration-500 group shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-slate-900/30"
+              className="text-center p-8 border-2 border-[#173876] rounded-2xl bg-white hover:bg-[#173876] hover:text-white transition-all duration-300 group"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
             >
-              <motion.div
-                className="text-5xl font-bold mb-3 text-slate-800 group-hover:text-white transition-colors duration-500"
+              <motion.div 
+                className="text-5xl font-bold mb-3 text-[#173876] group-hover:text-white transition-colors duration-300"
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
-                transition={{
+                transition={{ 
                   type: "spring",
                   stiffness: 200,
                   damping: 15,
-                  delay: 0.2 + index * 0.1
+                  delay: 0.2 + index * 0.1 
                 }}
               >
                 {stat.value}
               </motion.div>
-              <div className="text-sm font-semibold tracking-wide uppercase text-slate-600 group-hover:text-slate-300 transition-colors duration-500">
+              <div className="text-sm font-semibold tracking-wide uppercase text-gray-600 group-hover:text-white transition-colors duration-300">
                 {stat.label}
               </div>
             </motion.div>

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { Code, Database, Cpu, Brain, ArrowRight, Check } from 'lucide-react';
 
 const ServicesSection = () => {
-  const router = useRouter();
   const [activeService, setActiveService] = useState(null);
   const [hoveredFeature, setHoveredFeature] = useState(null);
   const [scrollY, setScrollY] = useState(0);
@@ -104,21 +102,6 @@ const ServicesSection = () => {
       color: "#F68F12"
     }
   ];
-
-  const getServiceRoute = (serviceTitle) => {
-    switch (serviceTitle) {
-      case 'DEVELOPMENT':
-        return '/services/dev';
-      case 'DATA & ANALYTICS':
-        return '/services/data';
-      case 'AI & AUTOMATION':
-        return '/services/ai';
-      case 'ML & DEEP LEARNING':
-        return '/services/ml-dl';
-      default:
-        return '/services';
-    }
-  };
 
   const getFeaturePosition = (index, total, radius, offset = 0) => {
     const angle = (index * 360 / total) - 90 + rotation + offset;
@@ -420,9 +403,8 @@ const ServicesSection = () => {
                   </div>
 
                   {/* CTA Button */}
-                  <button
-                    onClick={() => router.push(getServiceRoute(service.title))}
-                    className="group/btn relative px-8 py-4 rounded-xl font-bold text-white overflow-hidden transition-all duration-500 mt-6 cursor-pointer"
+                  <button 
+                    className="group/btn relative px-8 py-4 rounded-xl font-bold text-white overflow-hidden transition-all duration-500 mt-6"
                     style={{
                       backgroundColor: service.color,
                       transform: isActive ? 'translateY(-2px)' : 'translateY(0)',

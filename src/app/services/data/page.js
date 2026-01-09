@@ -363,14 +363,9 @@ function Page() {
                     {service.title}
                   </h3>
 
-                  <p className='text-sm text-gray-600 leading-relaxed mb-4'>
+                  <p className='text-sm text-gray-600 leading-relaxed'>
                     {service.description}
                   </p>
-
-                  <div className='inline-flex items-center gap-2 text-[#F67C0E] font-semibold text-sm'>
-                    Learn More
-                    <ArrowRight size={16} />
-                  </div>
                 </motion.div>
               );
             })}
