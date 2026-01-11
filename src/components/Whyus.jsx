@@ -156,7 +156,6 @@ export default function KriyantraiCards() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               whileHover={{
-                scale: 1.05,
                 y: -5,
                 transition: { duration: 0.3 }
               }}
@@ -179,7 +178,6 @@ export default function KriyantraiCards() {
                     damping: 15,
                     delay: 0.3 + index * 0.1
                   }}
-                  whileHover={{ scale: 1.1 }}
                 >
                   {stat.value}
                 </motion.div>

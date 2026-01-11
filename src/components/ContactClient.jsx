@@ -155,7 +155,7 @@ export default function ContactClient() {
               </h2>
               
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                We are committed to processing your information securely and professionally to facilitate meaningful communication and provide you with the best possible service. Your privacy and satisfaction are our top priorities.
               </p>
 
               {/* Contact Details */}

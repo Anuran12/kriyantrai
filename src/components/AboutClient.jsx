@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 import Footer from './Footer';
 
 const instr = {
@@ -131,7 +132,7 @@ function AboutClient() {
       </div>
 
       {/* Trusted Partners Section */}
-      <div className='trusted-partners-section w-full bg-white py-16 md:py-20 px-6 md:px-12'>
+      <div className='trusted-partners-section w-full bg-white py-8 md:py-12 px-6 md:px-12'>
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
           <motion.div
@@ -139,7 +140,7 @@ function AboutClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16 md:mb-20"
+            className="text-center mb-8 md:mb-12"
           >
             <h2 className={`${instr.className} text-2xl md:text-3xl lg:text-4xl font-semibold text-[#4d6179] mb-4`}>
               Trusted by Leading Companies and Partners
@@ -170,9 +171,11 @@ function AboutClient() {
               <div className="flex flex-col items-center text-center space-y-4">
                 {/* CINI Logo */}
                 <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center shadow-lg p-2">
-                  <img
+                  <Image
                     src="/CINI logo.png"
                     alt="CINI Logo"
+                    width={80}
+                    height={80}
                     className="w-full h-full object-contain"
                   />
                 </div>
@@ -216,7 +219,7 @@ function AboutClient() {
       </div>
 
       {/* Timeline Section */}
-      <div className='our-story-timeline min-h-screen w-full bg-[#EBEBEB] py-16 md:py-20 px-6 md:px-12 relative'>
+      <div className='our-story-timeline min-h-screen w-full bg-[#EBEBEB] py-8 md:py-12 px-6 md:px-12 relative'>
         <div className="max-w-4xl mx-auto">
           {/* Section Title */}
           <motion.div
@@ -224,7 +227,7 @@ function AboutClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16 md:mb-20"
+            className="text-center mb-8 md:mb-12"
           >
             <h2 className={`${instr.className} text-3xl md:text-4xl lg:text-5xl font-bold text-[#4d6179] mb-4`}>
               Our Story
@@ -311,8 +314,64 @@ function AboutClient() {
         </div>
       </div>
 
+      {/* Our Origins Section */}
+      <div className='our-origins-section w-full bg-white py-8 md:py-12 px-6 md:px-12'>
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className={`${instr.className} text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A2342] mb-8`}>
+              Our Origins
+            </h2>
+            <div className="w-24 h-1 bg-[#F66F13] mx-auto rounded-full mb-12"></div>
+
+            <motion.div
+              className="space-y-8"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.3 }}
+            >
+              <p className={`${instr.className} text-lg md:text-xl lg:text-2xl text-[#4d6179] leading-relaxed mb-8`}>
+                The name <span className="font-bold text-[#0474BA]">KRIYANTRAI</span> derives from two Sanskrit roots: <span className="font-semibold text-[#00A7E1]">Kriya</span> (Action/Work) and <span className="font-semibold text-[#FFA630]">Yantra</span> (Machine). Our philosophy is simple: we create machines that act with purpose and intelligence.
+              </p>
+
+              <motion.div
+                className="bg-gradient-to-r from-[#0474BA]/5 via-[#00A7E1]/5 to-[#FFA630]/5 rounded-2xl p-8 border border-[#0474BA]/10"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                <p className={`${instr.className} text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed`}>
+                  Founded by a team of engineers and visionaries, we set out to bridge the gap between abstract artificial intelligence and tangible physical automation. We believe that technology should be a force multiplier for human potential.
+                </p>
+              </motion.div>
+
+              {/* Decorative elements */}
+              <motion.div
+                className="flex justify-center items-center space-x-4 mt-12"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+              >
+                <div className="w-2 h-2 bg-[#0474BA] rounded-full animate-pulse"></div>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-[#0474BA] to-[#00A7E1]"></div>
+                <div className="text-2xl">⚙️</div>
+                <div className="w-16 h-0.5 bg-gradient-to-r from-[#00A7E1] to-[#FFA630]"></div>
+                <div className="w-2 h-2 bg-[#FFA630] rounded-full animate-pulse"></div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+
       {/* Journey Section */}
-      <div className='py-16 md:py-20 px-6 md:px-12 w-full bg-[#F9FAFB]'>
+      <div className='py-8 md:py-12 px-6 md:px-12 w-full bg-[#F9FAFB]'>
         <div className='max-w-7xl mx-auto'>
           <div className='flex flex-col md:flex-row items-center gap-8 md:gap-16'>
             {/* Image - Hidden on mobile, shown on desktop */}
@@ -350,7 +409,7 @@ function AboutClient() {
       </div>
 
       {/* Team Members Section */}
-      <div className='team-section min-h-screen w-full py-16 md:py-20 px-6 md:px-12 lg:px-24 bg-white'>
+      <div className='team-section min-h-screen w-full py-8 md:py-12 px-6 md:px-12 lg:px-24 bg-white'>
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
           <motion.div
@@ -358,7 +417,7 @@ function AboutClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16 md:mb-20"
+            className="text-center mb-8 md:mb-12"
           >
             <h2 className={`${instr.className} text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A2342] mb-4`}>
               Meet Our Team
