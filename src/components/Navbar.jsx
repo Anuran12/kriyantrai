@@ -71,7 +71,7 @@ export default function Navbar() {
               className="fixed top-0 left-0 right-0 z-50 hidden md:block"
             >
               <motion.nav
-                className="bg-white/50 backdrop-blur-lg border-b border-white/20 shadow-lg px-8 py-4"
+                className="bg-white border-b border-gray-200 shadow-lg px-8 py-4"
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -192,7 +192,7 @@ export default function Navbar() {
               transition={{ duration: 0.35, ease: "easeInOut" }}
               className="fixed top-0 left-0 right-0 z-50 md:hidden"
             >
-              <div className="bg-white/50 backdrop-blur-lg border-b border-white/20 shadow-lg px-6 py-4">
+              <div className="bg-white border-b border-gray-200 shadow-lg px-6 py-4">
                 <div className="flex items-center justify-between">
                   {/* Logo */}
                   <motion.div
@@ -262,7 +262,7 @@ export default function Navbar() {
 
             {/* Menu Content */}
             <motion.div
-              className="absolute inset-x-4 top-20 bottom-4 bg-white/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 overflow-y-auto"
+              className="absolute inset-x-4 top-20 bottom-4 bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-y-auto"
               initial={{ opacity: 0, scale: 0.9, y: -20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: -20 }}

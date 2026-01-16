@@ -148,7 +148,7 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto relative">
         {/* Header */}
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-7xl font-bold mb-6 relative inline-block" style={{ fontFamily: 'Instrument Serif, serif' }}>
+          <h2 className="text-5xl md:text-7xl font-bold mb-6 relative inline-block">
             <span className="relative">
               <span className="absolute inset-0 bg-gradient-to-b from-[#0474BA] to-[#00A7E1] bg-clip-text text-transparent blur-sm"></span>
               <span className="relative bg-gradient-to-b from-[#0474BA] to-[#00A7E1] bg-clip-text text-transparent">
@@ -368,7 +368,6 @@ const ServicesSection = () => {
                       className="text-3xl lg:text-4xl font-bold mb-4 transition-colors duration-300"
                       style={{
                         color: isActive ? service.color : '#0474BA',
-                        fontFamily: 'Instrument Serif, serif'
                       }}
                     >
                       {service.title}

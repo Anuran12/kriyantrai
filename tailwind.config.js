@@ -14,6 +14,11 @@ module.exports = {
         dark: '#4d6179',
         background: '#EBEBEB',
       },
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif'],
+        serif: ['Montserrat', 'serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+      },
     },
   },
   plugins: [],

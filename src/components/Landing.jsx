@@ -1,6 +1,5 @@
 'use client'
 import React, { useState } from 'react'
-import { Instrument_Serif , Roboto_Serif, Archivo_Black} from 'next/font/google'
 import { ArrowRight } from 'lucide-react'
 import {motion} from 'motion/react'
 import dynamic from 'next/dynamic'
@@ -17,17 +16,6 @@ import TrustedCompanies from './Partnership'
 const ServicesSection = dynamic(() => import('./Services'), { ssr: false })
 
 
-const instr = Instrument_Serif({
-    subsets: ['latin'],
-    weight: ['400'],
-    variable: '--font-instr',
-})
-
-const roboto = Roboto_Serif({
-    subsets: ['latin'],
-    weight: ['500'],
-    variable: '--font-roboto',
-})
 
 // Preloader Component
 const Preloader = () => {
@@ -66,13 +54,13 @@ function Landing() {
         
         {/* Content */}
         <div className="relative z-10 flex flex-col justify-center items-center gap-3 w-full">
-        <h1 className={`${roboto.className} text-xl md:text-2xl text-white text-center`} >
+        <h1 className="font-medium text-xl md:text-2xl text-white text-center">
             Transforming Business with AI & Innovation
         </h1>
-        <h1 className={`${instr.className} text-5xl md:text-7xl font-normal text-center leading-tight px-4 md:px-0 text-white`}>
+        <h1 className="font-bold text-5xl md:text-7xl text-center leading-tight px-4 md:px-0 text-white">
             Build Faster. Automate Smarter.
         </h1>
-        <p className={`${instr.className} text-lg md:text-xl w-[60%] text-center mt-20 text-white/90`}>
+        <p className="font-normal text-lg md:text-xl w-[60%] text-center mt-20 text-white/90">
             We design and ship high‑quality websites, apps, dashboards, and AI automations that streamline operations and accelerate growth. Partner with our team to turn ideas into scalable, production‑ready products.
         </p>
         <motion.button
@@ -82,7 +70,7 @@ function Landing() {
         onClick={()=>{router.push('/contact')}}
     >
         <motion.span
-            className={`${instr.className} text-[#173876] text-lg md:text-2xl whitespace-nowrap`}
+            className="font-semibold text-[#173876] text-lg md:text-2xl whitespace-nowrap"
         >
             Get In Touch
         </motion.span>
