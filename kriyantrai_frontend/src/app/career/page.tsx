@@ -40,7 +40,7 @@ export default function CareerPage() {
                 </div>
 
                 {/* Core Career Information Card - Side by Side grid */}
-                <div className="max-w-[80rem] w-full mx-auto flex flex-col gap-10 bg-white p-8 md:p-12 lg:p-16 rounded-[2.5rem] shadow-xl border border-gray-100">
+                <div className="max-w-[80rem] w-full mx-auto flex flex-col gap-10 bg-transparent rounded-[2.5rem]">
 
                     {/* Top 3 Sections Grid */}
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

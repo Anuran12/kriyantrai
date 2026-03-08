@@ -54,7 +54,6 @@ export default function Navbar() {
                         <Link href="/about-us" className="hover:text-primary transition-colors">
                             About Us
                         </Link>
-                        <Link href="/use-cases" className="hover:text-primary transition-colors">Use Cases</Link>
                     </div>
 
                     {/* Right Actions */}
