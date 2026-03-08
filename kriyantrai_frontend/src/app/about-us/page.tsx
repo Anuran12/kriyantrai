@@ -68,37 +68,43 @@ export default function AboutUsPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
                             {/* Mission */}
-                            <div className="bg-white rounded-3xl p-10 flex flex-col items-center text-center card-hover-effect group">
-                                <div className="w-20 h-20 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center mb-8 shadow-md shadow-teal-500/20">
-                                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <circle cx="12" cy="12" r="10" strokeWidth="2"></circle>
-                                        <circle cx="12" cy="12" r="6" strokeWidth="2"></circle>
-                                        <circle cx="12" cy="12" r="2" strokeWidth="2"></circle>
-                                    </svg>
+                            <div className="bg-white rounded-3xl p-10 flex flex-col card-hover-effect group text-left">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center shadow-md shadow-teal-500/20">
+                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="12" cy="12" r="10" strokeWidth="2"></circle>
+                                            <circle cx="12" cy="12" r="6" strokeWidth="2"></circle>
+                                            <circle cx="12" cy="12" r="2" strokeWidth="2"></circle>
+                                        </svg>
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-black">Our Mission</h3>
                                 </div>
-                                <h3 className="text-3xl font-bold text-black mb-6">Our Mission</h3>
                                 <p className="text-gray-600 font-medium text-lg leading-relaxed">
                                     To empower businesses with cutting-edge technology solutions that drive innovation, efficiency, and sustainable growth.
                                 </p>
                             </div>
 
                             {/* Vision */}
-                            <div className="bg-white rounded-3xl p-10 flex flex-col items-center text-center card-hover-effect group">
-                                <div className="w-20 h-20 bg-gradient-to-br from-[#22c55e] to-[#15803d] rounded-2xl flex items-center justify-center mb-8 shadow-md shadow-green-500/20">
-                                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <div className="bg-white rounded-3xl p-10 flex flex-col card-hover-effect group text-left">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-[#22c55e] to-[#15803d] rounded-xl flex items-center justify-center shadow-md shadow-green-500/20">
+                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-black">Our Vision</h3>
                                 </div>
-                                <h3 className="text-3xl font-bold text-black mb-6">Our Vision</h3>
                                 <p className="text-gray-600 font-medium text-lg leading-relaxed">
                                     To be a global leader in digital transformation, recognized for our expertise, integrity, and commitment to client success.
                                 </p>
                             </div>
 
                             {/* Values */}
-                            <div className="bg-white rounded-3xl p-10 flex flex-col items-center text-center card-hover-effect group">
-                                <div className="w-20 h-20 bg-gradient-to-br from-[#3b82f6] to-[#1d4ed8] rounded-2xl flex items-center justify-center mb-8 shadow-md shadow-blue-500/20">
-                                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                            <div className="bg-white rounded-3xl p-10 flex flex-col card-hover-effect group text-left">
+                                <div className="flex items-center gap-4 mb-6">
+                                    <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-[#3b82f6] to-[#1d4ed8] rounded-xl flex items-center justify-center shadow-md shadow-blue-500/20">
+                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-black">Our Values</h3>
                                 </div>
-                                <h3 className="text-3xl font-bold text-black mb-6">Our Values</h3>
                                 <p className="text-gray-600 font-medium text-lg leading-relaxed">
                                     Innovation, Excellence, Collaboration, Integrity, and Customer Centricity are at the core of everything we do.
                                 </p>
@@ -112,63 +118,74 @@ export default function AboutUsPage() {
                         <p className="text-gray-600 font-medium text-lg mb-16 text-center">Six compelling reasons to choose Kriyantrai as your AI transformation partner</p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-                            {/* Card 1 */}
-                            <div className="bg-white p-8 card-hover-effect group rounded-3xl">
-                                <span className="inline-block px-3 py-1 bg-teal-50 border border-teal-100 text-[#153776] text-xs font-bold rounded-full mb-6">Strategic Foundation</span>
-                                <div className="w-14 h-14 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-teal-500/20">
-                                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            <div className="bg-white p-8 card-hover-effect group rounded-3xl text-left flex flex-col">
+                                <span className="inline-block px-3 py-1 bg-teal-50 border border-teal-100 text-[#153776] text-xs font-bold rounded-full mb-6 self-start">Strategic Foundation</span>
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center shadow-md shadow-teal-500/20">
+                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-black">Consulting-Led PoC Approach</h3>
                                 </div>
-                                <h3 className="text-xl font-bold text-black mb-4">Consulting-Led PoC Approach</h3>
                                 <p className="text-gray-600 font-medium text-sm leading-relaxed">We start with understanding your business challenges and create focused Proof of Concepts that demonstrate clear value and ROI.</p>
                             </div>
 
                             {/* Card 2 */}
-                            <div className="bg-white p-8 card-hover-effect group rounded-3xl">
-                                <span className="inline-block px-3 py-1 bg-teal-50 border border-teal-100 text-[#153776] text-xs font-bold rounded-full mb-6">Cross-Domain Knowledge</span>
-                                <div className="w-14 h-14 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-teal-500/20">
-                                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                            <div className="bg-white p-8 card-hover-effect group rounded-3xl text-left flex flex-col">
+                                <span className="inline-block px-3 py-1 bg-teal-50 border border-teal-100 text-[#153776] text-xs font-bold rounded-full mb-6 self-start">Cross-Domain Knowledge</span>
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center shadow-md shadow-teal-500/20">
+                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-black">Industry Deep-Dive Expertise</h3>
                                 </div>
-                                <h3 className="text-xl font-bold text-black mb-4">Industry Deep-Dive Expertise</h3>
                                 <p className="text-gray-600 font-medium text-sm leading-relaxed">Our team combines management consulting, statistical modeling, data science, and programming with years of industry-specific experience.</p>
                             </div>
 
                             {/* Card 3 */}
-                            <div className="bg-white p-8 card-hover-effect group rounded-3xl">
-                                <span className="inline-block px-3 py-1 bg-teal-50 border border-teal-100 text-[#153776] text-xs font-bold rounded-full mb-6">Complete Solution</span>
-                                <div className="w-14 h-14 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-teal-500/20">
-                                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <div className="bg-white p-8 card-hover-effect group rounded-3xl text-left flex flex-col">
+                                <span className="inline-block px-3 py-1 bg-teal-50 border border-teal-100 text-[#153776] text-xs font-bold rounded-full mb-6 self-start">Complete Solution</span>
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center shadow-md shadow-teal-500/20">
+                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-black">End-to-End Transformation</h3>
                                 </div>
-                                <h3 className="text-xl font-bold text-black mb-4">End-to-End Transformation</h3>
                                 <p className="text-gray-600 font-medium text-sm leading-relaxed">From discovery to deployment and maintenance, we partner with you throughout your entire data & AI transformation journey.</p>
                             </div>
 
                             {/* Card 4 */}
-                            <div className="bg-white p-8 card-hover-effect group rounded-3xl">
-                                <span className="inline-block px-3 py-1 bg-teal-50 border border-teal-100 text-[#153776] text-xs font-bold rounded-full mb-6">Future-Ready Tech</span>
-                                <div className="w-14 h-14 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-teal-500/20">
-                                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            <div className="bg-white p-8 card-hover-effect group rounded-3xl text-left flex flex-col">
+                                <span className="inline-block px-3 py-1 bg-teal-50 border border-teal-100 text-[#153776] text-xs font-bold rounded-full mb-6 self-start">Future-Ready Tech</span>
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center shadow-md shadow-teal-500/20">
+                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-black">Modern Technology Stack</h3>
                                 </div>
-                                <h3 className="text-xl font-bold text-black mb-4">Modern Technology Stack</h3>
                                 <p className="text-gray-600 font-medium text-sm leading-relaxed">Cloud-first approach, low-code/no-code platforms, and cutting edge frameworks designed to scale with your business needs.</p>
                             </div>
 
                             {/* Card 5 */}
-                            <div className="bg-white p-8 card-hover-effect group rounded-3xl">
-                                <span className="inline-block px-3 py-1 bg-teal-50 border border-teal-100 text-[#153776] text-xs font-bold rounded-full mb-6">Trusted Expertise</span>
-                                <div className="w-14 h-14 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-teal-500/20">
-                                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                            <div className="bg-white p-8 card-hover-effect group rounded-3xl text-left flex flex-col">
+                                <span className="inline-block px-3 py-1 bg-teal-50 border border-teal-100 text-[#153776] text-xs font-bold rounded-full mb-6 self-start">Trusted Expertise</span>
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center shadow-md shadow-teal-500/20">
+                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-black">Proven Track Record</h3>
                                 </div>
-                                <h3 className="text-xl font-bold text-black mb-4">Proven Track Record</h3>
                                 <p className="text-gray-600 font-medium text-sm leading-relaxed">100+ successful projects and countless enterprise deployments that have delivered tangible business value across the globe.</p>
                             </div>
 
                             {/* Card 6 */}
-                            <div className="bg-white p-8 card-hover-effect group rounded-3xl">
-                                <span className="inline-block px-3 py-1 bg-teal-50 border border-teal-100 text-[#153776] text-xs font-bold rounded-full mb-6">Enterprise-Grade</span>
-                                <div className="w-14 h-14 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-teal-500/20">
-                                    <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            <div className="bg-white p-8 card-hover-effect group rounded-3xl text-left flex flex-col">
+                                <span className="inline-block px-3 py-1 bg-teal-50 border border-teal-100 text-[#153776] text-xs font-bold rounded-full mb-6 self-start">Enterprise-Grade</span>
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-[#14b8a6] to-[#0d9488] rounded-xl flex items-center justify-center shadow-md shadow-teal-500/20">
+                                        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                    </div>
+                                    <h3 className="text-xl font-bold text-black">Scalable & Secure Solutions</h3>
                                 </div>
-                                <h3 className="text-xl font-bold text-black mb-4">Scalable & Secure Solutions</h3>
                                 <p className="text-gray-600 font-medium text-sm leading-relaxed">Modular architecture with elastic scaling capabilities, uncompromising data security, and enterprise regulatory compliance.</p>
                             </div>
                         </div>

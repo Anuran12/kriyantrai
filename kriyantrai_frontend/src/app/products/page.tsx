@@ -189,30 +189,30 @@ export default function ProductsPage() {
                         <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Our Products</h2>
 
                         {/* Trucker Health Monitoring System Card */}
-                        <div className="bg-white border border-gray-100 rounded-3xl p-10 lg:p-14 text-left card-hover-effect group shadow-[0_0_20px_rgba(0,0,0,0.02)] max-w-7xl mx-auto relative overflow-hidden w-full mb-16">
+                        <div className="bg-white border border-gray-100 rounded-3xl p-6 lg:p-8 text-left card-hover-effect group shadow-[0_0_20px_rgba(0,0,0,0.02)] max-w-7xl mx-auto relative overflow-hidden w-full mb-12">
                             {/* Decorative background element */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#f97316]/5 to-[#ef4444]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
                             <div className="flex flex-col relative z-10 w-full">
                                 {/* Top Content Area */}
-                                <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start w-full">
+                                <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-center w-full">
                                     {/* Left Content */}
                                     <div className="flex-1 flex flex-col w-full">
-                                        <div className="flex flex-col justify-start items-start md:items-start gap-6 mb-8">
-                                            <div className="w-20 h-20 rounded-2xl bg-[#fff7ed] flex items-center justify-center shrink-0 border border-[#f97316]/20 group-hover:bg-[#f97316]/10 transition-colors shadow-sm">
-                                                <svg className="w-10 h-10 text-[#f97316] group-hover:text-[#ea580c] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <div className="flex flex-col justify-start items-start md:items-start gap-4 mb-4">
+                                            <div className="w-16 h-16 rounded-2xl bg-[#fff7ed] flex items-center justify-center shrink-0 border border-[#f97316]/20 group-hover:bg-[#f97316]/10 transition-colors shadow-sm">
+                                                <svg className="w-8 h-8 text-[#f97316] group-hover:text-[#ea580c] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                                 </svg>
                                             </div>
-                                            <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 group-hover:text-[#f97316] transition-colors text-left">Trucker Health Monitoring System</h3>
-                                            <p className="text-gray-600 text-lg md:text-xl font-medium">A full-stack platform enabling camp-based driver registration, health checkups, QR-powered public health profiles, and operational analytics.</p>
+                                            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2 group-hover:text-[#f97316] transition-colors text-left">Trucker Health Monitoring System</h3>
+                                            <p className="text-gray-600 text-base lg:text-lg font-medium">A full-stack platform enabling camp-based driver registration, health checkups, QR-powered public health profiles, and operational analytics.</p>
                                         </div>
 
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-6 mt-4">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-4 mt-2">
                                             {/* Deliverables Section */}
                                             <div>
-                                                <h4 className="text-[#f97316] font-bold mb-4 uppercase text-sm tracking-wider">🚀 What It Delivers</h4>
-                                                <div className="flex flex-col gap-3">
+                                                <h4 className="text-[#f97316] font-bold mb-2 uppercase text-xs tracking-wider">🚀 What It Delivers</h4>
+                                                <div className="flex flex-col gap-2">
                                                     <div className="flex items-start gap-3">
                                                         <div className="w-5 h-5 rounded-full bg-[#f97316]/10 flex items-center justify-center shrink-0 mt-0.5">
                                                             <svg className="w-3 h-3 text-[#f97316]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
@@ -248,8 +248,8 @@ export default function ProductsPage() {
 
                                             {/* Tech Stack Section */}
                                             <div>
-                                                <h4 className="text-[#3b82f6] font-bold mb-4 uppercase text-sm tracking-wider">🛠 Built With</h4>
-                                                <div className="flex flex-col gap-3">
+                                                <h4 className="text-[#3b82f6] font-bold mb-2 uppercase text-xs tracking-wider">🛠 Built With</h4>
+                                                <div className="flex flex-col gap-2">
                                                     <div className="flex items-start gap-3">
                                                         <div className="w-5 h-5 rounded-full bg-[#3b82f6]/10 flex items-center justify-center shrink-0 mt-0.5">
                                                             <svg className="w-3 h-3 text-[#3b82f6]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
@@ -278,7 +278,7 @@ export default function ProductsPage() {
                                             </div>
                                         </div>
 
-                                        <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-start">
+                                        <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-start">
                                             <div className="text-[#f97316] text-sm font-bold flex items-center gap-2">
                                                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                                                 Scalable Health Monitoring Platform
@@ -290,42 +290,42 @@ export default function ProductsPage() {
                                     <div className="w-full lg:w-[45%] flex flex-col justify-center items-center">
                                         <ImageSlider
                                             images={truckerImages}
-                                            containerClassName="relative w-full max-w-[280px] sm:max-w-[300px] aspect-[9/19.5] rounded-[2.5rem] overflow-hidden shadow-2xl border-[6px] border-gray-900 group bg-gray-900 mx-auto"
+                                            containerClassName="relative w-full max-w-[220px] sm:max-w-[240px] lg:max-w-[260px] aspect-[9/19.5] rounded-[2rem] overflow-hidden shadow-2xl border-[4px] border-gray-900 group bg-gray-900 mx-auto"
                                             imageClassName="w-full h-full object-cover"
                                         />
                                     </div>
                                 </div>
 
                                 {/* Bottom Button Row */}
-                                <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 pt-8 border-t border-gray-100">
-                                    <a href="/contact/sales" className="bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-4 px-10 rounded-full shadow-lg transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-lg w-full sm:w-auto">
+                                <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pt-6 border-t border-gray-100">
+                                    <a href="/contact/sales" className="bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-base w-full sm:w-auto">
                                         Book a demo
                                     </a>
-                                    <a href="/contact/sales" className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-200 shadow-sm font-bold py-4 px-10 rounded-full transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-lg w-full sm:w-auto">
+                                    <a href="/contact/sales" className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-200 shadow-sm font-bold py-3 px-8 rounded-full transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-base w-full sm:w-auto">
                                         Contact sales
                                     </a>
                                 </div>
                             </div>
                         </div>
                         {/* Digital Survey & Monitoring System Card */}
-                        <div className="bg-white border border-gray-100 rounded-3xl p-10 lg:p-14 text-left card-hover-effect group shadow-[0_0_20px_rgba(0,0,0,0.02)] max-w-7xl mx-auto relative overflow-hidden w-full">
+                        <div className="bg-white border border-gray-100 rounded-3xl p-6 lg:p-8 text-left card-hover-effect group shadow-[0_0_20px_rgba(0,0,0,0.02)] max-w-7xl mx-auto relative overflow-hidden w-full">
                             {/* Decorative background element */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#14b8a6]/5 to-[#3b82f6]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                             <div className="flex flex-col relative z-10 w-full">
                                 {/* Top Content Area */}
-                                <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start w-full">
+                                <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-center w-full">
                                     {/* Left Content */}
                                     <div className="flex-1 flex flex-col w-full">
-                                        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8">
-                                            <div className="w-20 h-20 rounded-2xl bg-[#eff6ff] flex items-center justify-center shrink-0 border border-[#3b82f6]/20 group-hover:bg-[#153776] transition-colors shadow-sm">
-                                                <svg className="w-10 h-10 text-[#3b82f6] group-hover:text-[#A1F9F3] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mb-4">
+                                            <div className="w-16 h-16 rounded-2xl bg-[#eff6ff] flex items-center justify-center shrink-0 border border-[#3b82f6]/20 group-hover:bg-[#153776] transition-colors shadow-sm">
+                                                <svg className="w-8 h-8 text-[#3b82f6] group-hover:text-[#A1F9F3] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                                 </svg>
                                             </div>
-                                            <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 group-hover:text-[#153776] transition-colors text-center md:text-left">Digital Survey & Monitoring System</h3>
+                                            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2 group-hover:text-[#153776] transition-colors text-center md:text-left">Digital Survey & Monitoring System</h3>
                                         </div>
 
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6 mt-4">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4 mt-2">
                                             <div className="flex items-start gap-3">
                                                 <div className="w-5 h-5 rounded-full bg-[#14b8a6]/10 flex items-center justify-center shrink-0 mt-0.5">
                                                     <svg className="w-3 h-3 text-[#14b8a6]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
@@ -376,7 +376,7 @@ export default function ProductsPage() {
                                             </div>
                                         </div>
 
-                                        <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-start">
+                                        <div className="mt-6 pt-4 border-t border-gray-100 flex items-center justify-start">
                                             <div className="text-[#3b82f6] text-sm font-bold flex items-center gap-2">
                                                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                                                 Enterprise-grade system
@@ -391,11 +391,11 @@ export default function ProductsPage() {
                                 </div>
 
                                 {/* Bottom Button Row */}
-                                <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-12 pt-8 border-t border-gray-100">
-                                    <a href="/contact/sales" className="bg-[#153776] hover:bg-[#102A5E] text-white font-bold py-4 px-10 rounded-full shadow-lg transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-lg w-full sm:w-auto">
+                                <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pt-6 border-t border-gray-100">
+                                    <a href="/contact/sales" className="bg-[#153776] hover:bg-[#102A5E] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-base w-full sm:w-auto">
                                         Book a demo
                                     </a>
-                                    <a href="/contact/sales" className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-200 shadow-sm font-bold py-4 px-10 rounded-full transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-lg w-full sm:w-auto">
+                                    <a href="/contact/sales" className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-200 shadow-sm font-bold py-3 px-8 rounded-full transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-base w-full sm:w-auto">
                                         Contact sales
                                     </a>
                                 </div>
