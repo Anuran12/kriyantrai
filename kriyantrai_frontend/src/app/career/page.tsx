@@ -45,7 +45,7 @@ export default function CareerPage() {
                     {/* Top 3 Sections Grid */}
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         {/* Why Join Us */}
-                        <div className="bg-gray-50/80 p-8 md:p-10 rounded-3xl card-hover-effect group text-left">
+                        <div className="bg-blue-50/50 border border-blue-100 p-8 md:p-10 rounded-3xl card-hover-effect group text-left">
                             <h2 className="text-2xl lg:text-3xl font-bold text-[#153776] flex items-center gap-3 mb-6 font-serif">
                                 <span className="text-3xl lg:text-4xl">💡</span> Why Join Us?
                             </h2>
@@ -78,7 +78,7 @@ export default function CareerPage() {
                         </div>
 
                         {/* Who We're Looking For */}
-                        <div className="bg-gray-50/80 p-8 md:p-10 rounded-3xl card-hover-effect group text-left">
+                        <div className="bg-orange-50/50 border border-orange-100 p-8 md:p-10 rounded-3xl card-hover-effect group text-left">
                             <h2 className="text-2xl lg:text-3xl font-bold text-[#153776] flex items-center gap-3 mb-6 font-serif">
                                 <span className="text-3xl lg:text-4xl">🧠</span> Who We’re Looking For
                             </h2>
@@ -117,7 +117,7 @@ export default function CareerPage() {
                         </div>
 
                         {/* What You'll Gain */}
-                        <div className="bg-gray-50/80 p-8 md:p-10 rounded-3xl card-hover-effect group text-left">
+                        <div className="bg-teal-50/50 border border-teal-100 p-8 md:p-10 rounded-3xl card-hover-effect group text-left">
                             <h2 className="text-2xl lg:text-3xl font-bold text-[#153776] flex items-center gap-3 mb-6 font-serif">
                                 <span className="text-3xl lg:text-4xl">🌱</span> What You’ll Gain
                             </h2>
@@ -150,7 +150,7 @@ export default function CareerPage() {
                     </div>
 
                     {/* Our Culture (Second line, full width) */}
-                    <div className="w-full bg-white p-8 md:p-12 rounded-3xl border border-gray-200 shadow-sm flex flex-col md:flex-row items-center md:items-start justify-between gap-8 mt-2">
+                    <div className="w-full bg-indigo-50/50 border border-indigo-100 p-8 md:p-12 rounded-3xl flex flex-col md:flex-row items-center md:items-start justify-between gap-8 mt-2">
                         <div className="flex-1 text-left">
                             <h2 className="text-3xl font-bold text-[#153776] flex items-center gap-3 mb-8 font-serif">
                                 <span className="text-4xl">🔥</span> Our Culture
@@ -171,7 +171,7 @@ export default function CareerPage() {
                             </ul>
                         </div>
 
-                        <div className="flex-1 bg-gray-50/80 border border-gray-200 p-8 rounded-3xl flex items-center justify-center text-center h-full min-h-[16rem]">
+                        <div className="flex-1 bg-white/60 border border-indigo-200/50 p-8 rounded-3xl flex items-center justify-center text-center h-full min-h-[16rem] shadow-sm">
                             <p className="font-bold text-2xl md:text-3xl leading-relaxed tracking-wide text-[#153776] italic">
                                 "We move fast.<br />
                                 We learn faster.<br />
