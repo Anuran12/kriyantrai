@@ -1,19 +1,41 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Navbar() {
+    const [isSpinning, setIsSpinning] = useState(false);
+
+    // Spin on initial load/refresh
+    useEffect(() => {
+        setIsSpinning(true);
+        const timer = setTimeout(() => setIsSpinning(false), 1000); // 1 second spin
+        return () => clearTimeout(timer);
+    }, []);
+
+    // Handle click spin
+    const handleLogoClick = () => {
+        setIsSpinning(true);
+        setTimeout(() => setIsSpinning(false), 1000);
+    };
+
     return (
         <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
-
 
             {/* Glassmorphism Navbar */}
             <nav className="bg-white/30 backdrop-blur-md border-b border-white/20 transition-all duration-300">
                 <div className="w-full px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                     {/* Logo - left */}
                     <div className="flex items-center flex-1">
-                        <Link href="/" className="flex items-center gap-2 group">
-                            <img src="/logo.png" alt="Kriyantrai Logo" className="h-10 w-auto" />
-                            <span className="font-bold text-xl text-black">Kriyantrai</span>
+                        <Link href="/" className="flex items-center gap-2 group" onClick={handleLogoClick}>
+                            <img
+                                src="/logo.png"
+                                alt="Kriyantrai Logo"
+                                className={`h-10 w-auto transition-transform duration-1000 ${isSpinning ? 'rotate-[360deg]' : 'rotate-0'}`}
+                            />
+                            <span className="font-bold text-xl text-black">
+                                Kriyantrai
+                            </span>
                         </Link>
                     </div>
 
