@@ -198,15 +198,15 @@ export default function ProductsPage() {
                                 <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-center w-full">
                                     {/* Left Content */}
                                     <div className="flex-1 flex flex-col w-full">
-                                        <div className="flex flex-col justify-start items-start md:items-start gap-4 mb-4">
-                                            <div className="w-16 h-16 rounded-2xl bg-[#fff7ed] flex items-center justify-center shrink-0 border border-[#f97316]/20 group-hover:bg-[#f97316]/10 transition-colors shadow-sm">
+                                        <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mb-4">
+                                            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#f97316]/10 to-[#ea580c]/10 flex items-center justify-center shrink-0 border border-[#f97316]/20 group-hover:from-[#f97316]/20 group-hover:to-[#ea580c]/20 transition-all duration-300 shadow-sm">
                                                 <svg className="w-8 h-8 text-[#f97316] group-hover:text-[#ea580c] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                                 </svg>
                                             </div>
-                                            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2 group-hover:text-[#f97316] transition-colors text-left">Trucker Health Monitoring System</h3>
-                                            <p className="text-gray-600 text-base lg:text-lg font-medium">A full-stack platform enabling camp-based driver registration, health checkups, QR-powered public health profiles, and operational analytics.</p>
+                                            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2 mt-1 lg:mt-2 group-hover:text-[#f97316] transition-colors text-center md:text-left">Trucker Health Monitoring System</h3>
                                         </div>
+                                        <p className="text-gray-600 text-base lg:text-lg font-medium mb-4 text-center md:text-left">A full-stack platform enabling camp-based driver registration, health checkups, QR-powered public health profiles, and operational analytics.</p>
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-4 mt-2">
                                             {/* Deliverables Section */}
