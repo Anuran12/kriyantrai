@@ -80,8 +80,8 @@ export default function Home() {
         </section>
 
         {/* Section 4: Products */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-20 text-center tracking-tight leading-tight">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col items-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center tracking-tight leading-tight">
             Analyze your operations and<br /> achieve record results.
           </h2>
           <div className="flex flex-col md:flex-row items-center gap-16 w-full">
@@ -109,7 +109,7 @@ export default function Home() {
         </section>
 
         {/* Section 5: Partners / Testimonial */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex flex-col items-center">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col items-center">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center tracking-tight leading-tight">
             With Kriyantrai, our partners<br /> make the impossible possible.
           </h2>

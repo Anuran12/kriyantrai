@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
     return (
-        <footer className="w-full relative overflow-hidden text-white pt-16 pb-8 px-6 sm:px-12 mt-4 transition-all duration-700 ease-in-out"
+        <footer className="w-full relative overflow-hidden text-white pt-12 pb-8 px-6 sm:px-12 transition-all duration-700 ease-in-out"
             style={{
                 background: "#153776"
             }}

@@ -119,6 +119,7 @@ const architectureLayers = [
 export default function DataSolutionsPage() {
     const [activeSection, setActiveSection] = useState('core-services');
     const [activeArchitectureLayer, setActiveArchitectureLayer] = useState('data-sources');
+    const [activeServiceTab, setActiveServiceTab] = useState('data-governance');
 
     useEffect(() => {
         const handleScroll = () => {
@@ -296,137 +297,584 @@ export default function DataSolutionsPage() {
                 {/* Tabbed Interface Body */}
                 <section id="core-services" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 mb-24 z-20 relative scroll-mt-32">
                     {/* Tab List */}
-                    <div className="flex items-center justify-center md:justify-start gap-2 overflow-x-auto hide-scrollbar bg-white p-2 rounded-2xl border border-gray-200 shadow-xl mb-6">
-                        <button className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-gray-100 text-black font-semibold text-sm whitespace-nowrap shadow-sm">
-                            <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                            Data Governance Framework
-                        </button>
-                        <button className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-gray-600 font-semibold text-sm whitespace-nowrap hover:text-black transition-colors">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
-                            Modern Data Infrastructure
-                        </button>
-                        <button className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-gray-600 font-semibold text-sm whitespace-nowrap hover:text-black transition-colors">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
-                            Enterprise Data Management
-                        </button>
-                        <button className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-gray-600 font-semibold text-sm whitespace-nowrap hover:text-black transition-colors">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                            Data Modeling & Architecture
-                        </button>
-                        <button className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-gray-600 font-semibold text-sm whitespace-nowrap hover:text-black transition-colors">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            Data Quality & Observability
-                        </button>
-                    </div>
-
-                    {/* Active Tab Content Background Plate */}
-                    <div className="bg-[#f8f9fc] border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-2xl">
-                        <div className="flex items-center gap-4 mb-4">
-                            <div className="w-12 h-12 rounded-xl bg-[#2DD4BF] flex items-center justify-center flex-shrink-0">
-                                <svg className="w-6 h-6 text-[#042F2E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                            </div>
-                            <div>
-                                <h3 className="text-3xl font-bold text-black">Data Governance Framework</h3>
-                                <p className="text-[#2DD4BF] font-medium mt-1">Comprehensive Data Governance: Ensuring Quality, Compliance, and Strategic Value</p>
-                            </div>
-                        </div>
-
-                        <p className="text-gray-600 text-lg mb-12 max-w-4xl">
-                            Establish robust data governance practices that ensure data quality, regulatory compliance, and strategic alignment across your entire organization.
-                        </p>
-
-                        <div className="flex flex-col lg:flex-row gap-12 w-full">
-                            {/* Left Side Feature Grid */}
-                            <div className="flex-1">
-                                <div className="flex items-center gap-2 mb-6">
-                                    <svg className="w-5 h-5 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                                    <span className="font-bold text-black text-lg">Key Components</span>
-                                </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    {/* Component 1 */}
-                                    <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
-                                                <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                            </div>
-                                            <div>
-                                                <h4 className="text-black font-bold mb-2">Data Quality Management & Monitoring</h4>
-                                                <p className="text-gray-600 text-sm leading-relaxed">Continuous validation, SLAs, and incident workflows keep trust high.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* Component 2 */}
-                                    <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
-                                                <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                            </div>
-                                            <div>
-                                                <h4 className="text-black font-bold mb-2">Regulatory Compliance (GDPR, HIPAA, SOX)</h4>
-                                                <p className="text-gray-600 text-sm leading-relaxed">Policies, audit trails, masking and retention aligned with regulations.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* Component 3 */}
-                                    <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
-                                                <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                            </div>
-                                            <div>
-                                                <h4 className="text-black font-bold mb-2">Master Data Management (MDM)</h4>
-                                                <p className="text-gray-600 text-sm leading-relaxed">Golden records and governance across domains and systems.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* Component 4 */}
-                                    <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
-                                                <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                            </div>
-                                            <div>
-                                                <h4 className="text-black font-bold mb-2">Data Cataloging & Metadata Management</h4>
-                                                <p className="text-gray-600 text-sm leading-relaxed">Searchable data assets with lineage, ownership and context.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* Component 5 */}
-                                    <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
-                                                <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                            </div>
-                                            <div>
-                                                <h4 className="text-black font-bold mb-2">Role-based Access Controls</h4>
-                                                <p className="text-gray-600 text-sm leading-relaxed">Least-privilege access with fine-grained policies.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/* Component 6 */}
-                                    <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
-                                                <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                            </div>
-                                            <div>
-                                                <h4 className="text-black font-bold mb-2">Data Stewardship & Ownership Model</h4>
-                                                <p className="text-gray-600 text-sm leading-relaxed">Defined roles, accountability, and clear data stewardship workflows.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Right Side Image Box */}
-                            <div className="w-full lg:w-[400px] flex-shrink-0 flex items-start justify-center">
-                                {/* Image Placeholder */}
-                                <div className="h-[400px] lg:h-[600px] w-full rounded-3xl overflow-hidden relative shadow-2xl border border-gray-100 bg-[#f8f9fc]">
-                                    <img src="/ai-bg-new.png" alt="AI Data Governance" className="w-full h-full object-cover" />
-                                </div>
-                            </div>
+                    <div className="flex items-center justify-center w-full overflow-x-auto hide-scrollbar mb-8">
+                        <div className="flex items-center p-1 bg-[#f4f5f5] border border-gray-200/60 rounded-2xl min-w-max mx-auto md:mx-0">
+                            {[
+                                { id: 'data-governance', label: 'Data Governance Framework', icon: <svg className="w-3.5 h-3.5 md:w-4 md:h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg> },
+                                { id: 'modern-data-infrastructure', label: 'Modern Data Infrastructure', icon: <svg className="w-3.5 h-3.5 md:w-4 md:h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg> },
+                                { id: 'enterprise-data', label: 'Enterprise Data Management', icon: <svg className="w-3.5 h-3.5 md:w-4 md:h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg> },
+                                { id: 'data-modeling', label: 'Data Modeling & Architecture', icon: <svg className="w-3.5 h-3.5 md:w-4 md:h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg> },
+                                { id: 'data-quality', label: 'Data Quality & Observability', icon: <svg className="w-3.5 h-3.5 md:w-4 md:h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> }
+                            ].map((tab) => (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => setActiveServiceTab(tab.id)}
+                                    className={`relative flex items-center gap-1.5 px-3 py-2 md:px-4 md:py-2 rounded-[14px] font-semibold whitespace-nowrap transition-colors cursor-pointer text-[12px] md:text-[13px] ${activeServiceTab === tab.id ? 'text-white' : 'text-[#5a6b7c] hover:text-gray-900'}`}
+                                >
+                                    {activeServiceTab === tab.id && (
+                                        <motion.div
+                                            layoutId="activeCoreServiceTab"
+                                            className="absolute inset-0 bg-[#153776] rounded-[14px] shadow-md z-0"
+                                            initial={false}
+                                            transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                                        />
+                                    )}
+                                    {tab.icon}
+                                    <span className="relative z-10">{tab.label}</span>
+                                </button>
+                            ))}
                         </div>
                     </div>
+
+                    {/* Data Governance Framework Content */}
+                    {activeServiceTab === 'data-governance' && (
+                        <div className="bg-[#f8f9fc] border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-500">
+                            <div className="flex items-center gap-4 mb-4">
+                                <div className="w-12 h-12 rounded-xl bg-[#2DD4BF] flex items-center justify-center flex-shrink-0">
+                                    <svg className="w-6 h-6 text-[#042F2E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                                </div>
+                                <div>
+                                    <h3 className="text-3xl font-bold text-black">Data Governance Framework</h3>
+                                    <p className="text-[#2DD4BF] font-medium mt-1">Comprehensive Data Governance: Ensuring Quality, Compliance, and Strategic Value</p>
+                                </div>
+                            </div>
+
+                            <p className="text-gray-600 text-lg mb-12 max-w-4xl">
+                                Establish robust data governance practices that ensure data quality, regulatory compliance, and strategic alignment across your entire organization.
+                            </p>
+
+                            <div className="flex flex-col lg:flex-row gap-12 w-full">
+                                {/* Left Side Feature Grid */}
+                                <div className="flex-1">
+                                    <div className="flex items-center gap-2 mb-6">
+                                        <svg className="w-5 h-5 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                        <span className="font-bold text-black text-lg">Key Components</span>
+                                    </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        {/* Component 1 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Data Quality Management & Monitoring</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Continuous validation, SLAs, and incident workflows keep trust high.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 2 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Regulatory Compliance (GDPR, HIPAA, SOX)</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Policies, audit trails, masking and retention aligned with regulations.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 3 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Master Data Management (MDM)</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Golden records and governance across domains and systems.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 4 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Data Cataloging & Metadata Management</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Searchable data assets with lineage, ownership and context.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 5 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Role-based Access Controls</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Least-privilege access with fine-grained policies.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 6 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Data Stewardship & Ownership Model</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Defined roles, accountability, and clear data stewardship workflows.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Right Side Image Box */}
+                                <div className="w-full lg:w-[400px] flex-shrink-0 flex items-start justify-center">
+                                    <div className="h-[400px] lg:h-[600px] w-full rounded-3xl overflow-hidden relative shadow-2xl border border-gray-100 bg-[#f8f9fc]">
+                                        <img src="/ai-bg-new.png" alt="AI Data Governance" className="w-full h-full object-cover" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Modern Data Infrastructure Content */}
+                    {activeServiceTab === 'modern-data-infrastructure' && (
+                        <div className="bg-[#f8f9fc] border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-500">
+                            <div className="flex items-center gap-4 mb-4">
+                                <div className="w-12 h-12 rounded-xl bg-[#2DD4BF] flex items-center justify-center flex-shrink-0">
+                                    <svg className="w-6 h-6 text-[#042F2E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
+                                </div>
+                                <div>
+                                    <h3 className="text-3xl font-bold text-black">Modern Data Infrastructure</h3>
+                                    <p className="text-[#2DD4BF] font-medium mt-1">Cloud-Native Data Platforms: Scalable, Secure, and Future-Ready</p>
+                                </div>
+                            </div>
+
+                            <p className="text-gray-600 text-lg mb-12 max-w-4xl">
+                                Build next-generation data infrastructure leveraging cloud technologies, microservices, and containerization for maximum scalability and performance.
+                            </p>
+
+                            <div className="flex flex-col lg:flex-row gap-12 w-full">
+                                {/* Left Side Feature Grid */}
+                                <div className="flex-1">
+                                    <div className="flex items-center gap-2 mb-6">
+                                        <svg className="w-5 h-5 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                        <span className="font-bold text-black text-lg">Key Components</span>
+                                    </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        {/* Component 1 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Cloud Data Warehouses (Snowflake, BigQuery, Redshift)</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Elastic, fast analytics with governed access and cost controls.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 2 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Data Lakes & Lake Houses Architecture</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Combine raw and curated zones for flexible analytics.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 3 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Kubernetes-based Data Processing</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Portable, scalable compute for pipelines and ML workloads.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 4 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Serverless Computing Integration</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Auto-scaling, event-driven data transformations.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 5 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Multi-cloud & Hybrid Deployments</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Resilience and choice without lock-in.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 6 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Cost Optimization & FinOps Practices</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Monitor, allocate, and right-size spend across platforms.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Right Side Image Box */}
+                                <div className="w-full lg:w-[400px] flex-shrink-0 flex items-start justify-center">
+                                    <div className="h-[400px] lg:h-[600px] w-full rounded-3xl overflow-hidden relative shadow-2xl border border-gray-100 bg-[#f8f9fc]">
+                                        <img src="/modern-data-infrastructure.jpg" alt="Modern Data Infrastructure" className="w-full h-full object-cover" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Enterprise Data Management Content */}
+                    {activeServiceTab === 'enterprise-data' && (
+                        <div className="bg-[#f8f9fc] border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-500">
+                            <div className="flex items-center gap-4 mb-4">
+                                <div className="w-12 h-12 rounded-xl bg-[#2DD4BF] flex items-center justify-center flex-shrink-0">
+                                    <svg className="w-6 h-6 text-[#042F2E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                                </div>
+                                <div>
+                                    <h3 className="text-3xl font-bold text-black">Enterprise Data Management</h3>
+                                    <p className="text-[#2DD4BF] font-medium mt-1">End-to-End Data Management: From Ingestion to Insights</p>
+                                </div>
+                            </div>
+
+                            <p className="text-gray-600 text-lg mb-12 max-w-4xl">
+                                Comprehensive data management solutions that handle the complete data lifecycle from ingestion and storage to processing and analytics.
+                            </p>
+
+                            <div className="flex flex-col lg:flex-row gap-12 w-full">
+                                {/* Left Side Feature Grid */}
+                                <div className="flex-1">
+                                    <div className="flex items-center gap-2 mb-6">
+                                        <svg className="w-5 h-5 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                        <span className="font-bold text-black text-lg">Key Components</span>
+                                    </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        {/* Component 1 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Data Ingestion & Collection Frameworks</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Streaming and batch ingestion with connectors and CDC.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 2 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Real-time & Batch Processing Systems</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Low-latency insights alongside scheduled transformations.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 3 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Data Storage Optimization</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Tiering, partitioning and compression for performance/cost.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 4 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Automated Data Quality Checks</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Rules and anomaly detection baked into pipelines.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 5 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Performance Monitoring & Optimization</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Observability dashboards and tuning for reliability.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 6 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Data Access APIs & Data Services</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Reliable, secure APIs to deliver curated datasets to apps and teams.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Right Side Image Box */}
+                                <div className="w-full lg:w-[400px] flex-shrink-0 flex items-start justify-center">
+                                    <div className="h-[400px] lg:h-[600px] w-full rounded-3xl overflow-hidden relative shadow-2xl border border-gray-100 bg-[#f8f9fc]">
+                                        <img src="/enterprise-data-management.jpg" alt="Enterprise Data Management" className="w-full h-full object-cover" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Data Modeling & Architecture Content */}
+                    {activeServiceTab === 'data-modeling' && (
+                        <div className="bg-[#f8f9fc] border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-500">
+                            <div className="flex items-center gap-4 mb-4">
+                                <div className="w-12 h-12 rounded-xl bg-[#2DD4BF] flex items-center justify-center flex-shrink-0">
+                                    <svg className="w-6 h-6 text-[#042F2E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                                </div>
+                                <div>
+                                    <h3 className="text-3xl font-bold text-black">Data Modeling & Architecture</h3>
+                                    <p className="text-[#2DD4BF] font-medium mt-1">Strategic Data Models: Optimized for Performance and Scalability</p>
+                                </div>
+                            </div>
+
+                            <p className="text-gray-600 text-lg mb-12 max-w-4xl">
+                                Design and implement sophisticated data models that optimize storage, improve query performance, and support complex analytical workloads.
+                            </p>
+
+                            <div className="flex flex-col lg:flex-row gap-12 w-full">
+                                {/* Left Side Feature Grid */}
+                                <div className="flex-1">
+                                    <div className="flex items-center gap-2 mb-6">
+                                        <svg className="w-5 h-5 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                        <span className="font-bold text-black text-lg">Key Components</span>
+                                    </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        {/* Component 1 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Dimensional & Star Schema Design</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Analyst-friendly models for BI and reporting.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 2 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Data Vault Modeling</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Auditability and agility for enterprise scale.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 3 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Graph Database Architecture</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Model complex relationships for connected insights.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 4 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Time-series Data Modeling</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Efficient storage and queries over time-bound data.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 5 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">NoSQL & Polyglot Persistence</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Use the right store for each workload.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 6 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Semantic Layer & Metrics Store</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Consistent business definitions and reusable metrics for BI.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Right Side Image Box */}
+                                <div className="w-full lg:w-[400px] flex-shrink-0 flex items-start justify-center">
+                                    <div className="h-[400px] lg:h-[600px] w-full rounded-3xl overflow-hidden relative shadow-2xl border border-gray-100 bg-[#f8f9fc]">
+                                        <img src="/data-modeling-architecture.jpg" alt="Data Modeling & Architecture" className="w-full h-full object-cover" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Data Quality & Observability Content */}
+                    {activeServiceTab === 'data-quality' && (
+                        <div className="bg-[#f8f9fc] border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-500">
+                            <div className="flex items-center gap-4 mb-4">
+                                <div className="w-12 h-12 rounded-xl bg-[#2DD4BF] flex items-center justify-center flex-shrink-0">
+                                    <svg className="w-6 h-6 text-[#042F2E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                                </div>
+                                <div>
+                                    <h3 className="text-3xl font-bold text-black">Data Quality & Observability</h3>
+                                    <p className="text-[#2DD4BF] font-medium mt-1">Trustworthy data through proactive monitoring and remediation</p>
+                                </div>
+                            </div>
+
+                            <p className="text-gray-600 text-lg mb-12 max-w-4xl">
+                                Ensure reliable analytics with automated data validation, lineage, and SLAs across your pipelines.
+                            </p>
+
+                            <div className="flex flex-col lg:flex-row gap-12 w-full">
+                                {/* Left Side Feature Grid */}
+                                <div className="flex-1">
+                                    <div className="flex items-center gap-2 mb-6">
+                                        <svg className="w-5 h-5 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                                        <span className="font-bold text-black text-lg">Key Components</span>
+                                    </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        {/* Component 1 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Automated quality checks & SLAs</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Define thresholds, track SLAs, and alert on drift.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 2 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Anomaly detection and alerts</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Detect outliers early to prevent data incidents.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 3 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Data lineage and impact analysis</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Trace data flows to speed up root-cause analysis.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 4 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Freshness, completeness, accuracy KPIs</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Trust metrics visible to all stakeholders.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 5 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Observability dashboards and reports</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Unified health view across platforms and pipelines.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/* Component 6 */}
+                                        <div className="bg-white border border-gray-200 hover:border-gray-100 rounded-2xl p-6 transition-colors group">
+                                            <div className="flex items-start gap-4">
+                                                <div className="w-8 h-8 rounded-full bg-[#0F3532] border border-[#2DD4BF]/30 flex items-center justify-center flex-shrink-0 mt-1">
+                                                    <svg className="w-4 h-4 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                                </div>
+                                                <div>
+                                                    <h4 className="text-black font-bold mb-2">Incident Management & Runbooks</h4>
+                                                    <p className="text-gray-600 text-sm leading-relaxed">Standardized playbooks to triage and resolve data issues quickly.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Right Side Image Box */}
+                                <div className="w-full lg:w-[400px] flex-shrink-0 flex items-start justify-center">
+                                    <div className="h-[400px] lg:h-[600px] w-full rounded-3xl overflow-hidden relative shadow-2xl border border-gray-100 bg-[#f8f9fc]">
+                                        <img src="/data-quality-observability.jpg" alt="Data Quality & Observability" className="w-full h-full object-cover" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </section>
 
                 {/* Data Engineering Section */}

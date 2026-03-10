@@ -9,7 +9,7 @@ export default function CareerPage() {
     return (
         <div className="flex flex-col min-h-screen bg-transparent relative z-10 w-full overflow-x-hidden">
             {/* Main content centered with top padding for navbar */}
-            <main className="flex-1 pt-32 pb-16 px-4 sm:px-6 flex flex-col items-center justify-start gap-12 bg-transparent relative z-10 w-full text-center">
+            <main className="flex-1 pt-32 pb-4 px-4 sm:px-6 flex flex-col items-center justify-start gap-12 bg-transparent relative z-10 w-full text-center">
 
                 {/* Hero Card */}
                 <div className="max-w-5xl w-full mx-auto flex flex-col items-center justify-center text-center gap-8 bg-white p-8 md:p-16 rounded-3xl shadow-xl border border-gray-100">
@@ -181,7 +181,7 @@ export default function CareerPage() {
                     </div>
 
                     {/* Apply Now Button */}
-                    <div className="w-full flex justify-center mt-6 mb-4">
+                    <div className="w-full flex justify-center mt-6">
                         <Link href="/career/apply" className="bg-[#F67112] hover:bg-[#e0620c] text-white font-bold py-5 px-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-xl flex items-center gap-3">
                             Apply Now
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>

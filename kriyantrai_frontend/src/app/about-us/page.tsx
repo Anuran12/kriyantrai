@@ -62,7 +62,7 @@ export default function AboutUsPage() {
                 <div className="w-full py-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
 
                     {/* Our Purpose Section */}
-                    <section className="w-full max-w-7xl mx-auto flex flex-col items-center mb-32 pt-12">
+                    <section className="w-full max-w-7xl mx-auto flex flex-col items-center mb-16 pt-12">
                         <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 text-center tracking-tight">Our Purpose</h2>
                         <p className="text-gray-600 font-medium text-lg mb-16 text-center">What drives us every day</p>
 
@@ -113,7 +113,7 @@ export default function AboutUsPage() {
                     </section>
 
                     {/* Why Partner With Us */}
-                    <section className="w-full max-w-7xl mx-auto flex flex-col items-center mb-32">
+                    <section className="w-full max-w-7xl mx-auto flex flex-col items-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 text-center tracking-tight">Why Partner With Us</h2>
                         <p className="text-gray-600 font-medium text-lg mb-16 text-center">Six compelling reasons to choose Kriyantrai as your AI transformation partner</p>
 
