@@ -368,7 +368,7 @@ export default function ArtificialIntelligencePage() {
 
                     <div className="relative z-10 flex flex-col items-center text-center">
                         <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md mb-8 shadow-sm text-white">
-                            <span className="text-lg">🧠</span>
+                            <span className="text-lg"></span>
                             <span className="text-sm font-bold tracking-wide">Next-Generation AI</span>
                         </div>
 

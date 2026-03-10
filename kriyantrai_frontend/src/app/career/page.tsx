@@ -47,12 +47,12 @@ export default function CareerPage() {
                         {/* Why Join Us */}
                         <div className="bg-blue-50/50 border border-blue-100 p-8 md:p-10 rounded-3xl card-hover-effect group text-left">
                             <h2 className="text-2xl lg:text-3xl font-bold text-[#153776] flex items-center gap-3 mb-6 font-serif">
-                                <span className="text-3xl lg:text-4xl">💡</span> Why Join Us?
+                                <span className="text-3xl lg:text-4xl"></span> Why Join Us?
                             </h2>
                             <ul className="space-y-4 text-gray-700 font-medium">
                                 <li className="flex items-start gap-3">
                                     <svg className="w-6 h-6 text-[#F67112] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Real-world project exposure (no coffee-fetching internships 😉)
+                                    Real-world project exposure (no coffee-fetching internships)
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <svg className="w-6 h-6 text-[#F67112] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
@@ -80,7 +80,7 @@ export default function CareerPage() {
                         {/* Who We're Looking For */}
                         <div className="bg-orange-50/50 border border-orange-100 p-8 md:p-10 rounded-3xl card-hover-effect group text-left">
                             <h2 className="text-2xl lg:text-3xl font-bold text-[#153776] flex items-center gap-3 mb-6 font-serif">
-                                <span className="text-3xl lg:text-4xl">🧠</span> Who We’re Looking For
+                                <span className="text-3xl lg:text-4xl"></span> Who We’re Looking For
                             </h2>
                             <p className="text-gray-700 font-bold mb-3">We love people who are:</p>
                             <ul className="space-y-2 text-gray-700 font-medium mb-6">
@@ -119,7 +119,7 @@ export default function CareerPage() {
                         {/* What You'll Gain */}
                         <div className="bg-teal-50/50 border border-teal-100 p-8 md:p-10 rounded-3xl card-hover-effect group text-left">
                             <h2 className="text-2xl lg:text-3xl font-bold text-[#153776] flex items-center gap-3 mb-6 font-serif">
-                                <span className="text-3xl lg:text-4xl">🌱</span> What You’ll Gain
+                                <span className="text-3xl lg:text-4xl"></span> What You’ll Gain
                             </h2>
                             <p className="text-gray-700 font-medium mb-6 leading-relaxed">
                                 At Kriyantrai, you won’t just add experience to your resume — you’ll build <span className="font-bold text-[#F67112]">confidence, capability, and clarity.</span>
@@ -153,7 +153,7 @@ export default function CareerPage() {
                     <div className="w-full bg-indigo-50/50 border border-indigo-100 p-8 md:p-12 rounded-3xl flex flex-col md:flex-row items-center md:items-start justify-between gap-8 mt-2">
                         <div className="flex-1 text-left">
                             <h2 className="text-3xl font-bold text-[#153776] flex items-center gap-3 mb-8 font-serif">
-                                <span className="text-4xl">🔥</span> Our Culture
+                                <span className="text-4xl"></span> Our Culture
                             </h2>
                             <ul className="space-y-4 font-medium text-lg text-gray-700">
                                 <li className="flex items-center gap-4">
