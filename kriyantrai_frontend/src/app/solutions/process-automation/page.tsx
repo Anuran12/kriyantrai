@@ -564,56 +564,71 @@ export default function ProcessAutomationPage() {
                 {/* Related Solutions Section */}
                 <section className="w-full bg-white py-24 z-20 relative border-t border-gray-200">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-center max-w-3xl mx-auto mb-16">
-                            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
-                                Related <span className="text-[#2DD4BF]">Solutions</span>
-                            </h2>
-                            <p className="text-gray-600 text-lg">
-                                Explore our complementary solutions to build a comprehensive digital transformation strategy
-                            </p>
+                        <div className="text-center mb-16 max-w-4xl mx-auto bg-white border border-gray-100 shadow-md rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
+                            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-transparent"></div>
+                            <div className="relative">
+                                <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+                                    Related <span className="text-[#2DD4BF]">Solutions</span>
+                                </h2>
+                                <p className="text-gray-600 text-lg">
+                                    Explore our complementary solutions to build a comprehensive digital transformation strategy
+                                </p>
+                            </div>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {/* Card 1: Business Process Automation */}
-                            <div className="bg-white rounded-[2rem] p-8 card-hover-effect flex flex-col h-full cursor-pointer group">
-                                <div className="flex items-center gap-5 mb-8">
-                                    <div className="w-16 h-16 rounded-2xl bg-[#eff6ff] shrink-0 flex items-center justify-center shadow-sm border border-[#3b82f6]/20">
-                                        <svg className="w-8 h-8 text-[#3b82f6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                            <div className="bg-white border border-gray-200 hover:border-[#3b82f6]/50 rounded-2xl p-6 transition-all duration-300 group flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1">
+                                <div className="flex items-start gap-4 flex-grow">
+                                    <div className="w-10 h-10 rounded-xl bg-[#eff6ff] shrink-0 flex items-center justify-center mt-1 border border-[#3b82f6]/20">
+                                        <svg className="w-5 h-5 text-[#3b82f6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                                     </div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-black leading-tight">Business Process Automation</h3>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-black group-hover:text-[#3b82f6] leading-tight transition-colors mb-2">Business Process Automation</h3>
+                                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                            Streamline workflows with customer service chatbots, scheduling systems, and automated document processing
+                                        </p>
+                                    </div>
                                 </div>
-                                <p className="text-gray-600 leading-relaxed mb-8 flex-grow text-sm md:text-base">
-                                    Streamline workflows with customer service chatbots, scheduling systems, and automated document processing
-                                </p>
-                                <ImageSlider images={bpaImages} />
+                                <div className="mt-4 pt-4 border-t border-gray-100">
+                                    <ImageSlider images={bpaImages} />
+                                </div>
                             </div>
 
                             {/* Card 2: Robotic Process Automation */}
-                            <div className="bg-white rounded-[2rem] p-8 card-hover-effect flex flex-col h-full cursor-pointer group">
-                                <div className="flex items-center gap-5 mb-8">
-                                    <div className="w-16 h-16 rounded-2xl bg-[#f0fdf4] shrink-0 flex items-center justify-center shadow-sm border border-[#22c55e]/20">
-                                        <svg className="w-8 h-8 text-[#22c55e]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
+                            <div className="bg-white border border-gray-200 hover:border-[#22c55e]/50 rounded-2xl p-6 transition-all duration-300 group flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1">
+                                <div className="flex items-start gap-4 flex-grow">
+                                    <div className="w-10 h-10 rounded-xl bg-[#f0fdf4] shrink-0 flex items-center justify-center mt-1 border border-[#22c55e]/20">
+                                        <svg className="w-5 h-5 text-[#22c55e]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
                                     </div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-black leading-tight">Robotic Process Automation</h3>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-black group-hover:text-[#22c55e] leading-tight transition-colors mb-2">Robotic Process Automation</h3>
+                                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                            Deploy intelligent bots for data entry, report generation, and system integration with 99.9% accuracy
+                                        </p>
+                                    </div>
                                 </div>
-                                <p className="text-gray-600 leading-relaxed mb-8 flex-grow text-sm md:text-base">
-                                    Deploy intelligent bots for data entry, report generation, and system integration with 99.9% accuracy
-                                </p>
-                                <ImageSlider images={rpaImages} />
+                                <div className="mt-4 pt-4 border-t border-gray-100">
+                                    <ImageSlider images={rpaImages} />
+                                </div>
                             </div>
 
                             {/* Card 3: Intelligent Process Automation */}
-                            <div className="bg-white rounded-[2rem] p-8 card-hover-effect flex flex-col h-full cursor-pointer group">
-                                <div className="flex items-center gap-5 mb-8">
-                                    <div className="w-16 h-16 rounded-2xl bg-[#f5f3ff] shrink-0 flex items-center justify-center shadow-sm border border-[#a78bfa]/20">
-                                        <svg className="w-8 h-8 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                            <div className="bg-white border border-gray-200 hover:border-[#a78bfa]/50 rounded-2xl p-6 transition-all duration-300 group flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1">
+                                <div className="flex items-start gap-4 flex-grow">
+                                    <div className="w-10 h-10 rounded-xl bg-[#f5f3ff] shrink-0 flex items-center justify-center mt-1 border border-[#a78bfa]/20">
+                                        <svg className="w-5 h-5 text-[#8b5cf6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
                                     </div>
-                                    <h3 className="text-xl md:text-2xl font-bold text-black leading-tight">Intelligent Process Automation</h3>
+                                    <div>
+                                        <h3 className="text-lg font-bold text-black group-hover:text-[#8b5cf6] leading-tight transition-colors mb-2">Intelligent Process Automation</h3>
+                                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                            AI-powered automation with computer vision, NLP, and machine learning for complex decision-making
+                                        </p>
+                                    </div>
                                 </div>
-                                <p className="text-gray-600 leading-relaxed mb-8 flex-grow text-sm md:text-base">
-                                    AI-powered automation with computer vision, NLP, and machine learning for complex decision-making
-                                </p>
-                                <ImageSlider images={ipaImages} />
+                                <div className="mt-4 pt-4 border-t border-gray-100">
+                                    <ImageSlider images={ipaImages} />
+                                </div>
                             </div>
                         </div>
                     </div>

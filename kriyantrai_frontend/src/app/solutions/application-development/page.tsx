@@ -1175,64 +1175,73 @@ export default function ApplicationDevelopmentPage() {
 
                 {/* Related Solutions */}
                 <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 z-20 relative">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-                            Related <span className="text-[#2DD4BF]">Solutions</span>
-                        </h2>
-                        <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                            Explore our complementary solutions to build a comprehensive digital transformation strategy
-                        </p>
+                    <div className="text-center mb-16 max-w-4xl mx-auto bg-white border border-gray-100 shadow-md rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-transparent"></div>
+                        <div className="relative">
+                            <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
+                                Related <span className="text-[#2DD4BF]">Solutions</span>
+                            </h2>
+                            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                                Explore our complementary solutions to build a comprehensive digital transformation strategy
+                            </p>
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {/* Solution 1 */}
-                        <a href="/solutions/artificial-intelligence" className="group flex flex-col justify-between bg-white border border-gray-100 hover:border-[#3b82f6]/30 rounded-3xl p-8 hover:shadow-xl transition-all shadow-sm">
-                            <div>
-                                <div className="w-12 h-12 rounded-xl bg-[#eff6ff] flex items-center justify-center mb-6">
-                                    <svg className="w-6 h-6 text-[#3b82f6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                        <a href="/solutions/artificial-intelligence" className="bg-white border border-gray-200 hover:border-[#3b82f6]/50 rounded-2xl p-6 transition-all duration-300 group flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1">
+                            <div className="flex items-start gap-4 flex-grow">
+                                <div className="w-10 h-10 rounded-xl bg-[#eff6ff] shrink-0 flex items-center justify-center mt-1">
+                                    <svg className="w-5 h-5 text-[#3b82f6]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-black mb-4 group-hover:text-[#3b82f6] transition-colors">Artificial Intelligence</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                                    Advanced machine learning, computer vision, and natural language processing for intelligent automation
-                                </p>
+                                <div>
+                                    <h3 className="text-lg font-bold text-black group-hover:text-[#3b82f6] leading-tight transition-colors mb-2">Artificial Intelligence</h3>
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                        Advanced machine learning, computer vision, and natural language processing for intelligent automation
+                                    </p>
+                                </div>
                             </div>
-                            <div className="flex items-center justify-between text-[#3b82f6] font-semibold text-sm">
-                                Learn More
-                                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            <div className="mt-auto flex items-center text-sm font-semibold text-[#3b82f6]">
+                                <span>Learn More</span>
+                                <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </div>
                         </a>
 
                         {/* Solution 2 */}
-                        <a href="/solutions/data-solutions" className="group flex flex-col justify-between bg-white border border-gray-100 hover:border-[#16a34a]/30 rounded-3xl p-8 hover:shadow-xl transition-all shadow-sm">
-                            <div>
-                                <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] flex items-center justify-center mb-6">
-                                    <svg className="w-6 h-6 text-[#16a34a]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                        <a href="/solutions/data-solutions" className="bg-white border border-gray-200 hover:border-[#16a34a]/50 rounded-2xl p-6 transition-all duration-300 group flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1">
+                            <div className="flex items-start gap-4 flex-grow">
+                                <div className="w-10 h-10 rounded-xl bg-[#f0fdf4] shrink-0 flex items-center justify-center mt-1">
+                                    <svg className="w-5 h-5 text-[#16a34a]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-black mb-4 group-hover:text-[#16a34a] transition-colors">Data Solutions</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                                    Enterprise data architecture, engineering, and analytics to transform raw data into actionable insights
-                                </p>
+                                <div>
+                                    <h3 className="text-lg font-bold text-black group-hover:text-[#16a34a] leading-tight transition-colors mb-2">Data Solutions</h3>
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                        Enterprise data architecture, engineering, and analytics to transform raw data into actionable insights
+                                    </p>
+                                </div>
                             </div>
-                            <div className="flex items-center justify-between text-[#16a34a] font-semibold text-sm">
-                                Learn More
-                                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            <div className="mt-auto flex items-center text-sm font-semibold text-[#16a34a]">
+                                <span>Learn More</span>
+                                <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </div>
                         </a>
 
                         {/* Solution 3 */}
-                        <a href="/solutions/process-automation" className="group flex flex-col justify-between bg-white border border-gray-100 hover:border-[#a855f7]/30 rounded-3xl p-8 hover:shadow-xl transition-all shadow-sm">
-                            <div>
-                                <div className="w-12 h-12 rounded-xl bg-[#faf5ff] flex items-center justify-center mb-6">
-                                    <svg className="w-6 h-6 text-[#a855f7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <a href="/solutions/process-automation" className="bg-white border border-gray-200 hover:border-[#a855f7]/50 rounded-2xl p-6 transition-all duration-300 group flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1">
+                            <div className="flex items-start gap-4 flex-grow">
+                                <div className="w-10 h-10 rounded-xl bg-[#faf5ff] shrink-0 flex items-center justify-center mt-1">
+                                    <svg className="w-5 h-5 text-[#a855f7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                                 </div>
-                                <h3 className="text-2xl font-bold text-black mb-4 group-hover:text-[#a855f7] transition-colors">Process Automation</h3>
-                                <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                                    Comprehensive BPA, RPA, and IPA solutions to automate workflows and reduce operational costs
-                                </p>
+                                <div>
+                                    <h3 className="text-lg font-bold text-black group-hover:text-[#a855f7] leading-tight transition-colors mb-2">Process Automation</h3>
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                        Comprehensive BPA, RPA, and IPA solutions to automate workflows and reduce operational costs
+                                    </p>
+                                </div>
                             </div>
-                            <div className="flex items-center justify-between text-[#a855f7] font-semibold text-sm">
-                                Learn More
-                                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            <div className="mt-auto flex items-center text-sm font-semibold text-[#a855f7]">
+                                <span>Learn More</span>
+                                <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </div>
                         </a>
                     </div>
