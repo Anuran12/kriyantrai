@@ -562,18 +562,15 @@ export default function ProcessAutomationPage() {
                 </section>
 
                 {/* Related Solutions Section */}
-                <section className="w-full bg-white py-24 z-20 relative border-t border-gray-200">
+                <section className="w-full py-16 z-20 relative">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-center mb-16 max-w-4xl mx-auto bg-white border border-gray-100 shadow-md rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
-                            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-transparent"></div>
-                            <div className="relative">
-                                <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
-                                    Related <span className="text-[#2DD4BF]">Solutions</span>
-                                </h2>
-                                <p className="text-gray-600 text-lg">
-                                    Explore our complementary solutions to build a comprehensive digital transformation strategy
-                                </p>
-                            </div>
+                        <div className="text-center mb-12 w-full bg-white border border-gray-200 shadow-sm rounded-2xl p-8 md:p-12 flex flex-col items-center justify-center hover:shadow-md transition-shadow">
+                            <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
+                                Related <span className="text-[#2DD4BF]">Solutions</span>
+                            </h2>
+                            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                                Explore our complementary solutions to build a comprehensive digital transformation strategy
+                            </p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

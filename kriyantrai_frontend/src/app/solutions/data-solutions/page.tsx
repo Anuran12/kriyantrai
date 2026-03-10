@@ -891,77 +891,76 @@ export default function DataSolutionsPage() {
                 </section>
 
                 {/* Related Solutions Section */}
-                <section className="w-full bg-white py-24 z-20 relative border-t border-gray-200">
+                <section className="w-full py-16 z-20 relative">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-center mb-16 max-w-4xl mx-auto bg-white border border-gray-100 shadow-md rounded-[2rem] p-8 md:p-12 relative overflow-hidden">
-                            <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-transparent"></div>
-                            <div className="relative">
+                        <div className="w-full bg-white border border-gray-200 shadow-sm rounded-[2rem] p-8 md:p-12 hover:shadow-md transition-shadow">
+                            <div className="text-center mb-12 flex flex-col items-center justify-center">
                                 <h2 className="text-4xl font-bold text-black mb-6">
                                     Related <span className="text-[#2DD4BF]">Solutions</span>
                                 </h2>
-                                <p className="text-gray-600 text-lg">
+                                <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                                     Explore our complementary solutions to build a comprehensive digital transformation strategy
                                 </p>
                             </div>
-                        </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {/* Card 1: AI Solutions */}
-                            <a href="/solutions/artificial-intelligence" className="bg-white border border-gray-200 hover:border-indigo-500/50 rounded-2xl p-6 transition-all duration-300 group flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1">
-                                <div className="flex items-start gap-4 flex-grow">
-                                    <div className="w-10 h-10 rounded-xl bg-[#262039] shrink-0 flex items-center justify-center shadow-sm mt-1">
-                                        <svg className="w-5 h-5 text-[#818CF8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"></path></svg>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                {/* Card 1: AI Solutions */}
+                                <a href="/solutions/artificial-intelligence" className="bg-white border border-gray-200 hover:border-indigo-500/50 rounded-2xl p-6 transition-all duration-300 group flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1">
+                                    <div className="flex items-start gap-4 flex-grow">
+                                        <div className="w-10 h-10 rounded-xl bg-[#262039] shrink-0 flex items-center justify-center shadow-sm mt-1">
+                                            <svg className="w-5 h-5 text-[#818CF8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"></path></svg>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-lg font-bold text-black group-hover:text-indigo-600 leading-tight transition-colors mb-2">Artificial Intelligence</h3>
+                                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                                Advanced machine learning, computer vision, and natural language processing for intelligent automation
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 className="text-lg font-bold text-black group-hover:text-indigo-600 leading-tight transition-colors mb-2">Artificial Intelligence</h3>
-                                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                            Advanced machine learning, computer vision, and natural language processing for intelligent automation
-                                        </p>
+                                    <div className="mt-auto flex items-center text-sm font-semibold text-indigo-600 group-hover:text-indigo-700 transition-colors">
+                                        <span>Learn More</span>
+                                        <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </div>
-                                </div>
-                                <div className="mt-auto flex items-center text-sm font-semibold text-indigo-600 group-hover:text-indigo-700 transition-colors">
-                                    <span>Learn More</span>
-                                    <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                                </div>
-                            </a>
+                                </a>
 
-                            {/* Card 2: Application Development */}
-                            <a href="/solutions/application-development" className="bg-white border border-gray-200 hover:border-teal-500/50 rounded-2xl p-6 transition-all duration-300 group flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1">
-                                <div className="flex items-start gap-4 flex-grow">
-                                    <div className="w-10 h-10 rounded-xl bg-[#14262E] shrink-0 flex items-center justify-center shadow-sm mt-1">
-                                        <svg className="w-5 h-5 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                {/* Card 2: Application Development */}
+                                <a href="/solutions/application-development" className="bg-white border border-gray-200 hover:border-teal-500/50 rounded-2xl p-6 transition-all duration-300 group flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1">
+                                    <div className="flex items-start gap-4 flex-grow">
+                                        <div className="w-10 h-10 rounded-xl bg-[#14262E] shrink-0 flex items-center justify-center shadow-sm mt-1">
+                                            <svg className="w-5 h-5 text-[#2DD4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-lg font-bold text-black group-hover:text-teal-600 leading-tight transition-colors mb-2">Application Development</h3>
+                                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                                Full-stack custom software development with modern frameworks and cloud-native architecture
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 className="text-lg font-bold text-black group-hover:text-teal-600 leading-tight transition-colors mb-2">Application Development</h3>
-                                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                            Full-stack custom software development with modern frameworks and cloud-native architecture
-                                        </p>
+                                    <div className="mt-auto flex items-center text-sm font-semibold text-teal-600 group-hover:text-teal-700 transition-colors">
+                                        <span>Learn More</span>
+                                        <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </div>
-                                </div>
-                                <div className="mt-auto flex items-center text-sm font-semibold text-teal-600 group-hover:text-teal-700 transition-colors">
-                                    <span>Learn More</span>
-                                    <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                                </div>
-                            </a>
+                                </a>
 
-                            {/* Card 3: Process Automation */}
-                            <a href="/solutions/process-automation" className="bg-white border border-gray-200 hover:border-red-500/50 rounded-2xl p-6 transition-all duration-300 group flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1">
-                                <div className="flex items-start gap-4 flex-grow">
-                                    <div className="w-10 h-10 rounded-xl bg-[#372323] shrink-0 flex items-center justify-center shadow-sm mt-1">
-                                        <svg className="w-5 h-5 text-[#F87171]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                {/* Card 3: Process Automation */}
+                                <a href="/solutions/process-automation" className="bg-white border border-gray-200 hover:border-red-500/50 rounded-2xl p-6 transition-all duration-300 group flex flex-col h-full cursor-pointer hover:shadow-lg hover:-translate-y-1">
+                                    <div className="flex items-start gap-4 flex-grow">
+                                        <div className="w-10 h-10 rounded-xl bg-[#372323] shrink-0 flex items-center justify-center shadow-sm mt-1">
+                                            <svg className="w-5 h-5 text-[#F87171]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-lg font-bold text-black group-hover:text-red-600 leading-tight transition-colors mb-2">Process Automation</h3>
+                                            <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                                Comprehensive BPA, RPA, and IPA solutions to automate workflows and reduce operational costs
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 className="text-lg font-bold text-black group-hover:text-red-600 leading-tight transition-colors mb-2">Process Automation</h3>
-                                        <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                                            Comprehensive BPA, RPA, and IPA solutions to automate workflows and reduce operational costs
-                                        </p>
+                                    <div className="mt-auto flex items-center text-sm font-semibold text-red-600 group-hover:text-red-700 transition-colors">
+                                        <span>Learn More</span>
+                                        <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </div>
-                                </div>
-                                <div className="mt-auto flex items-center text-sm font-semibold text-red-600 group-hover:text-red-700 transition-colors">
-                                    <span>Learn More</span>
-                                    <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>

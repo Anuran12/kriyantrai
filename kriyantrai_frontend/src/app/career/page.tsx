@@ -173,9 +173,9 @@ export default function CareerPage() {
 
                         <div className="flex-1 bg-white/60 border border-indigo-200/50 p-8 rounded-3xl flex items-center justify-center text-center h-full min-h-[16rem] shadow-sm">
                             <p className="font-bold text-2xl md:text-3xl leading-relaxed tracking-wide text-[#153776] italic">
-                                "We move fast.<br />
+                                We move fast.<br />
                                 We learn faster.<br />
-                                We grow together."
+                                We grow together.
                             </p>
                         </div>
                     </div>
