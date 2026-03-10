@@ -73,7 +73,7 @@ export default function Navbar() {
                                 </div>
                             </div>
                         </div>
-                        <Link href="/about-us" className="hover:text-primary transition-colors">
+                        <Link href="/about" className="hover:text-primary transition-colors">
                             About Us
                         </Link>
                     </div>
