@@ -89,10 +89,10 @@ const ImageSlider = ({
 export default function ProductsPage() {
     return (
         <div className="flex flex-col min-h-screen relative z-10 w-full bg-transparent">
-            <main className="flex-1 w-full flex flex-col items-center justify-start pt-32 pb-16">
+            <main className="flex-1 w-full flex flex-col items-center justify-start pt-28 pb-16">
 
                 {/* Hero Section */}
-                <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center mt-12 mb-20 relative">
+                <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center mt-6 mb-20 relative">
 
                     {/* Badge */}
                     <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-gray-300 bg-white/50 backdrop-blur-sm mb-12 shadow-sm">

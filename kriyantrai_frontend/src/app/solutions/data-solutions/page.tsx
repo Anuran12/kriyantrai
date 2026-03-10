@@ -215,7 +215,7 @@ export default function DataSolutionsPage() {
                 </section>
 
                 {/* Stats */}
-                <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-8 mt-16 pt-12 border-t border-gray-200 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
+                <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-8 mt-8 pt-8 border-t border-gray-200 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
                     <div className="flex flex-col items-center justify-center text-center">
                         <span className="text-4xl md:text-5xl font-bold text-black mb-2">25+</span>
                         <span className="text-gray-600 font-medium tracking-wide text-sm">Data Projects Delivered</span>
