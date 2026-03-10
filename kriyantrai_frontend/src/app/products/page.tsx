@@ -148,10 +148,6 @@ export default function ProductsPage() {
                                     Get Early Access
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </a>
-                                <a href="/contact/sales" className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-200 shadow-sm font-bold py-4 px-10 rounded-full transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center gap-2 text-lg">
-                                    Contact Us
-                                    <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
-                                </a>
                             </motion.div>
                         </div>
 
@@ -297,12 +293,9 @@ export default function ProductsPage() {
                                 </div>
 
                                 {/* Bottom Button Row */}
-                                <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pt-6 border-t border-gray-100">
+                                <div className="w-full flex justify-center mt-8 pt-6 border-t border-gray-100">
                                     <a href="/contact/sales" className="bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-base w-full sm:w-auto">
                                         Book a demo
-                                    </a>
-                                    <a href="/contact/sales" className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-200 shadow-sm font-bold py-3 px-8 rounded-full transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-base w-full sm:w-auto">
-                                        Contact sales
                                     </a>
                                 </div>
                             </div>
@@ -391,12 +384,9 @@ export default function ProductsPage() {
                                 </div>
 
                                 {/* Bottom Button Row */}
-                                <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 pt-6 border-t border-gray-100">
+                                <div className="w-full flex justify-center mt-8 pt-6 border-t border-gray-100">
                                     <a href="/contact/sales" className="bg-[#153776] hover:bg-[#102A5E] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-base w-full sm:w-auto">
                                         Book a demo
-                                    </a>
-                                    <a href="/contact/sales" className="bg-white hover:bg-gray-50 text-gray-900 border border-gray-200 shadow-sm font-bold py-3 px-8 rounded-full transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-base w-full sm:w-auto">
-                                        Contact sales
                                     </a>
                                 </div>
                             </div>
