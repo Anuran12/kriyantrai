@@ -1,10 +1,25 @@
 'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
+import { Leaf, Network, TrendingUp } from 'lucide-react';
 
 export default function Home() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const slideImages = [
+    '/data-modeling-architecture.jpg',
+    '/modern-data-infrastructure.jpg',
+    '/integrating-vision.jpg',
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % slideImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen bg-transparent relative z-10 w-full overflow-x-hidden">
       <main className="flex-1 w-full flex flex-col items-center justify-start pt-16 pb-0">
@@ -12,12 +27,126 @@ export default function Home() {
         <Hero />
 
         {/* Section 1: Intro */}
-        <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col items-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 md:mb-12 text-center tracking-tight leading-tight">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col items-center overflow-hidden">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 md:mb-16 text-center tracking-tight leading-tight">
             Why you need Kriyantrai's Solutions?
           </h2>
-          <div className="w-full rounded-3xl border border-gray-200 shadow-sm overflow-hidden bg-[#0f172a]">
-            <img src="/media-uploaded-new.jpg" alt="Why you need Kriyantrai's Solutions" className="w-full h-auto object-cover" />
+
+          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center bg-slate-50 p-8 md:p-12 xl:p-16 rounded-[2.5rem] border border-slate-200/60 shadow-sm relative">
+
+            {/* Background Decorations */}
+            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-blue-100/50 blur-3xl pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 rounded-full bg-emerald-100/50 blur-3xl pointer-events-none"></div>
+
+            {/* Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="flex flex-col gap-8 relative z-10"
+            >
+              <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
+                <p className="text-xl">
+                  Traditional approaches are neither interactive nor personalized. We partner with forward-thinking businesses to build <span className="font-semibold text-emerald-600">sustainable futures</span>, <span className="font-semibold text-blue-600">empower teams</span>, and achieve <span className="font-semibold text-orange-600">measurable success</span> through innovative technology solutions.
+                </p>
+              </div>
+
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="bg-white p-6 rounded-2xl border border-gray-100 shadow-xl shadow-gray-200/40 my-2 relative overflow-hidden"
+              >
+                <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-blue-500 to-emerald-400"></div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">
+                  Kriyantrai is your modern tool for growth.
+                </h3>
+                <p className="text-lg text-gray-600 font-medium">
+                  The result: <span className="font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">more efficiency, engagement and leads.</span>
+                </p>
+              </motion.div>
+
+              {/* Three Logos/Icons */}
+              <div className="grid grid-cols-3 gap-4 md:gap-6 mt-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                  className="flex flex-col items-center text-center gap-4 group cursor-pointer"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center text-emerald-600 shadow-sm border border-emerald-200/60 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                    <Leaf className="w-8 h-8 stroke-[1.5]" />
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-slate-800 leading-tight">Sustainable<br />Futures</span>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                  className="flex flex-col items-center text-center gap-4 group cursor-pointer"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center text-blue-600 shadow-sm border border-blue-200/60 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                    <Network className="w-8 h-8 stroke-[1.5]" />
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-slate-800 leading-tight">Empowered<br />Teams</span>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.6, duration: 0.5 }}
+                  className="flex flex-col items-center text-center gap-4 group cursor-pointer"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center text-orange-600 shadow-sm border border-orange-200/60 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
+                    <TrendingUp className="w-8 h-8 stroke-[1.5]" />
+                  </div>
+                  <span className="text-sm md:text-base font-bold text-slate-800 leading-tight">Measurable<br />Success</span>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Sliding Images */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+              className="relative w-full aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border-[6px] border-white z-10"
+            >
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={currentImageIndex}
+                  src={slideImages[currentImageIndex]}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{
+                    opacity: { duration: 0.8 },
+                    scale: { duration: 5, ease: "linear" }
+                  }}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  alt="Kriyantrai Solutions Gallery"
+                />
+              </AnimatePresence>
+
+              {/* Overlay Gradient for contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent pointer-events-none"></div>
+
+              {/* Slide Indicators */}
+              <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-10">
+                {slideImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentImageIndex(idx)}
+                    className={`h-1.5 rounded-full transition-all duration-500 ease-out cursor-pointer hover:bg-white ${idx === currentImageIndex ? 'w-10 bg-white shadow-[0_0_10px_rgba(255,255,255,0.5)]' : 'w-2 bg-white/40 backdrop-blur-sm'}`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </motion.div>
           </div>
         </section>
 
