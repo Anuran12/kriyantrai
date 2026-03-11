@@ -235,7 +235,7 @@ export default function DataSolutionsPage() {
                 </div>
 
                 {/* Sticky Section Navigation */}
-                <div className="sticky top-12 z-40 w-full transition-all duration-300">
+                <div className="hidden md:block sticky top-12 z-40 w-full transition-all duration-300">
                     <div className="container mx-auto px-6 max-w-7xl">
                         <div className="flex items-center py-4 overflow-x-auto hide-scrollbar">
                             <div className="flex items-center space-x-1 sm:space-x-2 mx-auto bg-gray-100/50 backdrop-blur-md rounded-full p-1 border border-white/60 shadow-inner w-max">
