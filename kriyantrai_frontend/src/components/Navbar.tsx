@@ -15,10 +15,15 @@ export default function Navbar() {
         return () => clearTimeout(timer);
     }, []);
 
-    // Handle click spin
-    const handleLogoClick = () => {
+    // Handle click spin and smooth scroll to top if on home page
+    const handleLogoClick = (e: React.MouseEvent) => {
         setIsSpinning(true);
         setTimeout(() => setIsSpinning(false), 1000);
+
+        if (typeof window !== 'undefined' && window.location.pathname === '/') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     };
 
     return (

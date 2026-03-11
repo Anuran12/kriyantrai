@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
     return (
@@ -11,10 +12,19 @@ export default function Footer() {
                 {/* Top Section: Logo/Info & Links */}
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-12">
                     <div className="md:col-span-2 flex flex-col gap-6 transform hover:-translate-y-1 transition-transform duration-300">
-                        <div className="flex items-center gap-3">
+                        <Link
+                            href="/"
+                            onClick={(e) => {
+                                if (typeof window !== 'undefined' && window.location.pathname === '/') {
+                                    e.preventDefault();
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }
+                            }}
+                            className="flex items-center gap-3 cursor-pointer"
+                        >
                             <img src="/logo-original.png" alt="Kriyantrai Logo" className="h-10 w-auto" />
                             <span className="font-bold text-2xl text-white">Kriyantrai</span>
-                        </div>
+                        </Link>
                         <p className="text-white text-sm leading-relaxed max-w-sm font-medium">
                             Transforming businesses with AI, Machine Learning, and Automation. We create intelligent solutions that drive innovation, efficiency, and growth.
                         </p>
