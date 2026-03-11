@@ -72,8 +72,8 @@ export default function ContactSalesPage() {
         <div className="w-full max-w-6xl flex flex-col gap-8">
           <div className="w-full relative flex flex-col md:flex-row gap-8 my-auto">
             <div className="flex-1 flex flex-col gap-8 justify-start">
-              <div className="bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 p-8 md:p-10 lg:p-12 hover:-translate-y-2 transition-transform duration-300">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 tracking-tight">
+              <div className="bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 p-6 sm:p-8 md:p-10 lg:p-12 hover:-translate-y-2 transition-transform duration-300">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 tracking-tight">
                   Talk to our Sales team
                 </h2>
                 <ul className="space-y-6">
@@ -104,9 +104,9 @@ export default function ContactSalesPage() {
                 </ul>
               </div>
 
-              <div className="bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 p-8 md:p-10 lg:p-12 hover:-translate-y-2 transition-transform duration-300">
-                <h3 className="text-2xl font-bold text-gray-900 mb-5 tracking-tight">Let&apos;s connect</h3>
-                <div className="space-y-4 text-gray-700 text-[17px] leading-relaxed">
+              <div className="bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 p-6 sm:p-8 md:p-10 lg:p-12 hover:-translate-y-2 transition-transform duration-300">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-5 tracking-tight">Let&apos;s connect</h3>
+                <div className="space-y-4 text-gray-700 text-base sm:text-[17px] leading-relaxed">
                   <p>
                     At Kriyantrai, we begin by understanding your challenges from the ground level. We carefully listen to your problem and design the solution for you.
                   </p>
@@ -117,8 +117,8 @@ export default function ContactSalesPage() {
               </div>
             </div>
 
-            <div className="flex-1 bg-teal-100/60 rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-teal-200/50 p-8 md:p-10 lg:p-12 flex flex-col justify-center hover:-translate-y-2 transition-transform duration-300">
-              <h3 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-8 leading-tight max-w-md">
+            <div className="flex-1 bg-teal-100/60 rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-teal-200/50 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center hover:-translate-y-2 transition-transform duration-300">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mb-8 leading-tight max-w-md">
                 Fill out this quick form and we&apos;ll get back to you shortly
               </h3>
 
@@ -175,7 +175,7 @@ export default function ContactSalesPage() {
 
           <div className="w-full flex flex-col gap-8 bg-transparent pb-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-              <div className="bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 p-8 flex flex-col justify-center gap-4 h-[160px] md:h-[180px] group hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 p-6 sm:p-8 flex flex-col justify-center gap-4 h-[160px] md:h-[180px] group hover:-translate-y-1 transition-transform duration-300">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-[#153776] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -185,7 +185,7 @@ export default function ContactSalesPage() {
                 <p className="text-gray-600 ml-16 font-medium">Monday - Friday: 8:00 AM - 5:00 PM IST</p>
               </div>
 
-              <div className="bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 p-8 flex flex-col justify-center gap-4 h-[160px] md:h-[180px] group hover:-translate-y-1 transition-transform duration-300">
+              <div className="bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 p-6 sm:p-8 flex flex-col justify-center gap-4 h-[160px] md:h-[180px] group hover:-translate-y-1 transition-transform duration-300">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-2xl bg-teal-50 text-[#14b8a6] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
@@ -196,7 +196,7 @@ export default function ContactSalesPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 p-8 lg:p-12 w-full flex flex-col items-center justify-center gap-10 text-center relative overflow-hidden">
+            <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 p-6 sm:p-8 lg:p-12 w-full flex flex-col items-center justify-center gap-10 text-center relative overflow-hidden">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#14b8a6] via-[#153776] to-[#F67112] rounded-b-full"></div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 w-full max-w-6xl mt-2 text-left">

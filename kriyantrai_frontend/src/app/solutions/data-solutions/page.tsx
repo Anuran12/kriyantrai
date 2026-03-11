@@ -177,10 +177,10 @@ export default function DataSolutionsPage() {
                         {/* Title Section */}
                         <div className="flex-1 flex flex-col items-center px-4 relative z-10">
                             <h1 className="flex flex-col items-center justify-center font-bold tracking-tight text-center">
-                                <span className="text-black text-5xl md:text-7xl lg:text-7xl leading-[1.15] tracking-tighter mb-4 whitespace-nowrap">
+                                <span className="text-black text-4xl sm:text-5xl md:text-7xl leading-[1.15] tracking-tighter mb-4 whitespace-nowrap">
                                     Transform with <span className="text-[#153776]">Data</span>
                                 </span>
-                                <span className="text-black text-5xl md:text-7xl lg:text-7xl leading-[1.15] tracking-tighter mb-6 whitespace-nowrap flex flex-wrap items-center justify-center gap-3 md:gap-4">
+                                <span className="text-black text-4xl sm:text-5xl md:text-7xl leading-[1.15] tracking-tighter mb-6 whitespace-nowrap flex flex-wrap items-center justify-center gap-3 md:gap-4">
                                     Solutions that <span className="inline-flex items-center justify-center bg-[#153776] text-[#A1F9F3] px-6 py-1.5 md:px-8 md:py-2 rounded-2xl md:rounded-[1.5rem] shadow-xl relative -top-1">Deliver</span>
                                 </span>
                             </h1>
@@ -215,22 +215,22 @@ export default function DataSolutionsPage() {
                 </section>
 
                 {/* Stats */}
-                <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-8 mt-8 pt-8 border-t border-gray-200 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
+                <div className="grid grid-cols-2 md:grid-cols-4 w-full gap-8 md:gap-4 mt-8 pt-8 border-t border-gray-200 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
                     <div className="flex flex-col items-center justify-center text-center">
-                        <span className="text-4xl md:text-5xl font-bold text-black mb-2">25+</span>
-                        <span className="text-gray-600 font-medium tracking-wide text-sm">Data Projects Delivered</span>
+                        <span className="text-3xl md:text-5xl font-bold text-black mb-2">25+</span>
+                        <span className="text-gray-600 font-medium tracking-wide text-xs md:text-sm">Data Projects Delivered</span>
                     </div>
                     <div className="flex flex-col items-center justify-center text-center">
-                        <span className="text-4xl md:text-5xl font-bold text-black mb-2">98%</span>
-                        <span className="text-gray-600 font-medium tracking-wide text-sm">Data Accuracy Achieved</span>
+                        <span className="text-3xl md:text-5xl font-bold text-black mb-2">98%</span>
+                        <span className="text-gray-600 font-medium tracking-wide text-xs md:text-sm">Data Accuracy Achieved</span>
                     </div>
                     <div className="flex flex-col items-center justify-center text-center">
-                        <span className="text-4xl md:text-5xl font-bold text-[#34D399] mb-2">75%</span>
-                        <span className="text-gray-600 font-medium tracking-wide text-sm">Cost Reduction Average</span>
+                        <span className="text-3xl md:text-5xl font-bold text-[#34D399] mb-2">75%</span>
+                        <span className="text-gray-600 font-medium tracking-wide text-xs md:text-sm">Cost Reduction Average</span>
                     </div>
                     <div className="flex flex-col items-center justify-center text-center">
-                        <span className="text-4xl md:text-5xl font-bold text-black mb-2">24/7</span>
-                        <span className="text-gray-600 font-medium tracking-wide text-sm">Data Monitoring</span>
+                        <span className="text-3xl md:text-5xl font-bold text-black mb-2">24/7</span>
+                        <span className="text-gray-600 font-medium tracking-wide text-xs md:text-sm">Data Monitoring</span>
                     </div>
                 </div>
 
@@ -283,10 +283,10 @@ export default function DataSolutionsPage() {
                         <span className="text-sm font-semibold tracking-wider text-[#2DD4BF]">Enterprise Solutions</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-center text-black mb-6 leading-tight tracking-tight">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-center text-black mb-6 leading-tight tracking-tight">
                         Transform <span className="text-[#2DD4BF]">Your Data</span>
                         <br />
-                        <span className="text-gray-800 text-3xl md:text-5xl lg:text-6xl font-medium tracking-normal">Into Strategic Assets</span>
+                        <span className="text-gray-800 text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-medium tracking-normal">Into Strategic Assets</span>
                     </h2>
 
                     <p className="text-base md:text-lg text-gray-600 text-center max-w-3xl font-medium mt-4">
@@ -885,7 +885,7 @@ export default function DataSolutionsPage() {
                             <span className="text-sm font-semibold tracking-wider text-[#2DD4BF]">AI-Ready Infrastructure</span>
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-center text-black leading-tight tracking-tight mb-4">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-center text-black leading-tight tracking-tight mb-4">
                             Data <span className="text-[#34D399]">Engineering</span>
                             <br />
                             <span className="text-gray-800">for AI Excellence</span>
@@ -1049,7 +1049,7 @@ export default function DataSolutionsPage() {
                             <span className="text-sm font-semibold tracking-wider text-[#2DD4BF]">Proven Methodology</span>
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-center text-black leading-tight tracking-tight mb-4">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-center text-black leading-tight tracking-tight mb-4">
                             Data <span className="text-[#34D399]">Implementation</span>
                             <br />
                             <span className="text-gray-800">Methodology</span>
@@ -1228,7 +1228,7 @@ export default function DataSolutionsPage() {
                 {/* Interactive Data Architecture Section */}
                 <section id="ai-engineering" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-24 z-20 relative scroll-mt-32">
                     <div className="flex flex-col flex-wrap text-center items-center justify-center mb-12">
-                        <h2 className="text-4xl text-black font-bold mb-4 tracking-tight">Interactive Data Architecture</h2>
+                        <h2 className="text-3xl md:text-4xl text-black font-bold mb-4 tracking-tight">Interactive Data Architecture</h2>
                         <p className="text-gray-600 max-w-3xl leading-relaxed">
                             Explore our data architecture layers in an interactive view. Each layer represents a critical component of the enterprise data ecosystem, from source systems to analytics platforms.
                         </p>
@@ -1343,7 +1343,7 @@ export default function DataSolutionsPage() {
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="w-full bg-white border border-gray-200 shadow-sm rounded-[2rem] p-8 md:p-12 hover:shadow-md transition-shadow">
                             <div className="text-center mb-12 flex flex-col items-center justify-center">
-                                <h2 className="text-4xl font-bold text-black mb-6">
+                                <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
                                     Related <span className="text-[#2DD4BF]">Solutions</span>
                                 </h2>
                                 <p className="text-gray-600 text-lg max-w-2xl mx-auto">

@@ -26,15 +26,7 @@ export default function Hero() {
             onMouseLeave={onMouseLeave}
         >
 
-            {/* Floating Elements (Background) */}
-            <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
-                className="absolute right-[15%] top-[70%] flex items-center gap-2 bg-white px-4 py-2 rounded-full text-sm font-semibold shadow-md border border-gray-200 text-gray-800"
-            >
-                <span className="text-primary">✨</span> KRIYANTRAI
-            </motion.div>
+
 
             {/* Main Content + Card, vertically centered in viewport */}
             <div className="max-w-5xl mx-auto text-center z-10 flex flex-col items-center gap-12">
@@ -43,16 +35,24 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     className="tracking-tight mb-8 flex flex-col items-center justify-center text-center w-full leading-[1.2]"
                 >
-                    <span className="text-3xl md:text-4xl font-bold text-black mb-2 uppercase tracking-wide">
+                    <span className="text-xl md:text-4xl font-bold text-black mb-2 uppercase tracking-wide">
                         POWERING THE NEXT ERA OF
                     </span>
-                    <span className="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#F67112] to-[#2DD4BF] animate-slow-pulse mb-6 pb-2">
+                    <span className="text-5xl sm:text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#F67112] to-[#2DD4BF] animate-slow-pulse mb-3 pb-2 w-full text-center flex justify-center flex-col items-center">
                         AI EXCELLENCE
                     </span>
-                    <span className="text-8xl md:text-5xl font-bold text-black mb-2">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.7, duration: 0.8 }}
+                        className="flex items-center gap-2 bg-white px-4 py-1.5 rounded-full text-sm font-semibold shadow-md border border-gray-100 text-[#153776] mb-6"
+                    >
+                        <span className="text-[#F67112]">✨</span> KRIYANTRAI
+                    </motion.div>
+                    <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-2">
                         BUILD FASTER...
                     </span>
-                    <span className="text-8xl md:text-5xl font-bold text-black">
+                    <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-black">
                         AUTOMATE SMARTER...
                     </span>
                 </motion.h1>

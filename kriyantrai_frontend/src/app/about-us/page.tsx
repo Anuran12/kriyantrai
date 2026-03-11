@@ -14,7 +14,7 @@ export default function AboutUsPage() {
                     </div>
 
                     <h1 className="flex flex-col items-center justify-center font-bold tracking-tight text-center mb-10">
-                        <span className="text-[#153776] text-5xl md:text-7xl lg:text-[6rem] leading-[1.0] tracking-tighter shadow-sm">About Kriyantrai</span>
+                        <span className="text-[#153776] text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] leading-[1.0] tracking-tighter shadow-sm">About Kriyantrai</span>
                     </h1>
 
                     <div className="max-w-5xl mx-auto bg-gray-50/50 border border-gray-100 p-8 md:p-12 rounded-[2.5rem] shadow-sm">
@@ -28,7 +28,7 @@ export default function AboutUsPage() {
                 </section>
 
                 <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center pb-24">
-                    <h2 className="text-[#3b597b] text-4xl font-bold mb-4 font-serif">
+                    <h2 className="text-[#3b597b] text-3xl md:text-4xl font-bold mb-4 font-serif">
                         Trusted by Leading Companies and Partners
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto mb-6 text-base font-medium">
@@ -63,7 +63,7 @@ export default function AboutUsPage() {
 
                     {/* Our Purpose Section */}
                     <section className="w-full max-w-7xl mx-auto flex flex-col items-center mb-16 pt-12">
-                        <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 text-center tracking-tight">Our Purpose</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold text-black mb-4 text-center tracking-tight">Our Purpose</h2>
                         <p className="text-gray-600 font-medium text-lg mb-16 text-center">What drives us every day</p>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
@@ -114,7 +114,7 @@ export default function AboutUsPage() {
 
                     {/* Why Partner With Us */}
                     <section className="w-full max-w-7xl mx-auto flex flex-col items-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 text-center tracking-tight">Why Partner With Us</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold text-black mb-4 text-center tracking-tight">Why Partner With Us</h2>
                         <p className="text-gray-600 font-medium text-lg mb-16 text-center">Six compelling reasons to choose Kriyantrai as your AI transformation partner</p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
@@ -193,7 +193,7 @@ export default function AboutUsPage() {
 
                     {/* Small Firm, Big Advantages */}
                     <section className="w-full max-w-7xl mx-auto flex flex-col items-center">
-                        <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 text-center tracking-tight">Small Firm, Big Advantages</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold text-black mb-4 text-center tracking-tight">Small Firm, Big Advantages</h2>
                         <p className="text-gray-600 font-medium text-lg mb-16 text-center">Why smaller consulting firms deliver superior value compared to large corporations</p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
@@ -273,7 +273,7 @@ export default function AboutUsPage() {
 
                     {/* Meet Our Team Section */}
                     <section className="w-full max-w-7xl mx-auto flex flex-col items-center mt-12 mb-20">
-                        <h2 className="text-4xl md:text-5xl font-bold text-[#153776] mb-20 text-center tracking-tight font-serif">Meet our team</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold text-[#153776] mb-12 sm:mb-20 text-center tracking-tight font-serif">Meet our team</h2>
 
                         <div className="flex flex-col gap-16 w-full max-w-6xl mx-auto px-4">
 
@@ -337,6 +337,6 @@ export default function AboutUsPage() {
 
             </main>
             <Footer />
-        </div>
+        </div >
     );
 }

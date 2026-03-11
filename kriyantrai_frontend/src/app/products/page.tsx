@@ -89,7 +89,7 @@ const ImageSlider = ({
 export default function ProductsPage() {
     return (
         <div className="flex flex-col min-h-screen relative z-10 w-full bg-transparent">
-            <main className="flex-1 w-full flex flex-col items-center justify-start pt-28 pb-16">
+            <main className="flex-1 w-full flex flex-col items-center justify-start pt-24 pb-12 md:pb-16">
 
                 {/* Hero Section */}
                 <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center mt-6 mb-20 relative">
@@ -123,9 +123,9 @@ export default function ProductsPage() {
                                 animate={{ opacity: 1, scale: 1 }}
                                 className="flex flex-col items-center justify-center font-bold tracking-tight text-center"
                             >
-                                <span className="text-gray-900 text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] mb-2">Analytics That</span>
-                                <span className="text-[#14b8a6] bg-clip-text text-transparent bg-gradient-to-r from-[#14b8a6] to-[#0ea5e9] text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1]">Speaks Your</span>
-                                <span className="text-[#14b8a6] bg-clip-text text-transparent bg-gradient-to-r from-[#14b8a6] to-[#0ea5e9] text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1]">Language</span>
+                                <span className="text-gray-900 text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1] mb-2">Analytics That</span>
+                                <span className="text-[#14b8a6] bg-clip-text text-transparent bg-gradient-to-r from-[#14b8a6] to-[#0ea5e9] text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1]">Speaks Your</span>
+                                <span className="text-[#14b8a6] bg-clip-text text-transparent bg-gradient-to-r from-[#14b8a6] to-[#0ea5e9] text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.1]">Language</span>
                             </motion.h1>
 
                             <motion.p
@@ -182,7 +182,7 @@ export default function ProductsPage() {
                         transition={{ duration: 0.5 }}
                         className="w-full text-left"
                     >
-                        <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Our Products</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Our Products</h2>
 
                         {/* Trucker Health Monitoring System Card */}
                         <div className="bg-white border border-gray-100 rounded-3xl p-6 lg:p-8 text-left card-hover-effect group shadow-[0_0_20px_rgba(0,0,0,0.02)] max-w-7xl mx-auto relative overflow-hidden w-full mb-12">
@@ -200,7 +200,7 @@ export default function ProductsPage() {
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                                                 </svg>
                                             </div>
-                                            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2 mt-1 lg:mt-2 group-hover:text-[#f97316] transition-colors text-center md:text-left">Trucker Health Monitoring System</h3>
+                                            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 mt-1 lg:mt-2 group-hover:text-[#f97316] transition-colors text-center md:text-left">Trucker Health Monitoring System</h3>
                                         </div>
                                         <p className="text-gray-600 text-base lg:text-lg font-medium mb-4 text-center md:text-left">A full-stack platform enabling camp-based driver registration, health checkups, QR-powered public health profiles, and operational analytics.</p>
 
@@ -315,7 +315,7 @@ export default function ProductsPage() {
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                                 </svg>
                                             </div>
-                                            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2 group-hover:text-[#153776] transition-colors text-center md:text-left">Digital Survey & Monitoring System</h3>
+                                            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 group-hover:text-[#153776] transition-colors text-center md:text-left">Digital Survey & Monitoring System</h3>
                                         </div>
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4 mt-2">

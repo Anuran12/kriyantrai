@@ -5,6 +5,8 @@ import Link from 'next/link';
 
 export default function Navbar() {
     const [isSpinning, setIsSpinning] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
 
     // Spin on initial load/refresh
     useEffect(() => {
@@ -79,7 +81,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Right Actions */}
-                    <div className="flex items-center justify-end gap-5 text-sm font-medium text-black flex-1">
+                    <div className="flex items-center justify-end gap-3 sm:gap-5 text-sm font-medium text-black flex-1">
                         <Link href="/career" className="hidden md:block hover:text-primary transition-colors">Careers</Link>
                         <Link
                             href="/contact/sales"
@@ -87,9 +89,59 @@ export default function Navbar() {
                         >
                             Contact sales
                         </Link>
+
+                        {/* Mobile Menu Button */}
+                        <button
+                            className="lg:hidden p-2 text-gray-600 hover:text-black focus:outline-none"
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            aria-label="Toggle menu"
+                        >
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                {isMobileMenuOpen ? (
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                ) : (
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                )}
+                            </svg>
+                        </button>
                     </div>
 
                 </div>
+
+                {/* Mobile Menu Overlay */}
+                {isMobileMenuOpen && (
+                    <div className="lg:hidden border-t border-gray-100 bg-white/95 backdrop-blur-md absolute top-full left-0 right-0 shadow-lg p-4 flex flex-col gap-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
+                        <Link href="/products" className="py-2 text-black font-medium hover:text-primary" onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
+                        <div className="flex flex-col gap-2">
+                            <button
+                                onClick={() => setIsMobileSolutionsOpen(!isMobileSolutionsOpen)}
+                                className="py-2 text-black font-medium flex items-center justify-between w-full text-left"
+                            >
+                                Solutions
+                                <svg
+                                    className={`w-4 h-4 transition-transform duration-200 ${isMobileSolutionsOpen ? 'rotate-180' : ''}`}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+
+                            {isMobileSolutionsOpen && (
+                                <div className="pl-4 flex flex-col gap-3 border-l-2 border-gray-100 ml-2 animate-in slide-in-from-top-2 duration-200">
+                                    <Link href="/solutions/artificial-intelligence" className="text-gray-600 hover:text-black text-sm" onClick={() => setIsMobileMenuOpen(false)}>Artificial Intelligence</Link>
+                                    <Link href="/solutions/data-solutions" className="text-gray-600 hover:text-black text-sm" onClick={() => setIsMobileMenuOpen(false)}>Data Solutions</Link>
+                                    <Link href="/solutions/process-automation" className="text-gray-600 hover:text-black text-sm" onClick={() => setIsMobileMenuOpen(false)}>Process Automation</Link>
+                                    <Link href="/solutions/application-development" className="text-gray-600 hover:text-black text-sm" onClick={() => setIsMobileMenuOpen(false)}>Application Development</Link>
+                                </div>
+                            )}
+                        </div>
+                        <Link href="/about" className="py-2 text-black font-medium hover:text-primary border-t border-gray-100 pt-4" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+                        <Link href="/career" className="py-2 text-black font-medium hover:text-primary md:hidden" onClick={() => setIsMobileMenuOpen(false)}>Careers</Link>
+                        <Link href="/contact/sales" className="mt-2 py-3 bg-black text-white text-center rounded-lg font-medium hover:bg-gray-800 transition-colors md:hidden" onClick={() => setIsMobileMenuOpen(false)}>Contact Sales</Link>
+                    </div>
+                )}
             </nav>
         </header>
     );

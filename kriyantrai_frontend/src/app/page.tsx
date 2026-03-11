@@ -12,8 +12,8 @@ export default function Home() {
         <Hero />
 
         {/* Section 1: Intro */}
-        <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center tracking-tight leading-tight">
+        <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col items-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 md:mb-12 text-center tracking-tight leading-tight">
             Why you need Kriyantrai's Solutions?
           </h2>
           <div className="w-full rounded-3xl border border-gray-200 shadow-sm overflow-hidden bg-[#0f172a]">
@@ -22,9 +22,9 @@ export default function Home() {
         </section>
 
         {/* Section 2: Why Choose Us */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-20 text-center tracking-tight leading-tight">
-            Create your digital foundation in weeks.<br /> Headache-free.
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col items-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 md:mb-20 text-center tracking-tight leading-tight">
+            Create your digital foundation in weeks.<br className="hidden md:block" /> Headache-free.
           </h2>
           <div className="flex flex-col md:flex-row items-center gap-16 w-full">
             <div className="w-full md:w-5/12 flex flex-col gap-10">
@@ -51,9 +51,9 @@ export default function Home() {
         </section>
 
         {/* Section 3: Core Solutions */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-20 text-center tracking-tight leading-tight">
-            Integrate intelligent solutions and<br /> share your vision with the world.
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col items-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 md:mb-20 text-center tracking-tight leading-tight">
+            Integrate intelligent solutions and<br className="hidden md:block" /> share your vision with the world.
           </h2>
           <div className="flex flex-col-reverse md:flex-row items-center gap-16 w-full">
             <div className="w-full md:w-7/12 flex items-center justify-center">
@@ -81,8 +81,8 @@ export default function Home() {
 
         {/* Section 4: Products */}
         <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center tracking-tight leading-tight">
-            Analyze your operations and<br /> achieve record results.
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 text-center tracking-tight leading-tight">
+            Analyze your operations and<br className="hidden md:block" /> achieve record results.
           </h2>
           <div className="flex flex-col md:flex-row items-center gap-16 w-full">
             <div className="w-full md:w-5/12 flex flex-col gap-10">
@@ -110,8 +110,8 @@ export default function Home() {
 
         {/* Section 5: Partners / Testimonial */}
         <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col items-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12 text-center tracking-tight leading-tight">
-            With Kriyantrai, our partners<br /> make the impossible possible.
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 text-center tracking-tight leading-tight">
+            With Kriyantrai, our partners<br className="hidden md:block" /> make the impossible possible.
           </h2>
 
           <div className="w-full max-w-5xl bg-[#151c28] rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row shadow-2xl">

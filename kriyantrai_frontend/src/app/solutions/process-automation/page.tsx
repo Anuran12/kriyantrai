@@ -144,13 +144,13 @@ export default function ProcessAutomationPage() {
 
                         <div className="flex-1 flex flex-col items-center px-4 relative z-10">
                             <h1 className="flex flex-col items-center justify-center font-bold tracking-tight text-center">
-                                <span className="text-black text-5xl md:text-7xl lg:text-7xl leading-[1.15] tracking-tighter mb-4 whitespace-nowrap">
+                                <span className="text-black text-4xl sm:text-5xl md:text-7xl lg:text-7xl leading-[1.15] tracking-tighter mb-4 whitespace-nowrap">
                                     Lead the Future with
                                 </span>
-                                <span className="text-[#2DD4BF] text-5xl md:text-7xl lg:text-7xl leading-[1.15] tracking-tighter mb-6 flex flex-wrap items-center justify-center gap-3 md:gap-4 bg-clip-text text-transparent bg-gradient-to-r from-[#2DD4BF] to-[#22c55e]">
+                                <span className="text-[#2DD4BF] text-4xl sm:text-5xl md:text-7xl lg:text-7xl leading-[1.15] tracking-tighter mb-6 flex flex-wrap items-center justify-center gap-3 md:gap-4 bg-clip-text text-transparent bg-gradient-to-r from-[#2DD4BF] to-[#22c55e]">
                                     Intelligent Automation
                                 </span>
-                                <span className="text-[#3b82f6] text-5xl md:text-7xl lg:text-7xl leading-[1.15] tracking-tighter mb-6 flex flex-wrap items-center justify-center gap-3 md:gap-4 bg-clip-text text-transparent bg-gradient-to-r from-[#3b82f6] to-[#818cf8]">
+                                <span className="text-[#3b82f6] text-4xl sm:text-5xl md:text-7xl lg:text-7xl leading-[1.15] tracking-tighter mb-6 flex flex-wrap items-center justify-center gap-3 md:gap-4 bg-clip-text text-transparent bg-gradient-to-r from-[#3b82f6] to-[#818cf8]">
                                     Solution
                                 </span>
                             </h1>
@@ -232,7 +232,7 @@ export default function ProcessAutomationPage() {
                         <span className="text-sm font-semibold tracking-wider text-[#153776]">Quick Answer</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight tracking-tight text-left">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight tracking-tight text-left">
                         What is <span className="text-[#2DD4BF]">Process Automation?</span>
                     </h2>
 

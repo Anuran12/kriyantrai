@@ -61,12 +61,12 @@ export default function ArtificialIntelligencePage() {
                         {/* Center Title */}
                         <div className="flex-1 max-w-4xl flex flex-col relative mt-8">
                             <h1 className="flex flex-col items-center justify-center font-bold tracking-tight text-center">
-                                <span className="text-gray-900 text-4xl md:text-5xl lg:text-6xl mb-4">Transform with</span>
-                                <span className="text-[#153776] text-6xl md:text-8xl lg:text-[7.5rem] leading-[1.0] tracking-tighter mb-2">Artificial</span>
-                                <span className="text-[#153776] text-6xl md:text-8xl lg:text-[7.5rem] leading-[1.0] tracking-tighter mb-6 shadow-sm">Intelligence</span>
+                                <span className="text-gray-900 text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4">Transform with</span>
+                                <span className="text-[#153776] text-5xl sm:text-6xl md:text-8xl lg:text-[7.5rem] leading-[1.0] tracking-tighter mb-2">Artificial</span>
+                                <span className="text-[#153776] text-5xl sm:text-6xl md:text-8xl lg:text-[7.5rem] leading-[1.0] tracking-tighter mb-6 shadow-sm">Intelligence</span>
                                 <div className="flex flex-wrap items-center justify-center gap-4 mt-2">
-                                    <span className="text-[#153776] text-4xl md:text-5xl lg:text-6xl">that</span>
-                                    <span className="text-[#A1F9F3] filter drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] px-5 py-2 bg-gradient-to-r from-[#153776] to-[#0d2146] rounded-2xl whitespace-nowrap text-4xl md:text-5xl lg:text-6xl">Delivers</span>
+                                    <span className="text-[#153776] text-3xl sm:text-4xl md:text-5xl lg:text-6xl">that</span>
+                                    <span className="text-[#A1F9F3] filter drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] px-5 py-2 bg-gradient-to-r from-[#153776] to-[#0d2146] rounded-2xl whitespace-nowrap text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Delivers</span>
                                 </div>
                             </h1>
                         </div>
@@ -160,7 +160,7 @@ export default function ArtificialIntelligencePage() {
                         <div className="w-2 h-2 rounded-full bg-[#153776]"></div>
                     </div>
 
-                    <h2 className="text-4xl md:text-6xl font-bold text-center text-black mb-8 leading-tight tracking-tight max-w-4xl">
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-center text-black mb-8 leading-tight tracking-tight max-w-4xl">
                         Real AI Solutions for<br />
                         <span className="text-[#A1F9F3] px-2 bg-gradient-to-r from-[#153776] to-[#0d2146] filter drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] rounded-xl mt-2 inline-block">Real Business Challenges</span>
                     </h2>
@@ -233,7 +233,7 @@ export default function ArtificialIntelligencePage() {
                         <span className="text-sm font-bold text-[#153776]">Complete AI Solutions Portfolio</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-black mb-8 leading-tight tracking-tight max-w-4xl">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center text-black mb-8 leading-tight tracking-tight max-w-4xl">
                         Comprehensive AI Services <span className="text-[#153776]">Portfolio</span>
                     </h2>
 

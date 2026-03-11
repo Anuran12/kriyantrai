@@ -56,10 +56,10 @@ export default function ApplicationDevelopmentPage() {
                         {/* Title Section */}
                         <div className="flex-1 flex flex-col items-center px-4 relative z-10">
                             <h1 className="flex flex-col items-center justify-center font-bold tracking-tight text-center">
-                                <span className="text-black text-5xl md:text-7xl lg:text-7xl leading-[1.15] tracking-tighter mb-4 whitespace-nowrap">
+                                <span className="text-black text-4xl sm:text-5xl md:text-7xl lg:text-7xl leading-[1.15] tracking-tighter mb-4 whitespace-nowrap">
                                     Transform with <span className="text-[#2DD4BF] bg-clip-text text-transparent bg-gradient-to-r from-[#2DD4BF] to-[#22c55e]">Application</span>
                                 </span>
-                                <span className="text-black text-5xl md:text-7xl lg:text-7xl leading-[1.15] tracking-tighter mb-6 whitespace-nowrap">
+                                <span className="text-black text-4xl sm:text-5xl md:text-7xl lg:text-7xl leading-[1.15] tracking-tighter mb-6 whitespace-nowrap">
                                     Solutions that <span className="text-[#2DD4BF] bg-clip-text text-transparent bg-gradient-to-r from-[#2DD4BF] to-[#22c55e]">Deliver</span>
                                 </span>
                             </h1>
@@ -162,7 +162,7 @@ export default function ApplicationDevelopmentPage() {
                         <span className="text-sm font-semibold tracking-wider text-[#153776]">Quick Answer</span>
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-black mb-6 leading-tight tracking-tight text-left">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold text-black mb-6 leading-tight tracking-tight text-left">
                         What is Custom Application Development?
                     </h2>
 
@@ -189,7 +189,7 @@ export default function ApplicationDevelopmentPage() {
                 {/* Why Enterprises Choose Us */}
                 <section id="why-choose-us" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 z-20 relative scroll-mt-32">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">Why Enterprises Choose <span className="text-[#2DD4BF]">Kriyantrai</span></h2>
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-4">Why Enterprises Choose <span className="text-[#2DD4BF]">Kriyantrai</span></h2>
                         <p className="text-gray-600 text-lg">The only AI partner you need from strategy to operation</p>
                     </div>
 
