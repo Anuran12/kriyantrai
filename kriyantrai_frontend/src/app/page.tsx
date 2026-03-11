@@ -13,11 +13,85 @@ export default function Home() {
     '/integrating-vision.jpg',
   ];
 
+  const [activeWhyChooseUsIndex, setActiveWhyChooseUsIndex] = useState(0);
+  const [currentWhyImageIndex, setCurrentWhyImageIndex] = useState(0);
+
+  const [activeSolutionsIndex, setActiveSolutionsIndex] = useState(0);
+  const [currentSolutionsImageIndex, setCurrentSolutionsImageIndex] = useState(0);
+
+  const whyChooseUsData = [
+    {
+      title: 'Personalized attention',
+      desc: 'Unlike large consulting firms, we provide dedicated resources and direct access to senior experts for every client.'
+    },
+    {
+      title: 'Agile & Responsive',
+      desc: 'We adapt quickly to changing requirements, ensuring your digital transformation stays on track without delays.'
+    },
+    {
+      title: 'Innovation Focus',
+      desc: 'Leveraging the latest technologies like Generative AI and scalable frameworks to future-proof your business.'
+    },
+    {
+      title: 'Strategic Foundation',
+      desc: 'We build solid architectural foundations that allow your systems to scale up smoothly as your company grows.'
+    }
+  ];
+
+  const solutionsData = [
+    {
+      title: 'Artificial Intelligence',
+      desc: 'Deploy production-ready models, computer vision systems, and predictive analytics that solve real business challenges.'
+    },
+    {
+      title: 'Data Solutions',
+      desc: 'Build robust data pipelines, implement advanced analytics, and leverage data lakes for actionable insights.'
+    },
+    {
+      title: 'Process Automation',
+      desc: 'Streamline workflows, reduce manual tasks, and optimize operations using intelligent RPA architectures.'
+    },
+    {
+      title: 'Application Development',
+      desc: 'Design and build scalable, secure, and intuitive full-stack applications tailored perfectly to your evolving needs.'
+    }
+  ];
+
+  const whyChooseUsImages = [
+    '/digital_foundation_1.png',
+    '/digital_foundation_2.png',
+    '/digital_foundation_3.png'
+  ];
+
+  const solutionsImages = [
+    '/solutions_ai_1.png',
+    '/solutions_data_2.png',
+    '/solutions_app_3.png'
+  ];
+
   useEffect(() => {
-    const timer = setInterval(() => {
+    const timer1 = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % slideImages.length);
     }, 5000);
-    return () => clearInterval(timer);
+    const timer2 = setInterval(() => {
+      setActiveWhyChooseUsIndex((prev) => (prev + 1) % whyChooseUsData.length);
+    }, 4000);
+    const timer3 = setInterval(() => {
+      setCurrentWhyImageIndex((prev) => (prev + 1) % whyChooseUsImages.length);
+    }, 5000);
+    const timer4 = setInterval(() => {
+      setActiveSolutionsIndex((prev) => (prev + 1) % solutionsData.length);
+    }, 4000);
+    const timer5 = setInterval(() => {
+      setCurrentSolutionsImageIndex((prev) => (prev + 1) % solutionsImages.length);
+    }, 5000);
+    return () => {
+      clearInterval(timer1);
+      clearInterval(timer2);
+      clearInterval(timer3);
+      clearInterval(timer4);
+      clearInterval(timer5);
+    };
   }, []);
 
   return (
@@ -156,25 +230,67 @@ export default function Home() {
             Create your digital foundation in weeks.<br className="hidden md:block" /> Headache-free.
           </h2>
           <div className="flex flex-col md:flex-row items-center gap-16 w-full">
-            <div className="w-full md:w-5/12 flex flex-col gap-10">
-              <div className="pl-6 border-l-2 border-blue-600 relative">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Personalized attention</h3>
-                <p className="text-gray-500">Unlike large consulting firms, we provide dedicated resources and direct access to senior experts for every client.</p>
-              </div>
-              <div className="pl-6 border-l-2 border-gray-200 opacity-50 hover:opacity-100 transition-opacity cursor-pointer">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Agile & Responsive</h3>
-              </div>
-              <div className="pl-6 border-l-2 border-gray-200 opacity-50 hover:opacity-100 transition-opacity cursor-pointer">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Innovation Focus</h3>
-              </div>
-              <div className="pl-6 border-l-2 border-gray-200 opacity-50 hover:opacity-100 transition-opacity cursor-pointer">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Strategic Foundation</h3>
-              </div>
+            <div className="w-full md:w-5/12 flex flex-col gap-8 md:gap-10">
+              {whyChooseUsData.map((item, index) => {
+                const isActive = index === activeWhyChooseUsIndex;
+                return (
+                  <div
+                    key={index}
+                    onClick={() => setActiveWhyChooseUsIndex(index)}
+                    className={`pl-6 border-l-2 cursor-pointer transition-all duration-300 ${isActive ? 'border-blue-600 opacity-100' : 'border-gray-200 opacity-50 hover:opacity-100'
+                      }`}
+                  >
+                    <h3 className={`text-xl md:text-2xl font-bold mb-2 transition-colors duration-300 ${isActive ? 'text-gray-900' : 'text-gray-600'}`}>
+                      {item.title}
+                    </h3>
+                    <AnimatePresence>
+                      {isActive && (
+                        <motion.p
+                          initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                          animate={{ opacity: 1, height: 'auto', marginTop: 8 }}
+                          exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          className="text-gray-500 overflow-hidden"
+                        >
+                          {item.desc}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
             </div>
-            <div className="w-full md:w-7/12 flex items-center justify-center">
-              <div className="w-full rounded-3xl border border-gray-200 shadow-sm overflow-hidden">
-                <img src="/why-kriyantrai.jpg" alt="Create your digital foundation" className="w-full h-auto object-contain" />
-              </div>
+            <div className="w-full md:w-7/12 flex items-center justify-center p-2">
+              <motion.div
+                className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden shadow-xl border-[4px] border-slate-50 bg-slate-100"
+              >
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentWhyImageIndex}
+                    src={whyChooseUsImages[currentWhyImageIndex]}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      opacity: { duration: 0.8 },
+                      scale: { duration: 6, ease: "linear" }
+                    }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    alt={`Why Choose Kriyantrai ${currentWhyImageIndex + 1}`}
+                  />
+                </AnimatePresence>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none"></div>
+                <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
+                  {whyChooseUsImages.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentWhyImageIndex(idx)}
+                      className={`h-1.5 rounded-full transition-all duration-300 ease-out hover:bg-white ${idx === currentWhyImageIndex ? 'w-8 bg-white shadow-sm' : 'w-2 bg-white/50 backdrop-blur-sm'}`}
+                      aria-label={`Go to image slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -185,25 +301,67 @@ export default function Home() {
             Integrate intelligent solutions and<br className="hidden md:block" /> share your vision with the world.
           </h2>
           <div className="flex flex-col-reverse md:flex-row items-center gap-16 w-full">
-            <div className="w-full md:w-7/12 flex items-center justify-center">
-              <div className="w-full rounded-3xl border border-gray-200 shadow-sm overflow-hidden">
-                <img src="/integrating-vision.jpg" alt="Integrate intelligent solutions" className="w-full h-auto object-contain" />
-              </div>
+            <div className="w-full md:w-7/12 flex items-center justify-center p-2">
+              <motion.div
+                className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden shadow-xl border-[4px] border-slate-50 bg-slate-100"
+              >
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentSolutionsImageIndex}
+                    src={solutionsImages[currentSolutionsImageIndex]}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      opacity: { duration: 0.8 },
+                      scale: { duration: 6, ease: "linear" }
+                    }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    alt={`Core Solutions ${currentSolutionsImageIndex + 1}`}
+                  />
+                </AnimatePresence>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none"></div>
+                <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
+                  {solutionsImages.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentSolutionsImageIndex(idx)}
+                      className={`h-1.5 rounded-full transition-all duration-300 ease-out hover:bg-white ${idx === currentSolutionsImageIndex ? 'w-8 bg-white shadow-sm' : 'w-2 bg-white/50 backdrop-blur-sm'}`}
+                      aria-label={`Go to image slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              </motion.div>
             </div>
-            <div className="w-full md:w-5/12 flex flex-col gap-10">
-              <div className="pl-6 border-l-2 border-blue-600 relative">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Artificial Intelligence</h3>
-                <p className="text-gray-500">Deploy production-ready models, computer vision systems, and predictive analytics that solve real business challenges.</p>
-              </div>
-              <div className="pl-6 border-l-2 border-gray-200 opacity-50 hover:opacity-100 transition-opacity cursor-pointer">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Data Solutions</h3>
-              </div>
-              <div className="pl-6 border-l-2 border-gray-200 opacity-50 hover:opacity-100 transition-opacity cursor-pointer">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Process Automation</h3>
-              </div>
-              <div className="pl-6 border-l-2 border-gray-200 opacity-50 hover:opacity-100 transition-opacity cursor-pointer">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Application Development</h3>
-              </div>
+            <div className="w-full md:w-5/12 flex flex-col gap-8 md:gap-10">
+              {solutionsData.map((item, index) => {
+                const isActive = index === activeSolutionsIndex;
+                return (
+                  <div
+                    key={index}
+                    onClick={() => setActiveSolutionsIndex(index)}
+                    className={`pl-6 border-l-2 cursor-pointer transition-all duration-300 ${isActive ? 'border-blue-600 opacity-100' : 'border-gray-200 opacity-50 hover:opacity-100'
+                      }`}
+                  >
+                    <h3 className={`text-xl md:text-2xl font-bold mb-2 transition-colors duration-300 ${isActive ? 'text-gray-900' : 'text-gray-600'}`}>
+                      {item.title}
+                    </h3>
+                    <AnimatePresence>
+                      {isActive && (
+                        <motion.p
+                          initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                          animate={{ opacity: 1, height: 'auto', marginTop: 8 }}
+                          exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          className="text-gray-500 overflow-hidden"
+                        >
+                          {item.desc}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
