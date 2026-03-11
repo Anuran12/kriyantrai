@@ -75,8 +75,8 @@ export default function Hero() {
                     <a href="/solutions/artificial-intelligence" className="px-8 py-3 rounded-full bg-primary hover:bg-primary-hover text-white font-semibold shadow-md transition-colors inline-block text-center cursor-pointer">
                         Start Your AI Journey
                     </a>
-                    <a href="/#solutions" className="px-8 py-3 rounded-full border border-gray-300 bg-white/70 backdrop-blur-sm text-gray-900 hover:bg-white shadow-sm transition-colors inline-block text-center cursor-pointer">
-                        Explore Solutions
+                    <a href="/contact/sales" className="px-8 py-3 rounded-full border border-gray-300 bg-white/70 backdrop-blur-sm text-gray-900 hover:bg-white shadow-sm transition-colors inline-block text-center cursor-pointer">
+                        Book a Demo
                     </a>
                 </motion.div>
 

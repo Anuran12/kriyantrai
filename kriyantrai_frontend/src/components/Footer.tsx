@@ -42,7 +42,6 @@ export default function Footer() {
                         <h4 className="font-bold text-lg mb-2 text-white">Company</h4>
                         <a href="/products" className="text-white font-medium hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 text-sm inline-block">Products</a>
                         <a href="/about" className="text-white font-medium hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 text-sm inline-block">About Us</a>
-                        <a href="#" className="text-white font-medium hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 text-sm inline-block">Use Cases</a>
                         <a href="/career" className="text-white font-medium hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 text-sm inline-block">Careers</a>
                         <a href="/contact/sales" className="text-white font-medium hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 text-sm inline-block">Contact sales</a>
                     </div>
@@ -52,7 +51,6 @@ export default function Footer() {
                         <a href="/solutions/artificial-intelligence" className="text-white font-medium hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 text-sm inline-block">Artificial Intelligence</a>
                         <a href="/solutions/data-solutions" className="text-white font-medium hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 text-sm inline-block">Data Solutions</a>
                         <a href="/solutions/process-automation" className="text-white font-medium hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 text-sm inline-block">Process Automation</a>
-                        <a href="/solutions/business-intelligence" className="text-white font-medium hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 text-sm inline-block">Business Intelligence</a>
                         <a href="/solutions/application-development" className="text-white font-medium hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 text-sm inline-block">Application Development</a>
                     </div>
 

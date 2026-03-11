@@ -22,6 +22,9 @@ export default function Home() {
   const [activeProductsIndex, setActiveProductsIndex] = useState(0);
   const [currentProductsImageIndex, setCurrentProductsImageIndex] = useState(0);
 
+  const [activeSocialIndex, setActiveSocialIndex] = useState(0);
+  const [currentSocialImageIndex, setCurrentSocialImageIndex] = useState(0);
+
   const whyChooseUsData = [
     {
       title: 'Personalized attention',
@@ -79,22 +82,46 @@ export default function Home() {
     }
   ];
 
+  const socialSectorData = [
+    {
+      title: 'Empowering Communities',
+      desc: 'Leveraging data and technology to amplify the impact of social initiatives and community programs.'
+    },
+    {
+      title: 'Accessible Health & Education',
+      desc: 'Developing digital platforms that bridge the gap and provide essential services to underserved populations.'
+    },
+    {
+      title: 'Sustainable Development',
+      desc: 'Creating solutions that align with sustainable development goals for long-lasting positive change.'
+    },
+    {
+      title: 'Non-profit Optimization',
+      desc: 'Providing cost-effective, scalable tech solutions to help non-profits maximize their outreach and efficiency.'
+    }
+  ];
+
   const whyChooseUsImages = [
-    '/digital_foundation_1.png',
-    '/digital_foundation_2.png',
-    '/digital_foundation_3.png'
+    '/indian_digital_foundation_1.png',
+    '/indian_digital_foundation_2.png',
+    '/indian_digital_foundation_3.png'
   ];
 
   const solutionsImages = [
-    '/solutions_ai_1.png',
-    '/solutions_data_2.png',
-    '/solutions_app_3.png'
+    '/indian_solutions_ai_1.png',
+    '/indian_solutions_data_2.png'
   ];
 
   const productsImages = [
     '/product_trucker_1.png',
     '/product_survey_2.png',
     '/product_secure_3.png'
+  ];
+
+  const socialSectorImages = [
+    '/social_sector_img_1.png',
+    '/social_sector_img_2.png',
+    '/social_sector_img_3.png'
   ];
 
   useEffect(() => {
@@ -119,6 +146,12 @@ export default function Home() {
     const timer7 = setInterval(() => {
       setCurrentProductsImageIndex((prev) => (prev + 1) % productsImages.length);
     }, 5000);
+    const timer8 = setInterval(() => {
+      setActiveSocialIndex((prev) => (prev + 1) % socialSectorData.length);
+    }, 4000);
+    const timer9 = setInterval(() => {
+      setCurrentSocialImageIndex((prev) => (prev + 1) % socialSectorImages.length);
+    }, 5000);
     return () => {
       clearInterval(timer1);
       clearInterval(timer2);
@@ -127,6 +160,8 @@ export default function Home() {
       clearInterval(timer5);
       clearInterval(timer6);
       clearInterval(timer7);
+      clearInterval(timer8);
+      clearInterval(timer9);
     };
   }, []);
 
@@ -469,6 +504,77 @@ export default function Home() {
                   ))}
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 4.5: Social Sector */}
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col items-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 text-center tracking-tight leading-tight">
+            Driving meaningful impact in the<br className="hidden md:block" /> social sector with technology.
+          </h2>
+          <div className="flex flex-col-reverse md:flex-row items-center gap-16 w-full">
+            <div className="w-full md:w-7/12 flex items-center justify-center p-2">
+              <motion.div
+                className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden shadow-xl border-[4px] border-slate-50 bg-slate-100"
+              >
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentSocialImageIndex}
+                    src={socialSectorImages[currentSocialImageIndex]}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      opacity: { duration: 0.8 },
+                      scale: { duration: 6, ease: "linear" }
+                    }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    alt={`Social Sector Impact ${currentSocialImageIndex + 1}`}
+                  />
+                </AnimatePresence>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none"></div>
+                <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
+                  {socialSectorImages.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentSocialImageIndex(idx)}
+                      className={`h-1.5 rounded-full transition-all duration-300 ease-out hover:bg-white ${idx === currentSocialImageIndex ? 'w-8 bg-white shadow-sm' : 'w-2 bg-white/50 backdrop-blur-sm'}`}
+                      aria-label={`Go to image slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+            <div className="w-full md:w-5/12 flex flex-col gap-8 md:gap-10">
+              {socialSectorData.map((item, index) => {
+                const isActive = index === activeSocialIndex;
+                return (
+                  <div
+                    key={index}
+                    onClick={() => setActiveSocialIndex(index)}
+                    className={`pl-6 border-l-2 cursor-pointer transition-all duration-300 ${isActive ? 'border-emerald-600 opacity-100' : 'border-gray-200 opacity-50 hover:opacity-100'
+                      }`}
+                  >
+                    <h3 className={`text-xl md:text-2xl font-bold mb-2 transition-colors duration-300 ${isActive ? 'text-gray-900' : 'text-gray-600'}`}>
+                      {item.title}
+                    </h3>
+                    <AnimatePresence>
+                      {isActive && (
+                        <motion.p
+                          initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                          animate={{ opacity: 1, height: 'auto', marginTop: 8 }}
+                          exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          className="text-gray-500 overflow-hidden"
+                        >
+                          {item.desc}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
