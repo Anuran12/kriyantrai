@@ -19,6 +19,9 @@ export default function Home() {
   const [activeSolutionsIndex, setActiveSolutionsIndex] = useState(0);
   const [currentSolutionsImageIndex, setCurrentSolutionsImageIndex] = useState(0);
 
+  const [activeProductsIndex, setActiveProductsIndex] = useState(0);
+  const [currentProductsImageIndex, setCurrentProductsImageIndex] = useState(0);
+
   const whyChooseUsData = [
     {
       title: 'Personalized attention',
@@ -57,6 +60,25 @@ export default function Home() {
     }
   ];
 
+  const productsData = [
+    {
+      title: 'Trucker Health System',
+      desc: 'A full-stack platform enabling driver registration, public health profiles, and operational analytics.'
+    },
+    {
+      title: 'Digital Survey System',
+      desc: 'Customizable digital survey tools designed for complex data gathering and seamless offline analysis.'
+    },
+    {
+      title: 'Offline Data Collection',
+      desc: 'Robust edge-computing solutions allowing reliable data collection in remote areas without internet connectivity.'
+    },
+    {
+      title: 'Secure Deployment',
+      desc: 'Enterprise-grade security protocols ensuring your sensitive operational data remains protected across all environments.'
+    }
+  ];
+
   const whyChooseUsImages = [
     '/digital_foundation_1.png',
     '/digital_foundation_2.png',
@@ -67,6 +89,12 @@ export default function Home() {
     '/solutions_ai_1.png',
     '/solutions_data_2.png',
     '/solutions_app_3.png'
+  ];
+
+  const productsImages = [
+    '/product_trucker_1.png',
+    '/product_survey_2.png',
+    '/product_secure_3.png'
   ];
 
   useEffect(() => {
@@ -85,12 +113,20 @@ export default function Home() {
     const timer5 = setInterval(() => {
       setCurrentSolutionsImageIndex((prev) => (prev + 1) % solutionsImages.length);
     }, 5000);
+    const timer6 = setInterval(() => {
+      setActiveProductsIndex((prev) => (prev + 1) % productsData.length);
+    }, 4000);
+    const timer7 = setInterval(() => {
+      setCurrentProductsImageIndex((prev) => (prev + 1) % productsImages.length);
+    }, 5000);
     return () => {
       clearInterval(timer1);
       clearInterval(timer2);
       clearInterval(timer3);
       clearInterval(timer4);
       clearInterval(timer5);
+      clearInterval(timer6);
+      clearInterval(timer7);
     };
   }, []);
 
@@ -372,25 +408,67 @@ export default function Home() {
             Analyze your operations and<br className="hidden md:block" /> achieve record results.
           </h2>
           <div className="flex flex-col md:flex-row items-center gap-16 w-full">
-            <div className="w-full md:w-5/12 flex flex-col gap-10">
-              <div className="pl-6 border-l-2 border-blue-600 relative">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Trucker Health System</h3>
-                <p className="text-gray-500">A full-stack platform enabling driver registration, public health profiles, and operational analytics.</p>
-              </div>
-              <div className="pl-6 border-l-2 border-gray-200 opacity-50 hover:opacity-100 transition-opacity cursor-pointer">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Digital Survey System</h3>
-              </div>
-              <div className="pl-6 border-l-2 border-gray-200 opacity-50 hover:opacity-100 transition-opacity cursor-pointer">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Offline Data Collection</h3>
-              </div>
-              <div className="pl-6 border-l-2 border-gray-200 opacity-50 hover:opacity-100 transition-opacity cursor-pointer">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Secure Deployment</h3>
-              </div>
+            <div className="w-full md:w-5/12 flex flex-col gap-8 md:gap-10">
+              {productsData.map((item, index) => {
+                const isActive = index === activeProductsIndex;
+                return (
+                  <div
+                    key={index}
+                    onClick={() => setActiveProductsIndex(index)}
+                    className={`pl-6 border-l-2 cursor-pointer transition-all duration-300 ${isActive ? 'border-blue-600 opacity-100' : 'border-gray-200 opacity-50 hover:opacity-100'
+                      }`}
+                  >
+                    <h3 className={`text-xl md:text-2xl font-bold mb-2 transition-colors duration-300 ${isActive ? 'text-gray-900' : 'text-gray-600'}`}>
+                      {item.title}
+                    </h3>
+                    <AnimatePresence>
+                      {isActive && (
+                        <motion.p
+                          initial={{ opacity: 0, height: 0, marginTop: 0 }}
+                          animate={{ opacity: 1, height: 'auto', marginTop: 8 }}
+                          exit={{ opacity: 0, height: 0, marginTop: 0 }}
+                          transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          className="text-gray-500 overflow-hidden"
+                        >
+                          {item.desc}
+                        </motion.p>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
             </div>
-            <div className="w-full md:w-7/12">
-              <div className="w-full rounded-3xl border border-gray-200 shadow-sm overflow-hidden">
-                <img src="/analyze-operations.jpg" alt="Analyze your operations" className="w-full h-auto object-contain" />
-              </div>
+            <div className="w-full md:w-7/12 flex items-center justify-center p-2">
+              <motion.div
+                className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden shadow-xl border-[4px] border-slate-50 bg-slate-100"
+              >
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentProductsImageIndex}
+                    src={productsImages[currentProductsImageIndex]}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{
+                      opacity: { duration: 0.8 },
+                      scale: { duration: 6, ease: "linear" }
+                    }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    alt={`Products Showcase ${currentProductsImageIndex + 1}`}
+                  />
+                </AnimatePresence>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none"></div>
+                <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-10">
+                  {productsImages.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentProductsImageIndex(idx)}
+                      className={`h-1.5 rounded-full transition-all duration-300 ease-out hover:bg-white ${idx === currentProductsImageIndex ? 'w-8 bg-white shadow-sm' : 'w-2 bg-white/50 backdrop-blur-sm'}`}
+                      aria-label={`Go to image slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
