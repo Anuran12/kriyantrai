@@ -144,8 +144,8 @@ export default function ProductsPage() {
                                 transition={{ delay: 0.2 }}
                                 className="flex flex-col sm:flex-row gap-4 justify-center w-full mt-10"
                             >
-                                <a href="#" className="bg-[#14b8a6] hover:bg-[#0d9488] text-white font-bold py-4 px-10 rounded-full shadow-lg transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center gap-2 text-lg">
-                                    Get Early Access
+                                <a href="/contact/sales" className="bg-[#14b8a6] hover:bg-[#0d9488] text-white font-bold py-4 px-10 rounded-full shadow-lg transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center gap-2 text-lg">
+                                    Book a demo
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </a>
                             </motion.div>
