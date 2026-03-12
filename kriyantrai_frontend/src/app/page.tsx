@@ -8,9 +8,9 @@ import { Leaf, Network, TrendingUp } from 'lucide-react';
 export default function Home() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const slideImages = [
-    '/data-modeling-architecture.jpg',
-    '/modern-data-infrastructure.jpg',
-    '/integrating-vision.jpg',
+    '/indian_sustainable_future.png',
+    '/indian_empowered_teams.png',
+    '/indian_measurable_success.png',
   ];
 
   const [activeWhyChooseUsIndex, setActiveWhyChooseUsIndex] = useState(0);
