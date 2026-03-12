@@ -113,15 +113,15 @@ export default function Home() {
   ];
 
   const productsImages = [
-    '/product_trucker_1.png',
-    '/product_survey_2.png',
-    '/product_secure_3.png'
+    '/indian_analytics_dashboard.png',
+    '/indian_team_meeting.png',
+    '/indian_data_analysis.png'
   ];
 
   const socialSectorImages = [
-    '/social_sector_img_1.png',
-    '/social_sector_img_2.png',
-    '/social_sector_img_3.png'
+    '/indian_social_impact.png',
+    '/indian_education_tech.png',
+    '/indian_healthcare_tech.png'
   ];
 
   useEffect(() => {
