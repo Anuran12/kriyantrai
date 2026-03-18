@@ -125,36 +125,34 @@ export default function ContactSalesPage() {
               <form id="sales-form" className="space-y-5" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-bold text-gray-900 mb-1.5" htmlFor="firstName">First Name</label>
+                    <label className="block text-sm font-bold text-gray-900 mb-1.5" htmlFor="firstName">First Name <span className="text-red-500">*</span></label>
                     <input type="text" id="firstName" required value={formData.firstName} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border-2 border-white/60 bg-white/80 text-gray-900 focus:ring-2 focus:ring-[#153776] focus:border-[#153776] outline-none transition-colors shadow-sm" placeholder="John" />
                   </div>
                   <div>
-                    <label className="block text-sm font-bold text-gray-900 mb-1.5" htmlFor="lastName">Last Name</label>
+                    <label className="block text-sm font-bold text-gray-900 mb-1.5" htmlFor="lastName">Last Name <span className="text-red-500">*</span></label>
                     <input type="text" id="lastName" required value={formData.lastName} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border-2 border-white/60 bg-white/80 text-gray-900 focus:ring-2 focus:ring-[#153776] focus:border-[#153776] outline-none transition-colors shadow-sm" placeholder="Doe" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-900 mb-1.5" htmlFor="email">Work Email</label>
+                  <label className="block text-sm font-bold text-gray-900 mb-1.5" htmlFor="email">Work Email <span className="text-red-500">*</span></label>
                   <input type="email" id="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border-2 border-white/60 bg-white/80 text-gray-900 focus:ring-2 focus:ring-[#153776] focus:border-[#153776] outline-none transition-colors shadow-sm" placeholder="john@company.com" />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-900 mb-1.5" htmlFor="phone">Phone Number</label>
-                  <input type="tel" id="phone" value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border-2 border-white/60 bg-white/80 text-gray-900 focus:ring-2 focus:ring-[#153776] focus:border-[#153776] outline-none transition-colors shadow-sm" placeholder="+91 0000000000" />
+                  <label className="block text-sm font-bold text-gray-900 mb-1.5" htmlFor="phone">Phone Number <span className="text-red-500">*</span></label>
+                  <input type="tel" id="phone" required value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border-2 border-white/60 bg-white/80 text-gray-900 focus:ring-2 focus:ring-[#153776] focus:border-[#153776] outline-none transition-colors shadow-sm" placeholder="+91 6289946256" />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-900 mb-1.5" htmlFor="useCase">Use Case</label>
-                  <select id="useCase" value={formData.useCase} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border-2 border-white/60 bg-white/80 text-gray-900 focus:ring-2 focus:ring-[#153776] focus:border-[#153776] outline-none transition-colors shadow-sm">
+                  <label className="block text-sm font-bold text-gray-900 mb-1.5" htmlFor="useCase">Solution <span className="text-red-500">*</span></label>
+                  <select id="useCase" required value={formData.useCase} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border-2 border-white/60 bg-white/80 text-gray-900 focus:ring-2 focus:ring-[#153776] focus:border-[#153776] outline-none transition-colors shadow-sm">
                     <option value="">Please select...</option>
                     <option value="ai">Artificial Intelligence</option>
                     <option value="data">Data Solutions</option>
                     <option value="automation">Process Automation</option>
-                    <option value="generative">Generative AI Services</option>
-                    <option value="bi">Business Intelligence</option>
                     <option value="appdev">Application Development</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-900 mb-1.5" htmlFor="message">Message (required)</label>
+                  <label className="block text-sm font-bold text-gray-900 mb-1.5" htmlFor="message">Message <span className="text-red-500">*</span></label>
                   <textarea id="message" rows={4} required value={formData.message} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border-2 border-white/60 bg-white/80 text-gray-900 focus:ring-2 focus:ring-[#153776] focus:border-[#153776] outline-none resize-none transition-colors shadow-sm" placeholder="Your space to ask questions, tell us your goals, or anything else you need from us."></textarea>
                 </div>
 
