@@ -173,78 +173,108 @@ export default function ContactSalesPage() {
             </div>
           </div>
 
-          <div className="w-full flex flex-col gap-8 bg-transparent pb-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-              <div className="bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 p-6 sm:p-8 flex flex-col justify-center gap-4 h-[160px] md:h-[180px] group hover:-translate-y-1 transition-transform duration-300">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-[#153776] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <div className="w-full flex flex-col items-center gap-10 bg-transparent pb-16 pt-8">
+            <div className="text-center space-y-3">
+              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 tracking-tight flex items-center justify-center gap-3">
+                Let&apos;s Work Together
+              </h2>
+              <p className="text-lg md:text-xl text-gray-500 font-medium max-w-2xl mx-auto">
+                Fast response. Real solutions. Global reach.
+              </p>
+            </div>
+
+            <div className="w-full max-w-[1000px] bg-white rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-gray-100 p-6 sm:p-8 flex flex-col md:flex-row gap-6 lg:gap-8 relative my-4">
+              {/* Left Side: Contact Methods Container */}
+              <div className="flex-1 flex flex-col gap-6">
+                
+                {/* Status Pill */}
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 border-b border-gray-100 pb-4">
+                  <div className="inline-flex items-center gap-2 bg-green-50 px-4 py-2 bg-green-100/50 rounded-full border border-green-200/50">
+                    <div className="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
+                    <span className="text-green-800 font-bold text-sm">Available now</span>
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 group-hover:text-[#153776] transition-colors">Business Hours</h4>
+                  <span className="text-gray-500 text-sm font-medium">We&apos;re available when your business needs us most</span>
                 </div>
-                <p className="text-gray-600 ml-16 font-medium">Monday - Friday: 8:00 AM - 5:00 PM IST</p>
+
+                {/* Grid for 3 cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-4 h-full">
+                  {/* Website Card */}
+                  <a href="https://www.kriyantrai.com" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-center justify-center p-3 sm:p-2 md:p-4 lg:p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all duration-300 group">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-gray-100 bg-white shadow-sm flex items-center justify-center text-gray-700 mb-4 lg:mb-6 group-hover:scale-110 group-hover:text-blue-600 transition-all">
+                      <svg className="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    </div>
+                    <span className="text-gray-900 font-bold text-[11px] xl:text-[13px] mb-2 whitespace-nowrap w-full">www.kriyantrai.com</span>
+                    <span className="text-gray-500 text-[10px] sm:text-xs">Visit Website</span>
+                  </a>
+
+                  {/* Phone Card */}
+                  <a href="tel:+916289946256" className="flex flex-col items-center text-center justify-center p-3 sm:p-2 md:p-4 lg:p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all duration-300 group">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-gray-100 bg-white shadow-sm flex items-center justify-center text-gray-700 mb-4 lg:mb-6 group-hover:scale-110 group-hover:text-blue-600 transition-all">
+                      <svg className="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    </div>
+                    <span className="text-gray-900 font-bold text-[11px] xl:text-[13px] mb-2 whitespace-nowrap w-full">+91 6289946256</span>
+                    <span className="text-gray-500 text-[10px] sm:text-xs">Give Us a Call</span>
+                  </a>
+
+                  {/* Email Card */}
+                  <a href="mailto:info@kriyantrai.com" className="flex flex-col items-center text-center justify-center p-3 sm:p-2 md:p-4 lg:p-6 bg-white rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all duration-300 group">
+                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-gray-100 bg-white shadow-sm flex items-center justify-center text-gray-700 mb-4 lg:mb-6 group-hover:scale-110 group-hover:text-blue-600 transition-all">
+                      <svg className="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <span className="text-gray-900 font-bold text-[11px] xl:text-[13px] mb-2 whitespace-nowrap w-full">info@kriyantrai.com</span>
+                    <span className="text-gray-500 text-[10px] sm:text-xs">Send an Email</span>
+                  </a>
+                </div>
               </div>
 
-              <div className="bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 p-6 sm:p-8 flex flex-col justify-center gap-4 h-[160px] md:h-[180px] group hover:-translate-y-1 transition-transform duration-300">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-teal-50 text-[#14b8a6] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+              {/* Right Side: Office Address Card */}
+              <div className="w-full md:w-[320px] bg-[#f8fbff] border border-gray-100 rounded-2xl overflow-hidden flex flex-col group hover:shadow-lg transition-all duration-300 flex-shrink-0">
+                <div className="h-32 w-full relative bg-gray-200 overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600" alt="Office Building" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+                  <div className="absolute top-4 right-4 text-white">
+                    <svg className="w-8 h-8 text-red-500 drop-shadow-md" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path></svg>
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 group-hover:text-[#14b8a6] transition-colors">Global Reach</h4>
                 </div>
-                <p className="text-gray-600 ml-16 font-medium">Serving clients worldwide with innovative solutions</p>
+                <div className="p-6 md:p-8 flex flex-col flex-1 relative">
+                  <div className="absolute -top-6 left-6 w-12 h-12 bg-white rounded-full shadow border border-gray-100 flex items-center justify-center p-1">
+                    <div className="w-full h-full bg-slate-100 rounded-full flex items-center justify-center">
+                      <div className="w-3 h-3 bg-slate-600 rounded-full"></div>
+                    </div>
+                  </div>
+                  <h4 className="text-gray-500 text-sm font-medium flex items-center gap-2 mb-4 mt-2">
+                    Visit Office
+                  </h4>
+                  <p className="text-[#0e1726] font-semibold text-base leading-relaxed tracking-wide">
+                    68/88 AMARPALLY,<br />JESSORE ROAD,<br />KOLKATA, 700074
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgba(0,0,0,0.04)] border border-gray-100 p-6 sm:p-8 lg:p-12 w-full flex flex-col items-center justify-center gap-10 text-center relative overflow-hidden">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#14b8a6] via-[#153776] to-[#F67112] rounded-b-full"></div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 w-full max-w-6xl mt-2 text-left">
-                <div className="flex items-center gap-4 justify-start bg-gray-50/50 p-4 rounded-2xl border border-gray-100 hover:border-gray-200 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-500 shrink-0">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
-                  </div>
-                  <div className="flex flex-col">
-                    <a href="https://www.kriyantrai.com" className="text-[#153776] font-bold hover:text-[#14b8a6] transition-colors truncate">www.kriyantrai.com</a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 justify-start bg-gray-50/50 p-4 rounded-2xl border border-gray-100 hover:border-gray-200 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-500 shrink-0">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-gray-700 font-bold truncate">+91 6289946256</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 justify-start bg-gray-50/50 p-4 rounded-2xl border border-gray-100 hover:border-gray-200 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-500 shrink-0">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                  </div>
-                  <div className="flex flex-col">
-                    <a href="mailto:info@kriyantrai.com" className="text-[#153776] font-bold hover:text-[#14b8a6] transition-colors truncate">info@kriyantrai.com</a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 justify-start bg-gray-50/50 p-4 rounded-2xl border border-gray-100 hover:border-gray-200 transition-colors sm:col-span-2 lg:col-span-1">
-                  <div className="w-12 h-12 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-500 shrink-0">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-gray-700 text-sm leading-relaxed font-semibold">
-                      68/88 AMARPALLY JESSORE ROAD,<br />KOLKATA, 700074
-                    </span>
-                  </div>
-                </div>
+            {/* Checkmarks / Guarantees */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4">
+              <div className="flex items-center gap-2 bg-white/80 px-4 py-2.5 rounded-full border border-gray-200 shadow-[0_2px_10px_rgba(0,0,0,0.03)] backdrop-blur-md text-gray-800 font-semibold text-[15px] hover:-translate-y-0.5 transition-transform duration-300">
+                <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                <span>24h response guarantee</span>
               </div>
-
-              <div className="mt-6 w-full flex justify-center border-t border-gray-100 pt-10">
-                <button className="bg-[#153776] hover:bg-[#0d2146] transition-all duration-300 transform hover:-translate-y-1 text-white font-bold py-4 px-10 rounded-xl flex items-center justify-center gap-3 shadow-[0_4px_14px_0_rgba(21,55,118,0.39)] hover:shadow-[0_6px_20px_rgba(21,55,118,0.23)]">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                  Request a Meeting
-                </button>
+              <div className="flex items-center gap-2 bg-white/80 px-4 py-2.5 rounded-full border border-gray-200 shadow-[0_2px_10px_rgba(0,0,0,0.03)] backdrop-blur-md text-gray-800 font-semibold text-[15px] hover:-translate-y-0.5 transition-transform duration-300">
+                <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                <span>Free consultation call</span>
               </div>
+              <div className="flex items-center gap-2 bg-white/80 px-4 py-2.5 rounded-full border border-gray-200 shadow-[0_2px_10px_rgba(0,0,0,0.03)] backdrop-blur-md text-gray-800 font-semibold text-[15px] hover:-translate-y-0.5 transition-transform duration-300">
+                <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
+                <span>Industry experts onboard</span>
+              </div>
+            </div>
+
+            {/* Request a Meeting Button */}
+            <div className="mt-8">
+              <button className="relative group overflow-hidden bg-gradient-to-r from-blue-500 via-indigo-500 to-pink-500 text-white font-bold py-4 px-10 rounded-xl flex items-center gap-3 shadow-[0_10px_30px_rgba(168,85,247,0.3)] hover:shadow-[0_10px_40px_rgba(168,85,247,0.5)] hover:-translate-y-1 transition-all duration-300">
+                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
+                <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <span className="relative z-10 text-lg">Request a Meeting</span>
+              </button>
             </div>
           </div>
         </div>

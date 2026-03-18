@@ -2,11 +2,18 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
     const [isSpinning, setIsSpinning] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
+    const pathname = usePathname();
+
+    const isActive = (path: string) => {
+        if (path === '/') return pathname === '/';
+        return pathname?.startsWith(path);
+    };
 
     // Spin on initial load/refresh
     useEffect(() => {
@@ -48,11 +55,11 @@ export default function Navbar() {
 
                     {/* Nav links - center */}
                     <div className="hidden lg:flex items-center justify-center gap-6 text-sm font-medium text-black flex-1">
-                        <Link href="/products" className="hover:text-primary transition-colors flex items-center gap-1">
+                        <Link href="/products" className={`transition-colors flex items-center gap-1 hover:text-primary ${isActive('/products') ? 'underline underline-offset-4 decoration-[#F67112] decoration-2' : ''}`}>
                             Products
                         </Link>
                         <div className="relative group">
-                            <Link href="#" className="hover:text-primary transition-colors flex items-center gap-1">
+                            <Link href="#" className={`transition-colors flex items-center gap-1 hover:text-primary ${isActive('/solutions') ? 'underline underline-offset-4 decoration-[#F67112] decoration-2' : ''}`}>
                                 Solutions
                                 <span className="transition-transform duration-200 group-hover:-rotate-180">
                                     <svg
@@ -73,21 +80,21 @@ export default function Navbar() {
                             </Link>
                             <div className="absolute left-0 top-full mt-3 w-56 rounded-xl bg-white/95 shadow-lg border border-gray-200 py-3 px-3 text-sm text-gray-800 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
                                 <div className="flex flex-col gap-1.5 text-left">
-                                    <Link href="/solutions/artificial-intelligence" className="block w-full text-left px-2 py-1.5 rounded-md hover:bg-gray-100 hover:text-[#153776] transition-colors">Artificial Intelligence</Link>
-                                    <Link href="/solutions/data-solutions" className="block w-full text-left px-2 py-1.5 rounded-md hover:bg-gray-100 hover:text-[#153776] transition-colors">Data Solutions</Link>
-                                    <Link href="/solutions/process-automation" className="block w-full text-left px-2 py-1.5 rounded-md hover:bg-gray-100 hover:text-[#153776] transition-colors">Process Automation</Link>
-                                    <Link href="/solutions/application-development" className="block w-full text-left px-2 py-1.5 rounded-md hover:bg-gray-100 hover:text-[#153776] transition-colors">Application Development</Link>
+                                    <Link href="/solutions/artificial-intelligence" className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${pathname === '/solutions/artificial-intelligence' ? 'bg-[#F67112]/10 text-black font-semibold' : 'text-gray-800 hover:bg-gray-100 hover:text-[#153776]'}`}>Artificial Intelligence</Link>
+                                    <Link href="/solutions/data-solutions" className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${pathname === '/solutions/data-solutions' ? 'bg-[#F67112]/10 text-black font-semibold' : 'text-gray-800 hover:bg-gray-100 hover:text-[#153776]'}`}>Data Solutions</Link>
+                                    <Link href="/solutions/process-automation" className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${pathname === '/solutions/process-automation' ? 'bg-[#F67112]/10 text-black font-semibold' : 'text-gray-800 hover:bg-gray-100 hover:text-[#153776]'}`}>Process Automation</Link>
+                                    <Link href="/solutions/application-development" className={`block w-full text-left px-3 py-2 rounded-md transition-colors ${pathname === '/solutions/application-development' ? 'bg-[#F67112]/10 text-black font-semibold' : 'text-gray-800 hover:bg-gray-100 hover:text-[#153776]'}`}>Application Development</Link>
                                 </div>
                             </div>
                         </div>
-                        <Link href="/about" className="hover:text-primary transition-colors">
+                        <Link href="/about" className={`transition-colors hover:text-primary ${isActive('/about') ? 'underline underline-offset-4 decoration-[#F67112] decoration-2' : ''}`}>
                             About Us
                         </Link>
                     </div>
 
                     {/* Right Actions */}
                     <div className="flex items-center justify-end gap-3 sm:gap-5 text-sm font-medium text-black flex-1">
-                        <Link href="/career" className="hidden md:block hover:text-primary transition-colors">Careers</Link>
+                        <Link href="/career" className={`hidden md:block transition-colors hover:text-primary ${isActive('/career') ? 'underline underline-offset-4 decoration-[#F67112] decoration-2' : ''}`}>Careers</Link>
                         <Link
                             href="/contact/sales"
                             className="hidden md:block px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors"
@@ -116,11 +123,11 @@ export default function Navbar() {
                 {/* Mobile Menu Overlay */}
                 {isMobileMenuOpen && (
                     <div className="lg:hidden border-t border-gray-100 bg-white/95 backdrop-blur-md absolute top-full left-0 right-0 shadow-lg p-4 flex flex-col gap-4 max-h-[calc(100vh-4rem)] overflow-y-auto">
-                        <Link href="/products" className="py-2 text-black font-medium hover:text-primary" onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
+                        <Link href="/products" className={`py-2 font-medium text-black hover:text-primary ${isActive('/products') ? 'underline underline-offset-4 decoration-[#F67112] decoration-2' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>Products</Link>
                         <div className="flex flex-col gap-2">
                             <button
                                 onClick={() => setIsMobileSolutionsOpen(!isMobileSolutionsOpen)}
-                                className="py-2 text-black font-medium flex items-center justify-between w-full text-left"
+                                className={`py-2 font-medium flex items-center justify-between w-full text-left text-black ${isActive('/solutions') ? 'underline underline-offset-4 decoration-[#F67112] decoration-2' : ''}`}
                             >
                                 Solutions
                                 <svg
@@ -135,15 +142,15 @@ export default function Navbar() {
 
                             {isMobileSolutionsOpen && (
                                 <div className="pl-4 flex flex-col gap-3 border-l-2 border-gray-100 ml-2 animate-in slide-in-from-top-2 duration-200">
-                                    <Link href="/solutions/artificial-intelligence" className="text-gray-600 hover:text-black text-sm" onClick={() => setIsMobileMenuOpen(false)}>Artificial Intelligence</Link>
-                                    <Link href="/solutions/data-solutions" className="text-gray-600 hover:text-black text-sm" onClick={() => setIsMobileMenuOpen(false)}>Data Solutions</Link>
-                                    <Link href="/solutions/process-automation" className="text-gray-600 hover:text-black text-sm" onClick={() => setIsMobileMenuOpen(false)}>Process Automation</Link>
-                                    <Link href="/solutions/application-development" className="text-gray-600 hover:text-black text-sm" onClick={() => setIsMobileMenuOpen(false)}>Application Development</Link>
+                                    <Link href="/solutions/artificial-intelligence" className={`text-sm transition-colors ${pathname === '/solutions/artificial-intelligence' ? 'text-black font-semibold' : 'text-gray-600 hover:text-black'}`} onClick={() => setIsMobileMenuOpen(false)}>Artificial Intelligence</Link>
+                                    <Link href="/solutions/data-solutions" className={`text-sm transition-colors ${pathname === '/solutions/data-solutions' ? 'text-black font-semibold' : 'text-gray-600 hover:text-black'}`} onClick={() => setIsMobileMenuOpen(false)}>Data Solutions</Link>
+                                    <Link href="/solutions/process-automation" className={`text-sm transition-colors ${pathname === '/solutions/process-automation' ? 'text-black font-semibold' : 'text-gray-600 hover:text-black'}`} onClick={() => setIsMobileMenuOpen(false)}>Process Automation</Link>
+                                    <Link href="/solutions/application-development" className={`text-sm transition-colors ${pathname === '/solutions/application-development' ? 'text-black font-semibold' : 'text-gray-600 hover:text-black'}`} onClick={() => setIsMobileMenuOpen(false)}>Application Development</Link>
                                 </div>
                             )}
                         </div>
-                        <Link href="/about" className="py-2 text-black font-medium hover:text-primary border-t border-gray-100 pt-4" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-                        <Link href="/career" className="py-2 text-black font-medium hover:text-primary md:hidden" onClick={() => setIsMobileMenuOpen(false)}>Careers</Link>
+                        <Link href="/about" className={`py-2 font-medium border-t border-gray-100 pt-4 text-black hover:text-primary ${isActive('/about') ? 'underline underline-offset-4 decoration-[#F67112] decoration-2' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+                        <Link href="/career" className={`py-2 font-medium md:hidden text-black hover:text-primary ${isActive('/career') ? 'underline underline-offset-4 decoration-[#F67112] decoration-2' : ''}`} onClick={() => setIsMobileMenuOpen(false)}>Careers</Link>
                         <Link href="/contact/sales" className="mt-2 py-3 bg-black text-white text-center rounded-lg font-medium hover:bg-gray-800 transition-colors md:hidden" onClick={() => setIsMobileMenuOpen(false)}>Contact Sales</Link>
                     </div>
                 )}
