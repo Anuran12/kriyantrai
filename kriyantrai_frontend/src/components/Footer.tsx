@@ -79,9 +79,20 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Bottom Section: Copyright */}
-                <div className="text-center text-sm text-white font-semibold pt-8 pb-4 border-t border-white/10">
-                    © 2025-26 Kriyantrai. All rights reserved.
+                {/* Bottom Section: Links & Copyright */}
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80 font-medium pt-8 pb-4 border-t border-white/10">
+                    <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2">
+                        <Link href="/privacy-policy" className="hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 inline-block">Privacy Policy</Link>
+                        <span className="text-white/30 text-xs">|</span>
+                        <Link href="/terms-and-conditions" className="hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 inline-block">Terms & Conditions</Link>
+                        <span className="text-white/30 text-xs">|</span>
+                        <Link href="/cookies-policy" className="hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 inline-block">Cookie Policy</Link>
+                        <span className="text-white/30 text-xs">|</span>
+                        <Link href="/sla" className="hover:text-[#F67112] hover:-translate-y-1 hover:scale-105 transition-all duration-300 inline-block">SLA</Link>
+                    </div>
+                    <div className="font-semibold text-white text-center md:text-right mt-4 md:mt-0">
+                        © 2025-26 Kriyantrai. All rights reserved.
+                    </div>
                 </div>
             </div>
         </footer>

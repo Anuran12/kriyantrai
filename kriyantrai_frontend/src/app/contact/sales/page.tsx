@@ -159,11 +159,34 @@ export default function ContactSalesPage() {
                 {submitMessage ? <p className="text-sm font-medium text-green-700">{submitMessage}</p> : null}
                 {submitError ? <p className="text-sm font-medium text-red-600">{submitError}</p> : null}
 
-                <div className="pt-2">
-                  <p className="text-sm text-gray-800 mb-6">
-                    By clicking submit you agree to our Terms of Service and Privacy Policy.
-                  </p>
-                  <button type="submit" disabled={isSubmitting} className="px-8 py-3.5 bg-black hover:bg-gray-800 disabled:bg-gray-500 text-white font-semibold rounded-lg shadow-md transition-colors w-full sm:w-auto">
+                <div className="pt-2 flex flex-col gap-4">
+                  <label className="flex items-start gap-3 cursor-pointer group">
+                    <div className="flex items-center h-5">
+                      <input 
+                        type="checkbox" 
+                        required 
+                        className="w-5 h-5 border-2 border-gray-300 rounded text-blue-600 focus:ring-blue-500 cursor-pointer shadow-sm transition-colors group-hover:border-blue-500"
+                      />
+                    </div>
+                    <span className="text-sm text-gray-700 leading-tight pt-0.5">
+                      I have read and agree to the <a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline font-semibold hover:text-blue-800 transition-colors">Terms and Conditions</a>
+                    </span>
+                  </label>
+                  
+                  <label className="flex items-start gap-3 cursor-pointer group">
+                    <div className="flex items-center h-5">
+                      <input 
+                        type="checkbox" 
+                        required 
+                        className="w-5 h-5 border-2 border-gray-300 rounded text-blue-600 focus:ring-blue-500 cursor-pointer shadow-sm transition-colors group-hover:border-blue-500"
+                      />
+                    </div>
+                    <span className="text-sm text-gray-700 leading-tight pt-0.5">
+                      I have read and agree to the <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline font-semibold hover:text-blue-800 transition-colors">Privacy Policy</a>, <a href="/cookies-policy" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline font-semibold hover:text-blue-800 transition-colors">Cookies Policy</a>, and <a href="/sla" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline font-semibold hover:text-blue-800 transition-colors">Service Level Agreement (SLA)</a>
+                    </span>
+                  </label>
+
+                  <button type="submit" disabled={isSubmitting} className="mt-2 px-8 py-3.5 bg-black hover:bg-gray-800 disabled:bg-gray-500 text-white font-semibold rounded-lg shadow-md transition-colors w-full sm:w-auto">
                     {isSubmitting ? "Sending..." : "Contact Sales"}
                   </button>
                 </div>
