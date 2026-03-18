@@ -122,7 +122,7 @@ export default function ContactSalesPage() {
                 Fill out this quick form and we&apos;ll get back to you shortly
               </h3>
 
-              <form className="space-y-5" onSubmit={handleSubmit}>
+              <form id="sales-form" className="space-y-5" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-sm font-bold text-gray-900 mb-1.5" htmlFor="firstName">First Name</label>
@@ -183,7 +183,7 @@ export default function ContactSalesPage() {
               </p>
             </div>
 
-            <div className="w-full max-w-[1000px] bg-white rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-gray-100 p-6 sm:p-8 flex flex-col md:flex-row gap-6 lg:gap-8 relative my-4">
+            <div className="w-full max-w-[1000px] bg-sky-50/50 backdrop-blur-sm rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-sky-100 p-6 sm:p-8 flex flex-col md:flex-row gap-6 lg:gap-8 relative my-4">
               {/* Left Side: Contact Methods Container */}
               <div className="flex-1 flex flex-col gap-6">
                 
@@ -270,7 +270,9 @@ export default function ContactSalesPage() {
 
             {/* Request a Meeting Button */}
             <div className="mt-8">
-              <button className="relative group overflow-hidden bg-gradient-to-r from-blue-500 via-indigo-500 to-pink-500 text-white font-bold py-4 px-10 rounded-xl flex items-center gap-3 shadow-[0_10px_30px_rgba(168,85,247,0.3)] hover:shadow-[0_10px_40px_rgba(168,85,247,0.5)] hover:-translate-y-1 transition-all duration-300">
+              <button 
+                onClick={(e) => { e.preventDefault(); document.getElementById('sales-form')?.scrollIntoView({ behavior: 'smooth' }); }}
+                className="relative group overflow-hidden bg-gradient-to-r from-[#F67112] via-[#A1F9F3] to-[#153776] text-black font-bold py-4 px-10 rounded-xl flex items-center gap-3 shadow-[0_10px_30px_rgba(246,113,18,0.3)] hover:shadow-[0_10px_40px_rgba(246,113,18,0.5)] hover:-translate-y-1 transition-all duration-300">
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
                 <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                 <span className="relative z-10 text-lg">Request a Meeting</span>
