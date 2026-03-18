@@ -18,7 +18,7 @@ const rpaImages = [
 const ipaImages = [
     "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=400&q=80",
     "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80",
-    "https://images.unsplash.com/photo-1620712948343-0008ece88852?auto=format&fit=crop&w=400&q=80"
+    "/ipa-automation-concept.png"
 ];
 
 const ImageSlider = ({ images }: { images: string[] }) => {
@@ -263,36 +263,36 @@ export default function ProcessAutomationPage() {
                     </div>
 
                     <div className="overflow-x-auto w-full">
-                        <table className="w-full border-collapse min-w-[800px] bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-xl">
+                        <table className="w-full border-collapse md:min-w-[800px] bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-xl">
                             <thead>
                                 <tr className="bg-white border-b border-gray-100">
-                                    <th className="py-6 px-8 text-left text-black font-bold text-lg w-1/4">Feature</th>
-                                    <th className="py-6 px-8 text-center w-1/4 border-l border-gray-100">
-                                        <div className="inline-block px-3 py-1 rounded-full bg-[#3b82f6]/10 text-[#3b82f6] text-xs font-bold mb-2">BPA</div>
-                                        <div className="text-gray-600 font-semibold">Business Process Automation</div>
+                                    <th className="py-4 md:py-6 px-2 md:px-8 text-left text-black font-bold text-xs md:text-lg w-1/4">Feature</th>
+                                    <th className="py-4 md:py-6 px-2 md:px-8 text-center w-1/4 border-l border-gray-100">
+                                        <div className="inline-block px-2 md:px-3 py-0.5 md:py-1 rounded-full bg-[#3b82f6]/10 text-[#3b82f6] text-[10px] md:text-xs font-bold md:mb-2">BPA</div>
+                                        <div className="hidden md:block text-gray-600 font-semibold">Business Process Automation</div>
                                     </th>
-                                    <th className="py-6 px-8 text-center w-1/4 border-l border-gray-100">
-                                        <div className="inline-block px-3 py-1 rounded-full bg-[#22c55e]/10 text-[#22c55e] text-xs font-bold mb-2">RPA</div>
-                                        <div className="text-gray-600 font-semibold">Robotic Process Automation</div>
+                                    <th className="py-4 md:py-6 px-2 md:px-8 text-center w-1/4 border-l border-gray-100">
+                                        <div className="inline-block px-2 md:px-3 py-0.5 md:py-1 rounded-full bg-[#22c55e]/10 text-[#22c55e] text-[10px] md:text-xs font-bold md:mb-2">RPA</div>
+                                        <div className="hidden md:block text-gray-600 font-semibold">Robotic Process Automation</div>
                                     </th>
-                                    <th className="py-6 px-8 text-center w-1/4 border-l border-gray-100">
-                                        <div className="inline-block px-3 py-1 rounded-full bg-[#a78bfa]/10 text-[#a78bfa] text-xs font-bold mb-2">IPA</div>
-                                        <div className="text-gray-600 font-semibold">Intelligent Process Automation</div>
+                                    <th className="py-4 md:py-6 px-2 md:px-8 text-center w-1/4 border-l border-gray-100">
+                                        <div className="inline-block px-2 md:px-3 py-0.5 md:py-1 rounded-full bg-[#a78bfa]/10 text-[#a78bfa] text-[10px] md:text-xs font-bold md:mb-2">IPA</div>
+                                        <div className="hidden md:block text-gray-600 font-semibold">Intelligent Process Automation</div>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {comparisonData.map((row, idx) => (
                                     <tr key={idx} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                                        <td className="py-5 px-8 font-bold text-black">{row.feature}</td>
-                                        <td className="py-5 px-8 text-center text-gray-600 font-medium border-l border-gray-100">
-                                            {typeof row.bpa === 'boolean' ? (row.bpa ? <span className="text-green-500 font-bold inline-block w-6 h-6 rounded-full border-2 border-green-500 flex items-center justify-center">✓</span> : <span className="text-red-500 font-bold inline-block w-6 h-6 rounded-full border-2 border-red-500 flex items-center justify-center">✕</span>) : row.bpa}
+                                        <td className="py-3 md:py-5 px-2 md:px-8 font-bold text-black text-[11px] md:text-base leading-tight md:leading-normal">{row.feature}</td>
+                                        <td className="py-3 md:py-5 px-1 md:px-8 text-center text-gray-600 font-medium border-l border-gray-100 text-[11px] md:text-base leading-tight md:leading-normal">
+                                            {typeof row.bpa === 'boolean' ? (row.bpa ? <span className="text-green-500 font-bold inline-flex w-4 h-4 md:w-6 md:h-6 rounded-full border border-green-500 md:border-2 md:border-green-500 items-center justify-center text-[10px] md:text-base flex-shrink-0">✓</span> : <span className="text-red-500 font-bold inline-flex w-4 h-4 md:w-6 md:h-6 rounded-full border border-red-500 md:border-2 md:border-red-500 items-center justify-center text-[10px] md:text-base flex-shrink-0">✕</span>) : row.bpa}
                                         </td>
-                                        <td className="py-5 px-8 text-center text-gray-600 font-medium border-l border-gray-100">
-                                            {typeof row.rpa === 'boolean' ? (row.rpa ? <span className="text-green-500 font-bold inline-block w-6 h-6 rounded-full border-2 border-green-500 flex items-center justify-center">✓</span> : <span className="text-red-500 font-bold inline-block w-6 h-6 rounded-full border-2 border-red-500 flex items-center justify-center">✕</span>) : row.rpa}
+                                        <td className="py-3 md:py-5 px-1 md:px-8 text-center text-gray-600 font-medium border-l border-gray-100 text-[11px] md:text-base leading-tight md:leading-normal">
+                                            {typeof row.rpa === 'boolean' ? (row.rpa ? <span className="text-green-500 font-bold inline-flex w-4 h-4 md:w-6 md:h-6 rounded-full border border-green-500 md:border-2 md:border-green-500 items-center justify-center text-[10px] md:text-base flex-shrink-0">✓</span> : <span className="text-red-500 font-bold inline-flex w-4 h-4 md:w-6 md:h-6 rounded-full border border-red-500 md:border-2 md:border-red-500 items-center justify-center text-[10px] md:text-base flex-shrink-0">✕</span>) : row.rpa}
                                         </td>
-                                        <td className="py-5 px-8 text-center text-gray-600 font-medium border-l border-gray-100">
-                                            {typeof row.ipa === 'boolean' ? (row.ipa ? <span className="text-green-500 font-bold inline-block w-6 h-6 rounded-full border-2 border-green-500 flex items-center justify-center">✓</span> : <span className="text-red-500 font-bold inline-block w-6 h-6 rounded-full border-2 border-red-500 flex items-center justify-center">✕</span>) : row.ipa}
+                                        <td className="py-3 md:py-5 px-1 md:px-8 text-center text-gray-600 font-medium border-l border-gray-100 text-[11px] md:text-base leading-tight md:leading-normal">
+                                            {typeof row.ipa === 'boolean' ? (row.ipa ? <span className="text-green-500 font-bold inline-flex w-4 h-4 md:w-6 md:h-6 rounded-full border border-green-500 md:border-2 md:border-green-500 items-center justify-center text-[10px] md:text-base flex-shrink-0">✓</span> : <span className="text-red-500 font-bold inline-flex w-4 h-4 md:w-6 md:h-6 rounded-full border border-red-500 md:border-2 md:border-red-500 items-center justify-center text-[10px] md:text-base flex-shrink-0">✕</span>) : row.ipa}
                                         </td>
                                     </tr>
                                 ))}
