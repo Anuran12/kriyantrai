@@ -297,7 +297,7 @@ export default function DataSolutionsPage() {
                 {/* Tabbed Interface Body */}
                 <section id="core-services" className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 mb-24 z-20 relative scroll-mt-32">
                     {/* Tab List */}
-                    <div className="flex items-center justify-center w-full overflow-x-auto hide-scrollbar mb-8">
+                    <div className="hidden md:flex items-center justify-center w-full overflow-x-auto hide-scrollbar mb-8">
                         <div className="flex items-center p-1 bg-[#f4f5f5] border border-gray-200/60 rounded-2xl min-w-max mx-auto md:mx-0">
                             {[
                                 { id: 'data-governance', label: 'Data Governance Framework', icon: <svg className="w-3.5 h-3.5 md:w-4 md:h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg> },
@@ -327,7 +327,7 @@ export default function DataSolutionsPage() {
                     </div>
 
                     {/* Data Governance Framework Content */}
-                    {activeServiceTab === 'data-governance' && (
+                    <div className={`${activeServiceTab === 'data-governance' ? 'block' : 'block md:hidden'} mb-8 md:mb-0`}>
                         <div className="bg-[#f8f9fc] border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-500">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 rounded-xl bg-[#2DD4BF] flex items-center justify-center flex-shrink-0">
@@ -434,10 +434,10 @@ export default function DataSolutionsPage() {
                                 </div>
                             </div>
                         </div>
-                    )}
+                    </div>
 
                     {/* Modern Data Infrastructure Content */}
-                    {activeServiceTab === 'modern-data-infrastructure' && (
+                    <div className={`${activeServiceTab === 'modern-data-infrastructure' ? 'block' : 'block md:hidden'} mb-8 md:mb-0`}>
                         <div className="bg-[#f8f9fc] border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-500">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 rounded-xl bg-[#2DD4BF] flex items-center justify-center flex-shrink-0">
@@ -544,10 +544,10 @@ export default function DataSolutionsPage() {
                                 </div>
                             </div>
                         </div>
-                    )}
+                    </div>
 
                     {/* Enterprise Data Management Content */}
-                    {activeServiceTab === 'enterprise-data' && (
+                    <div className={`${activeServiceTab === 'enterprise-data' ? 'block' : 'block md:hidden'} mb-8 md:mb-0`}>
                         <div className="bg-[#f8f9fc] border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-500">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 rounded-xl bg-[#2DD4BF] flex items-center justify-center flex-shrink-0">
@@ -654,11 +654,11 @@ export default function DataSolutionsPage() {
                                 </div>
                             </div>
                         </div>
-                    )}
+                    </div>
 
                     {/* Data Modeling & Architecture Content */}
-                    {activeServiceTab === 'data-modeling' && (
-                        <div className="bg-[#f8f9fc] border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-500">
+                    <div className={`${activeServiceTab === 'data-modeling' ? 'block' : 'block md:hidden'} mb-8 md:mb-0`}>
+                        <div className="bg-[#f8f9fc] border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-2xl animate-in fade-in slide-in-in-from-bottom-4 duration-500">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 rounded-xl bg-[#2DD4BF] flex items-center justify-center flex-shrink-0">
                                     <svg className="w-6 h-6 text-[#042F2E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
@@ -764,10 +764,10 @@ export default function DataSolutionsPage() {
                                 </div>
                             </div>
                         </div>
-                    )}
+                    </div>
 
                     {/* Data Quality & Observability Content */}
-                    {activeServiceTab === 'data-quality' && (
+                    <div className={`${activeServiceTab === 'data-quality' ? 'block' : 'block md:hidden'} mb-8 md:mb-0`}>
                         <div className="bg-[#f8f9fc] border border-gray-200 rounded-3xl p-8 lg:p-12 shadow-2xl animate-in fade-in slide-in-from-bottom-4 duration-500">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 rounded-xl bg-[#2DD4BF] flex items-center justify-center flex-shrink-0">
@@ -874,7 +874,7 @@ export default function DataSolutionsPage() {
                                 </div>
                             </div>
                         </div>
-                    )}
+                    </div>
                 </section>
 
                 {/* Data Engineering Section */}
