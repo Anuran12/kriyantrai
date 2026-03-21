@@ -2,11 +2,20 @@
 
 import React from "react";
 import Footer from "@/components/Footer";
+import { useRouter } from "next/navigation";
 
 export default function PrivacyPolicyPage() {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col min-h-screen bg-transparent w-full">
       <main className="flex-1 pt-32 pb-16 px-4 sm:px-6 w-full max-w-4xl mx-auto flex flex-col gap-8">
+        <div className="mb-2">
+          <button onClick={() => router.back()} className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors font-medium group">
+            <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Back
+          </button>
+        </div>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 flex items-center gap-4">🔐 PRIVACY POLICY</h1>
         <div className="prose prose-lg text-gray-700 space-y-6 max-w-none">
           <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
