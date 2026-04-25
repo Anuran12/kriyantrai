@@ -200,7 +200,7 @@ export default function ProductsPage() {
                             style={{ x: card1X, opacity: card1Opacity }}
                             className="col-start-1 row-start-1 w-full flex items-stretch justify-center z-20 origin-left"
                         >
-                        <div className="bg-white border border-gray-100 rounded-[2.5rem] p-6 lg:p-8 text-left group shadow-[0_20px_40px_rgba(0,0,0,0.08)] w-full h-full relative overflow-hidden flex flex-col justify-between">
+                        <div className="bg-white border border-gray-100 rounded-[2.5rem] p-6 lg:p-8 text-left group shadow-[0_20px_40px_rgba(0,0,0,0.08)] w-full h-[75vh] lg:h-full overflow-y-auto lg:overflow-hidden relative flex flex-col justify-between transform-gpu isolate will-change-transform">
                             {/* Decorative background element */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#f97316]/5 to-[#ef4444]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
@@ -322,7 +322,7 @@ export default function ProductsPage() {
                             style={{ scale: card2Scale, opacity: card2Opacity, y: card2Y }}
                             className="col-start-1 row-start-1 w-full flex items-stretch justify-center z-10 origin-center"
                         >
-                        <div className="bg-white border border-gray-100 rounded-[2.5rem] p-6 lg:p-8 text-left group shadow-[0_0_20px_rgba(0,0,0,0.02)] w-full h-full relative overflow-hidden flex flex-col justify-between">
+                        <div className="bg-white border border-gray-100 rounded-[2.5rem] p-6 lg:p-8 text-left group shadow-[0_0_20px_rgba(0,0,0,0.02)] w-full h-[75vh] lg:h-full overflow-y-auto lg:overflow-hidden relative flex flex-col justify-between transform-gpu isolate will-change-transform">
                             {/* Decorative background element */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#14b8a6]/5 to-[#3b82f6]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
                             <div className="flex flex-col relative z-10 w-full flex-1 justify-center">

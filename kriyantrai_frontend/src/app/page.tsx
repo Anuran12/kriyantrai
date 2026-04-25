@@ -299,7 +299,7 @@ export default function Home() {
         <div className="w-full relative pb-12">
 
         {/* Section 2: Why Choose Us */}
-        <div className="sticky top-24 w-[96%] max-w-7xl mx-auto bg-white/95 backdrop-blur-2xl z-20 border border-slate-200/60 shadow-2xl rounded-[3rem] overflow-hidden mb-12">
+        <div className="sticky top-24 w-[96%] max-w-7xl mx-auto bg-white/95 backdrop-blur-2xl z-20 border border-slate-200/60 shadow-2xl rounded-[3rem] overflow-y-auto lg:overflow-hidden max-h-[80vh] lg:max-h-none transform-gpu isolate will-change-transform mb-12">
         <section className="w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 flex flex-col items-center">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 md:mb-20 text-center tracking-tight leading-tight">
             Create your digital foundation in weeks.<br className="hidden md:block" /> Headache-free.
@@ -372,7 +372,7 @@ export default function Home() {
         </div>
 
         {/* Section 3: Core Solutions */}
-        <div className="sticky top-24 w-[96%] max-w-7xl mx-auto bg-slate-50/95 backdrop-blur-2xl z-30 border border-slate-200/60 shadow-2xl rounded-[3rem] overflow-hidden mb-12">
+        <div className="sticky top-24 w-[96%] max-w-7xl mx-auto bg-slate-50/95 backdrop-blur-2xl z-30 border border-slate-200/60 shadow-2xl rounded-[3rem] overflow-y-auto lg:overflow-hidden max-h-[80vh] lg:max-h-none transform-gpu isolate will-change-transform mb-12">
         <section className="w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 flex flex-col items-center">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 md:mb-20 text-center tracking-tight leading-tight">
             Integrate intelligent solutions and<br className="hidden md:block" /> share your vision with the world.
@@ -445,7 +445,7 @@ export default function Home() {
         </div>
 
         {/* Section 4: Products */}
-        <div className="sticky top-24 w-[96%] max-w-7xl mx-auto bg-white/95 backdrop-blur-2xl z-40 border border-slate-200/60 shadow-2xl rounded-[3rem] overflow-hidden mb-12">
+        <div className="sticky top-24 w-[96%] max-w-7xl mx-auto bg-white/95 backdrop-blur-2xl z-40 border border-slate-200/60 shadow-2xl rounded-[3rem] overflow-y-auto lg:overflow-hidden max-h-[80vh] lg:max-h-none transform-gpu isolate will-change-transform mb-12">
         <section className="w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 flex flex-col items-center">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 text-center tracking-tight leading-tight">
             Analyze your operations and<br className="hidden md:block" /> achieve record results.
@@ -518,7 +518,7 @@ export default function Home() {
         </div>
 
         {/* Section 4.5: Social Sector */}
-        <div className="sticky top-24 w-[96%] max-w-7xl mx-auto bg-slate-50/95 backdrop-blur-2xl z-50 border border-slate-200/60 shadow-2xl rounded-[3rem] overflow-hidden mb-12">
+        <div className="sticky top-24 w-[96%] max-w-7xl mx-auto bg-slate-50/95 backdrop-blur-2xl z-50 border border-slate-200/60 shadow-2xl rounded-[3rem] overflow-y-auto lg:overflow-hidden max-h-[80vh] lg:max-h-none transform-gpu isolate will-change-transform mb-12">
         <section className="w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 flex flex-col items-center">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 text-center tracking-tight leading-tight">
             Driving meaningful impact in the<br className="hidden md:block" /> social sector with technology.
