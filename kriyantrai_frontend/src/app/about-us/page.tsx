@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 
 export default function AboutUsPage() {
     return (
-        <div className="flex flex-col min-h-screen bg-transparent relative z-10 w-full">
+        <div className="flex flex-col min-h-screen bg-transparent relative z-10 w-full overflow-x-clip">
             <main className="flex-1 w-full flex flex-col items-center justify-start pt-32 pb-0">
 
                 {/* Hero Section */}
@@ -66,7 +66,7 @@ export default function AboutUsPage() {
                         <h2 className="text-3xl md:text-5xl font-bold text-black mb-4 text-center tracking-tight">Our Purpose</h2>
                         <p className="text-gray-600 font-medium text-lg mb-16 text-center">What drives us every day</p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full overflow-x-clip">
                             {/* Mission */}
                             <div className="bg-white rounded-3xl p-10 flex flex-col card-hover-effect group text-left">
                                 <div className="flex items-center gap-4 mb-6">
@@ -117,7 +117,7 @@ export default function AboutUsPage() {
                         <h2 className="text-3xl md:text-5xl font-bold text-black mb-4 text-center tracking-tight">Why Partner With Us</h2>
                         <p className="text-gray-600 font-medium text-lg mb-16 text-center">Six compelling reasons to choose Kriyantrai as your AI transformation partner</p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full overflow-x-clip">
                             <div className="bg-white p-8 card-hover-effect group rounded-3xl text-left flex flex-col">
                                 <span className="inline-block px-3 py-1 bg-teal-50 border border-teal-100 text-[#153776] text-xs font-bold rounded-full mb-6 self-start">Strategic Foundation</span>
                                 <div className="flex items-center gap-4 mb-4">
@@ -196,7 +196,7 @@ export default function AboutUsPage() {
                         <h2 className="text-3xl md:text-5xl font-bold text-black mb-4 text-center tracking-tight">Small Firm, Big Advantages</h2>
                         <p className="text-gray-600 font-medium text-lg mb-16 text-center">Why smaller consulting firms deliver superior value compared to large corporations</p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full overflow-x-clip">
                             {/* Advantage 1 */}
                             <div className="bg-white border-2 border-gray-100 hover:border-[#2DD4BF] hover:-translate-y-2 hover:shadow-xl rounded-3xl p-8 transition-all duration-300 flex flex-col">
                                 <div className="flex items-center gap-4 mb-6">
@@ -285,7 +285,7 @@ export default function AboutUsPage() {
                                     </div>
                                 </div>
                                 <div className="w-full md:w-2/3 flex">
-                                    <div className="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col items-center md:items-start text-center md:text-left h-full justify-center w-full">
+                                    <div className="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col items-center md:items-start text-center md:text-left h-full justify-center w-full overflow-x-clip">
                                         <h3 className="text-4xl font-bold text-[#153776] mb-2 font-serif">Souvagya Das</h3>
                                         <p className="text-[#F67112] font-bold text-sm tracking-widest uppercase mb-6">CEO & FOUNDER</p>
                                         <p className="text-gray-600 text-lg leading-relaxed font-medium">
@@ -303,7 +303,7 @@ export default function AboutUsPage() {
                                     </div>
                                 </div>
                                 <div className="w-full md:w-2/3 flex">
-                                    <div className="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col items-center md:items-start text-center md:text-left h-full justify-center w-full">
+                                    <div className="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col items-center md:items-start text-center md:text-left h-full justify-center w-full overflow-x-clip">
                                         <h3 className="text-4xl font-bold text-[#153776] mb-2 font-serif">Souvik Makur</h3>
                                         <p className="text-[#F67112] font-bold text-sm tracking-widest uppercase mb-6">HEAD OF DEVELOPMENT</p>
                                         <p className="text-gray-600 text-lg leading-relaxed font-medium">
@@ -321,7 +321,7 @@ export default function AboutUsPage() {
                                     </div>
                                 </div>
                                 <div className="w-full md:w-2/3 flex">
-                                    <div className="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col items-center md:items-start text-center md:text-left h-full justify-center w-full">
+                                    <div className="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-gray-100 flex flex-col items-center md:items-start text-center md:text-left h-full justify-center w-full overflow-x-clip">
                                         <h3 className="text-4xl font-bold text-[#153776] mb-2 font-serif">Anuran Das</h3>
                                         <p className="text-[#F67112] font-bold text-sm tracking-widest uppercase mb-6">CHIEF TECHNOLOGY OFFICER</p>
                                         <p className="text-gray-600 text-lg leading-relaxed font-medium">

@@ -169,9 +169,12 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-transparent relative z-10 w-full overflow-x-clip">
       <main className="flex-1 w-full flex flex-col items-center justify-start pt-16 pb-0">
 
-        <Hero />
+        <div className="sticky top-0 w-full z-0 bg-white">
+          <Hero />
+        </div>
 
         {/* Section 1: Intro */}
+        <div className="sticky top-0 w-full bg-white/95 backdrop-blur-2xl z-10 border-t border-slate-100 shadow-[0_-20px_40px_rgba(0,0,0,0.05)] rounded-t-[3rem] pt-4">
         <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col items-center overflow-hidden">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 md:mb-16 text-center tracking-tight leading-tight">
             Why you need Kriyantrai's Solutions?
@@ -294,13 +297,11 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-
-        {/* --- STICKY CARDS CONTAINER --- */}
-        <div className="w-full relative pb-12">
+        </div>
 
         {/* Section 2: Why Choose Us */}
-        <div className="sticky top-24 w-[96%] max-w-7xl mx-auto bg-white/95 backdrop-blur-2xl z-20 border border-slate-200/60 shadow-2xl rounded-[3rem] overflow-hidden mb-12">
-        <section className="w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 flex flex-col items-center">
+        <div className="sticky top-0 w-full bg-slate-50/95 backdrop-blur-2xl z-20 border-t border-slate-200/50 shadow-[0_-20px_40px_rgba(0,0,0,0.05)] rounded-t-[3rem] pt-4">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col items-center">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 md:mb-20 text-center tracking-tight leading-tight">
             Create your digital foundation in weeks.<br className="hidden md:block" /> Headache-free.
           </h2>
@@ -372,8 +373,8 @@ export default function Home() {
         </div>
 
         {/* Section 3: Core Solutions */}
-        <div className="sticky top-24 w-[96%] max-w-7xl mx-auto bg-slate-50/95 backdrop-blur-2xl z-30 border border-slate-200/60 shadow-2xl rounded-[3rem] overflow-hidden mb-12">
-        <section className="w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 flex flex-col items-center">
+        <div className="sticky top-0 w-full bg-white/95 backdrop-blur-2xl z-30 border-t border-slate-100 shadow-[0_-20px_40px_rgba(0,0,0,0.05)] rounded-t-[3rem] pt-4">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col items-center">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 md:mb-20 text-center tracking-tight leading-tight">
             Integrate intelligent solutions and<br className="hidden md:block" /> share your vision with the world.
           </h2>
@@ -445,8 +446,8 @@ export default function Home() {
         </div>
 
         {/* Section 4: Products */}
-        <div className="sticky top-24 w-[96%] max-w-7xl mx-auto bg-white/95 backdrop-blur-2xl z-40 border border-slate-200/60 shadow-2xl rounded-[3rem] overflow-hidden mb-12">
-        <section className="w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 flex flex-col items-center">
+        <div className="sticky top-0 w-full bg-slate-50/95 backdrop-blur-2xl z-40 border-t border-slate-200/50 shadow-[0_-20px_40px_rgba(0,0,0,0.05)] rounded-t-[3rem] pt-4">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col items-center">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 text-center tracking-tight leading-tight">
             Analyze your operations and<br className="hidden md:block" /> achieve record results.
           </h2>
@@ -518,8 +519,8 @@ export default function Home() {
         </div>
 
         {/* Section 4.5: Social Sector */}
-        <div className="sticky top-24 w-[96%] max-w-7xl mx-auto bg-slate-50/95 backdrop-blur-2xl z-50 border border-slate-200/60 shadow-2xl rounded-[3rem] overflow-hidden mb-12">
-        <section className="w-full px-4 sm:px-6 lg:px-8 py-16 md:py-20 flex flex-col items-center">
+        <div className="sticky top-0 w-full bg-white/95 backdrop-blur-2xl z-50 border-t border-slate-100 shadow-[0_-20px_40px_rgba(0,0,0,0.05)] rounded-t-[3rem] pt-4">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col items-center">
           <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 text-center tracking-tight leading-tight">
             Driving meaningful impact in the<br className="hidden md:block" /> social sector with technology.
           </h2>
@@ -590,12 +591,10 @@ export default function Home() {
         </section>
         </div>
 
-        </div>
-        {/* --- END STICKY CARDS CONTAINER --- */}
-
         {/* Section 5: Partners / Testimonial */}
-        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col items-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 text-center tracking-tight leading-tight">
+        <div className="sticky top-0 w-full bg-slate-900/95 backdrop-blur-2xl z-[60] border-t border-slate-800 shadow-[0_-20px_40px_rgba(0,0,0,0.2)] rounded-t-[3rem] pb-20 pt-8">
+        <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col items-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-12 text-center tracking-tight leading-tight">
             With Kriyantrai, our partners<br className="hidden md:block" /> make the impossible possible.
           </h2>
 
@@ -623,6 +622,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        </div>
 
       </main>
       <Footer />

@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useRef } from 'react';
 import Footer from '@/components/Footer';
 
 const productImages = [
@@ -87,6 +88,20 @@ const ImageSlider = ({
 };
 
 export default function ProductsPage() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end end"]
+    });
+
+    // Make the transition happen completely within the first 60% of the scroll container
+    const card1X = useTransform(scrollYProgress, [0, 0.6], ["0%", "-100%"]);
+    const card1Opacity = useTransform(scrollYProgress, [0.4, 0.6], [1, 0]);
+
+    const card2Scale = useTransform(scrollYProgress, [0, 0.6], [0.85, 1]);
+    const card2Opacity = useTransform(scrollYProgress, [0, 0.6], [0.3, 1]);
+    const card2Y = useTransform(scrollYProgress, [0, 0.6], ["5%", "0%"]);
+
     return (
         <div className="flex flex-col min-h-screen relative z-10 w-full bg-transparent">
             <main className="flex-1 w-full flex flex-col items-center justify-start pt-24 pb-12 md:pb-16">
@@ -174,22 +189,22 @@ export default function ProductsPage() {
                 </section>
 
                 {/* Products Section */}
-                <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center mt-20 mb-8 relative z-10">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                        className="w-full text-left"
-                    >
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 md:mb-12 text-center">Our Products</h2>
-
-                        {/* Trucker Health Monitoring System Card */}
-                        <div className="bg-white border border-gray-100 rounded-3xl p-6 lg:p-8 text-left card-hover-effect group shadow-[0_0_20px_rgba(0,0,0,0.02)] max-w-7xl mx-auto relative overflow-hidden w-full mb-12">
+                <section ref={containerRef} className="w-full h-[250vh] relative z-10 mt-12 mb-8">
+                    <div className="sticky top-12 w-full h-auto overflow-hidden flex flex-col items-center px-4 sm:px-6 lg:px-8 pb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 shrink-0 text-center">Our Products</h2>
+                        
+                        <div className="grid w-full max-w-7xl mx-auto flex-1">
+                            
+                        {/* Trucker Health Monitoring System Card (Foreground, scrolls left) */}
+                        <motion.div 
+                            style={{ x: card1X, opacity: card1Opacity }}
+                            className="col-start-1 row-start-1 w-full flex items-stretch justify-center z-20 origin-left"
+                        >
+                        <div className="bg-white border border-gray-100 rounded-[2.5rem] p-6 lg:p-8 text-left group shadow-[0_20px_40px_rgba(0,0,0,0.08)] w-full h-full relative overflow-hidden flex flex-col justify-between">
                             {/* Decorative background element */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#f97316]/5 to-[#ef4444]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
 
-                            <div className="flex flex-col relative z-10 w-full">
+                            <div className="flex flex-col relative z-10 w-full flex-1 justify-center">
                                 {/* Top Content Area */}
                                 <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-center w-full">
                                     {/* Left Content */}
@@ -293,18 +308,24 @@ export default function ProductsPage() {
                                 </div>
 
                                 {/* Bottom Button Row */}
-                                <div className="w-full flex justify-center mt-8 pt-6 border-t border-gray-100">
+                                <div className="w-full flex justify-center mt-auto pt-4 border-t border-gray-100">
                                     <a href="/contact/sales" className="bg-[#f97316] hover:bg-[#ea580c] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-base w-full sm:w-auto">
                                         Book a demo
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        {/* Digital Survey & Monitoring System Card */}
-                        <div className="bg-white border border-gray-100 rounded-3xl p-6 lg:p-8 text-left card-hover-effect group shadow-[0_0_20px_rgba(0,0,0,0.02)] max-w-7xl mx-auto relative overflow-hidden w-full">
+                        </motion.div>
+
+                        {/* Digital Survey & Monitoring System Card (Background, comes forward) */}
+                        <motion.div 
+                            style={{ scale: card2Scale, opacity: card2Opacity, y: card2Y }}
+                            className="col-start-1 row-start-1 w-full flex items-stretch justify-center z-10 origin-center"
+                        >
+                        <div className="bg-white border border-gray-100 rounded-[2.5rem] p-6 lg:p-8 text-left group shadow-[0_0_20px_rgba(0,0,0,0.02)] w-full h-full relative overflow-hidden flex flex-col justify-between">
                             {/* Decorative background element */}
                             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#14b8a6]/5 to-[#3b82f6]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-                            <div className="flex flex-col relative z-10 w-full">
+                            <div className="flex flex-col relative z-10 w-full flex-1 justify-center">
                                 {/* Top Content Area */}
                                 <div className="flex flex-col lg:flex-row gap-8 items-center lg:items-center w-full">
                                     {/* Left Content */}
@@ -315,8 +336,9 @@ export default function ProductsPage() {
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                                 </svg>
                                             </div>
-                                            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 group-hover:text-[#153776] transition-colors text-center md:text-left">Digital Survey & Monitoring System</h3>
+                                            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 mt-1 lg:mt-2 group-hover:text-[#153776] transition-colors text-center md:text-left">Digital Survey & Monitoring System</h3>
                                         </div>
+                                        <p className="text-gray-600 text-base lg:text-lg font-medium mb-4 text-center md:text-left">A robust platform designed for end-to-end management of surveys, facility tracking, and data-driven impact assessment in the development sector.</p>
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4 mt-2">
                                             <div className="flex items-start gap-3">
@@ -384,14 +406,17 @@ export default function ProductsPage() {
                                 </div>
 
                                 {/* Bottom Button Row */}
-                                <div className="w-full flex justify-center mt-8 pt-6 border-t border-gray-100">
+                                <div className="w-full flex justify-center mt-auto pt-4 border-t border-gray-100">
                                     <a href="/contact/sales" className="bg-[#153776] hover:bg-[#102A5E] text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1 inline-flex items-center justify-center text-base w-full sm:w-auto">
                                         Book a demo
                                     </a>
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
+                        </motion.div>
+                        
+                        </div>
+                    </div>
                 </section>
             </main>
 
