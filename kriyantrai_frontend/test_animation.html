@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+@keyframes pulseCard {
+  0%, 100% {
+    border-color: #f3f4f6;
+    transform: translateY(0);
+    box-shadow: none;
+  }
+  15%, 35% {
+    border-color: #2DD4BF;
+    transform: translateY(-0.5rem);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+  50% {
+    border-color: #f3f4f6;
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}
+.custom-auto-hover {
+  animation: pulseCard 12s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #f3f4f6;
+  margin: 20px;
+  display: inline-block;
+  background: white;
+}
+</style>
+</head>
+<body>
+  <div class="custom-auto-hover" style="animation-delay: 0s"></div>
+  <div class="custom-auto-hover" style="animation-delay: 3s"></div>
+  <div class="custom-auto-hover" style="animation-delay: 6s"></div>
+  <div class="custom-auto-hover" style="animation-delay: 9s"></div>
+</body>
+</html>

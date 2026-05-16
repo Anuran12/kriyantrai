@@ -5,6 +5,12 @@
   /* Vibrant Blue */
   --color-primary-hover: #1D4ED8;
   --font-sans: var(--font-antigravity), ui-sans-serif, system-ui, sans-serif;
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
 }
 
 .animate-slow-pulse {
@@ -84,4 +90,39 @@ body {
 
 .group:hover .card-icon-hover {
   color: #153776;
+}
+
+
+
+.pause-on-hover:hover {
+  animation-play-state: paused;
+}
+
+@keyframes pulseCard {
+  0%, 100% {
+    border-color: #f3f4f6;
+    transform: translateY(0);
+    box-shadow: none;
+  }
+  15%, 35% {
+    border-color: #2DD4BF;
+    transform: translateY(-0.5rem);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+  50% {
+    border-color: #f3f4f6;
+    transform: translateY(0);
+    box-shadow: none;
+  }
+}
+
+.custom-auto-hover {
+  animation: pulseCard 12s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+}
+
+.custom-auto-hover:hover {
+  animation: none !important;
+  border-color: #2DD4BF !important;
+  transform: translateY(-0.5rem) !important;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
 }
